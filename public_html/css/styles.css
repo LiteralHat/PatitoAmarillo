@@ -1,0 +1,9 @@
+@font-face { font-family: RobotoMono; src: url('fonts/RobotoMono.ttf'); } 
+@font-face { font-family: Engebrechtre; src: url('fonts/Engeregu.ttf'); } 
+
+h1 {
+    font-family: RobotoMono, Roboto, Verdana;
+    font-style: italic;
+    font-weight: bold;
+}
+
