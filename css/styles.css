@@ -1,9 +1,164 @@
 @font-face { font-family: RobotoMono; src: url('fonts/RobotoMono.ttf'); } 
 @font-face { font-family: Engebrechtre; src: url('fonts/Engeregu.ttf'); } 
+@font-face { font-family: EngebrechtreB; src: url('fonts/Engebold.ttf'); }
+
+:root {
+    --content-width: 720px;
+    --container-spacer-top-height: 50px;
+    --container-spacer-bottom-height: 50px;
+    font-size: 16px;
+}
+
+* {
+    margin: auto;   
+    overflow-x: hidden;
+}
+
+html {
+    background-color: black;
+}
+
+/* LOGO ITEMS HERE */
+.logofont {
+    font-family: EngebrechtreB;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 40px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.logoimage {
+    position: relative;
+    height: 40px;
+    top: 4px;
+    left: 5px;
+}
+
+/* TYPEFACE */
+h1, h2, h3, h4, h5, h6 {
+    font-family: RobotoMono, Roboto, Verdana;
+    font-weight: bold;
+    color: black;
+    text-transform: capitalize;
+    
+}
 
 h1 {
-    font-family: RobotoMono, Roboto, Verdana;
-    font-style: italic;
-    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.8rem;
 }
+
+h2 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+}
+
+
+/* MENU BARS */
+#menutop > li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 0.85rem;
+}
+
+#menutop > li + li::before {
+    content: " | ";
+}
+
+#menutop {
+    margin: 13px 20px;
+    padding: 0;
+}
+
+#menutop a:link {
+    color: #c92448;
+}
+
+#menutop a:visited {
+    color: #661d39;
+}
+
+
+/* IMPORTANT PAGE CONTENT */
+.borderlesscontainer {
+    box-sizing: border-box;
+    width: var(--content-width);
+    padding-bottom: 7px;
+}
+
+header {
+    background-color: white;
+}
+
+.pagecontent {
+    padding: 0 20px;
+}
+
+/* CONTENTCONTAINER */
+#containertop {
+    border: 4px solid black;
+    background-color: white;
+    border-bottom: none;
+    height: var(--container-spacer-top-height);
+    width: var(--content-width);
+    box-shadow: 7px 7px 0 0 black;
+}
+
+#containermiddle {
+    border: 4px solid black;
+    border-top: none;
+    background-color: white;
+    width: var(--content-width);
+    box-shadow: 7px 0 0 0 black;
+    border-bottom: none;
+    
+}
+
+#containerbottom {
+    border: 4px solid black;
+    border-top: none;
+    width: var(--content-width);
+    background-color: white;
+    height: var(--container-spacer-bottom-height);
+}
+
+
+/* STRIPES BACKGROUND */
+#whitefillerbox {
+    background-color: white;
+}
+
+#stripesbox {
+    background: linear-gradient(
+        to bottom,
+        #ffffff,
+        #ffffff 48%,
+        #000000 48%,
+        #000000
+      );
+    background-size: 100% 50px;
+}
+
+#blackfillerbox {
+    background-color: black;
+}
+
+#headercontainer {
+    display: flex;
+    
+}
+
+#headercontainerchild {
+    min-width: 999px;
+}
+
+
+
 
