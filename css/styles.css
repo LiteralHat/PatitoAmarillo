@@ -7,6 +7,7 @@
     --container-spacer-top-height: 50px;
     --container-spacer-bottom-height: 50px;
     font-size: 16px;
+    --accent-color: #236f65;
 
 }
 
@@ -31,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     text-transform: uppercase;
     font-size: 2.4rem;
+    color: #145f55;
 }
 
 h2 {
@@ -133,7 +135,10 @@ ul {
 
 .logoimage {
     height: 40px;
+    position: relative;
+    top: 4px;
 }
+
 
 #searchbar {
     padding-bottom: 4px;
@@ -143,24 +148,9 @@ ul {
     border: 4px solid black;
     background-color: white;
     width: var(--content-width);
+    margin: 2%;
 }
 
-.whitebox.top {
-    border-bottom: none;
-    height: var(--container-spacer-top-height);
-    box-shadow: 7px 7px 0 0 black;
-}
-
-.whitebox.middle {
-    border-top: none;
-    box-shadow: 7px 0 0 0 black;
-    border-bottom: none;
-}
-
-.whitebox.bottom {
-    border-top: none;
-    height: var(--container-spacer-bottom-height);
-}
 
 #stripesboxtop {
     background-color: white;
@@ -202,4 +192,41 @@ ul {
 }
 
 
+
+@media (max-width: 760px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    #searchbar {
+        display: none;
+    }
+    .headercontainer {
+        justify-content: center;
+    }
+
+
+}
+
+@media (min-width: 760px) {
+    .whitebox {
+        margin: 0%;
+        box-shadow: 7px 7px 0 0 black;
+    }
+    .whitebox.top {
+        border-bottom: none;
+        height: var(--container-spacer-top-height);
+    }
+    .whitebox.middle {
+        border-top: none;
+        border-bottom: none;
+    }
+    .whitebox.bottom {
+        border-top: none;
+        height: var(--container-spacer-bottom-height);
+    }
+
+    
+
+}
 
