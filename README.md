@@ -4,4 +4,6 @@ _This website is still in development. Strange bugs and bad formatting should be
 
 ## Mobile Testers
 
-demscyphozoa - DuckDuckGo, Firefox, Chrome, Edge, Opera GX, Tor | Samsung j7 ( 720x1280 px ) / Default Samsung browser
+**demscyphozoa** - 
+- Windows 10 / Coc Coc, DuckDuckGo, Firefox, Chrome, Edge, Opera GX, Tor | 
+- Samsung j7 ( 720x1280 px ) / Default Samsung browser
