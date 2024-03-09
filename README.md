@@ -25,8 +25,17 @@ https://literalhat.com/
 - Windows 11 [ 1920 x 1080 ] - Brave
 - Moto G Stylus 5g [ 2400 x 1080 ] - Chrome | Samsung
 
+**Furumasuku**
+- Windows 10 [ 1920 x 1080 ] - Chrome
+- Samsung Galaxy M12 [ 720 x 1600 ] - Chrome
+
+**Relaxande**
+- iPad Air Gen4 [ 1640 x 2360 ] - Chrome | Safari
+- OnePlus Nord N100 BE2013 [ 720x1600 ] - Chrome
+
 **Pugglester**
-- TBA
+- Huawei P Smart 2021 [ 1080 x 2400 ] - Vivaldi
+- Windows 10 [ 1920 x 1080 ] - Vivaldi
   
 **Queen Jane**
 - TBA
@@ -34,6 +43,5 @@ https://literalhat.com/
 **Ami**
 - TBA
   
-**Relaxande**
-- TBA
+
   
