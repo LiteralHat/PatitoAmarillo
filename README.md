@@ -1,6 +1,11 @@
 # Welcome to LiteralHat.com's Git repo.
 
-_This website is still in development. Strange bugs and bad formatting should be expected, delete your cache if the entire site looks messed up._
+https://literalhat.com/
+
+## Important Notes
+- IE does not support this site
+- Website still in development, expect many fun bugs and display issues
+- This is primarily a desktop site but basic mobile responsiveness is implemented. 
 
 ## Mobile Testers
 
@@ -21,7 +26,14 @@ _This website is still in development. Strange bugs and bad formatting should be
 - Moto G Stylus 5g [ 2400 x 1080 ] - Chrome / Samsung
 
 **Pugglester**
+- TBA
+  
 **Queen Jane**
+- TBA
+  
 **Ami**
+- TBA
+  
 **Relaxande**
-
+- TBA
+  
