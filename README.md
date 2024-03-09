@@ -5,7 +5,7 @@ https://literalhat.com/
 ## Important Notes
 - IE does not support this site
 - Website still in development, expect many fun bugs and display issues
-- This is primarily a desktop site but basic mobile responsiveness is implemented. 
+- This is primarily a desktop site but basic mobile responsiveness is implemented.
 
 ## Mobile Testers
 
