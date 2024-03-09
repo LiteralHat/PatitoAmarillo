@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Random Cat Sounds</title>
+        <meta name="Random Cat Sounds " content="meow" />
+        <link rel="stylesheet" href="/css/styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+
+
+    <body class="pagecontent">
+
+        <h1 class="center">Press me for random cat sounds!</h1>
+
+        <br>
+        <br>
+
+        <button style="height:100px;width:200px" class="center" onclick="randomSound()">MEOW!</button>
+        <audio class="center" id="button" autoplay></audio>
+          <script>
+            var sounds = ["sounds/cat/cat_meow.mp3", "sounds/cat/cat_scratch.mp3", "sounds/cat/cat_purr.mp3"];
+             function randomSound() {
+             document.getElementById("button").src = sounds[Math.floor(Math.random()*sounds.length)];
+             }
+        </script>
+
+        <!-- sorry lazy and cbf -->
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <div class="center">
+        <img src="images/images/characterai-1.JPG" width="400px">
+    </div>
+    <div class="center">
+        <img src="images/images/characterai-2.JPG" width="400px">
+    </div>
+    </body >
+
+</html >
