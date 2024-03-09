@@ -23,7 +23,7 @@ https://literalhat.com/
 
 **KoldTheWizard**
 - Windows 11 [ 1920 x 1080 ] - Brave
-- Moto G Stylus 5g [ 2400 x 1080 ] - Chrome / Samsung
+- Moto G Stylus 5g [ 2400 x 1080 ] - Chrome | Samsung
 
 **Pugglester**
 - TBA
