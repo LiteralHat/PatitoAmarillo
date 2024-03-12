@@ -45,6 +45,12 @@
                     </ul>
 
 
+                    <h3>v3.2.0-beta 13.03.2024</h3>
+                    <ul>
+                        <li>Changed site file hierachy</li>
+                        <li>Added social media links to some testers</li>
+                    </ul>
+
                     <h3>v3.1.0-beta 10.03.2024</h3>
                     <ul>
                         <li>Added changelog, terms of use, privacy policy</li>
