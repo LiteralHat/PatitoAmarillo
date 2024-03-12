@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,24 +13,11 @@
 
 <body>
 
-    <?php include 'header.php' ?>
+<?php include 'siteelements/header.php' ?>
 
     <main>
-        <div id="stripesboxtop" class="centerbox">
-            <div class="whitebox top">
-                <nav>
-                    <ul id="menutop">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a></li>
-                        <li><a href="cat_sounds.html">Cat Sounds</a></li>
-                        <li><a href="terms_of_use.html">Terms of Use</a></li>
-                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                        <li><a href="changelog.html">Changelog</a></li>
- 
-                    </ul>
-                </nav>
-            </div>
-        </div>
+
+    <?php include 'siteelements/topbox.php' ?>
 
         <div id="stripesboxmiddle" class="centerbox">
             <div class="whitebox middle">
@@ -126,18 +110,11 @@
             </div>
         </div>
 
-        <div id="stripesboxbottom" class="centerbox">
-            <div class="whitebox bottom">
+        <?php include 'siteelements/bottombox.php' ?>
 
-            </div>
-        </div>
     </main>
 
-    <footer class="footer centerbox">
-        <div class="footercontainer">
-            <p><a href="https://www.youtube.com/watch?v=iik25wqIuFo">Easter Egg</a></p>
-        </div>
-    </footer>
+    <?php include 'siteelements/footer.php' ?>
 
 </body>
 

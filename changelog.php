@@ -17,16 +17,11 @@
 
     </header>
 
-
+    <?php include 'siteelements/header.php' ?>
 
     <main>
-        <div id="stripesboxtop" class="centerbox">
-            <div class="whitebox top">
-                <ul id="menutop">
-                    <li><a href="javascript:history.go(-1)">Go Back</a></li>
-                </ul>
-            </div>
-        </div>
+        <?php include 'siteelements/topbox.php' ?>
+        
 
         <div id="stripesboxmiddle" class="centerbox">
             <div class="whitebox middle">
@@ -89,21 +84,11 @@
             </div>
         </div>
 
-        <div id="stripesboxbottom" class="centerbox">
-            <div class="whitebox bottom">
+        <?php include 'siteelements/bottombox.php' ?>
 
-            </div>
-        </div>
-    </main>
+</main>
 
-    <footer class="footer centerbox">
-        <div class="footercontainer">
-            <p><a href="https://www.youtube.com/watch?v=iik25wqIuFo">Easter Egg</a></p>
-        </div>
-    </footer>
-
-
-
+<?php include 'siteelements/footer.php' ?>
 
 </body>
 
