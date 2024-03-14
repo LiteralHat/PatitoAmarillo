@@ -133,7 +133,7 @@ ul, ol {
 
 
 .logofont {
-    font-family: EngebrechtreB;
+    font-family: EngebrechtreB, Haettenschweiler, Impact, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     font-style: italic;
     font-size: var(--logo-size);

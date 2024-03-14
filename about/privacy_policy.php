@@ -11,27 +11,9 @@
 </head>
 
 <body>
-
-
-    <header class="header centerbox">
-
-    </header>
-
-
-
-
     <main>
-        <div id="stripesboxtop" class="centerbox">
-            <div class="whitebox top">
-                <ul id="menutop">
-                    <li><a href="javascript:history.go(-1)">Go Back</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="stripesboxmiddle" class="centerbox">
-            <div class="whitebox middle">
-                <div class="pagecontent">
+        <!-- Header and opening main content div used for styling  -->
+        <?php include($folder . 'header.php') ?>
 
                     <h1>Privacy Policy </h1>
                     <nav id='navbar'>
@@ -138,27 +120,9 @@
 
 
 
+        <!-- Footer and closing div tags used for styled main content box  -->
+        <?php include($folder . 'footer.php') ?>
 
-                </div>
-            </div>
-        </div>
-
-        <div id="stripesboxbottom" class="centerbox">
-            <div class="whitebox bottom">
-
-            </div>
-        </div>
     </main>
-
-    <footer class="footer centerbox">
-        <div class="footercontainer">
-            <p><a href="https://www.youtube.com/watch?v=iik25wqIuFo">Easter Egg</a></p>
-        </div>
-    </footer>
-
-
-
-
 </body>
-
 </html>
