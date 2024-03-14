@@ -1,13 +1,11 @@
 @font-face { font-family: RobotoMono; src: url('fonts/RobotoMono.ttf'); } 
 @font-face { font-family: Engebrechtre; src: url('fonts/Engeregu.ttf'); } 
 @font-face { font-family: EngebrechtreB; src: url('fonts/Engebold.ttf'); }
-@font-face { font-family: DataTrash; src: url('fonts/DataTrash.TTF'); }
 
 :root {
-    /* --content-width: 720px; */
     --content-width: 720px;
     --container-spacer-top-height: 50px;
-    --container-spacer-bottom-height: 100px;
+    --container-spacer-bottom-height: 50px;
     --logo-size: 40px;
     --accent-color: #236f65;
     font-size: 16px;
@@ -24,9 +22,6 @@ html {
 }
 
 /* TYPEFACE */
-
-
-
 h1, h2, h3, h4, h5, h6 {
     font-family: RobotoMono, Roboto, Verdana;
     font-weight: 600;
@@ -50,6 +45,8 @@ h3 {
     font-size: 1.5rem;
 }
 
+
+
 p, ul, ol {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.9rem;
@@ -63,16 +60,6 @@ p, ul, ol {
     margin-bottom: 0.5rem;
     margin-top: 0.9rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-transform: capitalize;
-}
-
-.subtitle {
-    font-weight: bold;
-}
-
-.warning {
-    font-weight: bold;
-    color: red;
 }
 
 li {
@@ -146,7 +133,7 @@ ul, ol {
 
 
 .logofont {
-    font-family: EngebrechtreB, Haettenschweiler, Impact, 'Arial Narrow Bold', sans-serif;
+    font-family: EngebrechtreB;
     text-transform: uppercase;
     font-style: italic;
     font-size: var(--logo-size);
@@ -164,67 +151,14 @@ ul, ol {
     padding-bottom: 4px;
 }
 
-/* ANY container that requres the usage of the content width */
-.widthcontainer {
-    width: var(--content-width);
-}
-
-/* White content box styling */
 .whitebox {
     border: 0.3rem solid black;
     background-color: white;
+    width: var(--content-width);
     margin: 1% 2%;
 }
 
-.sidecontentbox {
-    border: 1px solid pink;
-    width: 250px;
-}
 
-.sticky {
-    position: sticky;
-    top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    
-}
-
-.container {
-    margin-left: auto;
-    height: auto;
-    width: auto;
-    /* border: 1px solid red; */
-}
-
-.goback{
-    width: fit-content;
-    background-color: PINK;
-}
-
-.arrowfront {
-    position: relative;
-    z-index: -1;
-    left: 2rem;
-    border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent; 
-    border-right: 42px solid black; 
-}
-
-.arrowback {
-    position: relative;
-    border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent; 
-    border-right: 42px solid PINK; 
-}
-
-p.buttontext {
-    font-family: DataTrash, Impact;
-    font-size: 1.8rem;
-    margin: 10px 20px 10px 0;
-}
-
-/* page section styling */
 #stripesboxtop {
     background-color: white;
 }
@@ -238,8 +172,6 @@ p.buttontext {
         #000000
       );
     background-size: 100% 50px;
-    position: relative;
-    height: 100%;
 }
 
 #stripesboxbottom {
@@ -283,21 +215,11 @@ p.buttontext {
         font-size: 3vw;
         --logo-size: 10vw;
     }
-    .sidecontentbox {
-        display: none;
-    }
+
+
 }
-
-@media (max-width: 1200px) {
-    .sidecontentbox {
-        display: none;
-    }
-}
-
-
 
 @media (min-width: 760px) {
-    
     .whitebox {
         margin: 0%;
         box-shadow: 7px 7px 0 0 black;
@@ -309,7 +231,6 @@ p.buttontext {
     .whitebox.middle {
         border-top: none;
         border-bottom: none;
-        box-shadow: 7px 0 0 0 black;
     }
     .whitebox.bottom {
         border-top: none;
