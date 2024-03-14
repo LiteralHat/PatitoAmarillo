@@ -28,6 +28,8 @@
         <h2>Known Issues</h2>
         <ul>
             <li>Strange white bar appears on the right of the footer on some mobile devices</li>
+            <li>GOBACK button is not visible on mobile devices</li>
+            <li>Make GOBACK button not ugly</li>
         </ul>
 
         <h2>Unreleased</h2>
@@ -41,11 +43,12 @@
         
 
         <section class='section'>
-        <h3>v3.3.0-beta 14.03.2024</h3>
+        <h3>v4.2.0-beta 15.03.2024</h3>
         <ul>
             <li>Added basic templating to site</li>
             <li>Added cache warning to front page</li>
             <li>Fixed several formatting issues on about/terms_of_use</li>
+            <li>Added GO BACK button on non-homepage pages</li>
         </ul>
 
         <h3>v3.2.0-beta 13.03.2024</h3>

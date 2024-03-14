@@ -24,6 +24,9 @@ html {
 }
 
 /* TYPEFACE */
+
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: RobotoMono, Roboto, Verdana;
     font-weight: 600;
@@ -173,72 +176,52 @@ ul, ol {
     margin: 1% 2%;
 }
 
-/* stupid sign */
-.sign {
-    position: fixed;
-    z-index: 4;
+.sidecontentbox {
+    /* border: 1px solid pink; */
+    width: 300px;
 }
 
-.signcontainer {
-    position: absolute;
-    right: 1rem;
-    top: -3.4rem;
-    box-sizing: border-box;
+.sticky {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    
 }
 
-button.goback{
-    width: max-content;
-    background-color: #661d39;
-    color: white;
-    padding: 0.3rem 1rem 0.5rem 0.2rem;
-    border-left: none;
+.container {
+    margin-left: auto;
+    height: auto;
+    width: auto;
+    /* border: 1px solid red; */
 }
 
-button.goback:hover {
-    width: max-content;
-    background-color: white;
-    color: black;
+.goback{
+    width: fit-content;
+    background-color: PINK;
 }
 
-button.goback span {
-    font-family: DataTrash;
-    font-size: 25px;
-}
-
-.arrowtriangle {
+.arrowfront {
     position: relative;
-    right: 1.87rem;
-    top: -3.4rem;
-    width: 0; 
-    height: 0; 
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent; 
-    border-right: 30px solid #661d39; 
     z-index: -1;
-}
-
-.arrowtriangleborder {
-    position: relative;
-    right: 2.35rem;
-    top: -7.9rem;
-    width: 0; 
-    height: 0; 
+    left: 2rem;
     border-top: 42px solid transparent;
     border-bottom: 42px solid transparent; 
     border-right: 42px solid black; 
-    z-index: -2;
 }
 
-.arrowtriangleshadow {
+.arrowback {
     position: relative;
-    right: 1.9rem;
-    top: -12.65rem;
-    width: 0; 
-    height: 0; 
     border-top: 42px solid transparent;
     border-bottom: 42px solid transparent; 
-    border-right: 42px solid black; 
-    z-index: -2;
+    border-right: 42px solid PINK; 
+}
+
+p.buttontext {
+    font-family: DataTrash, Impact;
+    font-size: 1.8rem;
+    margin: 10px 20px 10px 0;
 }
 
 /* page section styling */
@@ -255,6 +238,8 @@ button.goback span {
         #000000
       );
     background-size: 100% 50px;
+    position: relative;
+    height: 100%;
 }
 
 #stripesboxbottom {
@@ -298,11 +283,14 @@ button.goback span {
         font-size: 3vw;
         --logo-size: 10vw;
     }
-
+    .sidecontentbox {
+        display: none;
+    }
 
 }
 
 @media (min-width: 760px) {
+    
     .whitebox {
         margin: 0%;
         box-shadow: 7px 7px 0 0 black;

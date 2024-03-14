@@ -11,9 +11,9 @@
 
 <body>
     <main>
+
         <!-- Header and opening main content div used for styling  -->
         <?php include_once($folder . '/elements/header.php') ?>
-
 
         <section class="section">
             <h1>Welcome to LiteralHat.com.</h1>
