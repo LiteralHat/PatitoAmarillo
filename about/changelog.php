@@ -14,12 +14,16 @@
         <!-- Header and opening main content div used for styling  -->
         <?php include_once($folder . '/elements/header.php') ?>
 
-        <section>
+        <section class="section">
         <h1>Changelog</h1>
-        <p>This is a</p>
+        <p class="subtitle">This is the site's official changelog.</p>
+        <p>This website is still in development. Functionality is limited as a result. Please forgive any broken links, images, etc.</p>
+        <p>To view this website's Git repository and version history, <a href="https://github.com/LiteralHat/literalhat.com" target="_blank">click here.</a></p>
+        <p class="warning">If this website appears broken, you need to clear your cache (hard refresh on desktop with CTRL + SHIFT R).</p>
 
         </section>
 
+        <section class='section'>
         <h2>Known Issues</h2>
         <ul>
             <li>Strange white bar appears on the right of the footer on some mobile devices</li>
@@ -29,9 +33,18 @@
         <ul>
             <li>Working search bar</li>
             <li>Extra site navigation links</li>
-            <li>Proper homepage</li>
+            <li>Nicer looking homepage</li>
+            <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
         </ul>
+        </section>
+        
 
+        <section class='section'>
+        <h3>v3.3.0-beta 14.03.2024</h3>
+        <ul>
+            <li>Added basic templating to site</li>
+            <li>Added cache warning to front page</li>
+        </ul>
 
         <h3>v3.2.0-beta 13.03.2024</h3>
         <ul>
@@ -71,11 +84,11 @@
         <ul>
             <li>Added basic landing webpage to ensure propagation has occured</li>
         </ul>
-
+        </section>
 
 
         <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include($folder . '/footer.php') ?>
+        <?php include($folder . '/elements/footer.php') ?>
 
     </main>
 </body>
