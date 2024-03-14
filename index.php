@@ -20,6 +20,8 @@
             <p class="quote">Be gay, do crime. Create more than you consume. Desire less.</p>
             <p>This website is still in development. Functionality is limited as a result. Please scroll and
                 read below for more information.</p>
+
+            <img src="images/temp/mychildren.png" height="400px">
             <p><strong>New!</strong> <a href="changelog.html">Click here</a> to visit the changelog.</p>
             <div class="linkedlist">
                 <p><strong>Many thanks to my testers: </strong>
@@ -103,7 +105,6 @@
 
         <!-- Footer and closing div tags used for styled main content box  -->
         <?php include($folder . '/elements/footer.php') ?>
-
     </main>
 </body>
 </html>

@@ -13,6 +13,16 @@
 </header>
 
 <div id="stripesboxtop" class="centerbox">
+
+    <div class='sign'>
+        <button type="button" class="goback whitebox">
+            <span>GO BACK</span>
+        </button>
+        <div class="arrowtriangle">
+        </div>
+    </div>
+
+
     <div class="whitebox top">
         <nav>
             <ul id="menutop">
@@ -25,7 +35,13 @@
             </ul>
         </nav>
     </div>
+
+
+
 </div>
+
+
+
 
 <div id="stripesboxmiddle" class="centerbox">
             <div class="whitebox middle">

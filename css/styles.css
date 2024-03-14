@@ -1,6 +1,7 @@
 @font-face { font-family: RobotoMono; src: url('fonts/RobotoMono.ttf'); } 
 @font-face { font-family: Engebrechtre; src: url('fonts/Engeregu.ttf'); } 
 @font-face { font-family: EngebrechtreB; src: url('fonts/Engebold.ttf'); }
+@font-face { font-family: DataTrash; src: url('fonts/DataTrash.TTF'); }
 
 :root {
     --content-width: 720px;
@@ -58,7 +59,7 @@ p, ul, ol {
     margin-bottom: 0.5rem;
     margin-top: 0.9rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .subtitle {
@@ -159,11 +160,53 @@ ul, ol {
     padding-bottom: 4px;
 }
 
+
+
+
 .whitebox {
     border: 0.3rem solid black;
     background-color: white;
     width: var(--content-width);
     margin: 1% 2%;
+}
+
+
+.sign {
+    position: fixed;
+}
+
+button.goback{
+    position: absolute;
+    right: 23.6rem;
+    width: max-content;
+    background-color: #661d39;
+    color: white;
+    padding: 0.3rem 1rem 0.5rem 1rem;
+    border-left: none;
+}
+
+button.goback:hover {
+    width: max-content;
+    background-color: white;
+    color: black;
+}
+
+button.goback span {
+    font-family: DataTrash;
+    font-size: 25px;
+}
+
+.arrowtriangle {
+    position: absolute;
+    right: 31.1rem;
+    bottom: -4.05rem;
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    border-right: 40px solid #661d39; 
+    z-index: -1;
+      
 }
 
 

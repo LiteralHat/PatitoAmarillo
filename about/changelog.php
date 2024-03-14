@@ -14,6 +14,7 @@
         <!-- Header and opening main content div used for styling  -->
         <?php include_once($folder . '/elements/header.php') ?>
 
+
         <section class="section">
         <h1>Changelog</h1>
         <p class="subtitle">This is the site's official changelog.</p>
@@ -44,6 +45,7 @@
         <ul>
             <li>Added basic templating to site</li>
             <li>Added cache warning to front page</li>
+            <li>Fixed several formatting issues on about/terms_of_use</li>
         </ul>
 
         <h3>v3.2.0-beta 13.03.2024</h3>
