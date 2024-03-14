@@ -2,18 +2,15 @@
     </div>
 
     <div class='sidecontentbox'>
- 
     </div>
-
-
 </div>
 
 
 
 
 <div id="stripesboxbottom" class="centerbox">
-    <div class="centercontainer whitebox bottom">
-
+    <div class="widthcontainer whitebox bottom">
+        
     </div>
 </div>
 

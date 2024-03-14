@@ -26,7 +26,7 @@
             </ul>
         </nav>
 
-    </section>
+        </section>
 
         <section id="1.0">
             <h2>1.0 - The Website</h2>
@@ -108,10 +108,10 @@
         </section>
 
 
-    </main>
+        <!-- Footer and closing div tags used for styled main content box  -->
+        <?php include($folder . '/elements/footer.php') ?>
 
-    <!-- Footer and closing div tags used for styled main content box  -->
-    <?php include($folder . '/elements/footer.php') ?>
+    </main>
 </body>
 
 </html>

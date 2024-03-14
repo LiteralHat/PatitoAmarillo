@@ -28,8 +28,8 @@
         <h2>Known Issues</h2>
         <ul>
             <li>Strange white bar appears on the right of the footer on some mobile devices</li>
-            <li>GOBACK button is not visible on mobile devices</li>
-            <li>Make GOBACK button not ugly</li>
+            <li>GOBACK button is not visible on px width < 1200. </li>
+            <li>Make everything not ugly</li>
         </ul>
 
         <h2>Unreleased</h2>
@@ -48,7 +48,7 @@
             <li>Added basic templating to site</li>
             <li>Added cache warning to front page</li>
             <li>Fixed several formatting issues on about/terms_of_use</li>
-            <li>Added GO BACK button on non-homepage pages</li>
+            <li>Added temporary GOBACK button on non-homepage pages</li>
         </ul>
 
         <h3>v3.2.0-beta 13.03.2024</h3>

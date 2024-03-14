@@ -7,7 +7,7 @@
     /* --content-width: 720px; */
     --content-width: 720px;
     --container-spacer-top-height: 50px;
-    --container-spacer-bottom-height: 50px;
+    --container-spacer-bottom-height: 100px;
     --logo-size: 40px;
     --accent-color: #236f65;
     font-size: 16px;
@@ -177,8 +177,8 @@ ul, ol {
 }
 
 .sidecontentbox {
-    /* border: 1px solid pink; */
-    width: 300px;
+    border: 1px solid pink;
+    width: 250px;
 }
 
 .sticky {
@@ -286,8 +286,15 @@ p.buttontext {
     .sidecontentbox {
         display: none;
     }
-
 }
+
+@media (max-width: 1200px) {
+    .sidecontentbox {
+        display: none;
+    }
+}
+
+
 
 @media (min-width: 760px) {
     
@@ -302,6 +309,7 @@ p.buttontext {
     .whitebox.middle {
         border-top: none;
         border-bottom: none;
+        box-shadow: 7px 0 0 0 black;
     }
     .whitebox.bottom {
         border-top: none;
