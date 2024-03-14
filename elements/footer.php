@@ -6,7 +6,7 @@
 
 
 <div id="stripesboxbottom" class="centerbox">
-    <div class="whitebox bottom">
+    <div class="centercontainer whitebox bottom">
 
     </div>
 </div>

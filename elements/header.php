@@ -12,18 +12,10 @@
     </div>
 </header>
 
+
+
 <div id="stripesboxtop" class="centerbox">
-
-    <div class='sign'>
-        <button type="button" class="goback whitebox">
-            <span>GO BACK</span>
-        </button>
-        <div class="arrowtriangle">
-        </div>
-    </div>
-
-
-    <div class="whitebox top">
+    <div class="widthcontainer whitebox top">
         <nav>
             <ul id="menutop">
                 <li><a href=<?php echo $links . "index.php" ?> >Home</a></li>
@@ -35,16 +27,28 @@
             </ul>
         </nav>
     </div>
-
-
-
 </div>
 
-
-
+<div class="centerbox">
+    <div class="widthcontainer">
+        <div class='sign'>
+            <div class='signcontainer'>
+                <button type="button" class="goback whitebox">
+                    <span>GO BACK</span>
+                </button>
+                <div class="arrowtriangle">
+                </div>
+                <div class="arrowtriangleborder">
+                </div>
+                <div class="arrowtriangleshadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="stripesboxmiddle" class="centerbox">
-            <div class="whitebox middle">
+            <div class="widthcontainer whitebox middle">
                 <div class="pagecontent">
                     
 

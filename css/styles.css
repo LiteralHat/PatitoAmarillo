@@ -4,6 +4,7 @@
 @font-face { font-family: DataTrash; src: url('fonts/DataTrash.TTF'); }
 
 :root {
+    /* --content-width: 720px; */
     --content-width: 720px;
     --container-spacer-top-height: 50px;
     --container-spacer-bottom-height: 50px;
@@ -160,28 +161,36 @@ ul, ol {
     padding-bottom: 4px;
 }
 
+/* ANY container that requres the usage of the content width */
+.widthcontainer {
+    width: var(--content-width);
+}
 
-
-
+/* White content box styling */
 .whitebox {
     border: 0.3rem solid black;
     background-color: white;
-    width: var(--content-width);
     margin: 1% 2%;
 }
 
-
+/* stupid sign */
 .sign {
     position: fixed;
+    z-index: 4;
+}
+
+.signcontainer {
+    position: absolute;
+    right: 1rem;
+    top: -3.4rem;
+    box-sizing: border-box;
 }
 
 button.goback{
-    position: absolute;
-    right: 23.6rem;
     width: max-content;
     background-color: #661d39;
     color: white;
-    padding: 0.3rem 1rem 0.5rem 1rem;
+    padding: 0.3rem 1rem 0.5rem 0.2rem;
     border-left: none;
 }
 
@@ -197,19 +206,42 @@ button.goback span {
 }
 
 .arrowtriangle {
-    position: absolute;
-    right: 31.1rem;
-    bottom: -4.05rem;
+    position: relative;
+    right: 1.87rem;
+    top: -3.4rem;
     width: 0; 
     height: 0; 
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent; 
-    border-right: 40px solid #661d39; 
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent; 
+    border-right: 30px solid #661d39; 
     z-index: -1;
-      
 }
 
+.arrowtriangleborder {
+    position: relative;
+    right: 2.35rem;
+    top: -7.9rem;
+    width: 0; 
+    height: 0; 
+    border-top: 42px solid transparent;
+    border-bottom: 42px solid transparent; 
+    border-right: 42px solid black; 
+    z-index: -2;
+}
 
+.arrowtriangleshadow {
+    position: relative;
+    right: 1.9rem;
+    top: -12.65rem;
+    width: 0; 
+    height: 0; 
+    border-top: 42px solid transparent;
+    border-bottom: 42px solid transparent; 
+    border-right: 42px solid black; 
+    z-index: -2;
+}
+
+/* page section styling */
 #stripesboxtop {
     background-color: white;
 }
