@@ -1,7 +1,7 @@
 <header class="header centerbox">
     <div class="headercontainer">
         <div class="logos">
-            <span class="logofont">LiteralHat.com</span>
+            <span class="logofont hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
             <img class="logoimage"
                 src="<?php echo ($links . 'images/pagedolls/cute_sitting_sheep_with_bowtie.png'); ?>">
         </div>
@@ -16,8 +16,8 @@
 <div id="stripesboxtop" class="centerbox">
     <div class="widthcontainer whitebox top">
         <nav>
-            <ul id="menutop">
-                <li><a href=<?php echo $links . "index.php" ?>>Home</a></li>
+            <ul id="menutop" class="nounderline">
+                <li><a href=<?php echo $links . "index.php" ?> >Home</a></li>
                 <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a></li>
                 <li><a href=<?php echo $links . "cat_sounds.html"?>>Cat Sounds</a></li>
                 <li><a href=<?php echo $links . "about/terms_of_use.php" ?>>Terms of Use</a></li>
@@ -36,8 +36,8 @@
                     include('goback.php');
                 }
                 ?>
-
                 </div>
+                
 
     <div class="widthcontainer whitebox middle">
         <div class="pagecontent">

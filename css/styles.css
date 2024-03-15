@@ -9,9 +9,18 @@
     --container-spacer-top-height: 50px;
     --container-spacer-bottom-height: 100px;
     --logo-size: 40px;
-    --accent-color: #236f65;
     font-size: 16px;
     letter-spacing: normal;
+
+    --accent-red: #5e192a;
+    --accent-red2: #8a2836;
+    --accent-red3: #ff234d;
+    --accent-red4: #e57c8b;
+    --accent-green: #14413b; 
+    --accent-green2: #145f55;
+    --accent-green3: #109987;
+    --accent-green4: #7ac5bc;
+
 }
 
 * {
@@ -39,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     text-transform: uppercase;
     font-size: 2.4rem;
-    color: #145f55;
+    color: var(--accent-green2);
 }
 
 h2 {
@@ -84,6 +93,11 @@ ul, ol {
 }
 
 /* MENU BARS */
+
+.nounderline a:link {
+    text-decoration: none;
+}
+
 #menutop > li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline;
@@ -100,12 +114,32 @@ ul, ol {
     padding: 0.6rem 1rem 0.4rem;
 }
 
-#menutop a:link {
-    color: #c92448;
+#menutop a {
+    color: var(--accent-red2);
 }
 
-#menutop a:visited {
-    color: #661d39;
+#menutop a:hover {
+    color: var(--accent-red3);
+}
+
+.hoverred a {
+    color: #000000;
+}
+
+.hoverred a:visited {
+    color: black;
+}
+
+.hoverred a:hover {
+    color: var(--accent-red3);
+}
+
+a:link {
+    color: var(--accent-red3);
+}
+
+a:visited {
+    color: var(--accent-red);
 }
 
 
