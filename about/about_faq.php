@@ -32,13 +32,16 @@
         <h2>Frequently Asked Questions</h2>
 
         <p class='question'>Can I use your art in ______?</p>
-        <p>Please do. You are free to use any of my work as profile photos, banners, wallpapers, on your website, in edits, on forums, etc.</p>
+        <p>You are free to use any of my work as profile photos, banners, wallpapers, on your website, in edits, on forums, etc.</p>
         <p>You may also use my music or artwork in videos as long as it falls under fair use.</p>
         <p>You don't need to credit - but if you choose to, I am thankful.</p>
-        <p>For any commercial uses, please contact.</p>
+        <p>If you are unsure / need something for commercial use - please contact.</p>
 
         <p class='question'>Are you up for hire?</p>
         <p>Not at this time, sorry.</p>
+
+        <p class='question'>What do you use to draw?</p>
+        <p>From most to least: paper + ink, watercolors, Photoshop 2020, graphite.</p>
 
         <p class='question'>How can I contact you?</p>
         <p>Please email <i>support@literalhat.com</i>.</p>

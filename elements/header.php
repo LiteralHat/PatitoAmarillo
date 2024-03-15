@@ -2,7 +2,7 @@
     <a id="top"></a>
     <div class="headercontainer">
         <div class="logos">
-            <span class="logofont hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
+            <span class="logotext hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
             <img class="logoimage"
                 src="<?php echo ($links . 'images/pagedolls/cute-sitting-sheep-with-bowtie.png'); ?>">
         </div>
