@@ -1,4 +1,5 @@
 <header class="header centerbox">
+    <a id="top"></a>
     <div class="headercontainer">
         <div class="logos">
             <span class="logofont hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
@@ -20,9 +21,6 @@
                 <li><a href=<?php echo $links . "index.php" ?> >Home</a></li>
                 <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a></li>
                 <li><a href=<?php echo $links . "cat_sounds.html"?>>Cat Sounds</a></li>
-                <li><a href=<?php echo $links . "about/terms_of_use.php" ?>>Terms of Use</a></li>
-                <li><a href=<?php echo $links . "about/privacy_policy.php" ?>>Privacy Policy</a></li>
-                <li><a href=<?php echo $links . "about/changelog.php" ?>>Changelog</a></li>
             </ul>
         </nav>
     </div>
@@ -32,12 +30,30 @@
 <div id="stripesboxmiddle" class="centerbox">
 
                 <div class='sidecontentbox'>
-                <?php if (basename($_SERVER["PHP_SELF"]) !== "index.php") {
+                <!-- <?php if (basename($_SERVER["PHP_SELF"]) !== "index.php") {
                     include('goback.php');
                 }
-                ?>
+                ?> -->
+
+                <nav>
+                    <ul class='sidemenu'>
+                        <li class='list1'><a href=<?php echo $links . "index.php" ?> >Home</a></li>
+                        <li class='list2'><a href=<?php echo $links . "index.php" ?>>About</a></li>
+                        <ul>
+                            <li><a href=<?php echo $links . "index.php" ?> >FAQ</a></li>
+                            <li><a href=<?php echo $links . "about/terms_of_use.php" ?> >Terms Of Use</a></li>
+                            <li><a href=<?php echo $links . "about/privacy_policy.php" ?> >Privacy</a></li>
+                            <li><a href=<?php echo $links . "about/changelog.php" ?> >Changelog</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+
+                <ul class='sidemenu sticky'>
+                        <li class='list6'><a href='#top'>Back to Top</a></li>
                 </div>
-                
+
+
+
 
     <div class="widthcontainer whitebox middle">
         <div class="pagecontent">
