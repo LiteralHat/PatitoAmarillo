@@ -28,27 +28,38 @@
         <h2>Known Issues</h2>
         <ul>
             <li>Strange white bar appears on the right of the footer on some mobile devices</li>
-            <li>GOBACK button is not visible on px width < 1200. </li>
-            <li>Make everything not ugly</li>
+            <li>Side menu doesn't appear on browser widths smaller than ~1200px</li>
+            <li>catsounds webpage stylesheet isn't linked</li>
+
         </ul>
 
         <h2>Unreleased</h2>
         <ul>
             <li>Working search bar</li>
-            <li>Extra site navigation links</li>
-            <li>Nicer looking homepage</li>
+            <li>Better homepage</li>
             <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
         </ul>
         </section>
         
 
         <section class='section'>
+
+        <h3>v5.2.0-beta 16.03.2024</h3>
+        <ul>
+            <li>Added menu navigation bar</li>
+            <li>Added consistent site colors</li>
+            <li>Added about+FAQ page</li>
+            <li>Added gamer QnA</li>
+            <li>Removed goback button</li>
+        </ul>
+
+
         <h3>v4.2.0-beta 15.03.2024</h3>
         <ul>
             <li>Added basic templating to site</li>
             <li>Added cache warning to front page</li>
             <li>Fixed several formatting issues on about/terms_of_use</li>
-            <li>Added temporary GOBACK button on non-homepage pages</li>
+            <li>Added temporary goback button on non-homepage pages</li>
         </ul>
 
         <h3>v3.2.0-beta 13.03.2024</h3>

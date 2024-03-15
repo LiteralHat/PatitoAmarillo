@@ -4,7 +4,7 @@
         <div class="logos">
             <span class="logofont hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
             <img class="logoimage"
-                src="<?php echo ($links . 'images/pagedolls/cute_sitting_sheep_with_bowtie.png'); ?>">
+                src="<?php echo ($links . 'images/pagedolls/cute-sitting-sheep-with-bowtie.png'); ?>">
         </div>
         <div id="searchbar">
             <input type="search" placeholder="This doesn't work yet..!">
@@ -38,9 +38,9 @@
                 <nav>
                     <ul class='sidemenu'>
                         <li class='list1'><a href=<?php echo $links . "index.php" ?> >Home</a></li>
-                        <li class='list2'><a href=<?php echo $links . "index.php" ?>>About</a></li>
+                        <li class='list2'><a href=<?php echo $links . "about/about_faq.php" ?>>About</a></li>
                         <ul>
-                            <li><a href=<?php echo $links . "index.php" ?> >FAQ</a></li>
+                            <li><a href=<?php echo $links . "about/about_faq.php" ?> >About + FAQ</a></li>
                             <li><a href=<?php echo $links . "about/terms_of_use.php" ?> >Terms Of Use</a></li>
                             <li><a href=<?php echo $links . "about/privacy_policy.php" ?> >Privacy</a></li>
                             <li><a href=<?php echo $links . "about/changelog.php" ?> >Changelog</a></li>

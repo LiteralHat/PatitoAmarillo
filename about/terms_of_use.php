@@ -5,7 +5,7 @@
 
 <head>
     <title>Privacy Policy</title>
-    <meta name="Welcome to LiteralHat.com." content="Be gay, do crime. Create more than you consume. Desire less." />
+    <meta name="LiteralHat.com | Terms Of Use" content="" />
     <?php include_once($folder . '/elements/headtags.php') ?>
 </head>
 
