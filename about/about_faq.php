@@ -19,11 +19,11 @@
         <h1>About + FAQ</h1>
         <p class='large'>Hi.</p>
         <p class='subtitle'>You can call me LiteralHat, or just 'Hat'. </p>
-        <p>I was a technical animator in 2021 and am now a front end web developer.</p>
+        <p>Technical Animator from 2021-2023, now a front end web developer.</p>
         <p>Some of the projects I've worked on are Rise of the TMNT: The Movie, LEGO: Monkie Kid, and Marvel's Moon Girl + Devil Dinosaur.</p>
-        <p>You may have also come forums my YouTube animations or artworks.</p>
-        <p>In my free time, I work on this website, play guitar, and draw.</p>
-        <p>Regardless of where you discovered LiteralHat, thank you for visiting the website of my passion.</p>
+        <p>You may have also come from my YouTube animations or artworks.</p>
+        <p>In my free time I work on this website, play guitar, and draw.</p>
+        <p>Regardless of where you discovered LiteralHat, thank you for visiting this website of my passion.</p>
         <img src=<?php echo ($links . 'images/pagedolls/mohawk-guy-waving.png'); ?> class='image small' src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
         </section>
 
@@ -33,9 +33,9 @@
 
         <p class='question'>Can I use your art in ______?</p>
         <p>Please do. You are free to use any of my work as profile photos, banners, wallpapers, on your website, in edits, on forums, etc.</p>
-        <p>You're free to use my music or artwork in videos as long as it falls under fair use.</p>
-        <p>For any commercial uses, please contact me.</p>
+        <p>You may also use my music or artwork in videos as long as it falls under fair use.</p>
         <p>You don't need to credit - but if you choose to, I am thankful.</p>
+        <p>For any commercial uses, please contact.</p>
 
         <p class='question'>Are you up for hire?</p>
         <p>Not at this time, sorry.</p>
