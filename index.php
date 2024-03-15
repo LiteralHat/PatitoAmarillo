@@ -20,6 +20,7 @@
             <p class="quote">Be gay, do crime. Create more than you consume. Desire less.</p>
             <p>This website is still in development. Functionality is limited as a result. Please scroll and
                 read below for more information.</p>
+            <p class="warning">If this website appears broken, you need to clear your cache (hard refresh on desktop with CTRL + SHIFT R).</p>
 
             <img src="images/temp/mychildren.png" height="400px">
             <p><strong>New!</strong> <a href="changelog.html">Click here</a> to visit the changelog.</p>
@@ -55,52 +56,10 @@
             </ul>
         </section>
 
-        <section>
-            <h2>Website Rebuild Information.</h2>
-            <h3 class="quote">What happened to the old website?</h3>
-            <p>It's been retired, so unfortunately you won't see it again. If you miss it, visit the <a
-                    href="https://web.archive.org/web/*/literalhat.com">Wayback Machine</a> as I archived it
-                from the very start.</p>
-            <h3 class="quote">Why are you rebuilding the website?</h3>
-            <p>Numerous issues:</p>
-            <ul>
-                <li>The file structure of the site was a mess. No naming conventions were used. In other
-                    words,
-                    if you wanted to embed an image (such as an artwork) directly from my site onto your
-                    forum /
-                    myspace / etc. and I decided to move or modify the image, it would often break and you'd
-                    have to manually embed it again.</li>
-                <li>It was not very mobile / web responsive. Things would scale wrong and look broken across
-                    different devices and browsers. Styling was inconsistent. For example link colors would
-                    be
-                    red on one page but default blue on others.</li>
-                <li>It did not meet <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG
-                        standards.</a></li>
-                <li>It's too laggy.</li>
-                <li>SEO was inconsistent, meaning some pages would show up on Google and others wouldn't.
-                    Or,
-                    the SEO would just be outdated at times and pages would have incorrect titles / names.
-                </li>
-            </ul>
-            <p>With this website rebuild I hope to solve as much of these issues as possible.</p>
-            <h3 class="quote">Will the artworks / articles / store be back?</h3>
-            <p>I intend to restore full functionality of the original website, so yes. Priority at the
-                moment is
-                as follows: <strong>website structure + functionality > back-end > styling (aesthetics +
-                    animation).</strong> In other words, this website might be super plain for quite the
-                time.
-            </p>
-            <h3 class="quote">How long will it take?</h3>
-            <p>I am rewriting all html / css / js / php from scratch. Please allow some time, and I thank
-                you in
-                advance for your patience.</p>
-            <p>Should you be interested, I post daily updates and behind the scenes to my <a
-                    href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>.</p>
-            <p><i>Hopefully this answers any questions. If not, contact me via email at
-                    support@literalhat.com.</i></p>
-            <img class="framedimage" src="images/images/marla.jpg" height="250px;"
-                alt="marla (cat) sitting, looking up at camera with large round eyes">
-        </section>
+
+        <img class="framedimage" src="images/images/marla.jpg" height="250px;"
+                alt="marla (cat) sitting, looking up at camera with large round eyes"></img>
+        <p>If you were wondering where the website FAQ went, it <a href=<?php echo $links . "about/about_faq.php" ?>>has been moved here.</a></p>
 
 
         <!-- Footer and closing div tags used for styled main content box  -->
