@@ -9,9 +9,20 @@
     --container-spacer-top-height: 50px;
     --container-spacer-bottom-height: 100px;
     --logo-size: 40px;
-    --accent-color: #236f65;
     font-size: 16px;
     letter-spacing: normal;
+    --sidemenu-width: 13rem;
+    --submenu-width: 10.5rem;
+
+    --accent-red: #5e192a;
+    --accent-red2: #8a2836;
+    --accent-red3: #ff234d;
+    --accent-red4: #e57c8b;
+    --accent-green: #14413b; 
+    --accent-green2: #145f55;
+    --accent-green3: #109987;
+    --accent-green4: #7ac5bc;
+
 }
 
 * {
@@ -21,6 +32,7 @@
 
 html {
     background-color: white;
+    scroll-behavior: smooth;
 }
 
 /* TYPEFACE */
@@ -39,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     text-transform: uppercase;
     font-size: 2.4rem;
-    color: #145f55;
+    color: var(--accent-green2);
 }
 
 h2 {
@@ -84,6 +96,11 @@ ul, ol {
 }
 
 /* MENU BARS */
+
+.nounderline a:link {
+    text-decoration: none;
+}
+
 #menutop > li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline;
@@ -100,12 +117,32 @@ ul, ol {
     padding: 0.6rem 1rem 0.4rem;
 }
 
-#menutop a:link {
-    color: #c92448;
+#menutop a {
+    color: var(--accent-red2);
 }
 
-#menutop a:visited {
-    color: #661d39;
+#menutop a:hover {
+    color: var(--accent-red3);
+}
+
+.hoverred a {
+    color: #000000;
+}
+
+.hoverred a:visited {
+    color: black;
+}
+
+.hoverred a:hover {
+    color: var(--accent-red3);
+}
+
+a:link {
+    color: var(--accent-red3);
+}
+
+a:visited {
+    color: var(--accent-red);
 }
 
 
@@ -177,7 +214,7 @@ ul, ol {
 }
 
 .sidecontentbox {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     width: 250px;
 }
 
@@ -194,8 +231,105 @@ ul, ol {
     margin-left: auto;
     height: auto;
     width: auto;
-    /* border: 1px solid red; */
 }
+
+
+/* temporary list of colors for menu */
+.list1 {
+    background-color: #78181f;
+}
+
+.list2 {
+    background-color: #742a3a;
+}
+
+.list3 {
+    background-color: #754258;
+}
+
+.list4 {
+    background-color: #578676;
+}
+
+.list5 {
+    background-color: #35534c;
+}
+
+.list6 {
+    background-color: #1e3b3b;
+}
+
+
+/* main side menu styling */
+.sidemenu > li a {
+    display: block;
+    padding: 0.5rem 0.4rem;
+    color: white;
+    border: 5px solid black;
+    border-right: none;
+    text-decoration: none;
+}
+
+.sidemenu > li a:hover {
+    color: black;
+    background-color: white;
+}
+
+.sidemenu > li {
+    margin-bottom: -0.3rem;
+    margin-left: auto;
+    width: var(--sidemenu-width);
+    list-style-type: none;
+    font-family: DataTrash, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+
+.sidemenu > li:hover {
+    width: calc(var(--sidemenu-width) + 0.5rem);
+}
+
+
+/* submenu styling */
+/* this is just a workaround for now */
+.sidemenu ul > li a {
+    color: white;
+    display: inline-block;
+    width: 8rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.sidemenu ul > li {
+    margin: 0 0 0 auto;
+    padding: 0.1rem 1rem 0.2rem 0.6rem;
+    box-shadow: -3px 3px 0 0 white;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    list-style-type: square;
+    list-style-position: inside;
+    background-color: black;
+    font-family: RobotoMono, Roboto;
+    font-size: 1rem;
+    color: white;
+    width: var(--submenu-width);
+    text-transform: capitalize;
+}
+
+.sidemenu ul > li:first-child {
+    margin-top: 0.3rem;
+}
+
+.sidemenu ul > li:last-child {
+    padding-bottom: 0.4rem;
+}
+
+.sidemenu ul > li:hover {
+    width: calc(var(--submenu-width) + 0.3rem) ;
+}
+
+
 
 .goback{
     width: fit-content;
@@ -320,3 +454,16 @@ p.buttontext {
 
 }
 
+
+
+
+
+/* TEMPORARY ELEMENTS */
+/* TEMPORARY ELEMENTS */
+/* TEMPORARY ELEMENTS */
+/* TEMPORARY ELEMENTS */
+/* NAMING CONVENTION OF tempy-1, tempy-2 etc */
+
+.tempy-1 {
+    margin-left: 1rem;
+}
