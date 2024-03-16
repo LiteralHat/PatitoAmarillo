@@ -48,6 +48,9 @@
         <h3>v5.3.0-beta 17.03.2024</h3>
         <ul>
             <li>Added useless random site icon</li>
+            <li>Added .htaccess</li>
+            <li>Fixed fonts breaking on some browsers</li>
+            <li>Fixed missing margin on top menu on mobile devices</li>
             <li>Moved Terms of Use and Privacy Policy to footer</li>
         </ul>
 

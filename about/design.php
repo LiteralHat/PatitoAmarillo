@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralAbout</title>
-    <meta name="LiteralHat.com | About + FAQ" content="View commonly asked questions and contact information here." />
+    <title>LiteralDesign</title>
+    <meta name="LiteralHat.com | Design" content="Placeholder page for formatting" />
     <?php include_once($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -15,7 +15,7 @@
         <?php include_once($folder . '/elements/header.php') ?>
 
         <section class="section">
-        <h1>Design.php</h1>
+        <h1>Design</h1>
         <p>Hi, you shouldn't be on this page. This file is reserved for testing formatting throughout the website to ensure everything is nice and consistent. Consider it an easter egg if you're here though.</p>
         </section>
 

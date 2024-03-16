@@ -52,8 +52,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-header);
-    font-weight: 600;
-    letter-spacing: normal;
+    font-weight: bold;
     color: black;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
@@ -253,6 +252,7 @@ a:hover {
 .whitebox {
     border: 0.3rem solid black;
     background-color: white;
+    margin: 1% 2%;
 }
 
 .sidecontentbox {
@@ -431,8 +431,29 @@ p.buttontext {
 }
 
 .footercontainer {
-    color: grey;
     padding-top: 20px;
+    width: var(--content-width);
+}
+
+.footercontent {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-align: center;
+}
+
+.footercontent li {
+    width: 12rem;
+}
+
+.footercontent a {
+    text-decoration: none;
+}
+
+
+.footercontent li {
+    display: flex;
+    justify-content: center;
 }
 
 .pagecontent {
@@ -442,7 +463,6 @@ p.buttontext {
 .section:not(:first-child) {
     padding: 20px 0px;
 }
-
 
 .section {
     padding-top: 0px;
