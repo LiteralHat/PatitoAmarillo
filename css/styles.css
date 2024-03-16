@@ -84,7 +84,7 @@ h6 {
     font-size: 1rem;
 }
 
-p, ul, ol, span{
+p, ul, ol{
     font-family: var(--font-body);
     font-size: 0.9rem;
     margin-bottom: 0.7rem;
@@ -157,7 +157,7 @@ ul, ol {
     padding: 0.6rem 1rem 0.4rem;
 }
 
-#menutop a {
+#menutop a:link {
     color: var(--accent-red2);
 }
 
@@ -165,8 +165,12 @@ ul, ol {
     color: var(--accent-red3);
 }
 
-.hoverred a {
-    color: #000000;
+#menutop a:visited {
+    color: var(--accent-red2);
+}
+
+.hoverred a:link {
+    color: black;
 }
 
 .hoverred a:visited {
@@ -177,14 +181,13 @@ ul, ol {
     color: var(--accent-red3);
 }
 
-a:link {
+a {
+    color: #727272;
+}
+
+a:hover {
     color: var(--accent-red3);
 }
-
-a:visited {
-    color: var(--accent-red);
-}
-
 
 /* IMAGES */
 
@@ -220,21 +223,22 @@ a:visited {
     width: var(--content-width);
 }
 
-
 .logotext {
     font-family:  var(--font-logo);
     text-transform: uppercase;
     font-style: italic;
     font-size: var(--logo-size);
     font-weight: normal;
-    letter-spacing: 1px;
 }
 
 .logoimage {
     height: var(--logo-size);
     position: relative;
+    left: 9px;
     top: 4px;
 }
+
+
 
 #searchbar {
     padding-bottom: 4px;

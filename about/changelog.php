@@ -44,6 +44,13 @@
 
         <section class='section'>
 
+
+        <h3>v5.3.0-beta 17.03.2024</h3>
+        <ul>
+            <li>Added useless random site icon</li>
+            <li>Moved Terms of Use and Privacy Policy to footer</li>
+        </ul>
+
         <h3>v5.2.0-beta 16.03.2024</h3>
         <ul>
             <li>Added menu navigation bar</li>
@@ -51,6 +58,19 @@
             <li>Added about+FAQ page</li>
             <li>Added gamer QnA</li>
             <li>Removed goback button</li>
+            <li>Added variables in place of fonts on stylesheet<li>
+            <li>Changed link colors to gray</li>
+        </ul>
+
+        <h3>v5.2.0-beta 16.03.2024</h3>
+        <ul>
+            <li>Added menu navigation bar</li>
+            <li>Added consistent site colors</li>
+            <li>Added about+FAQ page</li>
+            <li>Added gamer QnA</li>
+            <li>Removed goback button</li>
+            <li>Added variables in place of fonts on stylesheet<li>
+            <li>Changed link colors to gray</li>
         </ul>
 
 

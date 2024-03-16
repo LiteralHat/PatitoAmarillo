@@ -1,18 +1,21 @@
+
 <header class="header centerbox">
     <a id="top"></a>
     <div class="headercontainer">
-        <div class="logos">
-            <span class="logotext hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a></span>
-            <img class="logoimage"
-                src="<?php echo ($links . 'images/pagedolls/cute-sitting-sheep-with-bowtie.png'); ?>">
-        </div>
-        <div id="searchbar">
+        <span><span class="logotext hoverred nounderline"><a href=<?php echo $links . "index.php" ?>>LiteralHat.com</a><span id='logoimage'><img class="logoimage"
+                src="<?php echo ($links . 'images/pagedolls/x.png'); ?>"></span></span>
+        </span>
+        <span id="searchbar">
             <input type="search" placeholder="This doesn't work yet..!">
             <button type="submit">Search</button>
-        </div>
+        </span>
     </div>
+
+
 </header>
 
+
+<script src="<?php echo ($links . 'scripts/randomcat.js')?>"></script>
 
 <div id="stripesboxtop" class="centerbox">
     <div class="widthcontainer whitebox top">
@@ -30,10 +33,7 @@
 <div id="stripesboxmiddle" class="centerbox">
 
                 <div class='sidecontentbox'>
-                <!-- <?php if (basename($_SERVER["PHP_SELF"]) !== "index.php") {
-                    include('goback.php');
-                }
-                ?> -->
+
 
                 <nav>
                     <ul class='sidemenu'>
