@@ -44,7 +44,6 @@
 
         <section class='section'>
 
-
         <h3>v5.3.0-beta 17.03.2024</h3>
         <ul>
             <li>Added useless random site icon</li>
