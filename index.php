@@ -1,4 +1,4 @@
-<?php include_once('variables.php') ?>
+<?php include_once ('variables.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,21 +6,23 @@
 <head>
     <title>LiteralWebsite.</title>
     <meta name="Welcome to LiteralHat.com." content="Be gay, do crime. Create more than you consume. Desire less." />
-    <?php include_once($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <link rel="stylesheet" href="<?php echo ($links . 'css/styles.css') ?>">
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once($folder . '/elements/header.php') ?>
+        <?php include_once ($folder . '/elements/header.php') ?>
 
         <section class="section">
             <h1>Welcome to LiteralHat.com.</h1>
             <p class="quote">Be gay, do crime. Create more than you consume. Desire less.</p>
             <p>This website is still in development. Functionality is limited as a result. Please scroll and
                 read below for more information.</p>
-            <p class="warning">If this website appears broken, you need to clear your cache (hard refresh on desktop with CTRL + SHIFT R).</p>
+            <p class="warning">If this website appears broken, you need to clear your cache (hard refresh on
+                desktop with CTRL + SHIFT R).</p>
 
             <img src="images/temp/mychildren.png" height="400px">
             <p><strong>New!</strong> <a href="changelog.html">Click here</a> to visit the changelog.</p>
@@ -58,12 +60,14 @@
 
 
         <img class="framedimage" src="images/images/marla.jpg" height="250px;"
-                alt="marla (cat) sitting, looking up at camera with large round eyes"></img>
-        <p>If you were wondering where the website FAQ went, it <a href=<?php echo $links . "about/about_faq.php" ?>>has been moved here.</a></p>
+            alt="marla (cat) sitting, looking up at camera with large round eyes"></img>
+        <p>If you were wondering where the website FAQ went, it <a href=<?php echo $links . "about/about_faq.php" ?>>has
+                been moved here.</a></p>
 
-
+                
         <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include($folder . '/elements/footer.php') ?>
+        <?php include ($folder . '/elements/footer.php') ?>
     </main>
 </body>
+
 </html>
