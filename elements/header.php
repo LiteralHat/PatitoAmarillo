@@ -50,8 +50,6 @@
     <div class='sidecontentbox'>
         <nav>
             <ul class='sidemenu'>
-
-
                 <?php include ($folder . '/elements/sidemenu.php') ?>
             </ul>
         </nav>
