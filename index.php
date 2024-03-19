@@ -6,8 +6,7 @@
 <head>
     <title>LiteralWebsite.</title>
     <meta name="Welcome to LiteralHat.com." content="Be gay, do crime. Create more than you consume. Desire less." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
-    <link rel="stylesheet" href="<?php echo ($links . 'css/styles.css') ?>">
+    <?php include_once ($headtags) ?>
 </head>
 
 <body>
@@ -25,6 +24,7 @@
                 <div class='sidecontainer'>
                     <div id='menuspacer'></div>
                     <?php include_once ($menuleft) ?>
+
                 </div>
 
                 <div class="extrawidthcontainer">
@@ -35,11 +35,14 @@
                                     <div class='whiteborder'>
                                         <section class="section center">
                                             <img src="images/pagedolls/punks-not-dead.png" height="800px" id='sitelogo'>
-                                            <p class="quote">Be gay, do crime. Create more than you consume. Desire
+
+
+                                            <p class="quote white">Be gay, do crime. Create more than you consume.
+                                                Desire
                                                 less.
                                             </p>
 
-                                            <p>Welcome to the 'effin coolest site in the world!</p>
+                                            <p class='white'>Welcome to the 'effin coolest site in the world!</p>
                                         </section>
                                     </div>
                                 </div>
@@ -51,7 +54,7 @@
 
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
-                            <p class='fancy'>> That's sarcasm, let it burn! <</p>
+                            <p class='fancy white'>› That's sarcasm, let it burn! ‹</p>
                         </div>
                     </div>
 
@@ -61,6 +64,54 @@
 
                 <!-- side content box (should be a pair on the top and bottom) -->
                 <div class='sidecontainer'>
+
+                    <div class='contentcontainer'>
+                        <img src='images/pagedolls/hat-sitting.png' width='250px;'>
+                    </div>
+                    <div class='contentcontainer'>
+                        <div class='whitebox tonegreen paddedsm center'>
+                            <h3 class='white'>♡ Patrons ♡</h3>
+                            <div class='whitebox padtop'>
+                                <ul class='centeredlist hearts'>
+                                    <li>Somber-Sonder</li>
+                                    <li>M1n1Cat</li>
+                                    <li>Hugs</li>
+                                    <li>Brew</li>
+                                    <li>Jay Aury</li>
+                                    <li style='font-size:0.6rem';>Captain Cbisnasty1031</li>
+                                    <li>Thatoneguy</li>
+                                    <li style='font-size:0.9rem'>NickAndValentine</li>
+                                    <li>Jaegar Foxx</li>
+                                    <li>sadsrius</li>
+                                    <li>Kinzator</li>
+                                    <li>Ciphybara</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class='contentcontainer'>
+                        <div class='whitebox tonered padded'>
+                            <h2 class='white'>!Achtung!</h2>
+                            <p class='white'>Site broken? Clear your cache.</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div class='boxedsection'>
+
+
+                <div class='sidecontainer'>
+
                     <div class='contentcontainer'>
                         <div class='whitebox padded'>
                             <section>
@@ -74,22 +125,6 @@
                             </section>
                         </div>
                     </div>
-                    <div class='contentcontainer'>
-                        <div class='whitebox tonered padded'>
-
-                            <h2 class='tonered'>!Achtung!</h2>
-                            <p>Site broken? Clear your cache.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class='boxedsection'>
-
-
-                <div class='sidecontainer'>
                 </div>
 
 
@@ -99,12 +134,53 @@
                 <div class='widthcontainer'>
 
 
+                    <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+
+                                <div class='whiteborder padded'>
+                                    <hr>
+                                    <h1 class='white padtop'>Welcome to LiteralHat.com.</h1>
+                                    <hr>
+                                </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox tonegreen center padded">
+                            <div class="whitebox center padded">
+                                <p>This website is still in development. Please forgive any weird formatting.
+                                </p>
+
+                                <p><strong>A huge thanks to my testers: </strong>
+                                    <span><a href="https://www.instagram.com/maker_gniht/"
+                                            target="_blank">Puggleman</a>,
+                                        <a href="https://demscyphozoa.neocities.org/" target="_blank">penis</a>, <a
+                                            href="https://www.instagram.com/queenn_janee?igsh=MWNwYmo3azJzaGo2OQ%3D%3D&utm_source=qr"
+                                            target="_blank">Queen Jane</a>, <a
+                                            href="https://www.reddit.com/user/Kinzator_Entertainer"
+                                            target="_blank">Kinzator</a>, <a href="https://pin.it/lVxQBMC3o"
+                                            target="_blank">Relaxande</a>, <a href="https://youtube.com/@KoldTheWizard"
+                                            target="_blank">KoldTheWizard</a>, <a href='https://twitter.com/Furumasuku' target='_blank'>Furumasuku</a>, cunt, Ami.</span>
+                                </p>
+                                <p>Without them, this site would be even more broken than it already is.</p>
+                                <p class='italics'><a href='about/about_faq.php'>Looking for the old site..?</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
 
                     <div class='rowbox'>
                         <div class='contentcontainer padright'>
                             <div class="whitebox padded">
                                 <section class="section">
-                                    <h2>social media</h2>
+                                    <h2>socials</h2>
+                                    <p>Terrible.</p>
                                     <ul>
                                         <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
                                         </li>
@@ -137,22 +213,15 @@
 
                         <div class='contentcontainer padleft'>
                             <div class="whitebox">
-                                <div class=" center">
+                                <div class="center">
                                     <img class="framedimage" src="images/marla/marla1.jpg" height="250px;"
                                         alt="marla (cat) sitting, looking up at camera"></img>
-                                    <p>she is cute</p>
+                                    <p>where is my FUCKING meow mix?</p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-
-
-
-
-
-
-
 
 
 
@@ -166,12 +235,11 @@
                         </div>
 
 
-
                         <div class="columnbox">
                             <div class='fixing'>
                                 <div class='contentcontainer'>
                                     <div class="whitebox padded center">
-                                        <p>Here are some cats, have a shit day!</p>
+                                        <p>Here are some cats for now.</p>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +259,7 @@
                 </div>
 
                 <div class='sidecontainer'>
-                    
+
                 </div>
 
             </div>

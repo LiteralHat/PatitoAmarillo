@@ -4,20 +4,20 @@
     <head>
         <title>Random Cat Sounds</title>
         <meta name="Random Cat Sounds " content="meow" />
-        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="css/cat_sounds.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1" />
     </head>
 
 
     <body class="pagecontent">
-
+        <div class="roundedthing center">
         <h1 class="center">Press me for random cat sounds!</h1>
-
+    </div>
         <br>
         <br>
 
-        <button style="height:100px;width:200px" class="center" onclick="randomSound()">MEOW!</button>
+        <button class="center" onclick="randomSound()"><h2>MEOW!</h2></button>
         <audio class="center" id="button" autoplay></audio>
           <script>
             var sounds = ["sounds/cat/cat_meow.mp3", "sounds/cat/cat_scratch.mp3", "sounds/cat/cat_purr.mp3"];

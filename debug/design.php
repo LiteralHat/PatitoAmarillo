@@ -4,39 +4,58 @@
 <html lang="en">
 
 <head>
-    <title>LiteralDesign</title>
-    <meta name="LiteralHat.com | Design" content="Placeholder page for formatting" />
+    <title>LiteralWebsite.</title>
+    <meta name="Welcome to LiteralHat.com." content="Be gay, do crime. Create more than you consume. Desire less." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
 <body>
     <main>
+
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
-        <?php include_once ($whiteboxtop) ?>
+        <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
-        <div id="stripesboxmiddle" class="centerbox">
+        <div class="contentrowstripe centerbox">
+            <div class='boxedsection'>
+                <div class='sidecontainer'>
+                    <div class='contentcontainer'>
 
-            <!-- side content box (should be a pair on the top and bottom) -->
-            <div class='sidecontentbox'>
-                <?php include_once ($sidebarmenu) ?>
-            </div>
+                    </div>
+                </div>
 
-            <!-- top half of the content div -->
-            <div class="widthcontainer whitebox middle">
-                <div class="pagecontent">
 
-                    <section class="section">
-                        <h1>Design</h1>
-                        <p>Hi, you shouldn't be on this page. This file is reserved for testing formatting throughout
-                            the website to ensure everything is nice and consistent. Consider it an easter egg if you're
-                            here though.</p>
-                    </section>
 
-                    <section class="section">
+
+
+                <div class='widthcontainer'>
+                    <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+
+                            <div class='whiteborder padded'>
+                                <hr>
+                                <h1 class='white padtop large'>Design</h1>
+                                <hr>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded">
+                            <p>Hi, you shouldn't be here.
+                                This is a debug page to test typefaces and layouts across different browsers and devices
+                                to ensure compatibility.</p>
+                        </div>
+                    </div>
+
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded">
+                            
                         <h1>1. Typeface Formatting</h1>
-                        <div class='whitebox pagecontent'>
                             <h1>This is a h1 header.</h1>
                             <h2>This is a h2 header.</h2>
                             <h3>This is a h3 header.</h3>
@@ -57,91 +76,35 @@
                             <h2><a href='https://www.youtube.com/watch?v=j5a0jTc9S10' target='_blank'>This is a
                                     link.</a></h2>
                             <span>This is a span element.</span>
-                        </div>
-                    </section>
-
-                    <section class='section'>
-                        <h1>2. Class Formatting</h2>
-                            <div class='whitebox pagecontent'>
-                                <p class='logofont'>This is a p element with class='logofont'.</p>
-                                <p class='quote'>This is a p element with class='quote'.</p>
-                                <p class='large'>This is a p element with class='large'.</p>
-                                <p class='question'>This is a p element with class='question'.</p>
-                                <p class='subtitle'>This is a p element with class='subtitle'.</p>
-                                <p class='warning'>This is a p element with class='warning'.</p>
-                            </div>
-                    </section>
-
-                    <section class='section'>
-                        <h1>3. Divs</h1>
-                        <div class='whitebox pagecontent'>
-
-                            <div class='whitebox'>
-                                <p>This is a div with class='whitebox'.</p>
-                            </div>
-
-                            <div class='whitebox pagecontent'>
-                                <p>This is a div with class='whitebox pagecontent'.</p>
-                            </div>
-
-                            <div class='whitebox pagecontent center'>
-                                <p>This is a div with class='whitebox pagecontent center'.</p>
-                            </div>
-
-                        </div>
-                    </section>
+                        
 
 
-                    <section class='section'>
-                        <h1>4. Font Families</h1>
-                        <div class='whitebox pagecontent'>
-
-                            <div class='enlarge'>
-                                <h2>a. --font-logo</h2>
-                                <p style='font-family: EngebrechtreB'>ENGEBRECHTREb engebrechtreb</p>
-                                <p style='font-family: Haettenschweiler'>HAETTENSCHWEILER haettenschweiler</p>
-                                <p style='font-family: Impact'>IMPACT impact</p>
-
-                                <h2>b. --font-header</h2>
-                                <p style='font-family: RobotoMono'>ROBOTOMONO robotomono</p>
-                                <p style='font-family: Roboto'>ROBOTO roboto</p>
-                                <p style='font-family: Monospace'>MONOSPACE monospace</p>
-
-                                <h2>c. --font-body</h2>
-                                <p style='font-family: verdana'>VERDANA verdana</p>
-                                <p style='font-family: Tahoma'>TAHOMA tahoma</p>
-                                <p style='font-family: sans-serif'>SANS-SERIF sansserif</p>
-
-                                <h2>d. --font-menu</h2>
-                                <p style='font-family: datatrash'>DATATRASH datatrash</p>
-                                <p style='font-family: Impact'>IMPACT impact</p>
-                                <p style='font-family: Haettenschweiler'>HAETTENSCHWEILER haettenschweiler</p>
 
 
-                            </div>
 
 
 
                         </div>
-                    </section>
+                    </div>
 
 
 
 
                 </div>
+
+                <div class='sidecontainer'>
+                    <div class='contentbox'>
+                        <div class='whitebox padded'>
+                            <p>This is a side container.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- side content box (should be a pair on the top and bottom) -->
-            <div class='sidecontentbox'>
-            </div>
-
-
-
-
-            
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include ($whiteboxbottom) ?>
+
         <?php include ($footer) ?>
     </main>
 </body>

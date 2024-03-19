@@ -15,8 +15,12 @@ $folder = $_SERVER['DOCUMENT_ROOT'];
 $links = 'https://literalhat.com/';
 };
 
+
 $header = $folder . '/elements/header.php';
 $footer = $folder . '/elements/footer.php';
+
+$headtags = $folder . '/elements/headtags.php';
+$stylesheet = $links . 'css/styles.css';
 
 $menutop = $folder . '/elements/menutop.php';
 $whiteboxbottom = $folder . '/elements/whiteboxbottom.php';

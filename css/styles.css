@@ -1,16 +1,7 @@
+
 @font-face {
     font-family: RobotoMono;
     src: url('fonts/RobotoMono.ttf');
-}
-
-@font-face {
-    font-family: Engebrechtre;
-    src: url('fonts/Engeregu.ttf');
-}
-
-@font-face {
-    font-family: EngebrechtreB;
-    src: url('fonts/Engebold.ttf');
 }
 
 @font-face {
@@ -18,19 +9,31 @@
     src: url('fonts/DataTrash.TTF');
 }
 
+@font-face {
+    font-family: Insatiable;
+    src: url('fonts/Insatiable.ttf');
+}
+
+
+
+/* Russo One, Spinnaker, Azeret Mono */
+
 :root {
     /* --content-width: 720px; */
-    --content-width: 720px;
+    --content-width: 700px;
     --container-spacer-top-height: 36px;
     --container-spacer-bottom-height: 100px;
-    --logo-size: 47px;
-    font-size: 16px;
-    letter-spacing: normal;
+
     --sidemenu-width: 13rem;
     --submenu-width: 10.5rem;
 
+    --logo-size: 47px;
+    font-size: 16px;
+    letter-spacing: normal;
+
+
     --accent-red: #5e192a;
-    --accent-red2: #8a2836;
+    --accent-red2: #c4001e;
     --accent-red3: #ff234d;
     --accent-red4: #e57c8b;
     --accent-green: #14413b;
@@ -39,11 +42,10 @@
     --accent-green4: #7ac5bc;
 
     --font-logo: DataTrash, Impact, Haettenschweiler;
-    /* --font-logo: EngebrechtreB, Haettenschweiler, Impact; */
-    --font-header: RobotoMono, Roboto, Monospace;
-    /* --font-header: RobotoMono, Roboto, Monospace; */
-    --font-body: RobotoMono, Courier New, sans-serif;
+    --font-header: "Azeret Mono", RobotoMono, Courier New;
+    --font-body: "Azeret Mono", RobotoMono, Courier New;
     --font-menu: DataTrash, Impact, Haettenschweiler;
+    --font-loud: Spinnaker, Russo One;
 }
 
 * {
@@ -73,15 +75,15 @@ h4,
 h5,
 h6 {
     font-family: var(--font-header);
-    font-weight: bold;
-    color: black;
+    font-weight: normal;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
-    color: var(--accent-green2);
+    color: var(--accent-red2);
 }
 
 h1 {
     font-size: 2.6rem;
+    font-family: var(--font-logo);
 }
 
 h2 {
@@ -104,7 +106,9 @@ h6 {
     font-size: 1rem;
 }
 
-
+hr {
+    border: 1px solid white;
+}
 
 
 p,
@@ -114,16 +118,8 @@ ol {
     font-family: var(--font-body);
     font-size: 1rem;
     margin-bottom: 0.7rem;
-}
-
-
-
-.quote {
-    font-size: 1.8rem;
-    font-style: italic;
-    font-weight: bold;
-    font-family: var(--font-header);
-    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
 }
 
 .question,
@@ -134,16 +130,18 @@ ol {
     content: " ► ";
 }
 
-.subtitle {
+.bold {
     font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
 }
 
 .warning {
     font-weight: bold;
     color: red;
 }
-
-
 
 li {
     margin-bottom: 0.1rem;
@@ -158,9 +156,23 @@ ol {
     width: 400px;
 }
 
+.large {
+    font-size: 3rem;
+}
+
 .image {
     padding: 1rem;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -190,10 +202,15 @@ ol {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+
 }
 
 .padded {
     padding: 1.2rem;
+}
+
+.paddedsm {
+    padding: 0.7rem;
 }
 
 /* container for middle width */
@@ -293,6 +310,7 @@ ol {
     justify-content: space-evenly;
     list-style-type: none;
     text-align: center;
+    font-size: 0.7rem;
 }
 
 .footercontent li {
@@ -301,6 +319,7 @@ ol {
 
 .footercontent a {
     text-decoration: none;
+    color: gray;
 }
 
 
@@ -353,7 +372,7 @@ ol {
 }
 
 #menutop>li {
-    font-family: Origami Mommy, Helvetica;
+    font-family: var(--font-loud);
     display: inline;
     text-transform: uppercase;
     font-weight: bold;
@@ -594,6 +613,11 @@ a:hover {
 
 
 
+
+
+
+
+
 /* media queries for responsiveness */
 @media (max-width: 760px) {
     img {
@@ -646,9 +670,6 @@ a:hover {
 
 /* Specific styling rules */
 
-
-
-
 .whiteborderdotted {
     border: 4px dashed white;
 }
@@ -668,7 +689,7 @@ a:hover {
 }
 
 .blackborder {
-    border: 5px solid black;
+    border: 4px solid transparent;
 }
 
 .noshadow {
@@ -679,18 +700,48 @@ a:hover {
     position: relative;
     top: 1.7rem;
     margin: -50px;
-
+    margin-bottom: -40px;
 }
+
+
+
+
+
+
+
+.centeredlist {
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    left: -0.7rem;
+}
+
+.hearts li::before, .hearts li::after  {
+    content: ' ♥ ';
+    text-wrap: nowrap;
+}
+
+
+
+
+
 
 .fancy {
     font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
 }
+
+.quote {
+    font-size: 2.1rem;
+    font-weight: normal;
+    font-family: Insatiable, Sedgwick Ave Display;
+    letter-spacing: -3px;
+}
+
+
 
 /* extra embelishment colors */
 .tone1 {
-    background-color: #78181f;
+    background-color: #631a24;
     color: white;
 }
 
@@ -710,11 +761,28 @@ a:hover {
 }
 
 .tone5 {
-    background-color: #35534c;
+    background-color: #2a5057;
     color: white;
 }
 
 .tone6 {
+    background-color: #12333b;
+    color: white;
+}
+
+.tone7 {
+    background-color: #4d2537;
+    color: white;
+}
+
+.tone8 {
+    background-color: #385850;
+    color: white;
+}
+
+
+
+.tonegreen {
     background-color: #106363;
     color: white;
 }
@@ -726,5 +794,21 @@ a:hover {
 
 .toneblack {
     background-color: #000000;
+    color: white !important;
+}
+
+
+
+
+
+
+
+.white {
     color: white;
+}
+
+
+
+.padtop {
+    padding-top: 0.6rem;
 }
