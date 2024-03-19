@@ -87,6 +87,7 @@
                                 <h3>v6.3.0-beta 20.03.2024</h3>
                                 <ul>
                                     <li>Added page sectioning</li>
+                                    <li>Added mobile responsiveness</li>
                                     <li>Added better stylesheet on literalhat.com/cat_sounds</li>
                                     <li>Added super cool homepage splash picture</li>
                                     <li>Added Patron list</li>
