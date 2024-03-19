@@ -183,6 +183,12 @@ ol {
 
 .large {
     font-size: 3rem;
+
+}
+
+
+.huge {
+    font-size: 7rem;
 }
 
 .image {
@@ -190,7 +196,9 @@ ol {
 }
 
 
-
+.imglarge {
+    width: 30rem;
+}
 
 
 
@@ -317,7 +325,7 @@ ol {
             #ffffff 48%,
             #000000 48%,
             #000000);
-    background-size: 100% 60px;
+    background-size: 200% 60px;
     flex-direction: column;
     align-items: center;
 }
@@ -644,44 +652,6 @@ a:hover {
 
 
 
-/* media queries for responsiveness */
-@media (max-width: 760px) {
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    #searchbar {
-        display: none;
-    }
-    .headercontainer {
-        justify-content: center;
-    }
-    :root {
-        font-size: 3vw;
-        --logo-size: 10vw;
-    }
-
-
-}
-
-@media (max-width: 1200px) {
-    .sidecontainer {
-        display: none;
-    }
-
-
-}
-
-@media (min-width: 760px) {
-
-    .whitebox {
-        box-shadow: 7px 7px 0 0 black;
-        box-sizing: border-box;
-        height: 100%;
-    }
-
-}
-
 
 
 
@@ -763,7 +733,6 @@ a:hover {
 
 
 .fancy {
-    font-size: 2.8rem;
     font-family: var(--font-fancy);
 }
 
@@ -848,4 +817,55 @@ a:hover {
 
 .padtop {
     padding-top: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+/* media queries for responsiveness */
+@media (max-width: 800px) {
+    .widthcontainer{ 
+        width: 100%;
+    }
+    .extrawidthcontainer{ 
+        width: 100%;
+    }
+    .whitebox {
+        width: 100%;
+    }
+    .contentcontainer{
+        width: 100%;
+    }
+    .headercontainer {
+        justify-content: center;
+    }
+    :root {
+        font-size: 3vw;
+        --logo-size: 10vw;
+    }
+
+
+}
+
+@media (max-width: 1200px) {
+    .sidecontainer {
+        display: none;
+    }
+
+
+}
+
+@media (min-width: 800px) {
+
+    .whitebox {
+        box-shadow: 7px 7px 0 0 black;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
 }

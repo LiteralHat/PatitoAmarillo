@@ -54,7 +54,7 @@
 
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
-                            <blockquote class='fancy white'>› That's sarcasm, let it burn! ‹</blockquote>
+                            <blockquote class='fancy white large '>› That's sarcasm, let it burn! ‹</blockquote>
                         </div>
                     </div>
                 </div>
