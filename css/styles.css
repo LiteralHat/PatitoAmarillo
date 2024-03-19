@@ -1,7 +1,22 @@
-@font-face { font-family: RobotoMono; src: url('fonts/RobotoMono.ttf'); } 
-@font-face { font-family: Engebrechtre; src: url('fonts/Engeregu.ttf'); } 
-@font-face { font-family: EngebrechtreB; src: url('fonts/Engebold.ttf'); }
-@font-face { font-family: DataTrash; src: url('fonts/DataTrash.TTF'); }
+@font-face {
+    font-family: RobotoMono;
+    src: url('fonts/RobotoMono.ttf');
+}
+
+@font-face {
+    font-family: Engebrechtre;
+    src: url('fonts/Engeregu.ttf');
+}
+
+@font-face {
+    font-family: EngebrechtreB;
+    src: url('fonts/Engebold.ttf');
+}
+
+@font-face {
+    font-family: DataTrash;
+    src: url('fonts/DataTrash.TTF');
+}
 
 :root {
     /* --content-width: 720px; */
@@ -18,7 +33,7 @@
     --accent-red2: #8a2836;
     --accent-red3: #ff234d;
     --accent-red4: #e57c8b;
-    --accent-green: #14413b; 
+    --accent-green: #14413b;
     --accent-green2: #145f55;
     --accent-green3: #109987;
     --accent-green4: #7ac5bc;
@@ -30,7 +45,7 @@
 }
 
 * {
-    margin: 0;   
+    margin: 0;
     padding: 0;
 }
 
@@ -50,7 +65,12 @@ html {
 
 /* TYPEFACE */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-header);
     font-weight: bold;
     color: black;
@@ -83,7 +103,10 @@ h6 {
     font-size: 1rem;
 }
 
-p, ul, ol{
+p,
+span,
+ul,
+ol {
     font-family: var(--font-body);
     font-size: 0.9rem;
     margin-bottom: 0.7rem;
@@ -97,7 +120,8 @@ p, ul, ol{
     text-transform: uppercase;
 }
 
-.question, .question::before{
+.question,
+.question::before {
     font-size: 1.2rem;
     text-transform: capitalize;
     font-weight: bold;
@@ -122,7 +146,8 @@ li {
     margin-bottom: 0.1rem;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 20px;
 }
 
@@ -140,8 +165,8 @@ ul, ol {
     text-decoration: none;
 }
 
-#menutop > li {
-    font-family:  var(--font-body);
+#menutop>li {
+    font-family: var(--font-body);
     display: inline;
     text-transform: uppercase;
     font-weight: bolder;
@@ -149,12 +174,12 @@ ul, ol {
 
 }
 
-#menutop > li + li::before {
+#menutop>li+li::before {
     content: " | ";
 }
 
 #menutop {
-padding-top: 0.6rem;
+    padding-top: 0.6rem;
 }
 
 #menutop a:link {
@@ -212,7 +237,7 @@ a:hover {
 .intersect {
     margin: 1% 2%;
 }
-  
+
 /* HEADER */
 
 .header {
@@ -227,7 +252,7 @@ a:hover {
 }
 
 .logotext {
-    font-family:  var(--font-logo);
+    font-family: var(--font-logo);
     text-transform: uppercase;
     font-style: italic;
     font-size: var(--logo-size);
@@ -247,25 +272,7 @@ a:hover {
     padding-bottom: 4px;
 }
 
-/* ANY container that requres the usage of the content width */
-.widthcontainer {
-    width: var(--content-width);
-}
 
-/* White content box styling */
-.whitebox {
-    border: 0.3rem solid black;
-    background-color: white;
-    margin: 1% 2%;
-}
-
-.sidecontentbox {
-    /* border: 1px solid pink; */
-    width: 250px;
-    height: auto;
-    border: 1px solid pink;
-    padding-top: 55px;
-}
 
 
 .sticky {
@@ -274,7 +281,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: right;
-    
+
 }
 
 .container {
@@ -311,7 +318,7 @@ a:hover {
 
 
 /* main side menu styling */
-.sidemenu > li a {
+.sidemenu>li a {
     display: block;
     padding: 0.5rem 0.4rem;
     color: white;
@@ -320,30 +327,31 @@ a:hover {
     text-decoration: none;
 }
 
-.sidemenu > li a:hover {
+.sidemenu>li a:hover {
     color: black;
     background-color: white;
 }
 
-.sidemenu > li {
+.sidemenu>li {
     margin-bottom: -0.3rem;
     margin-left: auto;
     width: var(--sidemenu-width);
     list-style-type: none;
-    font-family:  var(--font-menu);
+    font-family: var(--font-menu);
     text-transform: uppercase;
     font-size: 1.8rem;
 
 }
 
-.sidemenu > li:hover {
+
+.sidemenu>li:hover {
     width: calc(var(--sidemenu-width) + 0.5rem);
 }
 
 
 /* submenu styling */
 /* this is just a workaround for now */
-.sidemenu ul > li a {
+.sidemenu ul>li a {
     color: white;
     display: inline-block;
     width: 8rem;
@@ -351,7 +359,7 @@ a:hover {
     text-decoration: none;
 }
 
-.sidemenu ul > li {
+.sidemenu ul>li {
     margin: 0 0 0 auto;
     padding: 0.1rem 1rem 0.2rem 0.6rem;
     box-shadow: -3px 3px 0 0 white;
@@ -361,28 +369,31 @@ a:hover {
     list-style-type: square;
     list-style-position: inside;
     background-color: black;
-    font-family:  var(--font-header);
+    font-family: var(--font-header);
     font-size: 1rem;
     color: white;
     width: var(--submenu-width);
     text-transform: capitalize;
 }
 
-.sidemenu ul > li:first-child {
+.sidemenu ul>li:first-child {
     margin-top: 0.3rem;
 }
 
-.sidemenu ul > li:last-child {
+.sidemenu ul>li:last-child {
     padding-bottom: 0.4rem;
 }
 
-.sidemenu ul > li:hover {
-    width: calc(var(--submenu-width) + 0.3rem) ;
+.sidemenu ul>li:hover {
+    width: calc(var(--submenu-width) + 0.3rem);
 }
 
+.sidemenu {
 
 
-.goback{
+}
+
+.goback {
     width: fit-content;
     background-color: PINK;
 }
@@ -392,15 +403,15 @@ a:hover {
     z-index: -1;
     left: 2rem;
     border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent; 
-    border-right: 42px solid black; 
+    border-bottom: 42px solid transparent;
+    border-right: 42px solid black;
 }
 
 .arrowback {
     position: relative;
     border-top: 42px solid transparent;
-    border-bottom: 42px solid transparent; 
-    border-right: 42px solid PINK; 
+    border-bottom: 42px solid transparent;
+    border-right: 42px solid PINK;
 }
 
 p.buttontext {
@@ -415,14 +426,15 @@ p.buttontext {
 }
 
 #stripesboxmiddle {
-    background: linear-gradient(
-        to bottom,
-        #ffffff,
-        #ffffff 48%,
-        #000000 48%,
-        #000000
-      );
-    background-size: 100% 70px;
+    background-color: pink;
+    background: linear-gradient(to bottom,
+            #ffffff,
+            #ffffff 48%,
+            #000000 48%,
+            #000000);
+    background-size: 100% 60px;
+    flex-direction: column;
+    align-items: center;
 }
 
 #stripesboxbottom {
@@ -462,9 +474,7 @@ p.buttontext {
     justify-content: center;
 }
 
-.pagecontent {
-    padding: 1.2rem;
-}
+
 
 .section:not(:first-child) {
     padding: 20px 0px;
@@ -482,12 +492,15 @@ p.buttontext {
         max-width: 100%;
         height: auto;
     }
+
     #searchbar {
         display: none;
     }
+
     .headercontainer {
         justify-content: center;
     }
+
     :root {
         font-size: 3vw;
         --logo-size: 10vw;
@@ -500,20 +513,16 @@ p.buttontext {
     .sidecontentbox {
         display: none;
     }
-    
+
 
 }
 
-
-
-
-
-
 @media (min-width: 760px) {
-    
+
     .whitebox {
-        margin: 0;
         box-shadow: 7px 7px 0 0 black;
+        box-sizing: border-box;
+        height: 100%;
     }
     .whitebox.top {
         margin-bottom: 1rem;
@@ -524,28 +533,77 @@ p.buttontext {
         border-bottom: none;
         box-shadow: 7px 0 0 0 black;
     }
-    .whitebox.floating {
-        margin: 1rem 0;
-    }
+    .whitebox.floating {}
+
     .whitebox.bottom {
         border-top: none;
         height: var(--container-spacer-bottom-height);
     }
-
 }
 
-/* TEMPORARY ELEMENTS */
-/* TEMPORARY ELEMENTS */
-/* TEMPORARY ELEMENTS */
-/* TEMPORARY ELEMENTS */
-/* NAMING CONVENTION OF tempy-1, tempy-2 etc */
 
-.tempy-1 {
-    margin-left: 1rem;
-}
-
-/* I cant even believe that worked lmao */
 .boxedsection {
     display: flex;
-    background-color: red;
+    justify-content: center;
+    box-sizing: border-box;
 }
+
+/* it's a whitebox */
+.whitebox {
+    border: 0.3rem solid black;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 1.2rem;
+    height: 100%;
+    width: 100%;
+}
+
+/* container for main width */
+.widthcontainer {
+    width: var(--content-width);
+    box-sizing: border-box;
+}
+
+/* container for side content */
+.sidecontentbox {
+    width: 250px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* container for items that should be aligned vertically*/
+.columnbox {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.rowbox {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.contentcontainer {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0.3rem 0;
+}
+
+.padright {
+    padding-right: 0.2rem;
+}
+
+.padleft {
+    padding-left: 0.2rem;
+}
+
+.sidecontentbox > .contentcontainer {
+    padding-left: 0.7rem;
+}
+

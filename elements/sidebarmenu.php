@@ -17,8 +17,8 @@
             <li><a href=<?php echo $links . "debug/templating.php" ?>>Templating</a></li>
         </ul>
     </ul>
+    
 </nav>
-
 
 <ul class='sidemenu sticky'>
     <li class='list6'><a href='#top'>Back to Top</a></li>
