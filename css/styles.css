@@ -23,7 +23,7 @@
     --content-width: 720px;
     --container-spacer-top-height: 36px;
     --container-spacer-bottom-height: 100px;
-    --logo-size: 40px;
+    --logo-size: 47px;
     font-size: 16px;
     letter-spacing: normal;
     --sidemenu-width: 13rem;
@@ -38,9 +38,11 @@
     --accent-green3: #109987;
     --accent-green4: #7ac5bc;
 
-    --font-logo: EngebrechtreB, Haettenschweiler, Impact;
+    --font-logo: DataTrash, Impact, Haettenschweiler;
+    /* --font-logo: EngebrechtreB, Haettenschweiler, Impact; */
     --font-header: RobotoMono, Roboto, Monospace;
-    --font-body: Verdana, Tahoma, sans-serif;
+    /* --font-header: RobotoMono, Roboto, Monospace; */
+    --font-body: RobotoMono, Courier New, sans-serif;
     --font-menu: DataTrash, Impact, Haettenschweiler;
 }
 
@@ -110,15 +112,11 @@ span,
 ul,
 ol {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.7rem;
 }
 
-.fancy {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-}
+
 
 .quote {
     font-size: 1.8rem;
@@ -201,6 +199,11 @@ ol {
 /* container for middle width */
 .widthcontainer {
     width: var(--content-width);
+    box-sizing: border-box;
+}
+
+.extrawidthcontainer {
+    width: 1200px;
     box-sizing: border-box;
 }
 
@@ -345,44 +348,42 @@ ol {
 }
 
 #menutop {
-    padding-top: 0.5rem;
+    padding: 0.3rem;
+    margin: 0;
 }
 
 #menutop>li {
-    font-family: var(--font-body);
+    font-family: Origami Mommy, Helvetica;
     display: inline;
     text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 0.85rem;
-}
-
-#menutop>li+li::before {
-    content: " | ";
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
 }
 
 #menutop a {
-    color: var(--accent-red2);
+    color: white;
 }
 
 #menutop a:link {
-    color: var(--accent-red2);
+    color: white;
 }
 
 #menutop a:hover {
-    color: var(--accent-red3);
+    color: var(--accent-green4);
 }
 
-
 .hoverred a:link {
-    color: black;
+    color: white;
 }
 
 .hoverred a:visited {
-    color: black;
+    color: white;
 }
 
 .hoverred a:hover {
-    color: var(--accent-red3);
+    color: #c4001e;
 }
 
 a {
@@ -436,22 +437,19 @@ a:hover {
 
 /* HEADER */
 
-.header {
-    padding-top: 20px;
-}
 
 .headercontainer {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: center;
     width: calc(var(--content-width) - 1rem);
-    margin-bottom: -1rem;
+    margin-bottom: -0.9rem;
+    padding-top: 15px;
 }
 
 .logotext {
     font-family: var(--font-logo);
     text-transform: uppercase;
-    font-style: italic;
     font-size: var(--logo-size);
     font-weight: normal;
 }
@@ -649,10 +647,7 @@ a:hover {
 /* Specific styling rules */
 
 
-.blackbox {
-    background-color: #000000;
-    color: white;
-}
+
 
 .whiteborderdotted {
     border: 4px dashed white;
@@ -665,8 +660,7 @@ a:hover {
 }
 
 .extrawidth {
-    width: 1200px;
-    height: 1100px;
+    width: 1100px;
 }
 
 .whiteborder {
@@ -677,6 +671,9 @@ a:hover {
     border: 5px solid black;
 }
 
+.noshadow {
+    box-shadow: 0 0 0 0;
+}
 
 #sitelogo {
     position: relative;
@@ -685,8 +682,11 @@ a:hover {
 
 }
 
-
-
+.fancy {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
 
 /* extra embelishment colors */
 .tone1 {
@@ -715,6 +715,16 @@ a:hover {
 }
 
 .tone6 {
-    background-color: #1e3b3b;
+    background-color: #106363;
+    color: white;
+}
+
+.tonered {
+    background-color: #c4001e;
+    color: white;
+}
+
+.toneblack {
+    background-color: #000000;
     color: white;
 }

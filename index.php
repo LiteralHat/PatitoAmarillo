@@ -15,7 +15,7 @@
 
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
-        <?php include_once ($whiteboxtop) ?>
+        <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowstripe centerbox">
@@ -24,20 +24,20 @@
                 <!-- side content box (should be a pair on the top and bottom) -->
                 <div class='sidecontainer'>
                     <div id='menuspacer'></div>
-                    <?php include_once ($sidebarmenu) ?>
+                    <?php include_once ($menuleft) ?>
                 </div>
 
-                <div class="widthcontainer extrawidth">
+                <div class="extrawidthcontainer">
                     <div class='contentcontainer'>
-                        <div class="whitebox blackbox widerbox">
+                        <div class="whitebox toneblack">
                             <div class="whiteborderdotted">
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
                                         <section class="section center">
-                                                <img src="images/pagedolls/punks-not-dead.png" height="900px" id='sitelogo'>
+                                            <img src="images/pagedolls/punks-not-dead.png" height="800px" id='sitelogo'>
                                             <p class="quote">Be gay, do crime. Create more than you consume. Desire
                                                 less.
-                                            </p>    
+                                            </p>
 
                                             <p>Welcome to the 'effin coolest site in the world!</p>
                                         </section>
@@ -75,10 +75,10 @@
                         </div>
                     </div>
                     <div class='contentcontainer'>
-                        <div class='whitebox padded'>
+                        <div class='whitebox tonered padded'>
 
-                            <h2 class='warning'>Achtung!</h2>
-                            <p class="warning">Site broken? Clear your cache.</p>
+                            <h2 class='tonered'>!Achtung!</h2>
+                            <p>Site broken? Clear your cache.</p>
                         </div>
 
                     </div>
@@ -191,6 +191,7 @@
                 </div>
 
                 <div class='sidecontainer'>
+                    
                 </div>
 
             </div>
