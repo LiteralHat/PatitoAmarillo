@@ -14,9 +14,15 @@
     src: url('fonts/Insatiable.ttf');
 }
 
+@font-face {
+    font-family: Gamer;
+    src: url('fonts/Gamer.ttf');
+}
 
-
-/* Russo One, Spinnaker, Azeret Mono */
+@font-face {
+    font-family: '04b';
+    src: url('fonts/04b.TTF');
+}
 
 :root {
     /* --content-width: 720px; */
@@ -31,21 +37,36 @@
     font-size: 16px;
     letter-spacing: normal;
 
+    --tone1: #631a24; 
+    --tone2: #742a3a; 
+    --tone3: #754258; 
+    --tone4: #4d2537;
+    --tone5:  #578676;
+    --tone6:  #385850;
+    --tone7: #2a5057;
+    --tone8:  #12333b;
+    --tone9:  #7ac5bc;
+    --tonered:  #c4001e;
+    --tonegreen:  #106363;
+    --toneblack: #000000 ;
 
-    --accent-red: #5e192a;
-    --accent-red2: #c4001e;
-    --accent-red3: #ff234d;
-    --accent-red4: #e57c8b;
-    --accent-green: #14413b;
-    --accent-green2: #145f55;
-    --accent-green3: #109987;
-    --accent-green4: #7ac5bc;
 
-    --font-logo: DataTrash, Impact, Haettenschweiler;
-    --font-header: "Azeret Mono", RobotoMono, Courier New;
-    --font-body: "Azeret Mono", RobotoMono, Courier New;
-    --font-menu: DataTrash, Impact, Haettenschweiler;
-    --font-loud: Spinnaker, Russo One;
+
+
+
+
+    /* Used for main site logo */
+    --font-logo: DataTrash, '04b', Impact, Haettenschweiler;
+    /* Used for headers */
+    --font-header: '04b', "Azeret Mono", Impact, Roboto;
+    /* For P elements */
+    --font-body: "Azeret Mono", RobotoMono, Courier New, Verdana;
+    /* For the side menu */
+    --font-menu: DataTrash, Impact, Verdana, Haettenschweiler;
+    /* For the top menu */
+    --font-loud: Spinnaker, Russo One, Verdana;
+    /* Extra font for fancy text quote */
+    --font-fancy: Gamer, Spinnaker, Russo One;
 }
 
 * {
@@ -78,7 +99,7 @@ h6 {
     font-weight: normal;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
-    color: var(--accent-red2);
+    color: black;
 }
 
 h1 {
@@ -112,6 +133,7 @@ hr {
 
 
 p,
+blockquote,
 span,
 ul,
 ol {
@@ -153,8 +175,11 @@ ol {
 }
 
 .small {
-    width: 400px;
+    font-size: 0.8rem;
+    width: 20rem;
 }
+
+
 
 .large {
     font-size: 3rem;
@@ -219,10 +244,18 @@ ol {
     box-sizing: border-box;
 }
 
-.extrawidthcontainer {
-    width: 1200px;
+
+.biggerwidthcontainer {
+    width: 1090px;
     box-sizing: border-box;
 }
+.extrawidthcontainer {
+    width: 1100px;
+    box-sizing: border-box;
+}
+
+
+
 
 /* container for side content */
 .sidecontainer {
@@ -390,7 +423,7 @@ ol {
 }
 
 #menutop a:hover {
-    color: var(--accent-green4);
+    color: var(--tone9);
 }
 
 .hoverred a:link {
@@ -410,7 +443,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-red3);
+    color: var(--tonered);
 }
 
 
@@ -464,13 +497,6 @@ a:hover {
     width: calc(var(--content-width) - 1rem);
     margin-bottom: -0.9rem;
     padding-top: 15px;
-}
-
-.logotext {
-    font-family: var(--font-logo);
-    text-transform: uppercase;
-    font-size: var(--logo-size);
-    font-weight: normal;
 }
 
 .logoimage {
@@ -573,7 +599,7 @@ a:hover {
     list-style-type: square;
     list-style-position: inside;
     background-color: black;
-    font-family: var(--font-header);
+    font-family: var(--font-body);
     font-size: 1rem;
     color: white;
     width: var(--submenu-width);
@@ -596,7 +622,7 @@ a:hover {
     margin-left: 2rem;
 }
 
-#menuspacer {
+.spacermedium {
     height: 65px;
 }
 
@@ -703,11 +729,23 @@ a:hover {
     margin-bottom: -40px;
 }
 
+.logotext {
+    font-family: var(--font-logo);
+    text-transform: uppercase;
+    font-size: var(--logo-size);
+    font-weight: normal;
+}
 
 
 
 
 
+/* LIST STYLING */
+
+.hearts li::before, .hearts li::after  {
+    content: ' ♥ ';
+    text-wrap: nowrap;
+}
 
 .centeredlist {
     text-align: center;
@@ -716,10 +754,8 @@ a:hover {
     left: -0.7rem;
 }
 
-.hearts li::before, .hearts li::after  {
-    content: ' ♥ ';
-    text-wrap: nowrap;
-}
+
+
 
 
 
@@ -727,11 +763,12 @@ a:hover {
 
 
 .fancy {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
+    font-family: var(--font-fancy);
 }
 
 .quote {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     font-weight: normal;
     font-family: Insatiable, Sedgwick Ave Display;
     letter-spacing: -3px;
@@ -741,63 +778,61 @@ a:hover {
 
 /* extra embelishment colors */
 .tone1 {
-    background-color: #631a24;
+    background-color: var(--tone1);
     color: white;
 }
 
 .tone2 {
-    background-color: #742a3a;
+    background-color: var(--tone2);
     color: white;
 }
 
 .tone3 {
-    background-color: #754258;
+    background-color: var(--tone3);
     color: white;
 }
 
 .tone4 {
-    background-color: #578676;
+    background-color: var(--tone4);
     color: white;
 }
-
 .tone5 {
-    background-color: #2a5057;
+    background-color: var(--tone5);
     color: white;
 }
 
 .tone6 {
-    background-color: #12333b;
+    background-color: var(--tone6);
     color: white;
 }
-
 .tone7 {
-    background-color: #4d2537;
+    background-color: var(--tone7);
     color: white;
 }
 
 .tone8 {
-    background-color: #385850;
+    background-color: var(--tone8);
+    color: white;
+}
+.tone9 {
+    background-color: var(--tone9);
     color: white;
 }
 
-
-
 .tonegreen {
-    background-color: #106363;
+    background-color: var(--tonegreen);
     color: white;
 }
 
 .tonered {
-    background-color: #c4001e;
+    background-color: var(--tonered);
     color: white;
 }
 
 .toneblack {
-    background-color: #000000;
+    background-color:  var(--toneblack);
     color: white !important;
 }
-
-
 
 
 
@@ -807,8 +842,10 @@ a:hover {
     color: white;
 }
 
-
+.white > p {
+    color: white;
+}
 
 .padtop {
-    padding-top: 0.6rem;
+    padding-top: 0.9rem;
 }

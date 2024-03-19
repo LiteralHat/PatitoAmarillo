@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>LiteralAbout</title>
+    <title>LiteralAbout.</title>
     <meta name="LiteralHat.com | About + FAQ" content="View commonly asked questions and contact information here." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
@@ -14,64 +14,107 @@
 
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
-        <?php include_once ($whiteboxtop) ?>
+        <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
-        <div id="stripesboxmiddle" class="centerbox">
+        <div class="contentrowstripe centerbox">
+            <div class='boxedsection'>
+                <div class='sidecontainer'>
 
-            <!-- side content box (should be a pair on the top and bottom) -->
-            <div class='sidecontentbox'>
-                <?php include_once ($sidebarmenu) ?>
-            </div>
+                            <div class='spacermedium'></div>
+                            <?php include_once ($menusimple) ?>
 
-            <!-- top half of the content div -->
-            <div class="widthcontainer whitebox middle">
-                <div class="pagecontent">
+                </div>
 
 
-                    <section class="section center">
-                        <h1>About + FAQ</h1>
-                        <p class='large'>Hi.</p>
-                        <p class='subtitle'>You can call me LiteralHat, or just 'Hat'. </p>
-                        <p>Technical Animator from 2021-2023, now a front end web developer.</p>
-                        <p>Some of the projects I've worked on are Rise of the TMNT: The Movie, LEGO: Monkie Kid, and
-                            Marvel's Moon Girl + Devil Dinosaur.</p>
-                        <p>You may have also come from my YouTube animations or artworks.</p>
-                        <p>In my free time I work on this website, play guitar, and draw.</p>
-                        <p>Regardless of where you discovered LiteralHat, thank you for visiting this website of my
-                            passion.</p>
-                        <img src=<?php echo ($links . 'images/pagedolls/mohawk-guy-waving.png'); ?> class='image small'
-                            src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
+                <div class='widthcontainer'>
+
+                    <section>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center toneblack">
+                                <div class='whiteborder padded'>
+                                    <hr>
+                                    <h1 class='white padtop large'>About + Faq</h1>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='contentcontainer'>
+                            <div class="whitebox padded center">
+                                <p class='large'>Hi.</p>
+                                <p class='subtitle'>You can call me LiteralHat, or just 'Hat'. </p>
+                                <p>Technical Animator from 2021-2023, now a front end web developer.</p>
+                                <p>Some of the projects I've worked on are Rise of the TMNT: The Movie, LEGO: Monkie
+                                    Kid, and
+                                    Marvel's Moon Girl + Devil Dinosaur.</p>
+                                <p>You may have also come from my YouTube animations or artworks.</p>
+                                <p>In my free time I work on this website, play guitar, and draw.</p>
+                                <p>Regardless of where you discovered LiteralHat, thank you for visiting this website of
+                                    my
+                                    passion.</p>
+                                <img src=<?php echo ($links . 'images/pagedolls/mohawk-guy-waving.png'); ?>
+                                    class='image small'
+                                    src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
+                            </div>
+                        </div>
                     </section>
-
-                    <section class="section">
-
-                        <h2>Frequently Asked Questions</h2>
-
-                        <p class='question'>Can I use your art in ______?</p>
-                        <p>You are free to use any of my work as profile photos, banners, wallpapers, on your website,
-                            in edits, on forums, etc.</p>
-                        <p>You may also use my music or artwork in videos as long as it falls under fair use.</p>
-                        <p>You don't need to credit - but if you choose to, I am thankful.</p>
-                        <p>If you are unsure / need something for commercial use - please contact.</p>
-
-                        <p class='question'>Are you up for hire?</p>
-                        <p>Not at this time, sorry.</p>
-
-                        <p class='question'>What do you use to draw?</p>
-                        <p>From most to least: paper + ink, watercolors, Photoshop 2020, graphite.</p>
-
-                        <p class='question'>How can I contact you?</p>
-                        <p>Please email <i>support@literalhat.com</i>.</p>
-                        <p>I'm not really active on social media.</p>
-
-                    </section>
-
 
 
                     <section>
-                        <h2>Website Rebuild Information</h2>
-                        <p class="question">What happened to the old website?</p>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center tone1">
+                                <div class='whiteborder'>
+                                    <h2 class='white padtop'>Frequently Asked Questions</h2>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded tone2">
+                            <div class="whitebox padded">
+                                <p class='question'>Can I use your art in ______?</p>
+                                <p>You are free to use any of my work as profile photos, banners, wallpapers, on your
+                                    website,
+                                    in edits, on forums, etc.</p>
+                                <p>You may also use my music or artwork in videos as long as it falls under fair use.
+                                </p>
+                                <p>You don't need to credit - but if you choose to, I am thankful.</p>
+                                <p>If you are unsure / need something for commercial use - please contact.</p>
+
+                                <p class='question'>Are you up for hire?</p>
+                                <p>Not at this time, sorry.</p>
+
+                                <p class='question'>What do you use to draw?</p>
+                                <p>From most to least: paper + ink, watercolors, Photoshop 2020, graphite.</p>
+
+                                <p class='question'>How can I contact you?</p>
+                                <p>Please email <i>support@literalhat.com</i>.</p>
+                                <p>I'm not really active on social media.</p>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+
+
+
+                    
+                    <section>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center toneblack">
+                                <div class='whiteborder'>
+                                    <h2 class='white padtop'>Website Rebuild Information</h2>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox paddedsm toneblack">
+                            <div class='whiteborder'>
+                            <div class="whitebox padded noshadow">
+                            <p class="question">What happened to the old website?</p>
                         <p>It's been retired, so unfortunately you won't see it again. If you miss it, visit the <a
                                 href="https://web.archive.org/web/*/literalhat.com">Wayback Machine</a> as I archived it
                             from the very start.</p>
@@ -112,22 +155,39 @@
                                 href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>.</p>
                         <p><i>Hopefully this answers any questions. If not, contact me via email at
                                 support@literalhat.com.</i></p>
-
+                            </div>
+                        </div>
+</div>
+                    </div>
                     </section>
 
 
 
+                    <div class='spacermedium'></div>
+
+
+
+
+
                 </div>
-            </div>
 
-            <!-- side content box (should be a pair on the top and bottom) -->
-            <div class='sidecontentbox'>
-            </div>
 
+
+
+
+
+
+
+                <div class='sidecontainer'>
+                    <div class='contentbox padtop'>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include ($whiteboxbottom) ?>
+
         <?php include ($footer) ?>
     </main>
 </body>

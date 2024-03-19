@@ -26,3 +26,4 @@ $menutop = $folder . '/elements/menutop.php';
 $whiteboxbottom = $folder . '/elements/whiteboxbottom.php';
 
 $menuleft = $folder . '/elements/menuleft.php';
+$menusimple = $folder . '/elements/menusimple.php';

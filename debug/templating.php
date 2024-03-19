@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralAbout</title>
-    <meta name="LiteralHat.com | About + FAQ" content="View commonly asked questions and contact information here." />
+    <title>LiteralTemplating.</title>
+    <meta name="LiteralHat | Templating." content="Dedicated templating dump page" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -14,103 +14,93 @@
 
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
-        <?php include_once ($whiteboxtop) ?>
+        <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
-        <div id="stripesboxmiddle" class="centerbox">
-
-            <div>
-                <div class='boxedsection'>
-                    <div class='sidecontentbox'>
-                    </div>
-
-                    <!-- top half of the content div -->
-
-                    <div class="widthcontainer whitebox">
-                        <div class="pagecontent">
-                            <section class="section">
-                                <h2>Gallery</h2>
-                                <p>
-                                    Incididunt fugiat elit et tempor ea amet laboris laborum. Qui eu ullamco id mollit
-                                    velit
-                                    sint
-                                    Lorem reprehenderit nostrud ex cupidatat. Cupidatat ipsum eu minim eu occaecat
-                                    fugiat
-                                    occaecat
-                                    commodo velit. Consectetur consectetur cillum ullamco duis nisi. Duis sunt eiusmod
-                                    ullamco
-                                    reprehenderit consequat duis pariatur quis dolore officia id in et incididunt. Ea
-                                    amet
-                                    Lorem sit
-                                    nostrud proident amet labore ad mollit sint ea cillum laborum cupidatat. Voluptate
-                                    aliqua
-                                    commodo reprehenderit mollit occaecat.
-
-                                    Deserunt laborum eiusmod adipisicing duis laboris culpa do ea. Velit in enim ex sunt
-                                    nisi nisi
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-
-                    <!-- side content box (should be a pair on the top and bottom) -->
-                    <div class='sidecontentbox'>
-                    </div>
+        <div class="contentrowstripe centerbox">
+            <div class='boxedsection'>
+                <div class='sidecontainer'>
+                <div class='spacermedium'></div>
+                            <?php include_once ($menusimple) ?>
                 </div>
-                <div class='boxedsection'>
-                    <div class='sidecontentbox'>
+
+                <div class='widthcontainer'>
+                    <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+                            <div class='whiteborder padded'>
+                                <hr>
+                                <h1 class='white padtop large'>Templating</h1>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
-
-
-
-                    <!-- top half of the content div -->
-
-                    <div class="widthcontainer whitebox">
-                        <div class="pagecontent">
-                            <section class="section">
-                                <h2>Gallery</h2>
-                                <p>
-                                    Incididunt fugiat elit et tempor ea amet laboris laborum. Qui eu ullamco id mollit
-                                    velit
-                                    sint
-                                    Lorem reprehenderit nostrud ex cupidatat. Cupidatat ipsum eu minim eu occaecat
-                                    fugiat
-                                    occaecat
-                                    commodo velit. Consectetur consectetur cillum ullamco duis nisi. Duis sunt eiusmod
-                                    ullamco
-                                    reprehenderit consequat duis pariatur quis dolore officia id in et incididunt. Ea
-                                    amet
-                                    Lorem sit
-                                    nostrud proident amet labore ad mollit sint ea cillum laborum cupidatat. Voluptate
-                                    aliqua
-                                    commodo reprehenderit mollit occaecat.
-
-                                    Deserunt laborum eiusmod adipisicing duis laboris culpa do ea. Velit in enim ex sunt
-                                    nisi nisi
-                                </p>
-                            </section>
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded">
+                            <p>Dedicated page to stash templates I've made for this site.</p>
                         </div>
                     </div>
 
-                    <!-- side content box (should be a pair on the top and bottom) -->
-                    <div class='sidecontentbox'>
+
+                    <div class='spacermedium'>
                     </div>
+
+
+                    <section>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center tone1">
+                                <div class='whiteborder'>
+                                    <h2 class='white padtop'>HEADER</h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+                            <div class='whiteborder padded'>
+                                <hr>
+                                <h1 class='white padtop large'>HEADER</h1>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class='contentcontainer'>
+                            <div class="whitebox tonegreen padded">
+                                <div class="whitebox center padded">
+                                    <p>Mollit nisi occaecat reprehenderit in aute proident magna mollit nulla magna ipsum velit reprehenderit voluptate. Irure officia adipisicing dolore ex. Adipisicing ut aliquip ut qui elit labore sint duis. Pariatur aute velit id sit anim enim elit et veniam fugiat duis commodo. Ipsum anim culpa nulla excepteur eu ipsum quis cillum ullamco minim eu culpa Lorem. Irure irure minim reprehenderit sint pariatur enim ad amet dolore culpa anim nulla nostrud qui.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class='contentcontainer'>
+                            <div class="whitebox padded">
+                                <p>Aliqua magna sit exercitation esse cillum ex aliquip ex commodo est pariatur. Ipsum exercitation ad deserunt adipisicing excepteur voluptate nostrud amet sint ad laborum. Aliqua do nisi sint dolor anim commodo. Enim adipisicing velit duis ullamco id incididunt labore enim qui aliqua pariatur veniam aute. Qui ad veniam id ea quis aute adipisicing et exercitation nisi in duis.</p>
+                            </div>
+                        </div>
+
+
+
+
+                    </section>
+                </div>
+
+
+
+                    <div class='sidecontainer'>
+                        <div class='contentbox padtop'>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
+            <!-- Footer and closing div tags used for styled main content box  -->
 
-
-        </div>
-
-
-
-
-
-
-
-        <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include ($whiteboxbottom) ?>
-        <?php include ($footer) ?>
+            <?php include ($footer) ?>
     </main>
 </body>
 

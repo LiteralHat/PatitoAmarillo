@@ -22,7 +22,7 @@
             <div class='boxedsection'>
                 <!-- side content box (should be a pair on the top and bottom) -->
                 <div class='sidecontainer'>
-                    <div id='menuspacer'></div>
+                    <div class='spacermedium'></div>
                     <?php include_once ($menuleft) ?>
 
                 </div>
@@ -34,68 +34,69 @@
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
                                         <section class="section center">
-                                            <img src="images/pagedolls/punks-not-dead.png" height="800px" id='sitelogo'>
+                                            <img src="images/pagedolls/punks-not-dead.png" height="800px" id='sitelogo'
+                                                alt='literalhat.com logo behind a large group of cartoon sheep'>
 
 
                                             <p class="quote white">Be gay, do crime. Create more than you consume.
                                                 Desire
                                                 less.
                                             </p>
-
                                             <p class='white'>Welcome to the 'effin coolest site in the world!</p>
                                         </section>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                    <!-- Look, the excessive divs are important. I swear. -->
 
 
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
-                            <p class='fancy white'>› That's sarcasm, let it burn! ‹</p>
+                            <blockquote class='fancy white'>› That's sarcasm, let it burn! ‹</blockquote>
                         </div>
                     </div>
-
-
-
                 </div>
 
-                <!-- side content box (should be a pair on the top and bottom) -->
+
                 <div class='sidecontainer'>
 
                     <div class='contentcontainer'>
                         <img src='images/pagedolls/hat-sitting.png' width='250px;'>
                     </div>
+
                     <div class='contentcontainer'>
                         <div class='whitebox tonegreen paddedsm center'>
-                            <h3 class='white'>♡ Patrons ♡</h3>
-                            <div class='whitebox padtop'>
-                                <ul class='centeredlist hearts'>
-                                    <li>Somber-Sonder</li>
-                                    <li>M1n1Cat</li>
-                                    <li>Hugs</li>
-                                    <li>Brew</li>
-                                    <li>Jay Aury</li>
-                                    <li style='font-size:0.6rem';>Captain Cbisnasty1031</li>
-                                    <li>Thatoneguy</li>
-                                    <li style='font-size:0.9rem'>NickAndValentine</li>
-                                    <li>Jaegar Foxx</li>
-                                    <li>sadsrius</li>
-                                    <li>Kinzator</li>
-                                    <li>Ciphybara</li>
-                                </ul>
-
-                            </div>
+                            <section>
+                                <h3 class='white'>♡ Patrons ♡</h3>
+                                <div class='whitebox padtop'>
+                                    <ul class='centeredlist hearts'>
+                                        <li>Somber-Sonder</li>
+                                        <li>M1n1Cat</li>
+                                        <li>Hugs</li>
+                                        <li>Brew</li>
+                                        <li>Jay Aury</li>
+                                        <li style='font-size:0.6rem' ;>Captain Cbisnasty1031</li>
+                                        <li>Thatoneguy</li>
+                                        <li style='font-size:0.9rem'>NickAndValentine</li>
+                                        <li>Jaegar Foxx</li>
+                                        <li>sadsrius</li>
+                                        <li>Kinzator</li>
+                                        <li>Ciphybara</li>
+                                    </ul>
+                                </div>
+                            </section>
                         </div>
                     </div>
 
 
                     <div class='contentcontainer'>
                         <div class='whitebox tonered padded'>
-                            <h2 class='white'>!Achtung!</h2>
-                            <p class='white'>Site broken? Clear your cache.</p>
+                            <section>
+                                <h2 class='white'>!Achtung!</h2>
+                                <p class='white'>Site broken? Clear your cache.</p>
+                            </section>
                         </div>
                     </div>
 
@@ -108,10 +109,7 @@
 
 
             <div class='boxedsection'>
-
-
                 <div class='sidecontainer'>
-
                     <div class='contentcontainer'>
                         <div class='whitebox padded'>
                             <section>
@@ -133,52 +131,52 @@
 
                 <div class='widthcontainer'>
 
-
-                    <div class='contentcontainer'>
-                        <div class="whitebox center toneblack">
-
+                    <section>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center toneblack">
                                 <div class='whiteborder padded'>
                                     <hr>
                                     <h1 class='white padtop'>Welcome to LiteralHat.com.</h1>
                                     <hr>
                                 </div>
 
-                        </div>
-                    </div>
-
-
-
-                    <div class='contentcontainer'>
-                        <div class="whitebox tonegreen center padded">
-                            <div class="whitebox center padded">
-                                <p>This website is still in development. Please forgive any weird formatting.
-                                </p>
-
-                                <p><strong>A huge thanks to my testers: </strong>
-                                    <span><a href="https://www.instagram.com/maker_gniht/"
-                                            target="_blank">Puggleman</a>,
-                                        <a href="https://demscyphozoa.neocities.org/" target="_blank">penis</a>, <a
-                                            href="https://www.instagram.com/queenn_janee?igsh=MWNwYmo3azJzaGo2OQ%3D%3D&utm_source=qr"
-                                            target="_blank">Queen Jane</a>, <a
-                                            href="https://www.reddit.com/user/Kinzator_Entertainer"
-                                            target="_blank">Kinzator</a>, <a href="https://pin.it/lVxQBMC3o"
-                                            target="_blank">Relaxande</a>, <a href="https://youtube.com/@KoldTheWizard"
-                                            target="_blank">KoldTheWizard</a>, <a href='https://twitter.com/Furumasuku' target='_blank'>Furumasuku</a>, cunt, Ami.</span>
-                                </p>
-                                <p>Without them, this site would be even more broken than it already is.</p>
-                                <p class='italics'><a href='about/about_faq.php'>Looking for the old site..?</a></p>
                             </div>
                         </div>
-                    </div>
 
 
 
+                        <div class='contentcontainer'>
+                            <div class="whitebox tonegreen center padded">
+                                <div class="whitebox center padded">
+                                    <p>This website is still in development. Please forgive any weird formatting.
+                                    </p>
+
+                                    <p><strong>A huge thanks to my testers: </strong>
+                                        <span><a href="https://www.instagram.com/maker_gniht/"
+                                                target="_blank">Puggleman</a>,
+                                            <a href="https://demscyphozoa.neocities.org/" target="_blank">penis</a>, <a
+                                                href="https://www.instagram.com/queenn_janee?igsh=MWNwYmo3azJzaGo2OQ%3D%3D&utm_source=qr"
+                                                target="_blank">Queen Jane</a>, <a
+                                                href="https://www.reddit.com/user/Kinzator_Entertainer"
+                                                target="_blank">Kinzator</a>, <a href="https://pin.it/lVxQBMC3o"
+                                                target="_blank">Relaxande</a>, <a
+                                                href="https://youtube.com/@KoldTheWizard"
+                                                target="_blank">KoldTheWizard</a>, <a
+                                                href='https://twitter.com/Furumasuku' target='_blank'>Furumasuku</a>,
+                                            cunt, Ami.</span>
+                                    </p>
+                                    <p>Without them, this site would be even more broken than it already is.</p>
+                                    <p class='italics'><a href='about/about_faq.php'>Looking for the old site..?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
 
                     <div class='rowbox'>
                         <div class='contentcontainer padright'>
                             <div class="whitebox padded">
-                                <section class="section">
+                                <section>
                                     <h2>socials</h2>
                                     <p>Terrible.</p>
                                     <ul>
