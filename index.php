@@ -21,8 +21,11 @@
 
             <div class='boxedsection'>
                 <!-- side content box (should be a pair on the top and bottom) -->
-                <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
+                <div class='sidecontainer' id='menuleft'>
+                <div class='spacermedium'></div>
+                    <div class='contentcontainer' id='hattyleft'>
+                        <img src='images/pagedolls/hat-sitting.png' width='250px;'>
+                    </div>
                     <?php include_once ($menuleft) ?>
 
                 </div>
@@ -60,9 +63,9 @@
                 </div>
 
 
-                <div class='sidecontainer'>
+                <div class='sidecontainer' id='menuright'>
 
-                    <div class='contentcontainer'>
+                    <div class='contentcontainer' id='hattyright'>
                         <img src='images/pagedolls/hat-sitting.png' width='250px;'>
                     </div>
 
@@ -99,11 +102,6 @@
                             </section>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
             </div>
 
@@ -213,7 +211,7 @@
                             <div class="whitebox">
                                 <div class="center">
                                     <img class="framedimage" src="images/marla/marla1.jpg" height="250px;"
-                                        alt="marla (cat) sitting, looking up at camera"></img>
+                                        alt="marla (cat) sitting, looking up at camera">
                                     <p>where is my FUCKING meow mix?</p>
                                 </div>
                             </div>
@@ -228,7 +226,8 @@
                         <div class='contentcontainer'>
                             <div class="whitebox center">
                                 <img class="framedimage" src="images/marla/marla2.jpg" height="250px;"
-                                    alt="marla (cat) sitting, looking up at camera"></img>
+                                    alt="marla (cat) sitting on bed, striped background">
+                                    <p class='mobileonly'>I can tell you're on mobile,  you filthy pleb.</p>
                             </div>
                         </div>
 
@@ -245,7 +244,7 @@
                             <div class='contentcontainer'>
                                 <div class="whitebox center">
                                     <img class="framedimage" src="images/marla/marla3.jpg" height="150px;"
-                                        alt="marla (cat) sitting, looking up at camera"></img>
+                                        alt="marla (cat) sitting, licking nose nervously, laser pointer dot on chest">
                                 </div>
 
 

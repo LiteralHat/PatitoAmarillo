@@ -524,7 +524,7 @@ a:hover {
 
 
 
-.sticky {
+#sticky {
     position: sticky;
     top: 1rem;
     margin-left: 4rem;
@@ -532,7 +532,7 @@ a:hover {
 
 }
 
-.sticky>li a {
+#sticky>li a {
     display: block;
     padding: 0.5rem 0.4rem;
     color: white;
@@ -541,12 +541,12 @@ a:hover {
     box-shadow: 7px 7px 0 0 black;
 }
 
-.sticky>li a:hover {
+#sticky>li a:hover {
     color: black;
     background-color: white;
 }
 
-.sticky>li {
+#sticky>li {
     list-style-type: none;
     font-family: var(--font-menu);
     text-transform: uppercase;
@@ -584,9 +584,7 @@ a:hover {
     font-size: 1.8rem;
 }
 
-.sidemenu>li:hover {
-    margin-left: -0.3rem;
-}
+
 
 /* submenu styling */
 .sidemenu ul>li a {
@@ -622,9 +620,7 @@ a:hover {
     padding-bottom: 0.4rem;
 }
 
-.sidemenu ul>li:hover {
-    margin-left: -0.2rem;
-}
+
 
 .sidemenu {
     margin-left: 2rem;
@@ -670,11 +666,6 @@ a:hover {
     border: 4px dashed white;
 }
 
-#sitelogo {
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
 
 .extrawidth {
     width: 1100px;
@@ -835,37 +826,88 @@ a:hover {
     .extrawidthcontainer{ 
         width: 100%;
     }
+    .boxedsection{ 
+        width: 100%;
+        flex-direction: column;
+    }
+    .sidecontainer{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #menuleft {
+        order: 1;
+        flex-wrap: nowrap;
+    }
+    #menuright {
+        order: 2;
+    }
     .whitebox {
         width: 100%;
     }
+    #hattyright {
+    display: none;
+    }
+
     .contentcontainer{
         width: 100%;
     }
     .headercontainer {
         justify-content: center;
     }
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+    #centerbox {
+        order: 1;
+    }
+    #sticky {
+        display: none;
+    }
     :root {
         font-size: 3vw;
         --logo-size: 10vw;
     }
+    #sitelogo {
+        position: relative;
+        top: 1rem;
+        margin: 0;
+        max-width: 100%;
+    }
+
 
 
 }
 
-@media (max-width: 1200px) {
+
+
+
+/* @media (max-width: 1200px) {
     .sidecontainer {
         display: none;
     }
 
 
-}
+} */
 
 @media (min-width: 800px) {
-
+    .mobileonly {
+        display: none;
+    }
+    #hattyleft {
+        display: none;
+        }
     .whitebox {
         box-shadow: 7px 7px 0 0 black;
         box-sizing: border-box;
         height: 100%;
+    }
+    .sidemenu ul>li:hover {
+        margin-left: -0.2rem;
+    }
+    .sidemenu>li:hover {
+        margin-left: -0.3rem;
     }
 
 }
