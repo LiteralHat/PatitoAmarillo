@@ -6,7 +6,7 @@
 :root {
     /* --content-width: 720px; */
     --content-width: 720px;
-    --container-spacer-top-height: 50px;
+    --container-spacer-top-height: 36px;
     --container-spacer-bottom-height: 100px;
     --logo-size: 40px;
     font-size: 16px;
@@ -146,6 +146,7 @@ ul, ol {
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 0.85rem;
+
 }
 
 #menutop > li + li::before {
@@ -153,7 +154,7 @@ ul, ol {
 }
 
 #menutop {
-    padding: 0.6rem 1rem 0.4rem;
+padding-top: 0.6rem;
 }
 
 #menutop a:link {
@@ -262,7 +263,8 @@ a:hover {
     /* border: 1px solid pink; */
     width: 250px;
     height: auto;
-border: 3px solid pink
+    border: 1px solid pink;
+    padding-top: 55px;
 }
 
 
@@ -420,9 +422,7 @@ p.buttontext {
         #000000 48%,
         #000000
       );
-    background-size: 100% 50px;
-    position: relative;
-    height: 100%;
+    background-size: 100% 70px;
 }
 
 #stripesboxbottom {
@@ -512,15 +512,15 @@ p.buttontext {
 @media (min-width: 760px) {
     
     .whitebox {
-        margin: 0%;
+        margin: 0;
         box-shadow: 7px 7px 0 0 black;
     }
     .whitebox.top {
-        border-bottom: none;
+        margin-bottom: 1rem;
         height: var(--container-spacer-top-height);
     }
     .whitebox.middle {
-        border-top: none;
+
         border-bottom: none;
         box-shadow: 7px 0 0 0 black;
     }
@@ -544,12 +544,8 @@ p.buttontext {
     margin-left: 1rem;
 }
 
-.testing {
-    display: flex;
-    flex-direction: column;
-}
-
 /* I cant even believe that worked lmao */
 .boxedsection {
     display: flex;
+    background-color: red;
 }

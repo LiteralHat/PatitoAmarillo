@@ -43,6 +43,7 @@
             <li>Strange white bar appears on the right of the footer on some mobile devices</li>
             <li>Side menu doesn't appear on browser widths smaller than ~1200px</li>
             <li>catsounds webpage stylesheet isn't linked</li>
+            <li>General mobile responsiveness is a bit broken</li>
 
         </ul>
 
@@ -56,6 +57,12 @@
         
 
         <section class='section'>
+
+        <h3>v5.3.0-beta 19.03.2024</h3>
+        <ul>
+            <li>Fixed site templating issues</li>
+            <li>Added split between top menu bar and page content on main page</li>
+        </ul>
 
         <h3>v5.3.0-beta 17.03.2024</h3>
         <ul>
