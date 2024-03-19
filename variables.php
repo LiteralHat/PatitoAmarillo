@@ -15,4 +15,11 @@ $folder = $_SERVER['DOCUMENT_ROOT'];
 $links = 'https://literalhat.com/';
 };
 
+$header = $folder . '/elements/header.php';
+$footer = $folder . '/elements/footer.php';
 
+$whiteboxtop = $folder . '/elements/whiteboxtop.php';
+$whiteboxbottom = $folder . '/elements/whiteboxbottom.php';
+
+$sidebarmenu = $folder . '/elements/sidebarmenu.php';
+$sidebargamer = $folder . '/elements/sidebargamer.php';

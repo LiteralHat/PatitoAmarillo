@@ -261,7 +261,10 @@ a:hover {
 .sidecontentbox {
     /* border: 1px solid pink; */
     width: 250px;
+    height: auto;
+border: 3px solid pink
 }
+
 
 .sticky {
     position: sticky;
@@ -498,42 +501,9 @@ p.buttontext {
         display: none;
     }
     
-    /* .intersectmenu > li a:hover {
-        color: black;
-        background-color: white;
-    }
-    
-    .intersectmenu > li {
-        display: inline-block;
-        list-style-type: none;
-        font-family: var(--font-menu);
-        text-transform: uppercase;
-        font-size: 1.8rem;
-        text-align: center;
-        width: max-content;
-        margin: -0.2rem -0.3rem;
-        position: relative;
-        left: -1.2rem;
-    }
-
-    .intersectmenu > li > a {
-        color: white;
-        border: 0.3rem solid black;
-        padding: 1rem;
-        display: block;
-    }
-
-    .intersect.whitebox {
-        background-color: black;
-    } */
 
 }
 
-@media (min-width: 1200px) {
-    .intersect {
-        display: none;
-    }
-}
 
 
 
@@ -554,16 +524,15 @@ p.buttontext {
         border-bottom: none;
         box-shadow: 7px 0 0 0 black;
     }
+    .whitebox.floating {
+        margin: 1rem 0;
+    }
     .whitebox.bottom {
         border-top: none;
         height: var(--container-spacer-bottom-height);
     }
 
 }
-
-
-
-
 
 /* TEMPORARY ELEMENTS */
 /* TEMPORARY ELEMENTS */
@@ -573,4 +542,14 @@ p.buttontext {
 
 .tempy-1 {
     margin-left: 1rem;
+}
+
+.testing {
+    display: flex;
+    flex-direction: column;
+}
+
+/* I cant even believe that worked lmao */
+.boxedsection {
+    display: flex;
 }

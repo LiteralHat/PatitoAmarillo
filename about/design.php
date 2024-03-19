@@ -12,7 +12,20 @@
 <body>
     <main>
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once($folder . '/elements/header.php') ?>
+        <?php include_once ($header) ?>
+        <?php include_once ($whiteboxtop) ?>
+        <!-- side bar on the left.  -->
+
+        <div id="stripesboxmiddle" class="centerbox">
+
+            <!-- side content box (should be a pair on the top and bottom) -->
+            <div class='sidecontentbox'>
+                <?php include_once ($sidebarmenu) ?>
+            </div>
+
+            <!-- top half of the content div -->
+            <div class="widthcontainer whitebox middle">
+                <div class="pagecontent">
 
         <section class="section">
         <h1>Design</h1>
@@ -112,10 +125,18 @@
 
     
 
+        </div>
+            </div>
 
+            <!-- side content box (should be a pair on the top and bottom) -->
+            <div class='sidecontentbox'>
+            </div>
+
+
+        </div>
         <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include($folder . '/elements/footer.php') ?>
-
+        <?php include ($whiteboxbottom) ?>
+        <?php include ($footer) ?>
     </main>
 </body>
 
