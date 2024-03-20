@@ -51,10 +51,6 @@
     --toneblack: #000000 ;
 
 
-
-
-
-
     /* Used for main site logo */
     --font-logo: DataTrash, '04b', Impact, Haettenschweiler;
     /* Used for headers */
@@ -77,6 +73,7 @@
 html {
     background-color: white;
     scroll-behavior: smooth;
+
 }
 
 /* FALLBACK FONT TESTING */
@@ -314,7 +311,6 @@ ol {
 
 .contentrowwhite {
     background-color: white;
-    
 }
 
 .contentrowstripe {
@@ -355,7 +351,7 @@ ol {
 }
 
 .footercontent li {
-    width: 12rem;
+    width: 100%;
 }
 
 .footercontent a {
@@ -819,7 +815,7 @@ a:hover {
 
 
 /* media queries for responsiveness */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .widthcontainer{ 
         width: 100%;
     }
@@ -875,23 +871,10 @@ a:hover {
         margin: 0;
         max-width: 100%;
     }
-
-
-
 }
 
 
-
-
-/* @media (max-width: 1200px) {
-    .sidecontainer {
-        display: none;
-    }
-
-
-} */
-
-@media (min-width: 800px) {
+@media (min-width: 768px) {
     .mobileonly {
         display: none;
     }
