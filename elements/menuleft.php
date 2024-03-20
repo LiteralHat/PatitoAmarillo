@@ -15,5 +15,5 @@
 </nav>
 
 <ul id='sticky'>
-    <li class='tone6'><a href='#top'>Back to Top</a></li>
+    <li class='tonegreen'><a href='#top'>Back to Top</a></li>
 </ul>

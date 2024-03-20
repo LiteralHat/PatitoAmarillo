@@ -622,6 +622,12 @@ a:hover {
     margin-left: 2rem;
 }
 
+
+.spacersmall {
+    height: 10px;
+}
+
+
 .spacermedium {
     height: 65px;
 }
@@ -675,9 +681,6 @@ a:hover {
     border: 4px solid transparent;
 }
 
-.noshadow {
-    box-shadow: 0 0 0 0;
-}
 
 #sitelogo {
     position: relative;
@@ -724,7 +727,7 @@ a:hover {
 }
 
 .quote {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: normal;
     font-family: Insatiable, Sedgwick Ave Display;
     letter-spacing: -3px;
@@ -831,6 +834,9 @@ a:hover {
         display: flex;
         flex-wrap: wrap;
     }
+    .sidecontainer:first-child {
+        justify-content: right;
+    }
     #menuleft {
         order: 1;
         flex-wrap: nowrap;
@@ -893,4 +899,8 @@ a:hover {
         margin-left: -0.3rem;
     }
 
+}
+
+.noshadow {
+    box-shadow: 0 0 0 0 transparent;
 }

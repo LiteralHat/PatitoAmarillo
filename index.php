@@ -37,7 +37,7 @@
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
                                         <section class="section center">
-                                            <img src="images/pagedolls/punks-not-dead.png" height="800px" id='sitelogo'
+                                            <img src="images/pagedolls/literalhat-punks-not-dead.png" height="800px" id='sitelogo'
                                                 alt='literalhat.com logo behind a large group of cartoon sheep'>
 
 

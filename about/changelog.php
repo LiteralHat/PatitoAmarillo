@@ -20,7 +20,7 @@
         <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
                 <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
+
                     <?php include_once ($menusimple) ?>
                 </div>
 
@@ -83,6 +83,13 @@
                     <section>
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
+
+                                <h3>v6.4.0-beta 20.03.2024</h3>
+                                <ul>
+                                    <li>Removed padding from footer that caused a white bar on right side of page</li>
+                                    <li>Removed 'back to top' button on mobile devices</li>
+                                    <li>Changed spacing on top of menu bar on subpages</li>
+                                </ul>
 
                                 <h3>v6.3.0-beta 20.03.2024</h3>
                                 <ul>

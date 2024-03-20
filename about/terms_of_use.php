@@ -20,7 +20,6 @@
         <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
                 <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
                     <?php include_once ($menusimple) ?>
 
                 </div>

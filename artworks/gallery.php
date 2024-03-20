@@ -4,124 +4,63 @@
 <html lang="en">
 
 <head>
-    <title>LiteralAbout</title>
-    <meta name="LiteralHat.com | About + FAQ" content="View commonly asked questions and contact information here." />
+    <title>LiteralBlank.</title>
+    <meta name="LiteralHat | Blank." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
-
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
-        <?php include_once ($whiteboxtop) ?>
+        <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
-        <div id="stripesboxmiddle" class="centerbox">
+        <div class="contentrowstripe centerbox">
+            <div class='boxedsection'>
+                <div class='sidecontainer'>
+                    <div class='spacermedium'></div>
+                <?php include_once ($menusimple) ?>
 
-            <div>
+                </div>
 
-                <div class='boxedsection'>
-                    <!-- side content box (should be a pair on the top and bottom) -->
-                    <div class='boxedsection'>
-                        
-                    <div class='sidecontentbox'>
-                    </div>
- 
-                    </div>
-                    <!-- top half of the content div -->
+                <div class='widthcontainer'>
+                    <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+                            <div class='whiteborder padded'>
+                                <hr>
+                                <h1 class='white padtop large'>
 
-                    <div class="widthcontainer whitebox">
-                        <div class="pagecontent">
-                            <section class="section">
-                                <h2>Gallery</h2>
-                                <p>
-                                    Incididunt fugiat elit et tempor ea amet laboris laborum. Qui eu ullamco id mollit
-                                    velitfdsfd
-                                    sint
-                                    Lorem reprehenderit nostrud ex cupidatat. Cupidatat ipsum eu minim eu occaecat
-                                    fugiat
-                                    occaecat
-                                    commodo velit. Consectetur consectetur cillum ullamco duis nisi. Duis sunt eiusmod
-                                    ullamco
-                                    reprehenderit consequat duis pariatur quis dolore officia id in et incididunt. Ea
-                                    amet
-                                    Lorem sit
-                                    nostrud proident amet labore ad mollit sint ea cillum laborum cupidatat. Voluptate
-                                    aliqua
-                                    commodo reprehenderit mollit occaecat.
 
-                                    Deserunt laborum eiusmod adipisicing duis laboris culpa do ea. Velit in enim ex sunt
-                                    nisi nisi
-                                </p>
-                            </section>
+
+                            
+                                </h1>
+                                <hr>
+                            </div>
                         </div>
                     </div>
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded">
 
-                    <!-- side content box (should be a pair on the top and bottom) -->
-                    <div class='sidecontentbox'>
+
+                        </div>
                     </div>
                 </div>
 
-                <div class='boxedsection'>
-                    <div class='sidecontentbox'>
-                    </div>
 
 
-
-                    <!-- top half of the content div -->
-
-                    <div class="widthcontainer whitebox floating">
-                        <div class="pagecontent">
-                            <section class="section">
-                                <h2>Gallery</h2>
-                                <p>
-                                    Incididunt fugiat elit et tempor ea amet laboris laborum. Qui eu ullamco id mollit
-                                    velit
-                                    sint
-                                    Lorem reprehenderit nostrud ex cupidatat. Cupidatat ipsum eu minim eu occaecat
-                                    fugiat
-                                    occaecat
-                                    commodo velit. Consectetur consectetur cillum ullamco duis nisi. Duis sunt eiusmod
-                                    ullamco
-                                    reprehenderit consequat duis pariatur quis dolore officia id in et incididunt. Ea
-                                    amet
-                                    Lorem sit
-                                    nostrud proident amet labore ad mollit sint ea cillum laborum cupidatat. Voluptate
-                                    aliqua
-                                    commodo reprehenderit mollit occaecat.
-
-                                    Deserunt laborum eiusmod adipisicing duis laboris culpa do ea. Velit in enim ex sunt
-                                    nisi nisi
-                                </p>
-                            </section>
+                    <div class='sidecontainer'>
+                        <div class='contentbox padtop'>
                         </div>
                     </div>
 
-                    <!-- side content box (should be a pair on the top and bottom) -->
-                    <div class='sidecontentbox'>
-                    </div>
                 </div>
+
             </div>
+            <!-- Footer and closing div tags used for styled main content box  -->
 
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include ($whiteboxbottom) ?>
-        <?php include ($footer) ?>
+            <?php include ($footer) ?>
     </main>
 </body>
 
