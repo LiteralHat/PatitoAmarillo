@@ -73,7 +73,6 @@
 html {
     background-color: white;
     scroll-behavior: smooth;
-
 }
 
 /* FALLBACK FONT TESTING */
@@ -133,9 +132,10 @@ p,
 blockquote,
 span,
 ul,
+label,
 ol {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.7rem;
     font-weight: 500;
     color: black;
@@ -206,6 +206,42 @@ ol {
 
 
 
+.form li {
+    list-style-type: none;
+}
+.form fieldset {
+    border: none;
+}
+
+#daterange li {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 110%;
+    left: -1.3rem;
+    position: relative;
+}
+
+.button {
+    color: black;
+    background-color: white;
+
+    font-family: var(--font-logo);
+    font-size: 1.7rem;
+    border: 0.3rem solid black;
+    padding: 0.6rem;
+    box-shadow: 7px 7px 0 0 black;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -232,7 +268,13 @@ ol {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+}
 
+.clearbox {
+    border: 0.3rem solid transparent;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 .padded {
@@ -249,6 +291,10 @@ ol {
     box-sizing: border-box;
 }
 
+.bigwidthcontainer {
+    width: 900px;
+    box-sizing: border-box;
+}
 
 .biggerwidthcontainer {
     width: 1090px;
