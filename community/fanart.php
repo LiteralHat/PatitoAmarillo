@@ -21,7 +21,7 @@
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
-                <?php include_once ($menusimple) ?>
+                    <?php include_once ($menusimple) ?>
 
                 </div>
 
@@ -40,16 +40,22 @@
 
 
                     <div class='contentcontainer'>
-                        <div class="whitebox tone3 padded">
-                        <div class="whitebox padded">
-                        <h2>Welcome to the fanart gallery.</h2>
-                        <p>This gallery is still a work in progress and I'm mostly using it to test out gallery code. Eventually it will be updated with everything.</p>
-                        <p>Images here are most likely low resolution - do not fear as I shall replace them when I have the time.</p>
-
-
-
-
+                        <div class="whitebox tone3 paddedsm">
+                            <div class="whitebox padded">
+                                <h2>Welcome to the fanart gallery.</h2>
+                                <p>This gallery is still a work in progress and I'm mostly using it to test out gallery
+                                    code. Eventually it will be updated with everything.</p>
+                                <p>Images here are most likely low resolution - do not fear as I shall replace them when
+                                    I have the time.</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class='contentcontainer'>
+                        <div class="whitebox tonegreen padded">
+                            <div class="whitebox padded gallerysquare" id="fanartgallery">
+
+                            </div>
                         </div>
                     </div>
 
@@ -59,20 +65,21 @@
 
 
 
-                    <div class='sidecontainer'>
-                        <div class='contentbox padtop'>
-                        </div>
+                <div class='sidecontainer'>
+                    <div class='contentbox padtop'>
                     </div>
-
                 </div>
 
             </div>
-            <!-- Footer and closing div tags used for styled main content box  -->
+
+        </div>
+        <!-- Footer and closing div tags used for styled main content box  -->
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="../scripts/galleryfanart.js"></script>
 
 
-            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-            <script src="../scripts/galleryfanart.js"></script>
-            <?php include ($footer) ?>
+        <?php include ($footer) ?>
     </main>
 </body>
 
