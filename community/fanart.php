@@ -30,7 +30,7 @@
                         <div class="whitebox center toneblack">
                             <div class='whiteborder padded'>
                                 <hr>
-                                <h1 class='white padtop large'>
+                                <h1 class='white padtop larger'>
                                     LiteralFanart
                                 </h1>
                                 <hr>
@@ -52,11 +52,18 @@
                     </div>
 
                     <div class='contentcontainer'>
-                        <div class="whitebox tonegreen padded">
-                            <div class="whitebox padded gallerysquare" id="fanartgallery">
-
+                        <section class='whitebox toneblack'>
+                            <div class='whiteborder padded'>
+                                
+                                    <h2 class='white'>Click to jump to other years:</h2>
+                                    <p class='white'>2024 - 2023 - 2022 - 2021 - 2020</p>
+                                
+                                <hr>
+                                <div class='padtop' id="fanartgallery">
+                                    <!-- jquery appends here -->
+                                </div>
                             </div>
-                        </div>
+                        </section>
                     </div>
 
 

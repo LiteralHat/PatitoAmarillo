@@ -84,6 +84,14 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v7.4.0-beta 23.03.2024</h3>
+                                <ul>
+                                    <li>Added placeholder fanart gallery</li>
+                                    <li>Added placeholder gallery tab</li>
+                                    <li>Fixed display issues on certain contentwidths on mobile</li>
+                                    <li>Fixed broken 'back to top' display</li>
+                                </ul>
+
                                 <h3>v6.4.0-beta 20.03.2024</h3>
                                 <ul>
                                     <li>Removed padding from footer that caused a white bar on right side of page</li>
