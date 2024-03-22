@@ -43,7 +43,7 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded center">
                                 <p class='large'>Hi.</p>
-                                <p class='subtitle'>You can call me LiteralHat, or just 'Hat'. </p>
+                                <p>You can call me LiteralHat, or just 'Hat'. </p>
                                 <p>Technical Animator from 2021-2023, now a front end web developer.</p>
                                 <p>Some of the projects I've worked on are Rise of the TMNT: The Movie, LEGO: Monkie
                                     Kid, and

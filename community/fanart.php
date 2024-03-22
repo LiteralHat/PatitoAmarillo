@@ -44,9 +44,8 @@
                             <div class="whitebox padded">
                                 <h2>Welcome to the fanart gallery.</h2>
                                 <p>This gallery is still a work in progress and I'm mostly using it to test out gallery
-                                    code. Eventually it will be updated with everything.</p>
-                                <p>Images here are most likely low resolution - do not fear as I shall replace them when
-                                    I have the time.</p>
+                                    code. More functionality will be coded soon, check the changelog for upcoming features.</p>
+                                    <p class='warning'>Please note that URLs will change in the future; if you decide to hotlink an image from here, it will probably break in the next site release.</p><p>A front page announcement will be made when hotlinking is safe.</p>
                             </div>
                         </div>
                     </div>

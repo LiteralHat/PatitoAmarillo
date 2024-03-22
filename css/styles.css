@@ -185,7 +185,7 @@ ol {
 }
 
 .larger {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 
@@ -901,6 +901,75 @@ a:hover {
 
 
 
+
+
+
+
+
+.text1 {
+    color: var(--tone1);
+    }
+
+.text2 {
+    color: var(--tone2);
+    }
+
+.text3 {
+    color: var(--tone3);
+    }
+
+.text4 {
+    color: var(--tone4);
+    }
+
+.text5 {
+    color: var(--tone5);
+    }
+
+.text6 {
+    color: var(--tone6);
+    }
+
+.text7 {
+    color: var(--tone7);
+    }
+
+.text8 {
+    color: var(--tone8);
+    }
+
+.text9 {
+    color: var(--tone9);
+    }
+
+.textgreen {
+    color: var(--tonegreen);
+    }
+
+.textred {
+    color: var(--tonered);
+    }
+
+.textblack {
+    color: var(--toneblack);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* media queries for responsiveness */
 @media (max-width: 768px) {
     .widthcontainer {
@@ -908,6 +977,14 @@ a:hover {
     }
 
     .extrawidthcontainer {
+        width: 100%;
+    }
+    
+    .bigwidthcontainer {
+        width: 100%;
+    }
+
+    .biggerwidthcontainer {
         width: 100%;
     }
 
