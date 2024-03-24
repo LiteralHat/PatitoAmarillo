@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: RobotoMono;
     src: url('fonts/RobotoMono.ttf');
@@ -37,18 +36,20 @@
     font-size: 16px;
     letter-spacing: normal;
 
-    --tone1: #631a24; 
-    --tone2: #742a3a; 
-    --tone3: #754258; 
+    --box-borders: 0.3rem;
+
+    --tone1: #631a24;
+    --tone2: #742a3a;
+    --tone3: #754258;
     --tone4: #4d2537;
-    --tone5:  #578676;
-    --tone6:  #385850;
+    --tone5: #578676;
+    --tone6: #385850;
     --tone7: #2a5057;
-    --tone8:  #12333b;
-    --tone9:  #7ac5bc;
-    --tonered:  #c4001e;
-    --tonegreen:  #106363;
-    --toneblack: #000000 ;
+    --tone8: #12333b;
+    --tone9: #7ac5bc;
+    --tonered: #c4001e;
+    --tonegreen: #106363;
+    --toneblack: #000000;
 
 
     /* Used for main site logo */
@@ -73,7 +74,6 @@
 html {
     background-color: white;
     scroll-behavior: smooth;
-
 }
 
 /* FALLBACK FONT TESTING */
@@ -133,9 +133,10 @@ p,
 blockquote,
 span,
 ul,
+label,
 ol {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.7rem;
     font-weight: 500;
     color: black;
@@ -183,6 +184,10 @@ ol {
 
 }
 
+.larger {
+    font-size: 4rem;
+}
+
 
 .huge {
     font-size: 7rem;
@@ -195,6 +200,43 @@ ol {
 
 .imglarge {
     width: 30rem;
+}
+
+
+
+
+
+
+
+
+
+
+.form li {
+    list-style-type: none;
+}
+
+.form fieldset {
+    border: none;
+}
+
+#daterange li {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 110%;
+    left: -1.3rem;
+    position: relative;
+}
+
+.button {
+    color: black;
+    background-color: white;
+
+    font-family: var(--font-logo);
+    font-size: 1.7rem;
+    border: var(--box-borders) solid black;
+    padding: 0.6rem;
+    box-shadow: 7px 7px 0 0 black;
 }
 
 
@@ -227,12 +269,18 @@ ol {
 }
 
 .whitebox {
-    border: 0.3rem solid black;
+    border: var(--box-borders) solid black;
     background-color: white;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+}
 
+.clearbox {
+    border: 0.3rem solid transparent;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 .padded {
@@ -249,11 +297,16 @@ ol {
     box-sizing: border-box;
 }
 
+.bigwidthcontainer {
+    width: 900px;
+    box-sizing: border-box;
+}
 
 .biggerwidthcontainer {
     width: 1090px;
     box-sizing: border-box;
 }
+
 .extrawidthcontainer {
     width: 1100px;
     box-sizing: border-box;
@@ -276,6 +329,7 @@ ol {
     box-sizing: border-box;
     height: auto;
 }
+
 .columnbox {
     display: flex;
     flex-direction: column;
@@ -482,6 +536,32 @@ a:hover {
 
 
 
+.weezer {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -532,7 +612,7 @@ a:hover {
     display: block;
     padding: 0.5rem 0.4rem;
     color: white;
-    border: 5px solid black;
+    border: var(--box-borders) solid black;
     text-decoration: none;
     box-shadow: 7px 7px 0 0 black;
 }
@@ -560,7 +640,7 @@ a:hover {
     display: block;
     padding: 0.5rem 0.4rem;
     color: white;
-    border: 5px solid black;
+    border: var(--box-borders) solid black;
     border-right: none;
     text-decoration: none;
 }
@@ -702,7 +782,8 @@ a:hover {
 
 /* LIST STYLING */
 
-.hearts li::before, .hearts li::after  {
+.hearts li::before,
+.hearts li::after {
     content: ' ♥ ';
     text-wrap: nowrap;
 }
@@ -755,6 +836,7 @@ a:hover {
     background-color: var(--tone4);
     color: white;
 }
+
 .tone5 {
     background-color: var(--tone5);
     color: white;
@@ -764,6 +846,7 @@ a:hover {
     background-color: var(--tone6);
     color: white;
 }
+
 .tone7 {
     background-color: var(--tone7);
     color: white;
@@ -773,6 +856,7 @@ a:hover {
     background-color: var(--tone8);
     color: white;
 }
+
 .tone9 {
     background-color: var(--tone9);
     color: white;
@@ -789,7 +873,7 @@ a:hover {
 }
 
 .toneblack {
-    background-color:  var(--toneblack);
+    background-color: var(--toneblack);
     color: white !important;
 }
 
@@ -801,7 +885,7 @@ a:hover {
     color: white;
 }
 
-.white > p {
+.white>p {
     color: white;
 }
 
@@ -817,60 +901,151 @@ a:hover {
 
 
 
+
+
+
+
+
+.text1 {
+    color: var(--tone1);
+    }
+
+.text2 {
+    color: var(--tone2);
+    }
+
+.text3 {
+    color: var(--tone3);
+    }
+
+.text4 {
+    color: var(--tone4);
+    }
+
+.text5 {
+    color: var(--tone5);
+    }
+
+.text6 {
+    color: var(--tone6);
+    }
+
+.text7 {
+    color: var(--tone7);
+    }
+
+.text8 {
+    color: var(--tone8);
+    }
+
+.text9 {
+    color: var(--tone9);
+    }
+
+.textgreen {
+    color: var(--tonegreen);
+    }
+
+.textred {
+    color: var(--tonered);
+    }
+
+.textblack {
+    color: var(--toneblack);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* media queries for responsiveness */
 @media (max-width: 768px) {
-    .widthcontainer{ 
+    .widthcontainer {
         width: 100%;
     }
-    .extrawidthcontainer{ 
+
+    .extrawidthcontainer {
         width: 100%;
     }
-    .boxedsection{ 
+    
+    .bigwidthcontainer {
+        width: 100%;
+    }
+
+    .biggerwidthcontainer {
+        width: 100%;
+    }
+
+    .boxedsection {
         width: 100%;
         flex-direction: column;
     }
-    .sidecontainer{
+
+    .sidecontainer {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
     }
+
     .sidecontainer:first-child {
         justify-content: right;
     }
+
     #menuleft {
         order: 1;
         flex-wrap: nowrap;
     }
+
     #menuright {
         order: 2;
     }
+
     .whitebox {
         width: 100%;
     }
+
     #hattyright {
-    display: none;
+        display: none;
     }
 
-    .contentcontainer{
+    .contentcontainer {
         width: 100%;
     }
+
     .headercontainer {
         justify-content: center;
     }
+
     img {
         max-width: 90%;
         height: auto;
     }
+
     #centerbox {
         order: 1;
     }
+
     #sticky {
         display: none;
     }
+
     :root {
         font-size: 3vw;
         --logo-size: 10vw;
     }
+
     #sitelogo {
         position: relative;
         top: 1rem;
@@ -884,17 +1059,21 @@ a:hover {
     .mobileonly {
         display: none;
     }
+
     #hattyleft {
         display: none;
-        }
+    }
+
     .whitebox {
         box-shadow: 7px 7px 0 0 black;
         box-sizing: border-box;
         height: 100%;
     }
+
     .sidemenu ul>li:hover {
         margin-left: -0.2rem;
     }
+
     .sidemenu>li:hover {
         margin-left: -0.3rem;
     }
@@ -903,4 +1082,26 @@ a:hover {
 
 .noshadow {
     box-shadow: 0 0 0 0 transparent;
+}
+
+
+
+
+
+
+
+
+
+#fanartgallery img {
+    justify-content: center;
+    border: 0.2rem solid white;
+    height: 10rem;
+    margin: 0.2rem;
+    
+}
+
+#fanartgallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }

@@ -173,6 +173,7 @@
 
                     <div class='rowbox'>
                         <div class='contentcontainer padright'>
+                        <div class="whitebox paddedsm tone3">
                             <div class="whitebox padded">
                                 <section>
                                     <h2>socials</h2>
@@ -203,6 +204,7 @@
                                         </li>
                                     </ul>
                                 </section>
+                            </div>
                             </div>
                         </div>
 

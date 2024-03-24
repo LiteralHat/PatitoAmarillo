@@ -59,19 +59,20 @@
                         <div class='contentcontainer'>
                             <div class='whitebox tone2 paddedsm'>
                                 <div class="whitebox padded">
-                                    <h2>Known Issues</h2>
+                                    <h2 class='textred'>Known Issues</h2>
                                     <ul>
                                         <li>Strange white bar appears on the right of the footer on some mobile devices
                                         </li>
-                                        <li>Side menu doesn't appear on browser widths smaller than ~1200px</li>
-                                        <li>General mobile responsiveness is a bit broken</li>
                                     </ul>
 
-                                    <h2>Unreleased</h2>
+                                    <h2 class='textgreen'>Unreleased</h2>
                                     <ul>
                                         <li>Working search bar</li>
                                         <li>Responsive dynamic gallery</li>
-                                        <li>Better header colors</li>
+                                        <li>Gallery lightbox</li>
+                                        <li>Permalinks for gallery images</li>
+                                        <li>Add the rest of the fanart</li>
+                                        <li>Fanart gallery username credits</li>
                                         <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
                                     </ul>
                                 </div>
@@ -84,10 +85,20 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v7.4.0-beta 23.03.2024</h3>
+                                <ul>
+                                    <li>Added placeholder fanart gallery</li>
+                                    <li>Added placeholder gallery tab</li>
+                                    <li>Fixed display issues on certain contentwidths on mobile</li>
+                                    <li>Fixed broken 'back to top' display</li>
+                                    <li>Added better header color functionality</li>
+                                </ul>
+
                                 <h3>v6.4.0-beta 20.03.2024</h3>
                                 <ul>
                                     <li>Removed padding from footer that caused a white bar on right side of page</li>
                                     <li>Removed 'back to top' button on mobile devices</li>
+                                    <li>Added mobile responsive 'side' menu</li>
                                     <li>Changed spacing on top of menu bar on subpages</li>
                                 </ul>
 
