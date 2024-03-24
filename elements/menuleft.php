@@ -6,10 +6,10 @@
     
     
         <li class='tone1'><a href=<?php echo $links . "index.php" ?>>Home</a></li>
-        <li class='tone2'><a href=<?php echo $links . "artworks/gallery.php" ?>>Artworks</a></li>
+        <!-- <li class='tone2'><a href=<?php echo $links . "artworks/gallery.php" ?>>Artworks</a></li>
         <ul>
             <li><a href=<?php echo $links . "artworks/gallery.php" ?>>Gallery</a></li>
-        </ul>
+        </ul> -->
         <li class='tone3'><a href=<?php echo $links . "community/fanart.php" ?>>Community</a></li>
         <ul>
             <li><a href=<?php echo $links . "community/fanart.php" ?>>Fanart</a></li>

@@ -43,16 +43,14 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded center">
                                 <p class='large'>Hi.</p>
-                                <p>You can call me LiteralHat, or just 'Hat'. </p>
-                                <p>Technical Animator from 2021-2023, now a front end web developer.</p>
-                                <p>Some of the projects I've worked on are Rise of the TMNT: The Movie, LEGO: Monkie
-                                    Kid, and
-                                    Marvel's Moon Girl + Devil Dinosaur.</p>
-                                <p>You may have also come from my YouTube animations or artworks.</p>
+                                <p>I'm just a dude, really.</p>
+                                <p>I was a Technical Animator from 2021-2023. I've worked on Rise of the TMNT: The Movie, LEGO: Monkie
+                                    Kid,
+                                    Marvel's Moon Girl + Devil Dinosaur, and much more.</p>
+                                    <p>Nowadays I'm just a boring front end web developer. One day I'll be full stack.</p>
                                 <p>In my free time I work on this website, play guitar, and draw.</p>
-                                <p>Regardless of where you discovered LiteralHat, thank you for visiting this website of
-                                    my
-                                    passion.</p>
+                                <p>Sometimes I make <a href='https://www.youtube.com/c/literalhat' target='_blank'>YouTube animations</a> and <a href='https://www.instagram.com/literalhat/'>artworks.</a></p>
+                                <p>This is the website of my passion. Thanks for visiting.</p>
                                 <img src=<?php echo ($links . 'images/pagedolls/mohawk-guy-waving.png'); ?>
                                     class='image small'
                                     src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
