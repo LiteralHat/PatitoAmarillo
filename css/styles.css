@@ -39,7 +39,7 @@
     --box-borders: 0.3rem;
 
     --tone1: #631a24;
-    --tone2: #742a3a;
+    --tone2: #883b4b;
     --tone3: #754258;
     --tone4: #4d2537;
     --tone5: #578676;
@@ -178,6 +178,10 @@ ol {
 }
 
 
+.medium {
+width: 28rem;
+font-size: 1.5rem;
+}
 
 .large {
     font-size: 3rem;
@@ -328,6 +332,8 @@ ol {
     flex-direction: row;
     box-sizing: border-box;
     height: auto;
+    justify-content: center;
+    align-items: start;
 }
 
 .columnbox {
@@ -368,8 +374,6 @@ ol {
 }
 
 .contentrowstripe {
-
-    background-color: pink;
     background: linear-gradient(to bottom,
             #ffffff,
             #ffffff 48%,
@@ -379,6 +383,8 @@ ol {
     flex-direction: column;
     align-items: center;
 }
+
+
 
 .contentrowblack {
     background-color: black;
@@ -439,10 +445,34 @@ ol {
 
 
 
+.buttonwhiteoutline {
+    font-family: var(--font-menu);
+    font-size: 2rem;
+    padding: 0.6rem 1rem;
+    border: var(--box-borders) solid white;
+    color: white;
+    background-color: black;
+}
+
+.buttonwhiteoutline:hover{
+
+    color: black;
+    background-color: white
+}
+
+.buttonfixedwidth {
+    width: 16rem;
+}
 
 
+.rpsbox {
+    margin: 0 -4rem;
+    box-sizing: border-box;
+}
 
-
+.rpsbox >p {
+    margin: 0 4rem;
+}
 
 
 
@@ -906,49 +936,50 @@ a:hover {
 
 
 
+
 .text1 {
     color: var(--tone1);
-    }
+}
 
 .text2 {
     color: var(--tone2);
-    }
+}
 
 .text3 {
     color: var(--tone3);
-    }
+}
 
 .text4 {
     color: var(--tone4);
-    }
+}
 
 .text5 {
     color: var(--tone5);
-    }
+}
 
 .text6 {
     color: var(--tone6);
-    }
+}
 
 .text7 {
     color: var(--tone7);
-    }
+}
 
 .text8 {
     color: var(--tone8);
-    }
+}
 
 .text9 {
     color: var(--tone9);
-    }
+}
 
 .textgreen {
     color: var(--tonegreen);
-    }
+}
 
 .textred {
     color: var(--tonered);
-    }
+}
 
 .textblack {
     color: var(--toneblack);
@@ -979,7 +1010,7 @@ a:hover {
     .extrawidthcontainer {
         width: 100%;
     }
-    
+
     .bigwidthcontainer {
         width: 100%;
     }
@@ -1097,11 +1128,15 @@ a:hover {
     border: 0.2rem solid white;
     height: 10rem;
     margin: 0.2rem;
-    
+
 }
 
 #fanartgallery {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+#opponents {
+    display: flex;
 }

@@ -3,6 +3,7 @@
 //$folder - for any php includes
 //$link - for any hrefs and srcs
 
+
 //if the document root isnt in the xammp htdocs directory then it is live
 
 if ($_SERVER['DOCUMENT_ROOT'] == 'C:/xampp/htdocs') {
