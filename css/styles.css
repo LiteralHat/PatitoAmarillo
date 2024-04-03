@@ -158,6 +158,11 @@ ol {
     font-style: italic;
 }
 
+
+.underline {
+    text-decoration: underline;
+}
+
 .warning {
     font-weight: bold;
     color: red;
@@ -172,6 +177,10 @@ ol {
     padding-left: 20px;
 }
 
+.tiny {
+    width: 13rem;
+}
+
 .small {
     font-size: 0.8rem;
     width: 20rem;
@@ -179,8 +188,8 @@ ol {
 
 
 .medium {
-width: 28rem;
-font-size: 1.5rem;
+    width: 28rem;
+    font-size: 1.5rem;
 }
 
 .large {
@@ -235,7 +244,6 @@ font-size: 1.5rem;
 .button {
     color: black;
     background-color: white;
-
     font-family: var(--font-logo);
     font-size: 1.7rem;
     border: var(--box-borders) solid black;
@@ -452,10 +460,10 @@ font-size: 1.5rem;
     border: var(--box-borders) solid white;
     color: white;
     background-color: black;
+    margin: 1rem;
 }
 
-.buttonwhiteoutline:hover{
-
+.buttonwhiteoutline:hover {
     color: black;
     background-color: white
 }
@@ -465,16 +473,17 @@ font-size: 1.5rem;
 }
 
 
-.rpsbox {
-    margin: 0 -4rem;
-    box-sizing: border-box;
-}
 
-.rpsbox >p {
-    margin: 0 4rem;
+
+.margin {
+    margin: 1rem;
 }
 
 
+.buttonplain {
+    border: none;
+    background-color: none;
+}
 
 
 
@@ -566,9 +575,7 @@ a:hover {
 
 
 
-.weezer {
-    display: none;
-}
+
 
 
 
@@ -908,9 +915,6 @@ a:hover {
 }
 
 
-
-
-
 .white {
     color: white;
 }
@@ -1001,8 +1005,171 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+#opponents {
+    display: flex;
+}
+
+#characterDialogueBox {
+    width: 30rem;
+    margin-top: -5rem;
+    box-sizing: border-box;
+}
+
+#funnybox {
+    min-height: 5rem;
+}
+
+.scorebox {
+    width: 7rem;
+    height: 11rem;
+}
+
+#characterImage {
+    width: 25rem;
+}
+
+#opponentScore {
+    font-family: var(--font-menu);
+    font-size: 4rem;
+}
+
+#playerScore {
+    font-family: var(--font-menu);
+    font-size: 4rem;
+}
+
+.flexcenter {
+    align-items: center;
+}
+
+.rpsbox {
+    margin: 0 -4rem;
+    box-sizing: border-box;
+}
+
+.rpsbox>p {
+    margin: 0 4rem;
+}
+
+.gamerowBox {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidebutton {
+    background-color: #ffffff00;
+    border: none;
+}
+
+.rpsicon {
+    width: 200px;
+}
+
+.rpsicon>*:hover {
+    transform: rotate(15deg);
+    transform: translateY(-1rem);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1545px) {
+
+    .bigwidthcontainer {
+        width: 71vw;
+    }
+
+    .biggerwidthcontainer {
+        width: 71vw;
+    }
+
+    .extrawidthcontainer {
+        width: 71vw;
+    }
+
+    .widthcontainer {
+        width: 45vw;
+    }
+
+    .rowbox {
+        width: 45vw;
+    }
+
+    .columnbox {
+        width: 45vw;
+    }
+
+    .contentcontainer {
+        width: 100%;
+    }
+
+    #sitelogo {
+        position: relative;
+        top: 1rem;
+        margin: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    button {
+        max-width: 28vw;
+    }
+
+    #characterDialogueBox {
+        margin-top: 0.2rem;
+    }
+
+    #characterImage {
+        width: 50rem;
+        margin: -6rem;
+    }
+
+    #gameBox {
+        height: 30rem;
+    }
+    
+
+
+}
+
+
+
+
 /* media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .widthcontainer {
         width: 100%;
     }
@@ -1060,7 +1227,7 @@ a:hover {
     }
 
     img {
-        max-width: 90%;
+        width: 90%;
         height: auto;
     }
 
@@ -1083,10 +1250,11 @@ a:hover {
         margin: 0;
         max-width: 100%;
     }
+
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     .mobileonly {
         display: none;
     }
@@ -1137,6 +1305,21 @@ a:hover {
     justify-content: center;
 }
 
-#opponents {
-    display: flex;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,9 +10,9 @@
         <ul>
             <li><a href=<?php echo $links . "artworks/gallery.php" ?>>Gallery</a></li>
         </ul> -->
-        <li class='tone2'><a href=<?php echo $links . "games/games.php" ?>>Games</a></li>
+        <li class='tone2'><a href=<?php echo $links . "random/rock-paper-scissors.php" ?>>Random</a></li>
         <ul>
-            <li><a href=<?php echo $links . "games/rock-paper-scissors.php" ?>>Rock Paper Scissors</a></li>
+            <li><a href=<?php echo $links . "random/rock-paper-scissors.php" ?>>Rock Paper Scissors</a></li>
         </ul>
         <li class='tone3'><a href=<?php echo $links . "community/fanart.php" ?>>Community</a></li>
         <ul>
