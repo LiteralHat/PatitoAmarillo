@@ -1,6 +1,13 @@
 const fanartGallery = document.getElementById('fanartgallery');
 const year = document.getElementById('year');
 const lightBoxElement = document.getElementById('lightBoxElement');
+const galleryDisplay = document.getElementById('galleryDisplay');
+const galleryCredit = document.getElementById('galleryCredit');
+
+
+lightBoxElement.style.display = 'none';
+
+
 
 
 let galleryList = {
@@ -14,6 +21,7 @@ let galleryList = {
 // Default Values
 let yearLoading = '2023';
 let keyLoading = galleryList[yearLoading].length;
+let artistName = '';
 
 updateYear(yearLoading);
 
@@ -25,16 +33,23 @@ function updateYear(what) {
     year.innerHTML = `You are currently viewing: ${yearLoading}`
     for (let z = 0; z <= keyLoading - 1; z++) {
         let artworkLoading = galleryList[yearLoading][z];
-        let artistName = artworkLoading.replace(/\.[^.]+$/, '');
         console.log(artistName);
-        fanartGallery.innerHTML += `<img onclick='lightBox("${artistName}")' loading="lazy" src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${artworkLoading}' alt='Fanart by ${artistName}'>`
+        fanartGallery.innerHTML += `<img onclick='lightBox("${artworkLoading}")' loading="lazy" src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${artworkLoading}' alt='Fanart by ${artistName}'>`
     };
 }
 
+
+
 function lightBox(name){
-console.log(name);
+lightBoxElement.style.display = '';
+artistName = name.replace(/\.[^.]+$/, '');
+galleryDisplay.innerHTML = `<img src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${name}' alt='Fanart by ${name}'>`
+galleryCredit.innerHTML = `By ${artistName}`
 };
 
+function hidelightBox(){
+    lightBoxElement.style.display = 'none';
+}
 
 // function checkIfImageExists(url, callback) {
 //     const img = new Image();

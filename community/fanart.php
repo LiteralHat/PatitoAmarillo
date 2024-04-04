@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralBlank.</title>
-    <meta name="LiteralHat | Blank." content="" />
+    <title>LiteralFanart.</title>
+    <meta name="LiteralHat | Fanart." content="Browse, look, and explore the fanart of LiteralHat." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -17,11 +17,7 @@
         <?php include_once ($menutop) ?>
         <!-- side bar on the left.  -->
 
-        <div id='lightBoxElement'>
-            <div id='galleryDisplay'>
-                <h2 class='white'>what the fuck</h2>
-            </div>
-        </div>
+
 
 
         <div class="contentrowstripe centerbox">
@@ -57,7 +53,23 @@
                     </div>
 
                     <div class='contentcontainer'>
+
+
+
+                        <div id='lightBoxElement' onclick='hidelightBox()'>
+                            <div class='center'>
+                                <div id='galleryDisplay'>
+                                </div>
+                                <h2 class='white' id='galleryCredit'>Artist Name :D</h2>
+                            </div>
+                        </div>
+
+
                         <section class='whitebox toneblack'>
+
+
+
+
                             <div class='whiteborder padded'>
 
                                 <h2 class='white' id='year'></h2>
@@ -81,6 +93,7 @@
 
                             </div>
                         </section>
+
                     </div>
 
 
