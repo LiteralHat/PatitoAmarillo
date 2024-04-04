@@ -5,7 +5,7 @@ const galleryDisplay = document.getElementById('galleryDisplay');
 const galleryCredit = document.getElementById('galleryCredit');
 
 
-lightBoxElement.style.display = 'none';
+
 
 
 
@@ -33,45 +33,31 @@ function updateYear(what) {
     year.innerHTML = `You are currently viewing: ${yearLoading}`
     for (let z = 0; z <= keyLoading - 1; z++) {
         let artworkLoading = galleryList[yearLoading][z];
-        console.log(artistName);
-        fanartGallery.innerHTML += `<img onclick='lightBox("${artworkLoading}")' loading="lazy" src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${artworkLoading}' alt='Fanart by ${artistName}'>`
+        fanartGallery.innerHTML += `<div id='${artworkLoading}'></div><img onclick='lightBox("${artworkLoading}")' loading="lazy" class='fanartimage' src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${artworkLoading}' alt='Fanart by ${artistName}'>`
     };
 }
 
 
+var lightboxID = '';
 
-function lightBox(name){
-lightBoxElement.style.display = '';
-artistName = name.replace(/\.[^.]+$/, '');
-galleryDisplay.innerHTML = `<img src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${name}' alt='Fanart by ${name}'>`
-galleryCredit.innerHTML = `By ${artistName}`
+function lightBox(name) {
+    lightboxID = document.getElementById(name);
+    console.log(document.getElementById(name))
+    let artistCredit = name.replace(/\.[^.]+$/, '');
+    document.getElementById(name).innerHTML += `<div id='lightBoxElement' onclick='hidelightBox()'>
+    <div class='center'>
+    <div class='spacermedium'>
+    </div>
+        <div id='lightBoxDisplay'>
+        <img loading="lazy" class='lightBoxImage' src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${name}' alt='Fanart by ${artistName}'>
+        </div>
+        <h2 class='white' id='galleryCredit'>Fanart By ${artistCredit}</h2>
+        <p class='white'>Click again to hide.</p>
+        </div>
+</div>
+`
 };
 
-function hidelightBox(){
-    lightBoxElement.style.display = 'none';
+function hidelightBox() {
+    lightboxID.innerHTML = '';
 }
-
-// function checkIfImageExists(url, callback) {
-//     const img = new Image();
-//     img.src = url;
-
-//     if (img.complete) {
-//         callback(true);
-//     } else {
-//         img.onload = () => {
-//             callback(true);
-//         };
-
-//         img.onerror = () => {
-//             callback(false);
-//         };
-//     }
-// }
-
-// checkIfImageExists(`https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${galleryList[yearLoading][z]}`, (exists) => {
-//     if (exists) {
-//         fanartGallery.innerHTML += `<img loading="lazy" src='https://reloaded.literalhat.com/literalfanart/${yearLoading}/literalfanart-${yearLoading}-${galleryList[yearLoading][z]}'>`
-//     } else {
-//         console.log('rip')
-//     }
-// });

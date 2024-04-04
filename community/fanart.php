@@ -56,13 +56,7 @@
 
 
 
-                        <div id='lightBoxElement' onclick='hidelightBox()'>
-                            <div class='center'>
-                                <div id='galleryDisplay'>
-                                </div>
-                                <h2 class='white' id='galleryCredit'>Artist Name :D</h2>
-                            </div>
-                        </div>
+                        
 
 
                         <section class='whitebox toneblack'>

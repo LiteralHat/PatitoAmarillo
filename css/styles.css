@@ -1299,7 +1299,7 @@ a:hover {
 
 
 
-#fanartgallery img {
+.fanartimage {
     justify-content: center;
     border: 0.2rem solid white;
     height: 10rem;
@@ -1315,22 +1315,28 @@ a:hover {
 
 }
 
-#fanartgallery p {
-    z-index: 1;
-    text-align: center;
-    color: red;
-    word-break: break-all;
-}
+
 
 #lightBoxElement {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.856);
+    background-color: black;
     position: absolute;
     z-index: 3;
+    display: block;
+    left: 0;
+
 }
 
-#lightBoxElement #galleryDisplay {
+#lightBoxElement #lightBoxDisplay {
     display: flex;
     justify-content: center;
+}
+
+.lightBoxImage {
+    border: var(--box-borders) solid white;
+}
+
+#galleryCredit {
+    padding: 1rem;
 }
