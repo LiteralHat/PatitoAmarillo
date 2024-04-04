@@ -85,6 +85,12 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                                <h3>v9.4.0-beta 05.04.2024</h3>
+                                <ul>
+                                    <li>Added gallery functionality</li>
+                                </ul>
+
                                 <h3>v8.4.0-beta 04.04.2024</h3>
                                 <ul>
                                     <li>Added Rock Paper Scissors</li>
