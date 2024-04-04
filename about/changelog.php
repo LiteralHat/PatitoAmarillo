@@ -85,11 +85,12 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                                <h3>v8.4.0-beta 04.03.2024</h3>
+                                <h3>v8.4.0-beta 04.04.2024</h3>
                                 <ul>
                                     <li>Added Rock Paper Scissors</li>
                                     <li>Updated Patreon Name List</li>
                                     <li>Fixed responsiveness issue on medium tablet pagewidths</li>
+                                    <li>Updated About + FAQ</li>
                                 </ul>
 
                                 <h3>v7.4.0-beta 23.03.2024</h3>

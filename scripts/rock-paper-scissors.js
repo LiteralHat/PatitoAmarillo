@@ -33,15 +33,15 @@ const actionScissor = document.getElementById('actionScissor');
 
 const opponents = [
     {
-        name: 'Hat',
+        name: 'hat',
         starttext: 'He gives you a perfunctory glance and faces away from you.'
     },
     {
-        name: 'Fang',
+        name: 'fang',
         starttext: 'She shakes your hand violently, jumps up and down, then awaits your move.'
     },
     {
-        name: 'Levy',
+        name: 'levy',
         starttext: 'He absolutely reeks of deep fried chicken.'
     }
 ];
@@ -49,7 +49,7 @@ const opponents = [
 
 const dialogues = [
     {
-        name: 'Hat',
+        name: 'hat',
         'win': ["You’re clearly holding him up, what’s even the point?",
             "He looks down at the floor, hoping you'll leave him alone.",
             "Congratulations. Here’s your useless Reddit gold.",
@@ -73,7 +73,7 @@ const dialogues = [
         'tie': []
     },
     {
-        name: 'Fang',
+        name: 'fang',
         'win': ["She fucking dies inside.",
             "You just killed a part of her.",
             "Underneath that smile lies a world of pain, masked by your victory.",
@@ -97,7 +97,7 @@ const dialogues = [
         'tie': []
     },
     {
-        name: 'Levy',
+        name: 'levy',
 
         'lose': ["He wears a smug grin, heavily mocking your chronic lack of skill.",
             "He looks at you with disbelief as if that’s the best you can do.",
@@ -158,12 +158,12 @@ function startGame(opponent) {
     pickAnOpponent.style.display = 'none';
     gameBoxPlayer.style.display = '';
     // Init chosen character
-    characterImage.src = `../images/rock-paper-scissors/literalhat-${opponent.name}-neutral.png`;
+    gameOpponent = opponent.name;
+    characterImage.src = `../images/rock-paper-scissors/literalhat-${opponent.name.toLowerCase()}-neutral.png`;
     opponentName.innerText = opponent.name;
     characterDialogue.innerHTML = `${opponent.starttext}`;
     characterName.innerHTML = `${opponent.name.toUpperCase()}`;
     characterMove.innerHTML = `...`;
-    gameOpponent = opponent.name;
     console.log('User chose to play game with ' + gameOpponent + '.');
 }
 
@@ -270,9 +270,10 @@ function gameTime(playerWeapon) {
 
 }
 
+var characterResult = '';
 
 function characterThink() {
-    let characterResult = mathFloorThatBadBoy(gameOpponent);
+    characterResult = mathFloorThatBadBoy(gameOpponent);
     characterPicture = `../images/rock-paper-scissors/literalhat-${gameOpponent}-${characterResult}.png`;
     return (characterResult);
 }
@@ -282,16 +283,16 @@ function characterThink() {
 function mathFloorThatBadBoy(characterInQuestion) {
     var chanceRolling = Math.floor(Math.random() * 100);
     switch (characterInQuestion) {
-        case 'Fang':
+        case 'fang':
             return gameTree[Math.floor(Math.random() * 3)].name;
-        case 'Hat':
+        case 'hat':
             if (chanceRolling < 50) {
                 console.log(loseTree[userWeapon]);
                 return loseTree[userWeapon];
             } else {
                 return gameTree[Math.floor(Math.random() * 3)].name;
             }
-        case 'Levy':
+        case 'levy':
             if (chanceRolling < 50) {
                 console.log(winTree[userWeapon]);
                 return winTree[userWeapon];

@@ -22,7 +22,7 @@
                 <div class='sidecontainer'>
 
 
-                            <?php include_once ($menusimple) ?>
+                    <?php include_once ($menusimple) ?>
 
                 </div>
 
@@ -42,16 +42,10 @@
 
                         <div class='contentcontainer'>
                             <div class="whitebox padded center">
-                                <p class='large'>Hi.</p>
+                                <p class='large'>Hi. I'm Hat.</p>
                                 <p>I'm just a dude, really.</p>
-                                <p>I was a Technical Animator from 2021-2023. I've worked on Rise of the TMNT: The Movie, LEGO: Monkie
-                                    Kid,
-                                    Marvel's Moon Girl + Devil Dinosaur, and much more.</p>
-                                    <p>Nowadays I'm just a boring front end web developer. One day I'll be full stack.</p>
-                                <p>In my free time I work on this website, play guitar, and draw.</p>
-                                <p>Sometimes I make <a href='https://www.youtube.com/c/literalhat' target='_blank'>YouTube animations</a> and <a href='https://www.instagram.com/literalhat/'>artworks.</a></p>
                                 <p>This is the website of my passion. Thanks for visiting.</p>
-                                <img src=<?php echo ($links . 'images/pagedolls/mohawk-guy-waving.png'); ?>
+                                <img src=<?php echo ($links . 'images/pagedolls/hat-hands-together.png'); ?>
                                     class='image small'
                                     src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
                             </div>
@@ -67,108 +61,34 @@
                                 </div>
                             </div>
                         </div>
-                    
-
-                    <div class='contentcontainer'>
-                        <div class="whitebox padded tone2">
-                            <div class="whitebox padded">
-                                <p class='question'>Can I use your art in ______?</p>
-                                <p>You are free to use any of my work as profile photos, banners, wallpapers, on your
-                                    website,
-                                    in edits, on forums, etc.</p>
-                                <p>You may also use my music or artwork in videos as long as it falls under fair use.
-                                </p>
-                                <p>You don't need to credit - but if you choose to, I am thankful.</p>
-                                <p>If you are unsure / need something for commercial use - please contact.</p>
-
-                                <p class='question'>Are you up for hire?</p>
-                                <p>Not at this time, sorry.</p>
-
-                                <p class='question'>What do you use to draw?</p>
-                                <p>From most to least: paper + ink, watercolors, Photoshop 2020, graphite.</p>
-
-                                <p class='question'>How can I contact you?</p>
-                                <p>Please email <i>support@literalhat.com</i>.</p>
-                                <p>I'm not really active on social media.</p>
-                            </div>
-                        </div>
-                    </div>
-                    </section>
 
 
-
-                    
-                    <section>
                         <div class='contentcontainer'>
-                            <div class="whitebox center toneblack">
-                                <div class='whiteborder'>
-                                    <h2 class='white padtop'>Website Rebuild Information</h2>
+                            <div class="whitebox padded tone2">
+                                <div class="whitebox padded">
+                                    <p class='question'>Can I use your art in ______?</p>
+                                    <p>Yeah. I encourage you to, actually.</p>
+                                    <p>Profile pictures, banners, edits, videos etc. - all are fine as long as your use
+                                        is not commercial.</p>
+                                    <p>No need to credit... but be kind to others in your usage.</p>
+                                    <p class='question'>How can I support you?</p>
+                                    <p>You can become a supporter through <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a>. But if you can't, that's okay. Show my stuff to your friends. That's all I ask.</p>
+                                    <p class='question'>How can I contact you?</p>
+                                    <p>Might be tricky - email <i>support@literalhat.com</i> and I may respond when I
+                                        have the chance.</p>
                                 </div>
                             </div>
                         </div>
-                    
-
-                    <div class='contentcontainer'>
-                        <div class="whitebox paddedsm toneblack">
-                            <div class='whiteborder'>
-                            <div class="whitebox padded noshadow">
-                            <p class="question">What happened to the old website?</p>
-                        <p>It's been retired, so unfortunately you won't see it again. If you miss it, visit the <a
-                                href="https://web.archive.org/web/*/literalhat.com">Wayback Machine</a> as I archived it
-                            from the very start.</p>
-                        <p class="question">Why are you rebuilding the website?</p>
-                        <p>Numerous issues:</p>
-                        <ul>
-                            <li>The file structure of the site was a mess. No naming conventions were used. In other
-                                words,
-                                if you wanted to embed an image (such as an artwork) directly from my site onto your
-                                forum /
-                                myspace / etc. and I decided to move or modify the image, it would often break and you'd
-                                have to manually embed it again.</li>
-                            <li>It was not very mobile / web responsive. Things would scale wrong and look broken across
-                                different devices and browsers. Styling was inconsistent. For example link colors would
-                                be
-                                red on one page but default blue on others.</li>
-                            <li>It did not meet <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG
-                                    standards.</a></li>
-                            <li>It's too laggy.</li>
-                            <li>SEO was inconsistent, meaning some pages would show up on Google and others wouldn't.
-                                Or,
-                                the SEO would just be outdated at times and pages would have incorrect titles / names.
-                            </li>
-                        </ul>
-                        <p>With this website rebuild I hope to solve as much of these issues as possible.</p>
-                        <p class="question">Will the artworks / articles / store be back?</p>
-                        <p>I intend to restore full functionality of the original website, so yes. Priority at the
-                            moment is
-                            as follows: <strong>website structure + functionality > back-end > styling (aesthetics +
-                                animation).</strong> In other words, this website might be super plain for quite the
-                            time.
-                        </p>
-                        <p class="question">How long will it take?</p>
-                        <p>I am rewriting all html / css / js / php from scratch. Please allow some time, and I thank
-                            you in
-                            advance for your patience.</p>
-                        <p>Should you be interested, I post daily updates and behind the scenes to my <a
-                                href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>.</p>
-                        <p><i>Hopefully this answers any questions. If not, contact me via email at
-                                support@literalhat.com.</i></p>
-                            </div>
-                        </div>
-</div>
-                    </div>
                     </section>
 
 
-
-                    <div class='spacermedium'></div>
-
+            <div class='spacermedium'></div>
 
 
 
 
-                </div>
 
+        </div>
 
 
 
@@ -176,12 +96,13 @@
 
 
 
-                <div class='sidecontainer'>
-                    <div class='contentbox padtop'>
-                    </div>
-                </div>
 
+        <div class='sidecontainer'>
+            <div class='contentbox padtop'>
             </div>
+        </div>
+
+        </div>
 
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
