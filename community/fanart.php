@@ -12,6 +12,7 @@
 <body>
     <main>
 
+
         <!-- Header and opening main content div used for styling  -->
         <?php include_once ($header) ?>
         <?php include_once ($menutop) ?>
@@ -19,6 +20,8 @@
 
 
 
+        <div id='lightBoxContainer'>
+        </div>
 
         <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
@@ -45,38 +48,31 @@
 
                     <div class='contentcontainer'>
                         <div class="whitebox tone3 paddedsm">
-                            <div class="whitebox padded">
+                            <div class="whitebox padded center">
                                 <h2>Welcome to the fanart gallery.</h2>
-                                <p>
+                                <p>This is where you can view artworks made by you.</p>
+                                <p>To enlarge an image and see the artist's name, simply click on the image.</p>
+                                <p>If you want an image removed, or your artwork is credited with 'unknown', please email <i>support@literalhat.com</i>.</p>
+                                <p class='bold'>If you have something to submit, hold on for now - you'll be able to submit directly here in the future.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class='contentcontainer'>
-
-
-
-                        
-
-
                         <section class='whitebox toneblack'>
-
-
-
-
                             <div class='whiteborder padded'>
 
                                 <h2 class='white' id='year'></h2>
                                 <p class='white'>
-                                    <span class='white' onclick='updateYear(2024)'>2024</span>
+                                    <span class='white yearhover' onclick='updateYear(2024)'>2024</span>
                                     -
-                                    <span class='white' onclick='updateYear(2023)'>2023</span>
+                                    <span class='white yearhover' onclick='updateYear(2023)'>2023</span>
                                     -
-                                    <span class='white' onclick='updateYear(2022)'>2022</span>
+                                    <span class='white yearhover' onclick='updateYear(2022)'>2022</span>
                                     -
-                                    <span class='white' onclick='updateYear(2021)'>2021</span>
+                                    <span class='white yearhover' onclick='updateYear(2021)'>2021</span>
                                     -
-                                    <span class='white' onclick='updateYear(2020)'>2020</span>
+                                    <span class='white yearhover' onclick='updateYear(2020)'>2020</span>
                                 </p>
 
                                 <hr>
