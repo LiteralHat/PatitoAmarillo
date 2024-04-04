@@ -1160,7 +1160,7 @@ a:hover {
     #gameBox {
         height: 30rem;
     }
-    
+
 
 
 }
@@ -1291,11 +1291,18 @@ a:hover {
 
 
 
+
+
+
+
+
+
 #fanartgallery img {
     justify-content: center;
     border: 0.2rem solid white;
     height: 10rem;
-    margin: 0.2rem;
+
+    margin: 0.3rem;
 
 }
 
@@ -1303,23 +1310,26 @@ a:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
 }
 
+#fanartgallery p {
+    z-index: 1;
+    text-align: center;
+    color: red;
+    word-break: break-all;
+}
 
+#lightBoxElement {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    display: none;
+    z-index: 3;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#lightBoxElement #galleryDisplay {
+    display: flex;
+    justify-content: center;
+}
