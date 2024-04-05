@@ -30,13 +30,13 @@
 
                 </div>
 
-                <div class="extrawidthcontainer">
+                <div class="extrawidthcontainer center">
                     <div class='contentcontainer'>
                         <div class="whitebox toneblack">
                             <div class="whiteborderdotted">
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
-                                        <section class="section center">
+                                        <section class="section">
                                             <img src="images/pagedolls/literalhat-punks-not-dead.png" height="800px" id='sitelogo'
                                                 alt='literalhat.com logo behind a large group of cartoon sheep'>
 

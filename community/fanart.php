@@ -52,8 +52,11 @@
                                 <h2>Welcome to the fanart gallery.</h2>
                                 <p>This is where you can view artworks made by you.</p>
                                 <p>Click on an image to enlarge and see the artist's name, click again to hide.</p>
-                                <p>If you want an image removed, or your artwork is credited with 'unknown', please email <i>support@literalhat.com</i>.</p>
-                                <p class='bold'>If you have something to submit, hold on for now - you'll be able to submit directly here in the future.</p>
+                                <p>If you want an image removed, or your artwork is credited with 'unknown', please
+                                    email <i>support@literalhat.com</i>.</p>
+                                <p class='bold'>If you have something to submit, hold on for now - you'll be able to
+                                    submit directly here in the future.</p>
+                                <p class='warning'>Please note that links currently aren't permanent!</p>
                             </div>
                         </div>
                     </div>
@@ -76,6 +79,15 @@
                                 </p>
 
                                 <hr>
+                                <div class='center padded' id='loadingDiv'>
+                                    <img src='../images/pagedolls/loading.gif' style='width:300px'>
+                                    <div>
+                                        <span class='fancy large white'>Loading</span>
+                                        <span class='fancy large white' id='loadText'></span>
+                                    </div>
+                                </div>
+
+
                                 <div class='padtop' id="fanartgallery">
                                     <!-- js appends here -->
                                 </div>

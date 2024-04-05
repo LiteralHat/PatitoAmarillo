@@ -41,15 +41,26 @@
                         </div>
 
                         <div class='contentcontainer'>
-                            <div class="whitebox padded center">
-                                <p class='large'>Hi. I'm Hat.</p>
-                                <p>I'm just a dude, really.</p>
-                                <p>This is the website of my passion. Thanks for visiting.</p>
-                                <img src=<?php echo ($links . 'images/pagedolls/hat-hands-together.png'); ?>
-                                    class='image small'
-                                    src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
+                            <div class="whitebox padded">
+                                <div class="center">
+                                    <p class='large'>Hi. I'm Hat.</p>
+                                    <p>I'm just a dude, really.</p>
+                                    <p>Sometimes I draw, sometimes I animate.</p>
+                                    <p>On good days, I code. On bad days, I code anyways, but with more StackOverflow.</p>
+                                    <p>I also enjoy pretending to be a competent guitarist.</p>
+                                    <p>This is the website of my passion. Thanks for visiting.</p>
+                                    <img src=<?php echo ($links . 'images/pagedolls/hat-hands-together.png'); ?>
+                                        class='image small'
+                                        src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
+                                </div>
+                                    <p class='bold smalltext centerbox'>if (sleepSchedule == 'fucked') {<br>
+                                    doCoding();<br>
+                                    } else {<br>
+                                    shredGuitar();<br>
+                                    }
+                                </p>
+                                
                             </div>
-                        </div>
                     </section>
 
 
@@ -67,28 +78,31 @@
                             <div class="whitebox padded tone2">
                                 <div class="whitebox padded">
                                     <p class='question'>Can I use your art in ______?</p>
-                                    <p>Yeah. I encourage you to, actually.</p>
+                                    <p>Yeah. Please do, actually.</p>
                                     <p>Profile pictures, banners, edits, videos etc. - all are fine as long as your use
                                         is not commercial.</p>
                                     <p>No need to credit... but be kind to others in your usage.</p>
                                     <p class='question'>How can I support you?</p>
-                                    <p>You can become a supporter through <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a>. But if you can't, that's okay. Show my stuff to your friends. That's all I ask.</p>
+                                    <p>Monetarily? You don't need to, I have a day job.</p>
+                                    <p>If you insist, it would be cool if you showed some of my stuff to your friends. That's all I ask :)</p>
+                                        <p>I have a <a href='https://www.patreon.com/LiteralHat'
+                                        target='_blank'>Patreon</a> where I post daily if you're interested though.</p>
                                     <p class='question'>How can I contact you?</p>
-                                    <p>Might be tricky - email <i>support@literalhat.com</i> and I may respond when I
-                                        have the chance.</p>
+                                    <p>Might be tricky - email <i>support@literalhat.com</i> and see what happens..?</p>
+                                    <p>I don't really use social media, sorry.</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
 
-            <div class='spacermedium'></div>
+                    <div class='spacermedium'></div>
 
 
 
 
 
-        </div>
+                </div>
 
 
 
@@ -97,12 +111,12 @@
 
 
 
-        <div class='sidecontainer'>
-            <div class='contentbox padtop'>
+                <div class='sidecontainer'>
+                    <div class='contentbox padtop'>
+                    </div>
+                </div>
+
             </div>
-        </div>
-
-        </div>
 
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->

@@ -1,7 +1,7 @@
 <!-- top part of content box that houses external links  -->
 <div class="contentrowblack centerbox">
     <div class='boxedsection'>
-        <div class="bigwidthcontainer extrawidth">
+        <div class="bigwidthcontainer">
             <div class='contentcontainer'>
                 <div class='tonegreen whitebox noshadow center'>
                     <nav>

@@ -61,18 +61,14 @@
                                 <div class="whitebox padded">
                                     <h2 class='textred'>Known Issues</h2>
                                     <ul>
-                                        <li>Strange white bar appears on the right of the footer on some mobile devices
+                                        <li>None at the moment
                                         </li>
                                     </ul>
 
                                     <h2 class='textgreen'>Unreleased</h2>
                                     <ul>
                                         <li>Working search bar</li>
-                                        <li>Responsive dynamic gallery</li>
-                                        <li>Gallery lightbox</li>
-                                        <li>Permalinks for gallery images</li>
-                                        <li>Add the rest of the fanart</li>
-                                        <li>Fanart gallery username credits</li>
+                                        <li>Better site theme</li>
                                         <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
                                     </ul>
                                 </div>
@@ -85,6 +81,18 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v10.4.0-beta 06.04.2024</h3>
+                                <ul>
+                                    <li>Updated frontpage</li>
+                                    <li>Added gallery loading animation</li>
+                                    <li>Added gallery basic hover effect</li>
+                                    <li>Added better gallery lightbox</li>
+                                    <li>Added better gallery credits</li>
+                                    <li>Added better responsiveness on tablet width devices</li>
+                                    <li>Fixed unwanted whitespace on right of screen on some devices</li>
+                                    <li>Fixed gallery year hover colors unwanted whitespace on right of screen on some
+                                        devices</li>
+                                </ul>
 
                                 <h3>v9.4.0-beta 05.04.2024</h3>
                                 <ul>
