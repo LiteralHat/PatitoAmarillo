@@ -51,7 +51,7 @@
                             <div class="whitebox padded center">
                                 <h2>Welcome to the fanart gallery.</h2>
                                 <p>This is where you can view artworks made by you.</p>
-                                <p>To enlarge an image and see the artist's name, simply click on the image.</p>
+                                <p>Click on an image to enlarge and see the artist's name, click again to hide.</p>
                                 <p>If you want an image removed, or your artwork is credited with 'unknown', please email <i>support@literalhat.com</i>.</p>
                                 <p class='bold'>If you have something to submit, hold on for now - you'll be able to submit directly here in the future.</p>
                             </div>
