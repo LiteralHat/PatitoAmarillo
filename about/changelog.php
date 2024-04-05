@@ -81,6 +81,14 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                                <h3>v10.5.0-beta 06.04.2024</h3>
+                                <ul>
+                                    <li>Added thumbnail rendering to fanart page</li>
+                                    <li>Fixed changelog issues</li>
+                                </ul>
+
+
                                 <h3>v10.4.0-beta 06.04.2024</h3>
                                 <ul>
                                     <li>Updated frontpage</li>
@@ -90,8 +98,7 @@
                                     <li>Added better gallery credits</li>
                                     <li>Added better responsiveness on tablet width devices</li>
                                     <li>Fixed unwanted whitespace on right of screen on some devices</li>
-                                    <li>Fixed gallery year hover colors unwanted whitespace on right of screen on some
-                                        devices</li>
+                                    <li>Fixed gallery year hover colors</li>
                                 </ul>
 
                                 <h3>v9.4.0-beta 05.04.2024</h3>
@@ -157,20 +164,7 @@
                                     <li>Added about+FAQ page</li>
                                     <li>Added gamer QnA</li>
                                     <li>Removed goback button</li>
-                                    <li>Added variables in place of fonts on stylesheet
-                                    <li>
-                                    <li>Changed link colors to gray</li>
-                                </ul>
-
-                                <h3>v5.2.0-beta 16.03.2024</h3>
-                                <ul>
-                                    <li>Added menu navigation bar</li>
-                                    <li>Added consistent site colors</li>
-                                    <li>Added about+FAQ page</li>
-                                    <li>Added gamer QnA</li>
-                                    <li>Removed goback button</li>
-                                    <li>Added variables in place of fonts on stylesheet
-                                    <li>
+                                    <li>Added variables in place of fonts on stylesheet</li>
                                     <li>Changed link colors to gray</li>
                                 </ul>
 
