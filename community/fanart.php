@@ -114,9 +114,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
         <script src="../scripts/fanartgallery.js"></script>
-
 
         <?php include ($footer) ?>
     </main>

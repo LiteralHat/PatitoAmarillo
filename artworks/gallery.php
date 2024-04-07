@@ -63,16 +63,7 @@
                             <div class='whiteborder'>
                                 <div class='whitebox noshadow padded'>
                                     <h2>Welcome to the gallery.</h2>
-                                    <p>This section of the website contains my artworks. You
-                                        can either click the buttons to be taken to a random artwork, check out whatever
-                                        is newest, or find a piece using the extensive filter.</p>
-                                    <p>My coding is probably shit, if the filter has broken in some way please send an
-                                        email to support@literalhat.com.</p>
-                                    <p class='bold'>Please note that at this time, gore artworks are not viewable and
-                                        will require a Patreon account to login and access in the future.</p>
-                                    <p class='warning'>As of right now artworks are still being uploaded - I have more
-                                        than 1000 individual files to upload, sort, and tag.</p>
-                                    <p>Your patience is appreciated.</p>
+                                    <p>Insert some interesting text here about the page, I dont really wanna do it right now</p>
                                 </div>
                             </div>
                         </div>
