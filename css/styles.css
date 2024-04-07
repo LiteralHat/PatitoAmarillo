@@ -130,6 +130,19 @@ hr {
     border: 1px solid white;
 }
 
+.hrtextseparator {
+    border: 1px solid black;
+    margin-bottom: 0.5rem;
+    margin-top: 1.6rem;
+}
+
+
+dl {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: black;
+}
 
 p,
 blockquote,
@@ -387,6 +400,8 @@ ol {
 
 .contentrowwhite {
     background-color: white;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contentrowstripe {
@@ -404,6 +419,8 @@ ol {
 
 .contentrowblack {
     background-color: black;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer {
@@ -1100,6 +1117,86 @@ a:hover {
 
 
 
+
+
+
+.galleryimage {
+    width: 700px;
+    border: var(--box-borders) solid black;
+    box-shadow: 7px 7px 0 0 ;
+    position: relative;
+    top: 2rem;
+}
+
+#galleryarrowleft {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-right: 60px solid white;
+    margin-right: auto;
+}
+
+#galleryarrowleftshadow {
+    position: relative;
+    top: -6.85rem;
+    left: 0.26rem;
+    width: 0; 
+    height: 0; 
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 50px solid black;
+    margin-right: auto;
+}
+
+#galleryarrowright {
+    width: 0; 
+    height: 0; 
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid white;
+    margin-left: auto;
+}
+
+#galleryarrowrightshadow {
+    position: relative;
+    top: -6.85rem;
+    right: 0.26rem;
+    width: 0; 
+    height: 0; 
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid black;
+    margin-left: auto;
+}
+
+.gallerydetails dt {
+    font-weight: bold;
+    float: left;
+}
+
+.gallerydetails dd {
+    margin-left: 35%;
+}
+
+.gallerydetails dd::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#galleryarrowrightcontainer {
+    position: relative;
+    left: 2.4rem;
+    top: 3rem;
+}
+
+
+#galleryarrowleftcontainer {
+    position: relative;
+    right: 2.4rem;
+    top: 3rem;
+}
 
 
 

@@ -5,7 +5,7 @@
 
 <head>
     <title>LiteralBlank.</title>
-    <meta name="LiteralHat | Blank." content="" />
+    <meta name="LiteralHat | Gallery." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -63,7 +63,8 @@
                             <div class='whiteborder'>
                                 <div class='whitebox noshadow padded'>
                                     <h2>Welcome to the gallery.</h2>
-                                    <p>Insert some interesting text here about the page, I dont really wanna do it right now</p>
+                                    <p>Insert some interesting text here about the page, I dont really wanna do it right
+                                        now</p>
                                 </div>
                             </div>
                         </div>
@@ -87,17 +88,13 @@
 
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
-
                 <div class='sidecontainer'>
 
 
 
-                    <form class='form'>
+                    <form class='form' method='get'>
                         <div class='contentcontainer'>
-                            <div class='spacersmall'>
-                            </div>
                             <div class="whitebox padded">
-
                                 <h2>Advanced Search:</h2>
                                 <fieldset id='titlecontains'>
                                     <p>
@@ -112,7 +109,7 @@
                                     <h3>Date Range:</h3>
                                     <p>
                                         <label for="fuzzydate"><input id="fuzzydate" type="checkbox" name="fuzzy" />
-                                            Fuzzy Date</label>
+                                            Fuzzy Date</p></label>
 
                                     <ul>
                                         <li><label for="beforedate">From:</label><input id="beforedate" type="date"
@@ -120,17 +117,14 @@
                                         <li><label for="afterdate">To: </label><input id="afterdate" type="date"
                                                 name="afterdate" /></li>
                                     </ul>
-                                    </p>
+                                    
                                 </fieldset>
 
 
                                 <fieldset>
                                     <label for='mediums'>
                                         <h3>Mediums:</h3>
-
-                                        <label for="containsonly"><input id="containsonly" type="checkbox"
-                                                name="containsonly" /> Contains only:</label>
-                                        <p>
+                                      
                                         <ul>
                                             <li><input id="watercolor" type="checkbox" name="watercolor" /><label
                                                     for="watercolor"> Watercolor</label></li>
@@ -149,11 +143,11 @@
                                             <li><input id="mixedmedia" type="checkbox" name="mixedmedia" /><label
                                                     for="mixedmedia"> Mixed Media</label></li>
                                         </ul>
-                                        </p>
+                                      
                                     </label>
                                 </fieldset>
 
-                                <fieldset>
+                                <!-- <fieldset>
                                     <h3>Show For Sale Only?</h3>
                                     <p>
                                         <input id="forsale" type="radio" name="forsale" selected /><label for="forsale">
@@ -178,13 +172,12 @@
                                     <input id="hide" type="radio" name="gorevisibility" /><label for="hide">
                                         Hide</label>
                                     </p>
-                                </fieldset>
+                                </fieldset> -->
+
 
                                 <fieldset>
-                                    <h3>Characters:</h3>
-                                    <p>
-                                        <input id="containsonly" type="checkbox" name="containsonly" /><label
-                                            for="containsonly"> Contains only:</label>
+                                    <h3>Tags:</h3>
+                                    
                                     <ul>
                                         <li><input id="hat" type="checkbox" name="hat" /><label for="hat"> Hat</label>
                                         </li>
@@ -197,16 +190,16 @@
                                         <li><input id="pigtails" type="checkbox" name="pigtails" /><label
                                                 for="pigtails"> Pigtails</label></li>
                                     </ul>
-                                    </p>
+                                   
+                                </fieldset>
+
+                                <fieldset>
+                                    <button class='button'>SEARCH</button>
                                 </fieldset>
                             </div>
                         </div>
 
-                        <div class='contentcontainer'>
-                                <fieldset>
-                                    <button class='button'>SEARCH</button>
-                                </fieldset>
-                        </div>
+
                     </form>
 
 
