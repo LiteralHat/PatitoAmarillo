@@ -61,8 +61,7 @@
                                 <div class="whitebox padded">
                                     <h2 class='textred'>Known Issues</h2>
                                     <ul>
-                                        <li>None at the moment
-                                        </li>
+                                        <li>Gallery is not mobile responsive</li>
                                     </ul>
 
                                     <h2 class='textgreen'>Unreleased</h2>
@@ -70,6 +69,8 @@
                                         <li>Working search bar</li>
                                         <li>Better site theme</li>
                                         <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
+                                        <li>Search functionality on gallery page</li>
+                                        <li>Filter and sort functionality on gallery page</li>
                                     </ul>
                                 </div>
                             </div>
@@ -81,13 +82,21 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v11.5.0-beta 09.04.2024</h3>
+                                <ul>
+                                    <li>Added LiteralGallery!</li>
+                                    <li>Added individual gallery pages</li>
+                                    <li>Added placeholder images for gallery</li>
+                                    <li>Added gallery to menu</li>
+                                    <li>Updated About FAQ page</li>
+                                </ul>
+
 
                                 <h3>v10.5.0-beta 06.04.2024</h3>
                                 <ul>
                                     <li>Added thumbnail rendering to fanart page</li>
                                     <li>Fixed changelog issues</li>
                                 </ul>
-
 
                                 <h3>v10.4.0-beta 06.04.2024</h3>
                                 <ul>
