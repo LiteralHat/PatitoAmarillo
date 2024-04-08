@@ -1,4 +1,25 @@
 @font-face {
+    font-family: CuteNotes;
+    src: url('fonts/CuteNotes.ttf');
+}
+
+@font-face {
+    font-family: Deco;
+    src: url('fonts/Deco.otf');
+}
+
+@font-face {
+    font-family: Retro;
+    src: url('fonts/Retro.ttf');
+}
+
+@font-face {
+    font-family: Minercraftory;
+    src: url('fonts/Minercraftory.ttf');
+}
+
+
+@font-face {
     font-family: RobotoMono;
     src: url('fonts/RobotoMono.ttf');
 }
@@ -50,6 +71,7 @@
     --tonered: #c4001e;
     --tonegreen: #106363;
     --toneblack: #000000;
+    --tonegrey: #697270;
 
 
     /* Used for main site logo */
@@ -63,7 +85,8 @@
     /* For the top menu */
     --font-loud: Spinnaker, Russo One, Verdana;
     /* Extra font for fancy text quote */
-    --font-fancy: Gamer, Spinnaker, Russo One;
+    --font-fancy: Retro, Spinnaker, Russo One;
+    /* Extra font for fancy text quote */
 }
 
 * {
@@ -196,6 +219,7 @@ ol {
     width: 13rem;
 }
 
+
 .small {
     font-size: 0.8rem;
     width: 20rem;
@@ -236,7 +260,7 @@ ol {
 
 
 .alignright {
-text-align: right;
+    text-align: right;
 }
 
 
@@ -340,7 +364,7 @@ text-align: right;
 .widthcontainer {
     width: var(--content-width);
     box-sizing: border-box;
-    
+
 }
 
 .bigwidthcontainer {
@@ -880,7 +904,10 @@ a:hover {
 
 .fancy {
     font-family: var(--font-fancy);
+
 }
+
+
 
 .quote {
     font-size: 2.4rem;
@@ -951,6 +978,12 @@ a:hover {
     background-color: var(--toneblack);
     color: white !important;
 }
+
+
+.tonegrey {
+    background-color: var(--tonegrey);
+}
+
 
 
 .white {
@@ -1027,7 +1060,9 @@ a:hover {
     color: var(--toneblack);
 }
 
-
+.textgrey {
+    color: var(--tonegrey);
+}
 
 
 
@@ -1133,30 +1168,6 @@ a:hover {
 
 
 
-.galleryimage {
-    width: 700px;
-    border: var(--box-borders) solid black;
-    box-shadow: 7px 7px 0 0 ;
-
-}
-
-
-
-.gallerydetails dt {
-    font-weight: bold;
-    float: left;
-}
-
-.gallerydetails dd {
-    margin-left: 35%;
-}
-
-.gallerydetails dd::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
 
 
 
@@ -1188,12 +1199,12 @@ a:hover {
         width: 100%;
     }
 
-    img{
+    img {
         max-width: 100%;
         height: auto;
     }
 
-    .framedimage{
+    .framedimage {
         max-width: 90%;
         height: auto;
     }
@@ -1205,7 +1216,7 @@ a:hover {
         max-width: 100%;
         height: auto;
     }
- 
+
     button {
         max-width: 28vw;
     }
@@ -1370,7 +1381,7 @@ a:hover {
 
 .fanartimage:hover {
     opacity: 0.8;
-    
+
 }
 
 #fanartgallery {
@@ -1388,7 +1399,7 @@ a:hover {
 
 }
 
-.lightBoxElement img{
+.lightBoxElement img {
     width: max-content;
     height: auto;
     margin: 0.6rem auto 0.4rem;
@@ -1406,7 +1417,7 @@ a:hover {
 
 .yearhover {
     color: white;
-    
+
 }
 
 .yearhover:hover {
@@ -1420,4 +1431,139 @@ a:hover {
     width: 0px;
     height: 0px;
     background-color: red;
+}
+
+
+
+
+
+
+
+
+
+.galleryimage {
+    width: 600px;
+}
+
+.gallerydetails dt {
+    font-weight: bold;
+    float: left;
+}
+
+.gallerydetails dd {
+    margin-left: 35%;
+}
+
+.gallerydetails dd::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gallerycode {
+    width: 100%;
+}
+
+.gallerybutton {
+    border: var(--box-borders) solid black;
+    box-shadow: 7px 7px 0 0 black;
+    transition: all 50ms ease;
+    position: relative;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 8rem;
+}
+
+.gallerybutton:hover {
+    box-shadow: 15px 15px 0 0 black;
+    position: relative;
+    top: -0.3rem;
+    left: -0.3rem;
+    background-color: black;
+}
+
+.gallerybutton:hover hr {
+    width: 80%;
+}
+
+.gallerybutton hr {
+    width: 100%;
+    transition: all 50ms ease;
+    margin: 0 auto;
+}
+
+.gallerybutton p,
+.gallerybutton a {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.gallerybutton:hover img {
+    transform: rotate(-10deg);
+}
+
+.gallerybutton img {
+    height: 94px;
+    transition: all 50ms ease;
+}
+
+.gallerythumbnail img {
+    border: 0.26rem solid black;
+    padding: 0.2rem;
+    margin: 0.7rem 0;
+}
+
+.gallerythumbnail p {
+    padding: 0;
+    margin-bottom: 0.4rem;
+}
+
+.gallerythumbnail a {
+    text-decoration: none;
+}
+.gallerythumbnail {}
+
+.gallerytitle {
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+}
+
+#galleryitems {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    align-items: end;
+    justify-content: center;
+}
+
+#gallerytext {
+    font-size: 4rem;
+    font-family: var(--font-fancy);
+}
+
+#gallerytext a {
+    text-decoration: none;
+}
+
+#gallerymenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    position: relative;
+    right: 1rem;
+}
+
+#gallerymenu a {
+    text-decoration: none;
+}
+
+.galleryheader {
+    font-family: var(--font-fancy);
+    font-size: 2rem;
 }

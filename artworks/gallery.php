@@ -1,4 +1,5 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../variables.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,86 +14,39 @@
     <main>
 
 
-
-        <div class="contentrowstripe centerbox">
-            <div class='boxedsection'>
-                <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
-
-                </div>
-
-                <div class='bigwidthcontainer'>
-                    <div class='contentcontainer'>
-                        <div class="whitebox center tone8">
-                            <div class='whiteborder padded'>
-                                <hr>
-                                <h1 class='white padtop huge'>
-                                    LITERALGALLERY
-                                </h1>
-                                <hr>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class='sidecontainer'>
-                    <div class='contentbox padtop'>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <!-- Footer and closing div tags used for styled main content box  -->
-        <?php include_once ($menutop) ?>
-        <!-- side bar on the left.  -->
-
-        <div class="contentrowblack centerbox">
-            <div class='boxedsection'>
-                <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
-
-                </div>
-
-                <div class='biggerwidthcontainer'>
-                    <div class='contentcontainer'>
-                        <div class="whitebox toneblack">
-                            <div class='whiteborder'>
-                                <div class='whitebox noshadow padded'>
-                                    <h2>Welcome to the gallery.</h2>
-                                    <p>Insert some interesting text here about the page, I dont really wanna do it right
-                                        now</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class='spacersmall'>
-                    </div>
-                </div>
-
-
-                <div class='sidecontainer'>
-                    <div class='contentbox padtop'>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <?php include_once ($folder . '/elements/galleryheader.php');
+        // if (isset($_GET['submit'])) {
+        //     echo $_GET['title'];
+        //     echo $_GET['fuzzy'];
+        //     echo $_GET['beforedate'];
+        //     echo $_GET['afterdate'];
+        //     echo $_GET['tags'];
+        //     echo $_GET['watercolor'];
+        // };
+        ?>
 
 
 
 
         <div class="contentrowwhite centerbox">
+            <div class='widthcontainer centerbox'>
+                <div class='contentcontainer'>
+                    <div class='columnbox'>
+                        <p>Welcome to the gallery. In this section of the website you can find artworks that I've drawn
+                            over
+                            the years. Please note that this section does NOT contain <i>full sketchbooks</i>, which are
+                            <a href='https://www.patreon.com/LiteralHat' target="_blank">Patreon only.</a>
+                        </p>
+                        <p>I am a single person developing this gallery as well as cataloguing artworks, so any patience
+                            is wholly appreciated.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class='boxedsection'>
                 <div class='sidecontainer'>
-
-
-
-                    <form class='form' method='get'>
+                    <div class='spacermedium'></div>
+                    <form class='form' action='' method='get'>
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <h2>Advanced Search:</h2>
@@ -109,7 +63,8 @@
                                     <h3>Date Range:</h3>
                                     <p>
                                         <label for="fuzzydate"><input id="fuzzydate" type="checkbox" name="fuzzy" />
-                                            Fuzzy Date</p></label>
+                                            Fuzzy Date
+                                    </p></label>
 
                                     <ul>
                                         <li><label for="beforedate">From:</label><input id="beforedate" type="date"
@@ -117,14 +72,14 @@
                                         <li><label for="afterdate">To: </label><input id="afterdate" type="date"
                                                 name="afterdate" /></li>
                                     </ul>
-                                    
+
                                 </fieldset>
 
 
                                 <fieldset>
                                     <label for='mediums'>
                                         <h3>Mediums:</h3>
-                                      
+
                                         <ul>
                                             <li><input id="watercolor" type="checkbox" name="watercolor" /><label
                                                     for="watercolor"> Watercolor</label></li>
@@ -143,7 +98,7 @@
                                             <li><input id="mixedmedia" type="checkbox" name="mixedmedia" /><label
                                                     for="mixedmedia"> Mixed Media</label></li>
                                         </ul>
-                                      
+
                                     </label>
                                 </fieldset>
 
@@ -176,25 +131,15 @@
 
 
                                 <fieldset>
-                                    <h3>Tags:</h3>
-                                    
-                                    <ul>
-                                        <li><input id="hat" type="checkbox" name="hat" /><label for="hat"> Hat</label>
-                                        </li>
-                                        <li><input id="chickenman" type="checkbox" name="chickenman" /><label
-                                                for="title"> Chicken Man</label></li>
-                                        <li><input id="lady" type="checkbox" name="lady" /><label for="title">
-                                                Lady</label></li>
-                                        <li><input id="fluffy" type="checkbox" name="fluffy" /><label for="fluffy">
-                                                Fluffy</label></li>
-                                        <li><input id="pigtails" type="checkbox" name="pigtails" /><label
-                                                for="pigtails"> Pigtails</label></li>
-                                    </ul>
-                                   
+
+                                    <label for="tags">
+                                        Tags (separated by comma)
+                                        <input id="tags" type="text" name="tags" />
+                                    </label>
                                 </fieldset>
 
                                 <fieldset>
-                                    <button class='button'>SEARCH</button>
+                                    <button class='button' type='submit'  value='submit'  name='submit'>SEARCH</button>
                                 </fieldset>
                             </div>
                         </div>
@@ -213,26 +158,35 @@
 
 
                 <div class='biggerwidthcontainer'>
-
-
-
-                    <div class='spacermedium'>
-                    </div>
-
-
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
+                            <h2>Viewing all artworks: </h2><span>(Count currently unavailable. I'll code it
+                                soon!)</span>
+                            <hr class='hrtextseparator'>
+                            <div id='galleryitems'>
+                                <?php
+                                //define PDO tell about the db file
+                                $pdo = new PDO('sqlite:artworks.db');
 
-                            <h1>test</h1>
-                            <p>Aliqua nulla eu sint tempor esse aliqua mollit in ullamco sunt laborum cillum. Fugiat
-                                aute est consequat pariatur eiusmod ullamco quis velit commodo do cillum. Deserunt
-                                enim
-                                consectetur laborum eiusmod dolore quis nisi magna eu amet veniam id mollit. Nulla
-                                nisi
-                                Lorem voluptate eu elit ea adipisicing cupidatat ut nostrud aliqua velit. Mollit
-                                proident laborum ex quis adipisicing Lorem sint elit deserunt ex deserunt. Pariatur
-                                aliqua culpa Lorem est ut laboris enim.</P>
 
+                                $statement = $pdo->query("SELECT * FROM artworks");
+
+                                $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                                foreach ($artworksdb as $row => $artwork) {
+                                    $wordsArray = explode("-", $artwork['title']);
+                                    $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                    $finalString = implode(" ", $capitalizedWords);
+                                    $dateString = htmlspecialchars($artwork['datecreated']);
+                                    $year = substr($dateString, 0, 4);
+
+                                    // $wordsArray2 = explode("-", $artwork['collection']);
+                                    // $capitalizedWords2 = array_map('ucfirst', $wordsArray2);
+                                    // $finalString2 = implode(" ", $capitalizedWords2);
+                                
+                                    echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+                                } ?>
+                            </div>
                         </div>
                     </div>
 
