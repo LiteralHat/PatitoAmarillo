@@ -8,7 +8,7 @@
         <li class='tone1'><a href=<?php echo $links . "index.php" ?>>Home</a></li>
         <li class='tone2'><a href=<?php echo $links . "artworks/gallery.php" ?>>Artworks</a></li>
         <ul>
-            <li><a href=<?php echo $links . "artworks/gallery.php" ?>>Gallery</a></li>
+            <li><a href=<?php echo $links . "artworks/gallery.php" ?>>Gallery<span class='warning'> NEW!</span></a></li>
         </ul>
         <li class='tone3'><a href=<?php echo $links . "random/rock-paper-scissors.php" ?>>Random</a></li>
         <ul>
