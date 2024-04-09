@@ -73,22 +73,26 @@
                                         <h3>Mediums:</h3>
 
                                         <ul>
-                                            <li><input id="watercolor" type="checkbox" name="watercolor" /><label
-                                                    for="watercolor"> Watercolor</label></li>
-                                            <li><input id="ink" type="checkbox" name="ink" /><label for="ink">
+                                            <li><input id="watercolor" type="checkbox" name="mediums[]"
+                                                    value="watercolor" /><label for="watercolor"> Watercolor</label>
+                                            </li>
+                                            <li><input id="ink" type="checkbox" name="mediums[]" value="ink" /><label
+                                                    for="ink">
                                                     Ink</label></li>
-                                            <li><input id="acrylic" type="checkbox" name="acrylic" /><label
-                                                    for="acrylic"> Acrylic</label></li>
-                                            <li><input id="graphite" type="checkbox" name="graphite" /><label
-                                                    for="graphite"> Graphite</label></li>
-                                            <li><input id="gouache" type="checkbox" name="gouache" /><label
-                                                    for="gouache"> Gouache</label></li>
-                                            <li><input id="digital" type="checkbox" name="digital" /><label
-                                                    for="digital"> Digital</label></li>
-                                            <li><input id="traditional" type="checkbox" name="traditional" /><label
-                                                    for="traditional"> Traditional</label></li>
-                                            <li><input id="mixedmedia" type="checkbox" name="mixedmedia" /><label
-                                                    for="mixedmedia"> Mixed Media</label></li>
+                                            <li><input id="acrylic" type="checkbox" name="mediums[]"
+                                                    value="acrylic" /><label for="acrylic"> Acrylic</label></li>
+                                            <li><input id="graphite" type="checkbox" name="mediums[]"
+                                                    value="graphite" /><label for="graphite"> Graphite</label></li>
+                                            <li><input id="gouache" type="checkbox" name="mediums[]"
+                                                    value="gouache" /><label for="gouache"> Gouache</label></li>
+                                            <li><input id="digital" type="checkbox" name="mediums[]"
+                                                    value="digital" /><label for="digital"> Digital</label></li>
+                                            <li><input id="traditional" type="checkbox" name="mediums[]"
+                                                    value="traditional" /><label for="traditional"> Traditional</label>
+                                            </li>
+                                            <li><input id="mixedmedia" type="checkbox" name="mediums[]"
+                                                    value="mixedmedia" /><label for="mixedmedia"> Mixed Media</label>
+                                            </li>
                                         </ul>
 
                                     </label>
@@ -165,42 +169,89 @@
                                 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
+
                                 if (isset($_GET['submit'])) {
-                                    if (isset($_GET['title'])) {
+                                    function reSort($artworksdb, $matchingArtworks)
+                                    {
+                                        return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
+                                            return in_array($artwork, $matchingArtworks);
+                                        });
+                                    }
+
+                                    if (isset($_GET['afterdate']) || isset($_GET['beforedate'])) {
                                         $title = $_GET['title'];
-                                        $nospaces = str_replace(' ', '-', $title);
-                                        $searchTerm = '%' . $nospaces . '%';
+                                        $queryitem = str_replace(' ', '-', $title);
+
+                                        $searchTerm = '%' . $queryitem . '%';
                                         $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
                                         $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
                                         $statement->execute();
                                         $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                        // Filter $artworksdb to keep only matching items
-                                        $artworksdb = array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
-                                            return in_array($artwork, $matchingArtworks);
-                                        });
-                                    }
-                                    if (isset($_GET['tags'])) {
-                                        $tags = explode(' ', $_GET['tags']);
-                                        $artworksByTag = [];
 
-                                        foreach ($tags as $tag) {
-                                        $searchTerm = '%' . $tag . '%';
-                                        $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
+                                    }
+
+                                    if (isset($_GET['title'])) {
+                                        $title = $_GET['title'];
+                                        $queryitem = str_replace(' ', '-', $title);
+
+                                        $searchTerm = '%' . $queryitem . '%';
+                                        $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
                                         $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
                                         $statement->execute();
                                         $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                        $artworksByTag[$tag] = $matchingArtworks; 
-                                        };
+
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
+                                    }
+
+
+
+                                    if (isset($_GET['mediums']) && !empty($_GET['mediums'])) {
+                                        $answer = $_GET['mediums'];
+                                        $artworksByTag = [];
+                                        foreach ($answer as $queryitem) {
+                                            $searchTerm = '%' . $queryitem . '%';
+                                            $statement = $db->prepare("SELECT * FROM artworks WHERE medium LIKE :searchTerm");
+                                            $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+                                            $statement->execute();
+                                            $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                                            $artworksByTag[$queryitem] = $matchingArtworks;
+                                        }
+                                        ;
+                                        $matchingArtworks = [];
+                                        foreach ($artworksByTag as $artworks) {
+                                            foreach ($artworks as $artwork) {
+                                                $matchingArtworks[$artwork['artworkid']] = $artwork; 
+                                            }
+                                        }
+                                        ;
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
+
+                                    }
+
+                                    if (isset($_GET['tags'])) {
+                                        $answer = explode(' ', $_GET['tags']);
+                                        $artworksByTag = [];
+                                        foreach ($answer as $queryitem) {
+
+                                            $searchTerm = '%' . $queryitem . '%';
+                                            $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
+                                            $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+                                            $statement->execute();
+                                            $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                                            $artworksByTag[$queryitem] = $matchingArtworks;
+                                        }
+                                        ;
                                         $matchingArtworks = [];
                                         foreach ($artworksByTag as $artworks) {
                                             foreach ($artworks as $artwork) {
                                                 $matchingArtworks[$artwork['artworkid']] = $artwork; // Use artwork ID as key to avoid duplicates
                                             }
-                                        };
-                                        $artworksdb = array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
-                                            return in_array($artwork, $matchingArtworks);
-                                        });
-                                        
+                                        }
+                                        ;
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
                                     }
 
                                 }
