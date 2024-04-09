@@ -181,16 +181,24 @@
                                         });
                                     }
                                     if (isset($_GET['tags'])) {
-                                        $title = $_GET['tags'];
-                                        $searchTerm = '%' . $title . '%';
+                                        $tags = explode(' ', $_GET['tags']);
+                                        $artworksByTag = [];
+
+                                        foreach ($tags as $tag) {
+                                        $searchTerm = '%' . $tag . '%';
                                         $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
                                         $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
                                         $statement->execute();
                                         $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                        // Filter $artworksdb to keep only matching items
-                                        $artworksdb = array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
-                                            return in_array($artwork, $matchingArtworks);
-                                        });
+                                        $artworksByTag[$tag] = $matchingArtworks; 
+                                        };
+                                        $combinedArtworks = [];
+                                        foreach ($artworksByTag as $artworks) {
+                                            foreach ($artworks as $artwork) {
+                                                $combinedArtworks[$artwork['artworkid']] = $artwork; // Use artwork ID as key to avoid duplicates
+                                            }
+                                        };
+                                        
                                     }
 
                                 }
