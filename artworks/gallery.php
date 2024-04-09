@@ -166,7 +166,6 @@
 
 
                                 if (isset($_GET['submit'])) {
-                                    // Filter by title
                                     if (isset($_GET['title'])) {
                                         $title = $_GET['title'];
                                         $nospaces = str_replace(' ', '-', $title);
@@ -192,12 +191,15 @@
                                         $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
                                         $artworksByTag[$tag] = $matchingArtworks; 
                                         };
-                                        $combinedArtworks = [];
+                                        $matchingArtworks = [];
                                         foreach ($artworksByTag as $artworks) {
                                             foreach ($artworks as $artwork) {
-                                                $combinedArtworks[$artwork['artworkid']] = $artwork; // Use artwork ID as key to avoid duplicates
+                                                $matchingArtworks[$artwork['artworkid']] = $artwork; // Use artwork ID as key to avoid duplicates
                                             }
                                         };
+                                        $artworksdb = array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
+                                            return in_array($artwork, $matchingArtworks);
+                                        });
                                         
                                     }
 
