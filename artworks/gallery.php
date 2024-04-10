@@ -14,7 +14,12 @@
     <main>
 
 
-        <?php include_once ($folder . '/elements/galleryheader.php');
+        <?php //code for the header element and load the database for the gallery
+        include_once ($folder . '/elements/galleryheader.php');
+        $db = new PDO('sqlite:artworks.db');
+        $statement = $db->query("SELECT * FROM artworks");
+        //$artworksdb is the 'master' array that will be echo'ed in HTML
+        $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
 
@@ -98,32 +103,6 @@
                                     </label>
                                 </fieldset>
 
-                                <!-- <fieldset>
-                                    <h3>Show For Sale Only?</h3>
-                                    <p>
-                                        <input id="forsale" type="radio" name="forsale" selected /><label for="forsale">
-                                            Yes plz</label>
-                                        <input id="notforsale" type="radio" name="forsale" /><label for="notforsale"> No
-                                            thx</label>
-                                    </p>
-                                </fieldset>
-
-                                <fieldset>
-                                    <h3>Snowflake filter</h3>
-                                    <p>
-                                    <ul>
-                                        <li><input id="withgore" type="checkbox" name="withgore" /><label
-                                                for="withgore"> Gore!</label></li>
-                                        <li><input id="withguns" type="checkbox" name="withguns" /><label
-                                                for="withguns"> Guns!</label></li>
-                                    </ul>
-
-                                    <input id="showonly" type="radio" name="gorevisibility" /><label for="showonly">
-                                        Show only</label>
-                                    <input id="hide" type="radio" name="gorevisibility" /><label for="hide">
-                                        Hide</label>
-                                    </p>
-                                </fieldset> -->
 
 
                                 <fieldset>
@@ -140,7 +119,7 @@
                                 <fieldset>
                                     <button class='button' type='submit' value='submit' name='submit'>SEARCH</button>
                                 </fieldset>
-                                
+
                             </div>
                         </div>
 
@@ -165,20 +144,44 @@
                             <div id='galleryitems'>
 
                                 <?php
-                                $db = new PDO('sqlite:artworks.db');
-                                $statement = $db->query("SELECT * FROM artworks");
-                                $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
-
+                                //code wont execute at all if nothing has been submitted
                                 if (isset($_GET['submit'])) {
 
-
+                                    // This function compares the master array with the final array and removes the items that they both don't have in common
                                     function reSort($artworksdb, $matchingArtworks)
                                     {
                                         return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
                                             return in_array($artwork, $matchingArtworks);
                                         });
+                                    }
+                                    // This function removes any duplicates from $matchingArtworks using artworkid as the unique identifier
+                                    function getMatchingArtworks($matchingArtworks, $artworksByTag) {
+                                        $matchingArtworks = [];
+                                        foreach ($artworksByTag as $artworks) {
+                                            foreach ($artworks as $artwork) {
+                                                $matchingArtworks[$artwork['artworkid']] = $artwork;
+                                            }
+                                        }
+                                        ;
+                                        return $matchingArtworks;
+                                    }
+
+                                    function executeStatement($statement) {
+                                        $statement->execute();
+                                        return $statement->fetchAll(PDO::FETCH_ASSOC);
+                                    }
+                                    
+
+                                    if (isset($_GET['title'])) {
+                                        $title = $_GET['title'];
+                                        $queryitem = str_replace(' ', '-', $title);
+
+                                        $searchTerm = '%' . $queryitem . '%';
+                                        $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
+                                        $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
+                                    
+                                        $matchingArtworks = executeStatement($statement);
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
                                     }
 
                                     if (!empty($_GET['afterdate']) || !empty($_GET['beforedate'])) {
@@ -208,25 +211,10 @@
                                         $statement = $db->prepare('SELECT * FROM artworks WHERE datecreated BETWEEN :beforedate AND :afterdate');
                                         $statement->bindParam(':beforedate', $beforedate, PDO::PARAM_STR);
                                         $statement->bindParam(':afterdate', $afterdate, PDO::PARAM_STR);
-                                        $statement->execute();
-                                        $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+                                        $matchingArtworks = executeStatement($statement);
                                         $artworksdb = reSort($artworksdb, $matchingArtworks);
                                     }
-
-                                    if (isset($_GET['title'])) {
-                                        $title = $_GET['title'];
-                                        $queryitem = str_replace(' ', '-', $title);
-
-                                        $searchTerm = '%' . $queryitem . '%';
-                                        $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
-                                        $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                                        $statement->execute();
-                                        $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
-                                    }
-
 
 
                                     if (isset($_GET['mediums']) && !empty($_GET['mediums'])) {
@@ -236,19 +224,13 @@
                                             $searchTerm = '%' . $queryitem . '%';
                                             $statement = $db->prepare("SELECT * FROM artworks WHERE medium LIKE :searchTerm");
                                             $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                                            $statement->execute();
-                                            $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                                            $matchingArtworks = executeStatement($statement);
 
                                             $artworksByTag[$queryitem] = $matchingArtworks;
                                         }
                                         ;
-                                        $matchingArtworks = [];
-                                        foreach ($artworksByTag as $artworks) {
-                                            foreach ($artworks as $artwork) {
-                                                $matchingArtworks[$artwork['artworkid']] = $artwork;
-                                            }
-                                        }
-                                        ;
+                                        $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
                                         $artworksdb = reSort($artworksdb, $matchingArtworks);
 
                                     }
@@ -261,19 +243,12 @@
                                             $searchTerm = '%' . $queryitem . '%';
                                             $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
                                             $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                                            $statement->execute();
-                                            $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+                                            $matchingArtworks = executeStatement($statement);
                                             $artworksByTag[$queryitem] = $matchingArtworks;
                                         }
                                         ;
-                                        $matchingArtworks = [];
-                                        foreach ($artworksByTag as $artworks) {
-                                            foreach ($artworks as $artwork) {
-                                                $matchingArtworks[$artwork['artworkid']] = $artwork; // Use artwork ID as key to avoid duplicates
-                                            }
-                                        }
-                                        ;
+                                        $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
                                         $artworksdb = reSort($artworksdb, $matchingArtworks);
                                     }
 
@@ -294,7 +269,7 @@
                     </div>
 
 
-                    
+
 
                 </div>
 
