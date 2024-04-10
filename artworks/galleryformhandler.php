@@ -5,11 +5,15 @@ session_start();
 
 //code wont execute at all if nothing has been submitted
 
+$jsondb =  $_POST['jsondb']; 
+$data = json_decode($jsondb, true); 
+
+
 $db = new PDO('sqlite:artworks.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function notAllowed($string)
     {
         $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
