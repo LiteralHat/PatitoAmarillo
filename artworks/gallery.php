@@ -8,6 +8,8 @@
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Gallery." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -21,7 +23,6 @@
 
         if (isset($_SESSION['dbresults'])) {
             $artworksdb = $_SESSION['dbresults'];
-            unset($_SESSION['dbresults']);
         } else {
             $statement = $db->query("SELECT * FROM artworks");
             //$artworksdb is the 'master' array that will be echo'ed in HTML
@@ -29,12 +30,6 @@
         }
         ;
         ?>
-
-
-        <!-- actual html fucking starts here -->
-
-
-
 
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
@@ -145,19 +140,21 @@
                 </div>
 
 
-
                 <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <?php if (isset($_GET['submit'])) {
+                            <?php if (isset($_SESSION['dbresults'])) {
                                 echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
+                                unset($_SESSION['dbresults']);
                             } else {
                                 $statement = $db->query('SELECT COUNT(*) as total FROM artworks');
                                 $result = $statement->fetch(PDO::FETCH_ASSOC);
                                 echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
                             } ?>
+
                             <label for='sortby'><span class='bold'>Sort by:</span></label>
                             <select name='sortby' id='sortby'>
+                                <option value='default'>Default (Date Added)</option>
                                 <option value='title'>Title</option>
                                 <option value='newtoold'>Date Created (Newest to Oldest)</option>
                                 <option value='oldtonew'>Date Created (Oldest to Newest)</option>
@@ -179,6 +176,29 @@
                                 }
                                 ?>
                             </div>
+
+                            <script>
+
+                                
+                                $(document).ready(function () {
+                                    $('#sortby').change(function () {
+                                        var sortBy = $(this).val();
+                                        // Send data as an object
+                                        $.ajax({
+                                            url: 'sort_gallery',
+                                            method: 'POST',
+                                            data: { sortBy: sortBy }, // Send sortBy as key-value pair
+                                            success: function (response) {
+                                                $('#galleryitems').html(response);
+                                            },
+                                            error: function (xhr, status, error) {
+                                                console.error(error);
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+
                         </div>
                     </div>
 
@@ -192,12 +212,6 @@
 
             </div>
         </div>
-
-
-
-
-
-
 
 
 
