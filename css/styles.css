@@ -1511,9 +1511,10 @@ a:hover {
 
 .gallerythumbnail img {
     border: 0.26rem solid black;
-    padding: 0.2rem;
     margin: 0.7rem 0;
+    padding: 0.1rem;
 }
+
 
 .gallerythumbnail p {
     padding: 0;
@@ -1566,4 +1567,8 @@ a:hover {
 .galleryheader {
     font-family: var(--font-fancy);
     font-size: 2rem;
+}
+
+#gallerycontainer {
+    width: 70vw;
 }

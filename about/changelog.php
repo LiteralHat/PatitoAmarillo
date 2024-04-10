@@ -82,6 +82,8 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                            
                                 <h3>v11.5.0-beta 09.04.2024</h3>
                                 <ul>
                                     <li>Added LiteralGallery!</li>

@@ -129,7 +129,7 @@
                                 <fieldset>
 
                                     <label for="tags">
-                                        <h3>Tags:</h3><span>(Separate tags with a comma e.g. 'hat, levy')</span>
+                                        <h3>Tags:</h3><span>(Separate tags with a space e.g. 'hat levy')</span>
                                         <input id="tags" type="text" name="tags" />
                                     </label>
                                 </fieldset>
@@ -157,7 +157,7 @@
 
 
 
-                <div class='biggerwidthcontainer'>
+                <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
                             <h2>Viewing all artworks: </h2><span>Ill make a counter later.</span>
