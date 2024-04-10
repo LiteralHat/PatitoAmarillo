@@ -54,7 +54,7 @@
                                 <fieldset id='daterange'>
                                     <h3>Date Range:</h3>
                                     <p>
-                                        <label for="fuzzydate"><input id="fuzzydate" type="checkbox" name="fuzzy" />
+                                        <label for="fuzzydate"><input id="fuzzydate" type="checkbox" name="fuzzydate" />
                                             Fuzzy Date
                                     </p></label>
 
@@ -171,6 +171,8 @@
 
 
                                 if (isset($_GET['submit'])) {
+
+
                                     function reSort($artworksdb, $matchingArtworks)
                                     {
                                         return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
@@ -178,17 +180,33 @@
                                         });
                                     }
 
-                                    if (isset($_GET['afterdate']) || isset($_GET['beforedate'])) {
-                                        $title = $_GET['title'];
-                                        $queryitem = str_replace(' ', '-', $title);
+                                    if (!empty($_GET['afterdate']) || !empty($_GET['beforedate'])) {
+                                        if (!empty($_GET['beforedate'])) {
+                                            // Use the value from $_GET['beforedate']
+                                            $beforedate = $_GET['beforedate'];
+                                        } else {
+                                            // Use a default value if $_GET['beforedate'] is not set
+                                            $beforedate = '01-01-1970';
+                                        }
+                                        
+                                        if (!empty($_GET['afterdate'])) {
+                                            $afterdate = $_GET['afterdate'];
+                                        } else {
+                                            $afterdate = date('Y-m-d');
+                                        }
+                                        
+                                        if (isset($_GET['fuzzydate'])) {
+                                            $beforedatedt = new DateTime($beforedate);
+                                            $afterdatedt = new DateTime($afterdate);
+                                            $beforedatedt->modify("-30 days"); 
+                                            $afterdatedt->modify("+30 days");
+                                            $beforedate = $beforedatedt->format('Y-m-d'); 
+                                            $afterdate = $afterdatedt->format('Y-m-d'); 
+                                        }   else {
+                                        }
 
-                                        $searchTerm = '%' . $queryitem . '%';
-                                        $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
-                                        $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                                        $statement->execute();
-                                        $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
+                                        echo 'before' . $beforedate;
+                                        echo 'after' .$afterdate;
                                     }
 
                                     if (isset($_GET['title'])) {
