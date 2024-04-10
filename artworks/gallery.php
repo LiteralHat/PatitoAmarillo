@@ -20,7 +20,133 @@
         $statement = $db->query("SELECT * FROM artworks");
         //$artworksdb is the 'master' array that will be echo'ed in HTML
         $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        //code wont execute at all if nothing has been submitted
+        if (isset($_GET['submit'])) {
+
+            function notAllowed($string)
+            {
+                $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
+                if (preg_match($notallowed, $string)) {
+                    echo "<p class='warning'>Your search query is not valid!</p>";
+                    exit;
+                } else {
+                    return;
+                }
+            }
+
+            // This function compares the master array with the final array and removes the items that they both don't have in common
+            function reSort($artworksdb, $matchingArtworks)
+            {
+                return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
+                    return in_array($artwork, $matchingArtworks);
+                });
+            }
+            // This function removes any duplicates from $matchingArtworks using artworkid as the unique identifier
+            function getMatchingArtworks($matchingArtworks, $artworksByTag)
+            {
+                $matchingArtworks = [];
+                foreach ($artworksByTag as $artworks) {
+                    foreach ($artworks as $artwork) {
+                        $matchingArtworks[$artwork['artworkid']] = $artwork;
+                    }
+                }
+                ;
+                return $matchingArtworks;
+            }
+
+            function executeStatement($statement)
+            {
+                $statement->execute();
+                return $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+
+
+            if (isset($_GET['title'])) {
+                $title = $_GET['title'];
+                notAllowed($title);
+                $queryitem = str_replace(' ', '-', $title);
+                $searchTerm = '%' . $queryitem . '%';
+                $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
+                $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+
+                $matchingArtworks = executeStatement($statement);
+                $artworksdb = reSort($artworksdb, $matchingArtworks);
+            }
+
+            if (!empty($_GET['afterdate']) || !empty($_GET['beforedate'])) {
+                if (!empty($_GET['beforedate'])) {
+                    // Use the value from $_GET['beforedate']
+                    $beforedate = $_GET['beforedate'];
+                } else {
+                    // Use a default value if $_GET['beforedate'] is not set
+                    $beforedate = '01-01-1970';
+                }
+
+                if (!empty($_GET['afterdate'])) {
+                    $afterdate = $_GET['afterdate'];
+                } else {
+                    $afterdate = date('Y-m-d');
+                }
+
+                if (isset($_GET['fuzzydate'])) {
+                    $beforedatedt = new DateTime($beforedate);
+                    $afterdatedt = new DateTime($afterdate);
+                    $beforedatedt->modify("-30 days");
+                    $afterdatedt->modify("+30 days");
+                    $beforedate = $beforedatedt->format('Y-m-d');
+                    $afterdate = $afterdatedt->format('Y-m-d');
+                }
+
+                $statement = $db->prepare('SELECT * FROM artworks WHERE datecreated BETWEEN :beforedate AND :afterdate');
+                $statement->bindValue(':beforedate', $beforedate, PDO::PARAM_STR);
+                $statement->bindValue(':afterdate', $afterdate, PDO::PARAM_STR);
+
+                $matchingArtworks = executeStatement($statement);
+                $artworksdb = reSort($artworksdb, $matchingArtworks);
+            }
+
+
+            if (isset($_GET['mediums']) && !empty($_GET['mediums'])) {
+                $answer = $_GET['mediums'];
+                $artworksByTag = [];
+                foreach ($answer as $queryitem) {
+                    $searchTerm = '%' . $queryitem . '%';
+                    $statement = $db->prepare("SELECT * FROM artworks WHERE medium LIKE :searchTerm");
+                    $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+
+                    $matchingArtworks = executeStatement($statement);
+
+                    $artworksByTag[$queryitem] = $matchingArtworks;
+                }
+                ;
+                $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
+                $artworksdb = reSort($artworksdb, $matchingArtworks);
+
+            }
+
+            if (isset($_GET['tags'])) {
+                $answer = explode(' ', $_GET['tags']);
+                $artworksByTag = [];
+                foreach ($answer as $queryitem) {
+
+                    $searchTerm = '%' . $queryitem . '%';
+                    $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
+                    $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+
+                    $matchingArtworks = executeStatement($statement);
+                    $artworksByTag[$queryitem] = $matchingArtworks;
+                }
+                ;
+                $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
+                $artworksdb = reSort($artworksdb, $matchingArtworks);
+            }
+
+        }
         ?>
+
+
+        <!-- actual html fucking starts here -->
 
 
 
@@ -51,7 +177,8 @@
                                     <p>
                                         <label for="title">
                                             Title Contains:
-                                            <input id="title" type="text" name="title" />
+                                            <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="title" type="text"
+                                                name="title" placeholder="e.g. baby bird" />
                                         </label>
                                     </p>
                                 </fieldset>
@@ -109,7 +236,8 @@
 
                                     <label for="tags">
                                         <h3>Tags:</h3><span>(Separate tags with a space e.g. 'hat levy')</span>
-                                        <input id="tags" type="text" name="tags" />
+                                        <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="tags" type="text"
+                                            name="tags" placeholder="tag1 tag2 tag3" />
                                     </label>
                                 </fieldset>
 
@@ -133,128 +261,29 @@
 
 
 
-
-
-
                 <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <h2>Viewing all artworks: </h2><span>Ill make a counter later.</span>
+                            <?php if (isset($_GET['submit'])) {
+                                echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
+                            } else {
+                                $statement = $db->query('SELECT COUNT(*) as total FROM artworks');
+                                $result = $statement->fetch(PDO::FETCH_ASSOC);
+                                echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
+                            } ?>
+                            <label for='sortby'><span class='bold'>Sort by:</span></label>
+                            <select name='sortby' id='sortby'>
+                                <option value='title'>Title</option>
+                                <option value='newtoold'>Date Created (Newest to Oldest)</option>
+                                <option value='oldtonew'>Date Created (Oldest to Newest)</option>
+
+                            </select>
+
+
                             <hr class='hrtextseparator'>
                             <div id='galleryitems'>
 
                                 <?php
-                                //code wont execute at all if nothing has been submitted
-                                if (isset($_GET['submit'])) {
-
-                                    // This function compares the master array with the final array and removes the items that they both don't have in common
-                                    function reSort($artworksdb, $matchingArtworks)
-                                    {
-                                        return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
-                                            return in_array($artwork, $matchingArtworks);
-                                        });
-                                    }
-                                    // This function removes any duplicates from $matchingArtworks using artworkid as the unique identifier
-                                    function getMatchingArtworks($matchingArtworks, $artworksByTag) {
-                                        $matchingArtworks = [];
-                                        foreach ($artworksByTag as $artworks) {
-                                            foreach ($artworks as $artwork) {
-                                                $matchingArtworks[$artwork['artworkid']] = $artwork;
-                                            }
-                                        }
-                                        ;
-                                        return $matchingArtworks;
-                                    }
-
-                                    function executeStatement($statement) {
-                                        $statement->execute();
-                                        return $statement->fetchAll(PDO::FETCH_ASSOC);
-                                    }
-                                    
-
-                                    if (isset($_GET['title'])) {
-                                        $title = $_GET['title'];
-                                        $queryitem = str_replace(' ', '-', $title);
-
-                                        $searchTerm = '%' . $queryitem . '%';
-                                        $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
-                                        $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                                    
-                                        $matchingArtworks = executeStatement($statement);
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
-                                    }
-
-                                    if (!empty($_GET['afterdate']) || !empty($_GET['beforedate'])) {
-                                        if (!empty($_GET['beforedate'])) {
-                                            // Use the value from $_GET['beforedate']
-                                            $beforedate = $_GET['beforedate'];
-                                        } else {
-                                            // Use a default value if $_GET['beforedate'] is not set
-                                            $beforedate = '01-01-1970';
-                                        }
-
-                                        if (!empty($_GET['afterdate'])) {
-                                            $afterdate = $_GET['afterdate'];
-                                        } else {
-                                            $afterdate = date('Y-m-d');
-                                        }
-
-                                        if (isset($_GET['fuzzydate'])) {
-                                            $beforedatedt = new DateTime($beforedate);
-                                            $afterdatedt = new DateTime($afterdate);
-                                            $beforedatedt->modify("-30 days");
-                                            $afterdatedt->modify("+30 days");
-                                            $beforedate = $beforedatedt->format('Y-m-d');
-                                            $afterdate = $afterdatedt->format('Y-m-d');
-                                        }
-
-                                        $statement = $db->prepare('SELECT * FROM artworks WHERE datecreated BETWEEN :beforedate AND :afterdate');
-                                        $statement->bindParam(':beforedate', $beforedate, PDO::PARAM_STR);
-                                        $statement->bindParam(':afterdate', $afterdate, PDO::PARAM_STR);
-
-                                        $matchingArtworks = executeStatement($statement);
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
-                                    }
-
-
-                                    if (isset($_GET['mediums']) && !empty($_GET['mediums'])) {
-                                        $answer = $_GET['mediums'];
-                                        $artworksByTag = [];
-                                        foreach ($answer as $queryitem) {
-                                            $searchTerm = '%' . $queryitem . '%';
-                                            $statement = $db->prepare("SELECT * FROM artworks WHERE medium LIKE :searchTerm");
-                                            $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-
-                                            $matchingArtworks = executeStatement($statement);
-
-                                            $artworksByTag[$queryitem] = $matchingArtworks;
-                                        }
-                                        ;
-                                        $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
-
-                                    }
-
-                                    if (isset($_GET['tags'])) {
-                                        $answer = explode(' ', $_GET['tags']);
-                                        $artworksByTag = [];
-                                        foreach ($answer as $queryitem) {
-
-                                            $searchTerm = '%' . $queryitem . '%';
-                                            $statement = $db->prepare("SELECT * FROM artworks WHERE tags LIKE :searchTerm");
-                                            $statement->bindParam(':searchTerm', $searchTerm, PDO::PARAM_STR);
-
-                                            $matchingArtworks = executeStatement($statement);
-                                            $artworksByTag[$queryitem] = $matchingArtworks;
-                                        }
-                                        ;
-                                        $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
-                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
-                                    }
-
-                                }
-
-
                                 foreach ($artworksdb as $row => $artwork) {
                                     $wordsArray = explode("-", $artwork['title']);
                                     $capitalizedWords = array_map('ucfirst', $wordsArray);
