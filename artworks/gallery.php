@@ -140,6 +140,7 @@
                                 <fieldset>
                                     <button class='button' type='submit' value='submit' name='submit'>SEARCH</button>
                                 </fieldset>
+                                
                             </div>
                         </div>
 
@@ -188,25 +189,29 @@
                                             // Use a default value if $_GET['beforedate'] is not set
                                             $beforedate = '01-01-1970';
                                         }
-                                        
+
                                         if (!empty($_GET['afterdate'])) {
                                             $afterdate = $_GET['afterdate'];
                                         } else {
                                             $afterdate = date('Y-m-d');
                                         }
-                                        
+
                                         if (isset($_GET['fuzzydate'])) {
                                             $beforedatedt = new DateTime($beforedate);
                                             $afterdatedt = new DateTime($afterdate);
-                                            $beforedatedt->modify("-30 days"); 
+                                            $beforedatedt->modify("-30 days");
                                             $afterdatedt->modify("+30 days");
-                                            $beforedate = $beforedatedt->format('Y-m-d'); 
-                                            $afterdate = $afterdatedt->format('Y-m-d'); 
-                                        }   else {
+                                            $beforedate = $beforedatedt->format('Y-m-d');
+                                            $afterdate = $afterdatedt->format('Y-m-d');
                                         }
 
-                                        echo 'before' . $beforedate;
-                                        echo 'after' .$afterdate;
+                                        $statement = $db->prepare('SELECT * FROM artworks WHERE datecreated BETWEEN :beforedate AND :afterdate');
+                                        $statement->bindParam(':beforedate', $beforedate, PDO::PARAM_STR);
+                                        $statement->bindParam(':afterdate', $afterdate, PDO::PARAM_STR);
+                                        $statement->execute();
+                                        $matchingArtworks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+                                        $artworksdb = reSort($artworksdb, $matchingArtworks);
                                     }
 
                                     if (isset($_GET['title'])) {
@@ -240,7 +245,7 @@
                                         $matchingArtworks = [];
                                         foreach ($artworksByTag as $artworks) {
                                             foreach ($artworks as $artwork) {
-                                                $matchingArtworks[$artwork['artworkid']] = $artwork; 
+                                                $matchingArtworks[$artwork['artworkid']] = $artwork;
                                             }
                                         }
                                         ;
@@ -289,6 +294,7 @@
                     </div>
 
 
+                    
 
                 </div>
 
