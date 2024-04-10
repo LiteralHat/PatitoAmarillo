@@ -286,9 +286,13 @@ ol {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    width: 110%;
-    left: -1.3rem;
+    width: 100%;
+    left: -1rem;
     position: relative;
+}
+
+#daterange input {
+    justify-content: end;
 }
 
 .button {
@@ -334,7 +338,6 @@ ol {
     border: var(--box-borders) solid black;
     background-color: white;
     box-sizing: border-box;
-    height: 100%;
     width: 100%;
 }
 
@@ -1085,6 +1088,221 @@ a:hover {
 
 
 
+
+
+
+
+.fanartimage {
+    border: 0.2rem solid white;
+    height: 10rem;
+    margin: 0.3rem;
+    opacity: 1;
+}
+
+.fanartimage:hover {
+    opacity: 0.8;
+
+}
+
+#fanartgallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.lightBoxElement {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.lightBoxElement img {
+    width: max-content;
+    height: auto;
+    margin: 0.6rem auto 0.4rem;
+    opacity: 1;
+}
+
+.galleryCredit h2 {
+    margin: 0.5rem;
+    font-size: 3rem;
+}
+
+.galleryCredit hr {
+    margin-bottom: 1rem;
+}
+
+.yearhover {
+    color: white;
+
+}
+
+.yearhover:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.hidden img {
+    opacity: 0;
+    border: 0px solid transparent;
+    width: 0px;
+    height: 0px;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+.galleryimage {
+    width: 600px;
+}
+
+.gallerydetails dt {
+    font-weight: bold;
+    float: left;
+}
+
+.gallerydetails dd {
+    margin-left: 35%;
+}
+
+.gallerydetails dd::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gallerycode {
+    width: 100%;
+}
+
+.gallerybutton {
+    border: var(--box-borders) solid black;
+    box-shadow: 7px 7px 0 0 black;
+    width: 100%;
+}
+
+.gallerybutton:hover {
+    background-color: black;
+}
+
+.gallerybutton p,
+.gallerybutton a {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallerythumbnail img {
+    border: 0.26rem solid black;
+    margin: 0.7rem 0;
+    padding: 0.1rem;
+}
+
+.gallerythumbnail p {
+    padding: 0;
+    margin-bottom: 0.4rem;
+}
+
+.gallerythumbnail a {
+    text-decoration: none;
+}
+
+.gallerythumbnail {}
+
+.gallerytitle {
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+}
+
+#galleryitems {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    align-items: end;
+    justify-content: center;
+}
+
+#gallerytext {
+    font-size: 4rem;
+    font-family: var(--font-fancy);
+}
+
+#gallerytext a {
+    text-decoration: none;
+}
+
+#gallerymenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    position: relative;
+    right: 1rem;
+}
+
+#gallerymenu a {
+    text-decoration: none;
+}
+
+.galleryheader {
+    font-family: var(--font-fancy);
+    font-size: 2rem;
+}
+
+#gallerycontainer {
+    width: 70vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #opponents {
     display: flex;
 }
@@ -1191,6 +1409,9 @@ a:hover {
         margin: auto;
     }
 
+    #gallerycontainer {
+        width: 100%;
+    }
     .widthcontainer {
         width: 45vw;
     }
@@ -1218,8 +1439,14 @@ a:hover {
     }
 
     button {
-        max-width: 28vw;
+        max-width: 27vw;
     }
+
+    .gallerybutton {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+     }
 
     #characterDialogueBox {
         margin-top: 0.2rem;
@@ -1234,9 +1461,13 @@ a:hover {
         height: 30rem;
     }
 
+    .galleryimage {
+        width: 100%;
+    }
 
-
-
+    .whitebox {
+        height: fit-content;
+    }
 
 }
 
@@ -1245,6 +1476,14 @@ a:hover {
 
 /* media queries for responsiveness */
 @media (max-width: 1000px) {
+    .gallerythumbnail img {
+        width: 38vw;
+    }
+
+    #gallerytext {
+        font-size: 3.2rem;
+    }
+
     .widthcontainer {
         width: 100%;
     }
@@ -1297,10 +1536,19 @@ a:hover {
         width: 100%;
     }
 
+    .gallerybutton {
+        border: var(--box-borders) solid black;
+        box-shadow: 7px 7px 0 0 black;
+    }
+
+
     .headercontainer {
         justify-content: center;
     }
 
+    .thinwidthcontainer{
+        width: 100%;
+    }
 
     #centerbox {
         order: 1;
@@ -1322,6 +1570,8 @@ a:hover {
         max-width: 100%;
     }
 
+   
+
 }
 
 
@@ -1337,7 +1587,6 @@ a:hover {
     .whitebox {
         box-shadow: 7px 7px 0 0 black;
         box-sizing: border-box;
-        height: 100%;
     }
 
     .sidemenu ul>li:hover {
@@ -1348,6 +1597,9 @@ a:hover {
         margin-left: -0.3rem;
     }
 
+    .contentcontainer {
+        align-items: start;
+    }
 }
 
 .noshadow {
@@ -1364,211 +1616,3 @@ a:hover {
 
 
 
-
-
-
-
-
-
-
-
-.fanartimage {
-    border: 0.2rem solid white;
-    height: 10rem;
-    margin: 0.3rem;
-    opacity: 1;
-}
-
-.fanartimage:hover {
-    opacity: 0.8;
-
-}
-
-#fanartgallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.lightBoxElement {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-}
-
-.lightBoxElement img {
-    width: max-content;
-    height: auto;
-    margin: 0.6rem auto 0.4rem;
-    opacity: 1;
-}
-
-.galleryCredit h2 {
-    margin: 0.5rem;
-    font-size: 3rem;
-}
-
-.galleryCredit hr {
-    margin-bottom: 1rem;
-}
-
-.yearhover {
-    color: white;
-
-}
-
-.yearhover:hover {
-    color: red;
-    cursor: pointer;
-}
-
-.hidden img {
-    opacity: 0;
-    border: 0px solid transparent;
-    width: 0px;
-    height: 0px;
-    background-color: red;
-}
-
-
-
-
-
-
-
-
-
-.galleryimage {
-    width: 600px;
-}
-
-.gallerydetails dt {
-    font-weight: bold;
-    float: left;
-}
-
-.gallerydetails dd {
-    margin-left: 35%;
-}
-
-.gallerydetails dd::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.gallerycode {
-    width: 100%;
-}
-
-.gallerybutton {
-    border: var(--box-borders) solid black;
-    box-shadow: 7px 7px 0 0 black;
-    transition: all 50ms ease;
-    position: relative;
-    top: 0rem;
-    left: 0rem;
-    width: 100%;
-    height: 8rem;
-}
-
-.gallerybutton:hover {
-    box-shadow: 15px 15px 0 0 black;
-    position: relative;
-    top: -0.3rem;
-    left: -0.3rem;
-    background-color: black;
-}
-
-.gallerybutton:hover hr {
-    width: 80%;
-}
-
-.gallerybutton hr {
-    width: 100%;
-    transition: all 50ms ease;
-    margin: 0 auto;
-}
-
-.gallerybutton p,
-.gallerybutton a {
-    font-family: var(--font-header);
-    font-size: 2rem;
-    text-decoration: none;
-}
-
-.gallerybutton:hover img {
-    transform: rotate(-10deg);
-}
-
-.gallerybutton img {
-    height: 94px;
-    transition: all 50ms ease;
-}
-
-.gallerythumbnail img {
-    border: 0.26rem solid black;
-    margin: 0.7rem 0;
-    padding: 0.1rem;
-}
-
-
-.gallerythumbnail p {
-    padding: 0;
-    margin-bottom: 0.4rem;
-}
-
-.gallerythumbnail a {
-    text-decoration: none;
-}
-.gallerythumbnail {}
-
-.gallerytitle {
-    font-family: var(--font-header);
-    font-size: 1.3rem;
-}
-
-#galleryitems {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 2rem;
-    align-items: end;
-    justify-content: center;
-}
-
-#gallerytext {
-    font-size: 4rem;
-    font-family: var(--font-fancy);
-}
-
-#gallerytext a {
-    text-decoration: none;
-}
-
-#gallerymenu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-    font-family: var(--font-header);
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    position: relative;
-    right: 1rem;
-}
-
-#gallerymenu a {
-    text-decoration: none;
-}
-
-.galleryheader {
-    font-family: var(--font-fancy);
-    font-size: 2rem;
-}
-
-#gallerycontainer {
-    width: 70vw;
-}

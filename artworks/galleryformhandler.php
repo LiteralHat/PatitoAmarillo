@@ -5,15 +5,15 @@ session_start();
 
 //code wont execute at all if nothing has been submitted
 
-$jsondb =  $_POST['jsondb']; 
-$data = json_decode($jsondb, true); 
+// $jsondb =  $_POST['jsondb']; 
+// $data = json_decode($jsondb, true); 
 
 
 $db = new PDO('sqlite:artworks.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     function notAllowed($string)
     {
         $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $_SESSION['dbresults'] = $artworksdb;
-    header("Location: gallery.php?success=1");
+    header("Location: gallery?success=1");
     exit();
 
 }
