@@ -32,9 +32,6 @@ session_start();
         }
         ;
 
-        $totalArtworks = count($artworksdb);
-        $itemsPerPage = 30;
-        $pageNumber = 1;
         ?>
 
         <div class="contentrowwhite centerbox">
@@ -149,8 +146,13 @@ session_start();
                                 $statement = $db->query('SELECT COUNT(*) as total FROM artworks');
                                 $result = $statement->fetch(PDO::FETCH_ASSOC);
                                 echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
-                            } ?>
+                            }
+                            ?>
 
+                            <h2><a href='gallery.php?page=1'>Page: 1</a></h2>
+                            <h2><a href='gallery.php?page=2'>Page: 2</a></h2>
+
+                            
                             <label for='sortby'><span class='bold'>Sort by:</span></label>
                             <select name='sortby' id='sortby'>
                                 <option value='default'>Default (Date Added)</option>
@@ -164,25 +166,63 @@ session_start();
                             <div id='galleryitems'>
 
                                 <?php
+                                //make it so you can change this later, but i honestly cant be bothered
+                                $itemsPerPage = 30;
+                                $totalArtworks = count($artworksdb);
+                                $totalPages = ceil($totalArtworks / $itemsPerPage);
+                                //gets the current page from the url
+                                $currentPage = $_GET['page'];
+
+                                $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
+                                $itemsEndLimit = $itemsPerPage * $currentPage;
+
+                                echo 'currentpage = ' . $currentPage;
+                                echo '<br> total pages = ' . $totalPages;
+                                echo '<br>itemsStartLimit = ' . $itemsStartLimit;
+                                echo '<br>itemsEndLimit = ' . $itemsEndLimit;
+
+                                $itemsStartLimit;
+
+                                $rowCount = 0;
                                 foreach ($artworksdb as $row => $artwork) {
-                                    $wordsArray = explode("-", $artwork['title']);
-                                    $capitalizedWords = array_map('ucfirst', $wordsArray);
-                                    $finalString = implode(" ", $capitalizedWords);
-                                    $dateString = htmlspecialchars($artwork['datecreated']);
-                                    $year = substr($dateString, 0, 4);
-                                    echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+                                    $rowCount++;
+
+                                    if ($rowCount >= $itemsStartLimit) {
+                                        $wordsArray = explode("-", $artwork['title']);
+                                        $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                        $finalString = implode(" ", $capitalizedWords);
+                                        $dateString = htmlspecialchars($artwork['datecreated']);
+                                        $year = substr($dateString, 0, 4);
+                                        echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+
+                                        if ($rowCount >= $itemsEndLimit) {
+                                            break;
+                                        }
+                                    }
                                 }
 
+
+
+                                // foreach ($artworksdb as $row => $artwork) {
+                                //     $wordsArray = explode("-", $artwork['title']);
+                                //     $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                //     $finalString = implode(" ", $capitalizedWords);
+                                //     $dateString = htmlspecialchars($artwork['datecreated']);
+                                //     $year = substr($dateString, 0, 4);
+                                //     echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+                                // }
+                                
                                 unset($_SESSION['dbresults']);
 
                                 $test = array('stupid', 'fuckyou');
 
                                 ?>
                                 <script>
-                                    var artworksArray = <?php echo json_encode($artworksdb); ?>;
+
                                     $(document).ready(function () {
                                         $('#sortby').change(function () {
                                             var sortBy = $(this).val();
+                                            var artworksArray = <?php echo json_encode($artworksdb); ?>;
                                             $.ajax({
                                                 url: 'sort_gallery',
                                                 method: 'POST',
@@ -202,8 +242,7 @@ session_start();
 
 
                             <div class='contentcontainer'>
-                                
-                                <h2> uhh </h2>
+
                             </div>
 
                         </div>

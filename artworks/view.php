@@ -136,7 +136,6 @@
                                     <dt>Artwork No.</dt>
                                     <dd>
 
-
                                         <?php
                                         if (isset($r['artworkid'])) {
                                             echo "# " . htmlspecialchars($r['artworkid']);
