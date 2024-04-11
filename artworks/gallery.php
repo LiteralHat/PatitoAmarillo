@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php'); 
+<?php include_once ('../variables.php');
 session_start();
 ?>
 
@@ -10,7 +10,7 @@ session_start();
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Gallery." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -147,13 +147,13 @@ session_start();
                                 echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
                             } ?>
 
-                            <!-- <label for='sortby'><span class='bold'>Sort by:</span></label>
+                            <label for='sortby'><span class='bold'>Sort by:</span></label>
                             <select name='sortby' id='sortby'>
                                 <option value='default'>Default (Date Added)</option>
                                 <option value='title'>Title</option>
                                 <option value='newtoold'>Date Created (Newest to Oldest)</option>
                                 <option value='oldtonew'>Date Created (Oldest to Newest)</option>
-                            </select> -->
+                            </select>
 
 
                             <hr class='hrtextseparator'>
@@ -168,40 +168,44 @@ session_start();
                                     $year = substr($dateString, 0, 4);
                                     echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
                                 }
-                                
+
                                 unset($_SESSION['dbresults']);
-                                // $jsondb = json_encode($artworkdb); 
+
+                                $test = array('stupid', 'fuckyou');
+
                                 ?>
-                                
-                            </div>
+                                <script>
 
-                            <script>
-
-                                $(document).ready(function () {
-                                    $('#sortby').change(function () {
-                                        var sortBy = $(this).val();
-                                        // Send data as an object
-                                        $.ajax({
-                                            url: 'sort_gallery',
-                                            method: 'POST',
-                                            data: {sortBy: sortBy}, // Send sortBy as key-value pair
-                                            success: function (response) {
-                                                $('#galleryitems').html(response);
-                                            },
-                                            error: function (xhr, status, error) {
-                                                console.error(error);
-                                            }
+                                    $(document).ready(function () {
+                                        $('#sortby').change(function () {
+                                            var sortBy = $(this).val();
+                                            var artworksArray = <?php echo json_encode($artworksdb); ?>; // Serialize the PHP array
+                                            console.log(artworksArray);
+                                            $.ajax({
+                                                url: 'sort_gallery',
+                                                method: 'POST',
+                                                data: { sortBy: sortBy, artworksArray: JSON.stringify(artworksArray) }, // Send sortBy and JSON data
+                                                success: function (response) {
+                                                    $('#galleryitems').html(response);
+                                                },
+                                                error: function (xhr, status, error) {
+                                                    console.error(error);
+                                                }
+                                            });
                                         });
                                     });
-                                });
-                            </script>
+                                </script>
+
+                            </div>
+
+
 
                         </div>
                     </div>
                 </div>
 
                 <div class='sidecontainer'>
-                    
+
                 </div>
 
             </div>
