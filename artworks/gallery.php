@@ -164,7 +164,6 @@ session_start();
 
                             <hr class='hrtextseparator'>
                             <div id='galleryitems'>
-
                                 <?php
                                 //make it so you can change this later, but i honestly cant be bothered
                                 $itemsPerPage = 30;
@@ -182,8 +181,8 @@ session_start();
                                 echo '<br>itemsEndLimit = ' . $itemsEndLimit;
 
                                 $itemsStartLimit;
-
                                 $rowCount = 0;
+
                                 foreach ($artworksdb as $row => $artwork) {
                                     $rowCount++;
 
@@ -200,20 +199,7 @@ session_start();
                                         }
                                     }
                                 }
-
-
-
-                                // foreach ($artworksdb as $row => $artwork) {
-                                //     $wordsArray = explode("-", $artwork['title']);
-                                //     $capitalizedWords = array_map('ucfirst', $wordsArray);
-                                //     $finalString = implode(" ", $capitalizedWords);
-                                //     $dateString = htmlspecialchars($artwork['datecreated']);
-                                //     $year = substr($dateString, 0, 4);
-                                //     echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
-                                // }
                                 
-                                unset($_SESSION['dbresults']);
-
                                 $test = array('stupid', 'fuckyou');
 
                                 ?>
