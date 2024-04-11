@@ -69,8 +69,6 @@
                                         <li>Working search bar</li>
                                         <li>Better site theme</li>
                                         <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
-                                        <li>Search functionality on gallery page</li>
-                                        <li>Filter and sort functionality on gallery page</li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,8 +80,18 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                              
 
-                            
+
+                                <h3>v12.5.0-beta 11.04.2024</h3>
+                                <ul>
+                                    <li>Added filter functionality to gallery page</li>
+                                    <li>Added artwork counter to gallery page</li>
+                                    <li>Added mobile responsiveness to all gallery pages</li>
+                                    <li>Added better individual artwork viewer buttons</li>
+                                    <li>Fixed thumbnail spacing issues</li>
+                                </ul>
+
                                 <h3>v11.5.0-beta 09.04.2024</h3>
                                 <ul>
                                     <li>Added LiteralGallery!</li>

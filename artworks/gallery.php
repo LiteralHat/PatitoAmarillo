@@ -1,4 +1,6 @@
-<?php include_once ('../variables.php'); ?>
+<?php include_once ('../variables.php'); 
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@
 
 
         <?php //code for the header element and load the database for the gallery
-        session_start();
+        
         include_once ($folder . '/elements/galleryheader.php');
         $db = new PDO('sqlite:artworks.db');
 
@@ -139,7 +141,6 @@
                         <div class="whitebox padded">
                             <?php if (isset($_SESSION['dbresults'])) {
                                 echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
-                                unset($_SESSION['dbresults']);
                             } else {
                                 $statement = $db->query('SELECT COUNT(*) as total FROM artworks');
                                 $result = $statement->fetch(PDO::FETCH_ASSOC);
@@ -168,6 +169,7 @@
                                     echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
                                 }
                                 
+                                unset($_SESSION['dbresults']);
                                 // $jsondb = json_encode($artworkdb); 
                                 ?>
                                 

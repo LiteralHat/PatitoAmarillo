@@ -34,11 +34,19 @@
 
             $statement->execute();
 
+
             $r = $statement->fetch();
-            $db = null;
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $query = "SELECT COUNT(*) as artworkid FROM artworks";
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
 
             if (!$r) {
-                echo "Oh no. that artwork doesnt exist. sorry.";
+                echo "<p class='center large'>Oh no. This page doesn't exist! Sorry.</p>";
                 exit();
             }
 
@@ -46,6 +54,8 @@
             print 'looks like something just flat out broke.. please open an issue on my GitHub and ill fix it. https://github.com/LiteralHat/literalhat.com';
             die();
         }
+
+        
 
         ?>
 
@@ -211,7 +221,7 @@
                         </div>
                     </div>
 
-                                        
+
                     <div class='rowbox' id='gallerybuttons'>
                         <div class='columnbox'>
                             <div class='contentcontainer'>
@@ -237,12 +247,7 @@
                             <div class='contentcontainer'>
                                 <button id='random' class='gallerybutton tone2' href=''>
                                     <?php
-                                    $db = new PDO('sqlite:artworks.db');
-                                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    $query = "SELECT COUNT(*) as artworkid FROM artworks";
-                                    $stmt = $db->prepare($query);
-                                    $stmt->execute();
-                                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                                    
                                     $rowCount = isset($result['artworkid']) ? $result['artworkid'] : 0;
                                     $randomNumber = rand(0, $rowCount);
                                     echo "<a href='$randomNumber'>";
@@ -295,12 +300,6 @@
                                 <button id='random' class='gallerybutton tone5' href=''>
 
                                     <?php
-                                    $db = new PDO('sqlite:artworks.db');
-                                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                    $query = "SELECT COUNT(*) as artworkid FROM artworks";
-                                    $stmt = $db->prepare($query);
-                                    $stmt->execute();
-                                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
                                     $rowCount = isset($result['artworkid']) ? $result['artworkid'] : 0;
                                     echo "<a href='$rowCount'>";
                                     ?>
