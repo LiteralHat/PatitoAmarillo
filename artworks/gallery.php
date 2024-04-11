@@ -31,6 +31,10 @@ session_start();
             $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
         }
         ;
+
+        $totalArtworks = count($artworksdb);
+        $itemsPerPage = 30;
+        $pageNumber = 1;
         ?>
 
         <div class="contentrowwhite centerbox">
@@ -175,16 +179,14 @@ session_start();
 
                                 ?>
                                 <script>
-
+                                    var artworksArray = <?php echo json_encode($artworksdb); ?>;
                                     $(document).ready(function () {
                                         $('#sortby').change(function () {
                                             var sortBy = $(this).val();
-                                            var artworksArray = <?php echo json_encode($artworksdb); ?>; // Serialize the PHP array
-                                            console.log(artworksArray);
                                             $.ajax({
                                                 url: 'sort_gallery',
                                                 method: 'POST',
-                                                data: { sortBy: sortBy, artworksArray: JSON.stringify(artworksArray) }, // Send sortBy and JSON data
+                                                data: { sortBy: sortBy, artworksArray: JSON.stringify(artworksArray) },
                                                 success: function (response) {
                                                     $('#galleryitems').html(response);
                                                 },
@@ -199,10 +201,18 @@ session_start();
                             </div>
 
 
+                            <div class='contentcontainer'>
+                                
+                                <h2> uhh </h2>
+                            </div>
 
                         </div>
+
+
                     </div>
+
                 </div>
+
 
                 <div class='sidecontainer'>
 
