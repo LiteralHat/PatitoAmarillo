@@ -1,12 +1,12 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['sortBy']) && isset($_POST['artworksArray'])) {
-        $sortBy = $_POST['sortBy'];
+    if (isset($_POST['sortby']) && isset($_POST['data'])) {
+        $sortby = $_POST['sortby'];
         $artworksArray = json_decode($_POST['data'], true); // Unserialize the array
         
 
-        switch ($sortBy) {
+        switch ($sortby) {
             case 'default':
                 usort($artworksArray, function ($a, $b) {
                     return strcmp($a['artworkid'], $b['artworkid']);
@@ -34,15 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 break;
         }
 
-        // Generate sorted HTML output
-        foreach ($artworksArray as $row => $artwork) {
-            $wordsArray = explode("-", $artwork['title']);
-            $capitalizedWords = array_map('ucfirst', $wordsArray);
-            $finalString = implode(" ", $capitalizedWords);
-            $dateString = htmlspecialchars($artwork['datecreated']);
-            $year = substr($dateString, 0, 4);
-            echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
-        }
+
+        $_SESSION['dbresults'] = $artworksdb;
+        header("Location: gallery?page=1");
+        exit();
 
     } else {
         echo 'Insufficient data received';

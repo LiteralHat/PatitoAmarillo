@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
 
-    if (!empty($_GET['mediums']) && !empty($_GET['mediums'])) {
+    if (!empty($_GET['mediums'])) {
         $answer = $_GET['mediums'];
         $artworksByTag = [];
         foreach ($answer as $queryitem) {

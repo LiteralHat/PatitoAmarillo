@@ -1267,8 +1267,15 @@ a:hover {
     width: 70vw;
 }
 
+#gallerypagenumbers {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
 
-
+.nounderline {
+    text-decoration: none;
+}
 
 
 
@@ -1412,6 +1419,7 @@ a:hover {
     #gallerycontainer {
         width: 100%;
     }
+
     .widthcontainer {
         width: 45vw;
     }
@@ -1443,10 +1451,10 @@ a:hover {
     }
 
     .gallerybutton {
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-     }
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 
     #characterDialogueBox {
         margin-top: 0.2rem;
@@ -1546,7 +1554,7 @@ a:hover {
         justify-content: center;
     }
 
-    .thinwidthcontainer{
+    .thinwidthcontainer {
         width: 100%;
     }
 
@@ -1570,7 +1578,7 @@ a:hover {
         max-width: 100%;
     }
 
-   
+
 
 }
 
@@ -1605,14 +1613,3 @@ a:hover {
 .noshadow {
     box-shadow: 0 0 0 0 transparent;
 }
-
-
-
-
-
-
-
-
-
-
-

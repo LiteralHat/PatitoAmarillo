@@ -137,6 +137,26 @@ session_start();
                 </div>
 
 
+
+                <?php
+                //code that sets up all the shit that makes the rest of the shit do its fucking shit
+                
+                //make it so you can change the itemsperpage later 
+                $itemsPerPage = 30;
+                $totalArtworks = count($artworksdb);
+                $totalPages = ceil($totalArtworks / $itemsPerPage);
+                //gets the current page from the url
+                $currentPage = $_GET['page'];
+
+                $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
+                $itemsEndLimit = $itemsPerPage * $currentPage;
+
+                $rowCount = 0;
+
+            
+                ?>
+
+
                 <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
@@ -148,40 +168,54 @@ session_start();
                                 echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
                             }
                             ?>
+                            <div>
+                                <h2 id='gallerypagenumbers'>Page you wanna go to:
+                                    <?php
+                                    for ($i = 1; $i <= $totalPages; $i++) {
+                                        if ($i == $currentPage) {
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        } else {
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        };
+                                    }
+                                    ?>
+                                </h2>
+                            </div>
 
-                            <h2><a href='gallery.php?page=1'>Page: 1</a></h2>
-                            <h2><a href='gallery.php?page=2'>Page: 2</a></h2>
+                            <form class='form' action='gallerysorter' method='POST'>
+                                <label for='sortby'><span class='bold'>Sort by:</span></label>
+                                <select name='sortby' id='sortby'>
+                                    <option value='default'>Default (Date Added)</option>
+                                    <option value='title'>Title</option>
+                                    <option value='newtoold'>Date Created (Newest to Oldest)</option>
+                                    <option value='oldtonew'>Date Created (Oldest to Newest)</option>
+                                </select>
 
-                            
-                            <label for='sortby'><span class='bold'>Sort by:</span></label>
-                            <select name='sortby' id='sortby'>
-                                <option value='default'>Default (Date Added)</option>
-                                <option value='title'>Title</option>
-                                <option value='newtoold'>Date Created (Newest to Oldest)</option>
-                                <option value='oldtonew'>Date Created (Oldest to Newest)</option>
-                            </select>
+                                <label for='sortby'><span class='bold'>Items Per Page:</span></label>
+                                <select name='sortby' id='sortby'>
+                                    <option value='15'>15</option>
+                                    <option value='30'>30</option>
+                                    <option value='45'>45</option>
+                                    <option value='60'>60</option>
+                                </select>
+                                    <?php 
+                                    $artworksdb;
+                                    ?>
+                                    
+                                <input type='hidden' name='data' value='<?php echo json_encode($artworksdb); ?>'>
+                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy! </button>
+                            </form>
+
 
 
                             <hr class='hrtextseparator'>
                             <div id='galleryitems'>
                                 <?php
-                                //make it so you can change this later, but i honestly cant be bothered
-                                $itemsPerPage = 30;
-                                $totalArtworks = count($artworksdb);
-                                $totalPages = ceil($totalArtworks / $itemsPerPage);
-                                //gets the current page from the url
-                                $currentPage = $_GET['page'];
 
-                                $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
-                                $itemsEndLimit = $itemsPerPage * $currentPage;
-
-                                echo 'currentpage = ' . $currentPage;
+                                echo 'DEBUG TEXT (Please Ignore :D) </br> currentpage = ' . $currentPage;
                                 echo '<br> total pages = ' . $totalPages;
                                 echo '<br>itemsStartLimit = ' . $itemsStartLimit;
                                 echo '<br>itemsEndLimit = ' . $itemsEndLimit;
-
-                                $itemsStartLimit;
-                                $rowCount = 0;
 
                                 foreach ($artworksdb as $row => $artwork) {
                                     $rowCount++;
@@ -199,30 +233,12 @@ session_start();
                                         }
                                     }
                                 }
+
                                 
-                                $test = array('stupid', 'fuckyou');
 
                                 ?>
-                                <script>
 
-                                    $(document).ready(function () {
-                                        $('#sortby').change(function () {
-                                            var sortBy = $(this).val();
-                                            var artworksArray = <?php echo json_encode($artworksdb); ?>;
-                                            $.ajax({
-                                                url: 'sort_gallery',
-                                                method: 'POST',
-                                                data: { sortBy: sortBy, artworksArray: JSON.stringify(artworksArray) },
-                                                success: function (response) {
-                                                    $('#galleryitems').html(response);
-                                                },
-                                                error: function (xhr, status, error) {
-                                                    console.error(error);
-                                                }
-                                            });
-                                        });
-                                    });
-                                </script>
+
 
                             </div>
 
