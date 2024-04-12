@@ -1,6 +1,20 @@
 <?php include_once ('../variables.php');
 session_start();
 $db = new PDO('sqlite:artworksv2.db');
+if (!isset($_GET['page'])) {
+    session_unset();
+    //echo '<br>SESSION DESTROYED';
+}
+if (isset($_SESSION['dbresults'])) {
+    $artworksdb = $_SESSION['dbresults'];
+    //echo '<br>SESSION ONGOING';
+
+} else {
+    $statement = $db->query("SELECT * FROM artworks");
+    //$artworksdb is the 'master' array that will be echo'ed in HTML
+    $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //echo '<br>ARRAY RESET';
+};
 ?>
 
 
@@ -8,8 +22,8 @@ $db = new PDO('sqlite:artworksv2.db');
 <html lang="en">
 
 <head>
-    <title>LiteralBlank.</title>
-    <meta name="LiteralHat | Gallery." content="" />
+    <title>LiteralGallery.</title>
+    <meta name="LiteralHat | Gallery" content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 
 </head>
@@ -279,7 +293,7 @@ $db = new PDO('sqlite:artworksv2.db');
                             <hr class='hrtextseparator'>
                             <br>
                             <div>
-                                <h2 id='gallerypagenumbers'>LiteralHat:
+                                <h2 id='gallerypagenumbers'>More pages: 
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
                                         if ($i == $currentPage) {

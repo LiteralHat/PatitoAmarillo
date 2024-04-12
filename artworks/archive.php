@@ -1,9 +1,8 @@
 <?php include_once ('../variables.php');
 session_start();
 $db = new PDO('sqlite:artworksv2.db');
-
-
-
+$statement = $db->query("SELECT * FROM artworks");
+$artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -11,7 +10,7 @@ $db = new PDO('sqlite:artworksv2.db');
 <html lang="en">
 
 <head>
-    <title>LiteralBlank.</title>
+    <title>LiteralArchive.</title>
     <meta name="LiteralHat | Archive" content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 
