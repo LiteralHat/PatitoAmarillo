@@ -55,6 +55,7 @@ session_start();
                         if (isset($_SESSION['dbresults'])) {
                             $artworksdb = $_SESSION['dbresults'];
                             echo '<br>SESSION ONGOING';
+
                         } else {
                             $statement = $db->query("SELECT * FROM artworks");
                             //$artworksdb is the 'master' array that will be echo'ed in HTML
@@ -63,35 +64,44 @@ session_start();
                         }
                         ;
 
+                        if (isset($_SESSION['last_activity'])) {
+                            // Check if the session has expired (e.g., 30 minutes)
+                            $expireAfterSeconds = 60 * 15; // 30 minutes
+                            $inactiveTime = time() - $_SESSION['last_activity'];
 
+                            if ($inactiveTime > $expireAfterSeconds) {
+                                // Session expired, destroy it
+                                session_unset();
+                                session_destroy();
+                                header("Location: gallery.php"); // Redirect to login page
+                                exit;
+                            }
+                        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        $_SESSION['last_activity'] = time();
                         
+                        // Update last activity time
+                        
+
+
+
+
+
+
+
+
+
 
 
                         //code that sets up all the shit that makes the rest of the shit do its fucking shit
-                        
-                        //make it so you can change the itemsperpage later 
-                        $itemsPerPage = 30;
+                       
+                        if (isset($_SESSION['iPP'])) {
+                        echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
+                            $itemsPerPage = $_SESSION['iPP'];
+                        } else {
+                            $itemsPerPage = 30;
+                        }
+
                         $totalArtworks = count($artworksdb);
                         $totalPages = ceil($totalArtworks / $itemsPerPage);
                         //gets the current page from the url
@@ -101,20 +111,18 @@ session_start();
                             $currentPage = 1;
                         }
 
-                        $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
-                        $itemsEndLimit = $itemsPerPage * $currentPage;
-
-                        $rowCount = 0;
-
                         echo '<br>currentpage = ' . $currentPage;
                         echo '<br>total pages = ' . $totalPages;
+
+                        $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
+                        $itemsEndLimit = $itemsPerPage * $currentPage;
                         echo '<br>itemsStartLimit = ' . $itemsStartLimit;
                         echo '<br>itemsEndLimit = ' . $itemsEndLimit;
+                        
+                        $rowCount = 0;
                         echo '</div>';
 
                         ?>
-
-                     
 
 
                     </div>

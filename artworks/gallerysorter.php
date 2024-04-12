@@ -4,6 +4,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['sortby']) && isset($_POST['data'])) {
         $sortby = $_POST['sortby'];
+        $itemsPerPage = $_POST['itemsnumber'];
         $artworksArray = json_decode($_POST['data'], true); // Unserialize the array
         
 
@@ -43,8 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 break;
         }
 
+
         // Generate sorted HTML output
         $_SESSION['dbresults'] = $artworksArray;
+        $_SESSION['iPP'] = $itemsPerPage;
         header("Location: gallery?page=1");
         exit();
     } else {
