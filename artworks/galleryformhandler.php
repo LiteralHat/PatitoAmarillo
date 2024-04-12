@@ -1,13 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-
-session_start();
-
-//code wont execute at all if nothing has been submitted
-
-$db = new PDO('sqlite:artworks.db');
-=======
 session_start();
 
 //code wont execute at all if nothing has been submitted
@@ -17,7 +8,6 @@ session_start();
 
 
 $db = new PDO('sqlite:artworksv2.db');
->>>>>>> gallerytest
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -105,11 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
 
-<<<<<<< HEAD
-    if (!empty($_GET['mediums']) && !empty($_GET['mediums'])) {
-=======
     if (!empty($_GET['mediums'])) {
->>>>>>> gallerytest
         $answer = $_GET['mediums'];
         $artworksByTag = [];
         foreach ($answer as $queryitem) {
@@ -145,11 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     $_SESSION['dbresults'] = $artworksdb;
-<<<<<<< HEAD
-    header("Location: gallery.php?success=1");
-=======
     header("Location: gallery?page=1");
->>>>>>> gallerytest
     exit();
 
 }
