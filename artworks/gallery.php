@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 <?php include_once ('../variables.php'); ?>
 
+=======
+<?php include_once ('../variables.php');
+session_start();
+$db = new PDO('sqlite:artworksv2.db');
+?>
+>>>>>>> gallerytest
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +15,17 @@
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Gallery." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
+<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+=======
+>>>>>>> gallerytest
 
 </head>
 
+
 <body>
     <main>
+<<<<<<< HEAD
 
 
         <?php //code for the header element and load the database for the gallery
@@ -34,6 +46,12 @@
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer'>
+=======
+        <?php include_once ($folder . '/elements/galleryheader.php'); ?>
+        <div class="contentrowwhite centerbox">
+            <div class='widthcontainer centerbox'>
+                <div class='contentcontainer paddedsm'>
+>>>>>>> gallerytest
                     <div class='columnbox'>
                         <p>Welcome to the gallery. In this section of the website you can find artworks that I've drawn
                             over
@@ -42,6 +60,60 @@
                         </p>
                         <p>I am a single person developing this gallery as well as cataloguing artworks, so any patience
                             is wholly appreciated.</p>
+<<<<<<< HEAD
+=======
+
+                        <br>
+                        <br>
+
+                        <?php //code for the header element and load the database for the gallery
+                        
+
+                        // echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
+                        
+
+
+                        if (isset($_SESSION['last_activity'])) {
+                            $expireAfterSeconds = 60 * 15; //15 minutes for now
+                            $inactiveTime = time() - $_SESSION['last_activity'];
+
+                            if ($inactiveTime > $expireAfterSeconds) {
+                                // Session expired, destroy it
+                                session_unset();
+                                session_destroy();
+                                header("Location: gallery.php"); // Redirect to login page
+                                exit;
+                            }
+                        }
+
+                        $_SESSION['last_activity'] = time();
+
+                        //code that sets up all the shit that makes the rest of the shit do its fucking shit
+                        
+                        if (isset($_SESSION['iPP'])) {
+                            // echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
+                            $itemsPerPage = $_SESSION['iPP'];
+                        } else {
+                            $itemsPerPage = 30;
+                        }
+
+                        $totalArtworks = count($artworksdb);
+                        $totalPages = ceil($totalArtworks / $itemsPerPage);
+                        //gets the current page from the url
+                        if (isset($_GET['page'])) {
+                            $currentPage = $_GET['page'];
+                        } else {
+                            $currentPage = 1;
+                        }
+
+                        $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
+                        $itemsEndLimit = $itemsPerPage * $currentPage;
+
+                        $rowCount = 0;
+
+                        ?>
+
+>>>>>>> gallerytest
                     </div>
                 </div>
             </div>
@@ -128,18 +200,134 @@
                                     <button class='button' type='submit' value='submit' name='submit'>SEARCH</button>
                                 </fieldset>
 
+<<<<<<< HEAD
+=======
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div id='gallerycontainer'>
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded">
+                            <?php if (isset($_SESSION['dbresults'])) {
+                                echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
+                            } else {
+                                echo '<h2>Viewing All Artworks: ' . count($artworksdb) . '</h2><span></span>';
+                            }
+                            ?>
+                            <div>
+                                <h2 id='gallerypagenumbers'>Page you wanna go to:
+                                    <?php
+                                    for ($i = 1; $i <= $totalPages; $i++) {
+                                        if ($i == $currentPage) {
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        } else {
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        }
+                                        ;
+                                    }
+                                    ?>
+                                </h2>
+                            </div>
+
+                            <form class='form' action='gallerysorter' method='POST'>
+                                <label for='sortby'><span class='bold'>Sort by:</span></label>
+                                <select name='sortby' id='sortby'>
+                                    <option value='default'>Default (Date Added)</option>
+                                    <option value='title'>Title</option>
+                                    <option value='newtoold'>Date Created (Newest to Oldest)</option>
+                                    <option value='oldtonew'>Date Created (Oldest to Newest)</option>
+                                </select>
+
+                                <label for='itemsnumber'><span class='bold'>Items Per Page:</span></label>
+                                <select name='itemsnumber' id='itemsnumber'>
+                                    <option value='15'>15</option>
+                                    <option value='30'>30</option>
+                                    <option value='45'>45</option>
+                                    <option value='60'>60</option>
+                                </select>
+
+                                <?php
+
+
+                                function escapeApostrophes($input)
+                                {
+                                    if (is_array($input)) {
+                                        return array_map('escapeApostrophes', $input);
+                                    } elseif (is_string($input)) {
+                                        return str_replace("'", "STUPIDAPOSTROPHE", $input);
+                                    } else {
+                                        return $input;
+                                    }
+                                }
+                                $encodeArray = escapeApostrophes($artworksdb);
+                                
+                                ?>
+
+                                <input type='hidden' name='data' value='<?php echo json_encode($encodeArray); ?>'>
+                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy!
+                                </button>
+                            </form>
+
+
+
+                            <hr class='hrtextseparator'>
+                            <div id='galleryitems'>
+                                <?php
+
+
+
+                                foreach ($artworksdb as $row => $artwork) {
+                                    $rowCount++;
+
+                                    if ($rowCount >= $itemsStartLimit) {
+                                        $wordsArray = explode("-", $artwork['title']);
+                                        $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                        $finalString = implode(" ", $capitalizedWords);
+                                        $dateString = htmlspecialchars($artwork['datecreated']);
+                                        $year = substr($dateString, 0, 4);
+                                        echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+
+                                        if ($rowCount >= $itemsEndLimit) {
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                ?>
+
+
+
+                            </div>
+
+                            <hr class='hrtextseparator'>
+                            <br>
+                            <div>
+                                <h2 id='gallerypagenumbers'>LiteralHat:
+                                    <?php
+                                    for ($i = 1; $i <= $totalPages; $i++) {
+                                        if ($i == $currentPage) {
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        } else {
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        }
+                                        ;
+                                    }
+                                    ?>
+                                </h2>
+>>>>>>> gallerytest
                             </div>
                         </div>
 
 
-                    </form>
-
-
-
+                    </div>
 
                 </div>
 
 
+<<<<<<< HEAD
                 <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
@@ -207,13 +395,17 @@
 
                 </div>
 
+=======
+>>>>>>> gallerytest
                 <div class='sidecontainer'>
+
                 </div>
 
             </div>
         </div>
 
 
+<<<<<<< HEAD
 
 
 
@@ -226,3 +418,16 @@
 
 
 
+=======
+        <?php include ($footer);
+        ?>
+    </main>
+</body>
+
+
+
+
+
+
+</html>
+>>>>>>> gallerytest

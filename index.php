@@ -57,7 +57,7 @@
 
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
-                            <blockquote class='fancy white large '>› That's sarcasm, let it burn! ‹</blockquote>
+                            <blockquote class='fancy white medium center'>› THAT'S SARCASM, LET IT BURN! ‹</blockquote>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,6 @@
                                             cunt, Ami.</span>
                                     </p>
                                     <p>Without them, this site would be even more broken than it already is.</p>
-                                    <p class='italics'><a href='about/about_faq.php'>Looking for the old site..?</a></p>
                                 </div>
                             </div>
                         </div>

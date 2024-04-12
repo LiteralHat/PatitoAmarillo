@@ -46,20 +46,21 @@
                                     <p class='large'>Hi. I'm Hat.</p>
                                     <p>I'm just a dude, really.</p>
                                     <p>Sometimes I draw, sometimes I animate.</p>
-                                    <p>On good days, I code. On bad days, I code anyways, but with more StackOverflow.</p>
+                                    <p>On good days, I code. On bad days, I code anyways, but with more StackOverflow.
+                                    </p>
                                     <p>I also enjoy pretending to be a competent guitarist.</p>
                                     <p>This is the website of my passion. Thanks for visiting.</p>
                                     <img src=<?php echo ($links . 'images/pagedolls/hat-hands-together.png'); ?>
                                         class='image small'
                                         src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
                                 </div>
-                                    <p class='bold smalltext centerbox'>if (sleepSchedule == 'fucked') {<br>
+                                <p class='bold smalltext centerbox'>if (sleepSchedule == 'fucked') {<br>
                                     doCoding();<br>
                                     } else {<br>
                                     shredGuitar();<br>
                                     }
                                 </p>
-                                
+
                             </div>
                     </section>
 
@@ -77,19 +78,17 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded tone2">
                                 <div class="whitebox padded">
+                                    <p class='question'>Are you up for hire?</p>
+                                    <p>Please send any business enquiries to <i>support@literalhat.com</i>.</p>
                                     <p class='question'>Can I use your art in ______?</p>
-                                    <p>Yeah. Please do, actually.</p>
+                                    <p>I encourage you to.</p>
                                     <p>Profile pictures, banners, edits, videos etc. - all are fine as long as your use
                                         is not commercial.</p>
-                                    <p>No need to credit... but be kind to others in your usage.</p>
+                                    <p>No need to credit... be kind to others in your usage.</p>
                                     <p class='question'>How can I support you?</p>
-                                    <p>Monetarily? You don't need to, I have a day job.</p>
-                                    <p>If you insist, it would be cool if you showed some of my stuff to your friends. That's all I ask :)</p>
-                                        <p>I have a <a href='https://www.patreon.com/LiteralHat'
-                                        target='_blank'>Patreon</a> where I post daily if you're interested though.</p>
-                                    <p class='question'>How can I contact you?</p>
-                                    <p>Might be tricky - email <i>support@literalhat.com</i> and see what happens..?</p>
-                                    <p>I don't really use social media, sorry.</p>
+                                    <p>You can become a supporter through <a href='https://www.patreon.com/LiteralHat'
+                                            target='_blank'>Patreon</a> where I post daily.</p>
+                                    <p>Or, if you can, show my stuff to your friends. That's all I need.</p>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,25 @@
 @font-face {
+    font-family: CuteNotes;
+    src: url('fonts/CuteNotes.ttf');
+}
+
+@font-face {
+    font-family: Deco;
+    src: url('fonts/Deco.otf');
+}
+
+@font-face {
+    font-family: Retro;
+    src: url('fonts/Retro.ttf');
+}
+
+@font-face {
+    font-family: Minercraftory;
+    src: url('fonts/Minercraftory.ttf');
+}
+
+
+@font-face {
     font-family: RobotoMono;
     src: url('fonts/RobotoMono.ttf');
 }
@@ -50,6 +71,7 @@
     --tonered: #c4001e;
     --tonegreen: #106363;
     --toneblack: #000000;
+    --tonegrey: #697270;
 
 
     /* Used for main site logo */
@@ -63,7 +85,8 @@
     /* For the top menu */
     --font-loud: Spinnaker, Russo One, Verdana;
     /* Extra font for fancy text quote */
-    --font-fancy: Gamer, Spinnaker, Russo One;
+    --font-fancy: Retro, Spinnaker, Russo One;
+    /* Extra font for fancy text quote */
 }
 
 * {
@@ -196,6 +219,7 @@ ol {
     width: 13rem;
 }
 
+
 .small {
     font-size: 0.8rem;
     width: 20rem;
@@ -235,7 +259,14 @@ ol {
 }
 
 
+.alignright {
+    text-align: right;
+}
 
+
+.alignleft {
+    text-align: left;
+}
 
 
 
@@ -255,9 +286,13 @@ ol {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    width: 110%;
-    left: -1.3rem;
+    width: 100%;
+    left: -1rem;
     position: relative;
+}
+
+#daterange input {
+    justify-content: end;
 }
 
 .button {
@@ -303,7 +338,6 @@ ol {
     border: var(--box-borders) solid black;
     background-color: white;
     box-sizing: border-box;
-    height: 100%;
     width: 100%;
 }
 
@@ -323,9 +357,17 @@ ol {
 }
 
 /* container for middle width */
+.thinwidthcontainer {
+    width: 500px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
 .widthcontainer {
     width: var(--content-width);
     box-sizing: border-box;
+
 }
 
 .bigwidthcontainer {
@@ -343,8 +385,6 @@ ol {
     box-sizing: border-box;
 
 }
-
-
 
 
 /* container for side content */
@@ -867,7 +907,10 @@ a:hover {
 
 .fancy {
     font-family: var(--font-fancy);
+
 }
+
+
 
 .quote {
     font-size: 2.4rem;
@@ -938,6 +981,12 @@ a:hover {
     background-color: var(--toneblack);
     color: white !important;
 }
+
+
+.tonegrey {
+    background-color: var(--tonegrey);
+}
+
 
 
 .white {
@@ -1013,6 +1062,230 @@ a:hover {
 .textblack {
     color: var(--toneblack);
 }
+
+.textgrey {
+    color: var(--tonegrey);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fanartimage {
+    border: 0.2rem solid white;
+    height: 10rem;
+    margin: 0.3rem;
+    opacity: 1;
+}
+
+.fanartimage:hover {
+    opacity: 0.8;
+
+}
+
+#fanartgallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.lightBoxElement {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.lightBoxElement img {
+    width: max-content;
+    height: auto;
+    margin: 0.6rem auto 0.4rem;
+    opacity: 1;
+}
+
+.galleryCredit h2 {
+    margin: 0.5rem;
+    font-size: 3rem;
+}
+
+.galleryCredit hr {
+    margin-bottom: 1rem;
+}
+
+.yearhover {
+    color: white;
+
+}
+
+.yearhover:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.hidden img {
+    opacity: 0;
+    border: 0px solid transparent;
+    width: 0px;
+    height: 0px;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+.galleryimage {
+    width: 600px;
+}
+
+.gallerydetails dt {
+    font-weight: bold;
+    float: left;
+}
+
+.gallerydetails dd {
+    margin-left: 35%;
+}
+
+.gallerydetails dd::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gallerycode {
+    width: 100%;
+}
+
+.gallerybutton {
+    border: var(--box-borders) solid black;
+    box-shadow: 7px 7px 0 0 black;
+    width: 100%;
+}
+
+.gallerybutton:hover {
+    background-color: black;
+}
+
+.gallerybutton p,
+.gallerybutton a {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallerythumbnail img {
+    border: 0.26rem solid black;
+    margin: 0.7rem 0;
+    padding: 0.1rem;
+}
+
+.gallerythumbnail p {
+    padding: 0;
+    margin-bottom: 0.4rem;
+}
+
+.gallerythumbnail a {
+    text-decoration: none;
+}
+
+.gallerythumbnail {}
+
+.gallerytitle {
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+}
+
+#galleryitems {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    align-items: end;
+    justify-content: center;
+}
+
+#gallerytext {
+    font-size: 4rem;
+    font-family: var(--font-fancy);
+}
+
+#gallerytext a {
+    text-decoration: none;
+}
+
+#gallerymenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    position: relative;
+    right: 1rem;
+}
+
+#gallerymenu a {
+    text-decoration: none;
+}
+
+.galleryheader {
+    font-family: var(--font-fancy);
+    font-size: 2rem;
+}
+
+#gallerycontainer {
+    width: 70vw;
+}
+
+#gallerypagenumbers {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+
+.nounderline {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1120,86 +1393,6 @@ a:hover {
 
 
 
-.galleryimage {
-    width: 700px;
-    border: var(--box-borders) solid black;
-    box-shadow: 7px 7px 0 0 ;
-    position: relative;
-    top: 2rem;
-}
-
-#galleryarrowleft {
-    width: 0; 
-    height: 0; 
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-right: 60px solid white;
-    margin-right: auto;
-}
-
-#galleryarrowleftshadow {
-    position: relative;
-    top: -6.85rem;
-    left: 0.26rem;
-    width: 0; 
-    height: 0; 
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-right: 50px solid black;
-    margin-right: auto;
-}
-
-#galleryarrowright {
-    width: 0; 
-    height: 0; 
-    border-top: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid white;
-    margin-left: auto;
-}
-
-#galleryarrowrightshadow {
-    position: relative;
-    top: -6.85rem;
-    right: 0.26rem;
-    width: 0; 
-    height: 0; 
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-left: 50px solid black;
-    margin-left: auto;
-}
-
-.gallerydetails dt {
-    font-weight: bold;
-    float: left;
-}
-
-.gallerydetails dd {
-    margin-left: 35%;
-}
-
-.gallerydetails dd::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-#galleryarrowrightcontainer {
-    position: relative;
-    left: 2.4rem;
-    top: 3rem;
-}
-
-
-#galleryarrowleftcontainer {
-    position: relative;
-    right: 2.4rem;
-    top: 3rem;
-}
-
-
-
 
 
 
@@ -1223,6 +1416,10 @@ a:hover {
         margin: auto;
     }
 
+    #gallerycontainer {
+        width: 100%;
+    }
+
     .widthcontainer {
         width: 45vw;
     }
@@ -1231,12 +1428,12 @@ a:hover {
         width: 100%;
     }
 
-    img{
+    img {
         max-width: 100%;
         height: auto;
     }
 
-    .framedimage{
+    .framedimage {
         max-width: 90%;
         height: auto;
     }
@@ -1248,9 +1445,15 @@ a:hover {
         max-width: 100%;
         height: auto;
     }
- 
+
     button {
-        max-width: 28vw;
+        max-width: 27vw;
+    }
+
+    .gallerybutton {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     #characterDialogueBox {
@@ -1266,9 +1469,13 @@ a:hover {
         height: 30rem;
     }
 
+    .galleryimage {
+        width: 100%;
+    }
 
-
-
+    .whitebox {
+        height: fit-content;
+    }
 
 }
 
@@ -1277,6 +1484,14 @@ a:hover {
 
 /* media queries for responsiveness */
 @media (max-width: 1000px) {
+    .gallerythumbnail img {
+        width: 38vw;
+    }
+
+    #gallerytext {
+        font-size: 3.2rem;
+    }
+
     .widthcontainer {
         width: 100%;
     }
@@ -1329,10 +1544,19 @@ a:hover {
         width: 100%;
     }
 
+    .gallerybutton {
+        border: var(--box-borders) solid black;
+        box-shadow: 7px 7px 0 0 black;
+    }
+
+
     .headercontainer {
         justify-content: center;
     }
 
+    .thinwidthcontainer {
+        width: 100%;
+    }
 
     #centerbox {
         order: 1;
@@ -1354,6 +1578,8 @@ a:hover {
         max-width: 100%;
     }
 
+
+
 }
 
 
@@ -1369,7 +1595,6 @@ a:hover {
     .whitebox {
         box-shadow: 7px 7px 0 0 black;
         box-sizing: border-box;
-        height: 100%;
     }
 
     .sidemenu ul>li:hover {
@@ -1380,87 +1605,11 @@ a:hover {
         margin-left: -0.3rem;
     }
 
+    .contentcontainer {
+        align-items: start;
+    }
 }
 
 .noshadow {
     box-shadow: 0 0 0 0 transparent;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fanartimage {
-    border: 0.2rem solid white;
-    height: 10rem;
-    margin: 0.3rem;
-    opacity: 1;
-}
-
-.fanartimage:hover {
-    opacity: 0.8;
-    
-}
-
-#fanartgallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.lightBoxElement {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-}
-
-.lightBoxElement img{
-    width: max-content;
-    height: auto;
-    margin: 0.6rem auto 0.4rem;
-    opacity: 1;
-}
-
-.galleryCredit h2 {
-    margin: 0.5rem;
-    font-size: 3rem;
-}
-
-.galleryCredit hr {
-    margin-bottom: 1rem;
-}
-
-.yearhover {
-    color: white;
-    
-}
-
-.yearhover:hover {
-    color: red;
-    cursor: pointer;
-}
-
-.hidden img {
-    opacity: 0;
-    border: 0px solid transparent;
-    width: 0px;
-    height: 0px;
-    background-color: red;
 }
