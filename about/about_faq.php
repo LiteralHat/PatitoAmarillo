@@ -44,7 +44,7 @@
                             <div class="whitebox padded">
                                 <div class="center">
                                     <p class='large'>Hi. I'm Hat.</p>
-                                    <p>I'm just a dude, really.</p>
+                                    <p>I made this website.</p>
                                     <p>Sometimes I draw, sometimes I animate.</p>
                                     <p>On good days, I code. On bad days, I code anyways, but with more StackOverflow.
                                     </p>

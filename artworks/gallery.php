@@ -3,6 +3,7 @@ session_start();
 $db = new PDO('sqlite:artworksv2.db');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +22,15 @@ $db = new PDO('sqlite:artworksv2.db');
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
                     <div class='columnbox'>
-                        <p>Welcome to the gallery. In this section of the website you can find artworks that I've drawn
+                        <p>Welcome to the gallery. In this section of the website you can find artworks that I've
+                            drawn
                             over
-                            the years. Please note that this section does NOT contain <i>full sketchbooks</i>, which are
+                            the years. Please note that this section does NOT contain <i>full sketchbooks</i>, which
+                            are
                             <a href='https://www.patreon.com/LiteralHat' target="_blank">Patreon only.</a>
                         </p>
-                        <p>I am a single person developing this gallery as well as cataloguing artworks, so any patience
+                        <p>I am a single person developing this gallery as well as cataloguing artworks, so any
+                            patience
                             is wholly appreciated.</p>
 
                         <br>
@@ -83,6 +87,8 @@ $db = new PDO('sqlite:artworksv2.db');
                 </div>
             </div>
 
+
+
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
@@ -123,7 +129,8 @@ $db = new PDO('sqlite:artworksv2.db');
 
                                         <ul>
                                             <li><input id="watercolor" type="checkbox" name="mediums[]"
-                                                    value="watercolor" /><label for="watercolor"> Watercolor</label>
+                                                    value="watercolor" /><label for="watercolor">
+                                                    Watercolor</label>
                                             </li>
                                             <li><input id="ink" type="checkbox" name="mediums[]" value="ink" /><label
                                                     for="ink">
@@ -131,16 +138,19 @@ $db = new PDO('sqlite:artworksv2.db');
                                             <li><input id="acrylic" type="checkbox" name="mediums[]"
                                                     value="acrylic" /><label for="acrylic"> Acrylic</label></li>
                                             <li><input id="graphite" type="checkbox" name="mediums[]"
-                                                    value="graphite" /><label for="graphite"> Graphite</label></li>
+                                                    value="graphite" /><label for="graphite"> Graphite</label>
+                                            </li>
                                             <li><input id="gouache" type="checkbox" name="mediums[]"
                                                     value="gouache" /><label for="gouache"> Gouache</label></li>
                                             <li><input id="digital" type="checkbox" name="mediums[]"
                                                     value="digital" /><label for="digital"> Digital</label></li>
                                             <li><input id="traditional" type="checkbox" name="mediums[]"
-                                                    value="traditional" /><label for="traditional"> Traditional</label>
+                                                    value="traditional" /><label for="traditional">
+                                                    Traditional</label>
                                             </li>
                                             <li><input id="mixedmedia" type="checkbox" name="mediums[]"
-                                                    value="mixedmedia" /><label for="mixedmedia"> Mixed Media</label>
+                                                    value="mixedmedia" /><label for="mixedmedia"> Mixed
+                                                    Media</label>
                                             </li>
                                         </ul>
 
@@ -226,11 +236,12 @@ $db = new PDO('sqlite:artworksv2.db');
                                     }
                                 }
                                 $encodeArray = escapeApostrophes($artworksdb);
-                                
+
                                 ?>
 
                                 <input type='hidden' name='data' value='<?php echo json_encode($encodeArray); ?>'>
-                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy!
+                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad
+                                    boy!
                                 </button>
                             </form>
 
@@ -294,6 +305,7 @@ $db = new PDO('sqlite:artworksv2.db');
                 </div>
 
             </div>
+
         </div>
 
 

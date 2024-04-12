@@ -59,9 +59,9 @@
                         <div class='contentcontainer'>
                             <div class='whitebox tone2 paddedsm'>
                                 <div class="whitebox padded">
-                                    <h2 class='textred'>Known Issues</h2>
+                                    <h2 class='textred'>Known Major Issues</h2>
                                     <ul>
-                                        <li>Gallery is not mobile responsive</li>
+                                        <li>None at the moment</li>
                                     </ul>
 
                                     <h2 class='textgreen'>Unreleased</h2>
@@ -80,8 +80,20 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                              
 
+
+                                <h3>v13.5.0-beta 12.04.2024</h3>
+                                <ul>
+                                    <li>Added sortby functionality to gallery page</li>
+                                    <li>Added <a href='../artworks/archive'>gallery archive</a> page</li>
+                                    <li>Added spacer to bottom of gallery page</li>
+                                    <li>Fixed random button on gallery header</li>
+                                    <li>Changed 'known issues' to 'known major issues'</li>
+                                    <li>Updated About + FAQ</li>
+                                    <li>Added pagenation to gallery</li>
+                                    <li>Added session to gallery</li>
+                                    <li>Removed jQuery scripts</li>
+                                </ul>
 
                                 <h3>v12.5.0-beta 11.04.2024</h3>
                                 <ul>
