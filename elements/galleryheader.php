@@ -1,5 +1,5 @@
 <?php
-$db = new PDO('sqlite:artworks.db');
+$db = new PDO('sqlite:artworksv2.db');
 if (!isset($_GET['page'])) {
     session_unset();
     //echo '<br>SESSION DESTROYED';
