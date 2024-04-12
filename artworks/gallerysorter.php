@@ -46,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        // Generate sorted HTML output
-
         function unescapeApostrophes($input)
         {
             if (is_array($input)) {
@@ -58,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 return $input;
             }
         }
-        $artworksArray = unescapeApostrophes($decodedArray);
+        $artworksArray = unescapeApostrophes($artworksArray);
 
 
         $_SESSION['dbresults'] = $artworksArray;
