@@ -14,7 +14,8 @@ if (isset($_SESSION['dbresults'])) {
     //$artworksdb is the 'master' array that will be echo'ed in HTML
     $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
     //echo '<br>ARRAY RESET';
-};
+}
+;
 ?>
 
 
@@ -23,7 +24,8 @@ if (isset($_SESSION['dbresults'])) {
 
 <head>
     <title>LiteralGallery.</title>
-    <meta name="LiteralHat | Gallery" content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
+    <meta name="LiteralHat | Gallery"
+        content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 
 </head>
@@ -101,6 +103,72 @@ if (isset($_SESSION['dbresults'])) {
                 </div>
             </div>
 
+<!-- 
+
+            <?php
+
+            if (!isset($_SESSION['dbresults'])) {
+
+                $artworksrecent = $artworksdb;
+                usort($artworksrecent, function ($a, $b) {
+                    return strtotime($b['datecreated']) - strtotime($a['datecreated']);
+                });
+
+                function getTimeAgo($date)
+                {
+                    $now = new DateTime();
+                    $ago = new DateTime($date);
+                    $diff = $now->diff($ago);
+                    if ($diff->y > 0) {
+                        return $diff->y . 'y ago';
+                    } elseif ($diff->m > 0) {
+                        return $diff->m . 'm ago';
+                    } elseif ($diff->d > 0) {
+                        return $diff->d . 'd ago';
+                    } elseif ($diff->h > 0) {
+                        return $diff->h . 'h ago';
+                    } elseif ($diff->i > 0) {
+                        return $diff->i . 'm ago';
+                    } else {
+                        return 'Just now';
+                    }
+                }
+
+                echo "<div class='boxedsection'>
+                                    <div class='contentcontainer'>
+                                        <div class='whitebox toneblack'>
+                                            <div class='whiteborder padded'>
+                                                <h2 class='white'>Newest Artworks</h2>
+                                                <div id='newestitems'>";
+
+                foreach ($artworksrecent as $row => $artwork) {
+                    $rowCount++;
+                    $timeAgo = getTimeAgo($artwork['datecreated']);
+                    if ($rowCount >= $itemsStartLimit) {
+                        $wordsArray = explode("-", $artwork['title']);
+                        $capitalizedWords = array_map('ucfirst', $wordsArray);
+                        echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'></a><p>" . $timeAgo . "</p></div>";
+
+                        if ($rowCount >= 5) {
+                            break;
+                        }
+                    }
+                }
+
+                $rowCount = 0;
+
+                echo '</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+
+            } else {
+
+            }
+
+            ?>
+ -->
 
 
             <div class='boxedsection'>
@@ -195,7 +263,7 @@ if (isset($_SESSION['dbresults'])) {
                 </div>
 
 
-                <div id='gallerycontainer'>
+                <div class='boxedsection gallerycontainer' id='gallerytop'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
                             <?php if (isset($_SESSION['dbresults'])) {
@@ -209,9 +277,9 @@ if (isset($_SESSION['dbresults'])) {
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
                                         if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
                                         } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
                                         }
                                         ;
                                     }
@@ -292,13 +360,13 @@ if (isset($_SESSION['dbresults'])) {
                             <hr class='hrtextseparator'>
                             <br>
                             <div>
-                                <h2 id='gallerypagenumbers'>More pages: 
+                                <h2 id='gallerypagenumbers'>More pages:
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
                                         if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
                                         } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
                                         }
                                         ;
                                     }

@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     $_SESSION['dbresults'] = $artworksdb;
-    header("Location: gallery?page=1");
+    header("Location: gallery?page=1#gallerytop");
     exit();
 
 }

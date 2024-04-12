@@ -80,7 +80,10 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-
+                                <h3>v13.6.0-beta 13.04.2024</h3>
+                                <ul>
+                                    <li>Fixed incorrect variable causing entire gallery sorting methods to break in gallery</li>
+                                </ul>
 
                                 <h3>v13.5.0-beta 12.04.2024</h3>
                                 <ul>

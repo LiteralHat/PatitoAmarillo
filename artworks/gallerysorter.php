@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['dbresults'] = $artworksArray;
         $_SESSION['iPP'] = $itemsPerPage;
-        header("Location: gallery?page=1");
+        header("Location: gallery?page=1#gallerytop");
         exit();
     } else {
         echo 'Insufficient data received';

@@ -96,7 +96,7 @@
 
 html {
     background-color: white;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     height: 100%;
 }
 
@@ -1263,7 +1263,7 @@ a:hover {
     font-size: 2rem;
 }
 
-#gallerycontainer {
+.gallerycontainer {
     width: 70vw;
 }
 
@@ -1277,11 +1277,28 @@ a:hover {
     text-decoration: none;
 }
 
+#newestitems {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    align-items: end;
+    justify-content: flex-start;
+    padding: 0 1rem;
+}
+
+#newestitems img {
+    border: 0.2rem solid white;
+    padding: 0;
+}
 
 
+#newestitems p {
+    color: white;
+}
 
-
-
+#gallerytop {
+    scroll-behavior: unset;
+}
 
 
 
