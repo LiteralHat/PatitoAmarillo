@@ -215,9 +215,21 @@ $db = new PDO('sqlite:artworksv2.db');
                                 <?php
 
 
+                                function escapeApostrophes($input)
+                                {
+                                    if (is_array($input)) {
+                                        return array_map('escapeApostrophes', $input);
+                                    } elseif (is_string($input)) {
+                                        return str_replace("'", "STUPIDAPOSTROPHE", $input);
+                                    } else {
+                                        return $input;
+                                    }
+                                }
+                                $encodeArray = escapeApostrophes($artworksdb);
+                                
                                 ?>
 
-                                <input type='hidden' name='data' value='<?php echo json_encode($artworksdb); ?>'>
+                                <input type='hidden' name='data' value='<?php echo json_encode($encodeArray); ?>'>
                                 <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy!
                                 </button>
                             </form>

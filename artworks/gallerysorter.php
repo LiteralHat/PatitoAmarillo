@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['sortby']) && isset($_POST['data'])) {
         $sortby = $_POST['sortby'];
         $itemsPerPage = $_POST['itemsnumber'];
+
         $artworksArray = json_decode($_POST['data'], true); // Unserialize the array
 
 
@@ -46,6 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         // Generate sorted HTML output
+
+        function unescapeApostrophes($input)
+        {
+            if (is_array($input)) {
+                return array_map('unescapeApostrophes', $input);
+            } elseif (is_string($input)) {
+                return str_replace("STUPIDAPOSTROPHE", "'", $input);
+            } else {
+                return $input;
+            }
+        }
+        $artworksArray = unescapeApostrophes($decodedArray);
+
+
         $_SESSION['dbresults'] = $artworksArray;
         $_SESSION['iPP'] = $itemsPerPage;
         header("Location: gallery?page=1");
