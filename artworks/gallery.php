@@ -1,7 +1,7 @@
 <?php include_once ('../variables.php');
 session_start();
+$db = new PDO('sqlite:artworksv2.db');
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,20 +10,13 @@ session_start();
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Gallery." content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 
-
-
-
-
 <body>
     <main>
-
         <?php include_once ($folder . '/elements/galleryheader.php'); ?>
-
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -39,34 +32,15 @@ session_start();
                         <br>
                         <br>
 
-
-                        <div id='remainingtime'></div>
-
                         <?php //code for the header element and load the database for the gallery
                         
-                        $db = new PDO('sqlite:artworksv2.db');
-                        echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
 
-                        if (!isset($_GET['page'])) {
-                            session_unset();
-                            session_destroy();
-                            echo '<br>SESSION DESTROYED';
-                        }
-                        if (isset($_SESSION['dbresults'])) {
-                            $artworksdb = $_SESSION['dbresults'];
-                            echo '<br>SESSION ONGOING';
+                        // echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
+                        
 
-                        } else {
-                            $statement = $db->query("SELECT * FROM artworks");
-                            //$artworksdb is the 'master' array that will be echo'ed in HTML
-                            $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-                            echo '<br>ARRAY RESET';
-                        }
-                        ;
 
                         if (isset($_SESSION['last_activity'])) {
-                            // Check if the session has expired (e.g., 30 minutes)
-                            $expireAfterSeconds = 60 * 15; // 30 minutes
+                            $expireAfterSeconds = 60 * 15; //15 minutes for now
                             $inactiveTime = time() - $_SESSION['last_activity'];
 
                             if ($inactiveTime > $expireAfterSeconds) {
@@ -79,24 +53,11 @@ session_start();
                         }
 
                         $_SESSION['last_activity'] = time();
-                        
-                        // Update last activity time
-                        
-
-
-
-
-
-
-
-
-
-
 
                         //code that sets up all the shit that makes the rest of the shit do its fucking shit
-                       
+                        
                         if (isset($_SESSION['iPP'])) {
-                        echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
+                            // echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
                             $itemsPerPage = $_SESSION['iPP'];
                         } else {
                             $itemsPerPage = 30;
@@ -111,19 +72,12 @@ session_start();
                             $currentPage = 1;
                         }
 
-                        echo '<br>currentpage = ' . $currentPage;
-                        echo '<br>total pages = ' . $totalPages;
-
                         $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
                         $itemsEndLimit = $itemsPerPage * $currentPage;
-                        echo '<br>itemsStartLimit = ' . $itemsStartLimit;
-                        echo '<br>itemsEndLimit = ' . $itemsEndLimit;
-                        
+
                         $rowCount = 0;
-                        echo '</div>';
 
                         ?>
-
 
                     </div>
                 </div>
@@ -223,9 +177,7 @@ session_start();
                             <?php if (isset($_SESSION['dbresults'])) {
                                 echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
                             } else {
-                                $statement = $db->query('SELECT COUNT(*) as total FROM artworks');
-                                $result = $statement->fetch(PDO::FETCH_ASSOC);
-                                echo '<h2>Viewing All Artworks: ' . $result['total'] . '</h2><span></span>';
+                                echo '<h2>Viewing All Artworks: ' . count($artworksdb) . '</h2><span></span>';
                             }
                             ?>
                             <div>
@@ -259,6 +211,12 @@ session_start();
                                     <option value='45'>45</option>
                                     <option value='60'>60</option>
                                 </select>
+
+                                <?php
+
+
+                                ?>
+
                                 <input type='hidden' name='data' value='<?php echo json_encode($artworksdb); ?>'>
                                 <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy!
                                 </button>
@@ -295,11 +253,22 @@ session_start();
 
                             </div>
 
-
-                            <div class='contentcontainer'>
-
+                            <hr class='hrtextseparator'>
+                            <br>
+                            <div>
+                                <h2 id='gallerypagenumbers'>LiteralHat:
+                                    <?php
+                                    for ($i = 1; $i <= $totalPages; $i++) {
+                                        if ($i == $currentPage) {
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        } else {
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
+                                        }
+                                        ;
+                                    }
+                                    ?>
+                                </h2>
                             </div>
-
                         </div>
 
 

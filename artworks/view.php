@@ -1,5 +1,4 @@
-<?php include_once ('../variables.php');
-?>
+<?php include_once ('../variables.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +19,6 @@
         <!-- PHP CODE TO DO THE PHP SHIT -->
         <?php
 
-        //define PDO tell about the db file
-        $db = new PDO('sqlite:artworks.db');
-
 
         try {
             $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
@@ -31,19 +27,9 @@
 
             $id = filter_input(INPUT_GET, 'artworkid');
             $statement->bindValue(':artworkid', $id, PDO::PARAM_INT);
-
-
             $statement->execute();
-
-
             $r = $statement->fetch();
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $query = "SELECT COUNT(*) as artworkid FROM artworks";
-            $stmt = $db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
 
 
             if (!$r) {
@@ -136,6 +122,7 @@
 
                                     <dt>Artwork No.</dt>
                                     <dd>
+
 
                                         <?php
                                         if (isset($r['artworkid'])) {
@@ -247,9 +234,6 @@
                             <div class='contentcontainer'>
                                 <button id='random' class='gallerybutton tone2' href=''>
                                     <?php
-                                    
-                                    $rowCount = isset($result['artworkid']) ? $result['artworkid'] : 0;
-                                    $randomNumber = rand(0, $rowCount);
                                     echo "<a href='$randomNumber'>";
                                     ?>
                                     <div class='paddedsm'>
@@ -269,7 +253,7 @@
                                     preg_match('/\d+$/', $currentUrl, $matches);
                                     $extractedDigits = isset($matches[0]) ? $matches[0] : '';
                                     $extractedDigits += 1;
-                                    if ($extractedDigits >= $rowCount + 1) {
+                                    if ($extractedDigits >= $wow + 1) {
                                         echo "<a href=''>";
                                     } else {
                                         echo "<a href='$extractedDigits'>";
@@ -339,14 +323,5 @@
         <?php include ($footer) ?>
     </main>
 </body>
-
-
-
-
-
-
-
-
-
 
 </html>

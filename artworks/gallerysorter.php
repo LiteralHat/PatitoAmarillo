@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sortby = $_POST['sortby'];
         $itemsPerPage = $_POST['itemsnumber'];
         $artworksArray = json_decode($_POST['data'], true); // Unserialize the array
-        
+
 
         switch ($sortby) {
             case 'default':
