@@ -3,9 +3,9 @@
         <div class='contentcontainer'>
             <div>
                 <div class='spacermedium'></div>
-                <span id='gallerytext'><a class='hoverred textblack' href=<?php echo $links . "artworks/gallery.php?page=1" ?>>LITERALGALLERY.</a></span>
+                <span id='gallerytext'><a class='hoverred textblack' href=<?php echo $links . "artworks/gallery" ?>>LITERALGALLERY.</a></span>
                 <ul id='gallerymenu'>
-                    <li><a  class='hoverred textblack' href=<?php echo $links . "artworks/gallery.php?page=1" ?>>Gallery</a></li>
+                    <li><a  class='hoverred textblack' href=<?php echo $links . "artworks/gallery" ?>>Gallery</a></li>
                     <li>Random</li>
                     <li>Index</li>
                     <li><a  class='hoverred textblack' href=<?php echo $links . "index.php" ?>>Back Home</a></li>

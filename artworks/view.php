@@ -1,4 +1,5 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../variables.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -338,5 +339,14 @@
         <?php include ($footer) ?>
     </main>
 </body>
+
+
+
+
+
+
+
+
+
 
 </html>

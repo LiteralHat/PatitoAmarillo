@@ -14,25 +14,15 @@ session_start();
 
 </head>
 
+
+
+
+
+
 <body>
     <main>
 
-
-        <?php //code for the header element and load the database for the gallery
-        
-        include_once ($folder . '/elements/galleryheader.php');
-        $db = new PDO('sqlite:artworks.db');
-
-        if (isset($_SESSION['dbresults'])) {
-            $artworksdb = $_SESSION['dbresults'];
-        } else {
-            $statement = $db->query("SELECT * FROM artworks");
-            //$artworksdb is the 'master' array that will be echo'ed in HTML
-            $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-        }
-        ;
-
-        ?>
+        <?php include_once ($folder . '/elements/galleryheader.php'); ?>
 
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
@@ -45,6 +35,88 @@ session_start();
                         </p>
                         <p>I am a single person developing this gallery as well as cataloguing artworks, so any patience
                             is wholly appreciated.</p>
+
+                        <br>
+                        <br>
+
+
+                        <div id='remainingtime'></div>
+
+                        <?php //code for the header element and load the database for the gallery
+                        
+                        $db = new PDO('sqlite:artworksv2.db');
+                        echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
+
+                        if (!isset($_GET['page'])) {
+                            session_unset();
+                            session_destroy();
+                            echo '<br>SESSION DESTROYED';
+                        }
+                        if (isset($_SESSION['dbresults'])) {
+                            $artworksdb = $_SESSION['dbresults'];
+                            echo '<br>SESSION ONGOING';
+                        } else {
+                            $statement = $db->query("SELECT * FROM artworks");
+                            //$artworksdb is the 'master' array that will be echo'ed in HTML
+                            $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+                            echo '<br>ARRAY RESET';
+                        }
+                        ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+                        //code that sets up all the shit that makes the rest of the shit do its fucking shit
+                        
+                        //make it so you can change the itemsperpage later 
+                        $itemsPerPage = 30;
+                        $totalArtworks = count($artworksdb);
+                        $totalPages = ceil($totalArtworks / $itemsPerPage);
+                        //gets the current page from the url
+                        if (isset($_GET['page'])) {
+                            $currentPage = $_GET['page'];
+                        } else {
+                            $currentPage = 1;
+                        }
+
+                        $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
+                        $itemsEndLimit = $itemsPerPage * $currentPage;
+
+                        $rowCount = 0;
+
+                        echo '<br>currentpage = ' . $currentPage;
+                        echo '<br>total pages = ' . $totalPages;
+                        echo '<br>itemsStartLimit = ' . $itemsStartLimit;
+                        echo '<br>itemsEndLimit = ' . $itemsEndLimit;
+                        echo '</div>';
+
+                        ?>
+
+                     
+
+
                     </div>
                 </div>
             </div>
@@ -137,26 +209,6 @@ session_start();
                 </div>
 
 
-
-                <?php
-                //code that sets up all the shit that makes the rest of the shit do its fucking shit
-                
-                //make it so you can change the itemsperpage later 
-                $itemsPerPage = 30;
-                $totalArtworks = count($artworksdb);
-                $totalPages = ceil($totalArtworks / $itemsPerPage);
-                //gets the current page from the url
-                $currentPage = $_GET['page'];
-
-                $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
-                $itemsEndLimit = $itemsPerPage * $currentPage;
-
-                $rowCount = 0;
-
-            
-                ?>
-
-
                 <div id='gallerycontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
@@ -176,7 +228,8 @@ session_start();
                                             echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '">' . $i . '</a>';
                                         } else {
                                             echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '">' . $i . '</a>';
-                                        };
+                                        }
+                                        ;
                                     }
                                     ?>
                                 </h2>
@@ -191,19 +244,16 @@ session_start();
                                     <option value='oldtonew'>Date Created (Oldest to Newest)</option>
                                 </select>
 
-                                <label for='sortby'><span class='bold'>Items Per Page:</span></label>
-                                <select name='sortby' id='sortby'>
+                                <label for='itemsnumber'><span class='bold'>Items Per Page:</span></label>
+                                <select name='itemsnumber' id='itemsnumber'>
                                     <option value='15'>15</option>
                                     <option value='30'>30</option>
                                     <option value='45'>45</option>
                                     <option value='60'>60</option>
                                 </select>
-                                    <?php 
-                                    $artworksdb;
-                                    ?>
-                                    
                                 <input type='hidden' name='data' value='<?php echo json_encode($artworksdb); ?>'>
-                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy! </button>
+                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad boy!
+                                </button>
                             </form>
 
 
@@ -212,10 +262,7 @@ session_start();
                             <div id='galleryitems'>
                                 <?php
 
-                                echo 'DEBUG TEXT (Please Ignore :D) </br> currentpage = ' . $currentPage;
-                                echo '<br> total pages = ' . $totalPages;
-                                echo '<br>itemsStartLimit = ' . $itemsStartLimit;
-                                echo '<br>itemsEndLimit = ' . $itemsEndLimit;
+
 
                                 foreach ($artworksdb as $row => $artwork) {
                                     $rowCount++;
@@ -233,8 +280,6 @@ session_start();
                                         }
                                     }
                                 }
-
-                                
 
                                 ?>
 
@@ -263,12 +308,14 @@ session_start();
         </div>
 
 
-
-
-
-
-        <?php include ($footer) ?>
+        <?php include ($footer);
+        ?>
     </main>
 </body>
+
+
+
+
+
 
 </html>

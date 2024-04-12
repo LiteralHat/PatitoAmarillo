@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 
 //code wont execute at all if nothing has been submitted
@@ -9,7 +7,7 @@ session_start();
 // $data = json_decode($jsondb, true); 
 
 
-$db = new PDO('sqlite:artworks.db');
+$db = new PDO('sqlite:artworksv2.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 

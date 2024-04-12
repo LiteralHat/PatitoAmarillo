@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['sortby']) && isset($_POST['data'])) {
@@ -9,7 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         switch ($sortby) {
             case 'default':
                 usort($artworksArray, function ($a, $b) {
-                    return strcmp($a['artworkid'], $b['artworkid']);
+                    $idA = intval($a['artworkid']);
+                    $idB = intval($b['artworkid']);
+                    if ($idA < $idB) {
+                        return -1;
+                    } elseif ($idA > $idB) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
                 });
                 break;
             case 'title':
@@ -34,11 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 break;
         }
 
-
-        $_SESSION['dbresults'] = $artworksdb;
+        // Generate sorted HTML output
+        $_SESSION['dbresults'] = $artworksArray;
         header("Location: gallery?page=1");
         exit();
-
     } else {
         echo 'Insufficient data received';
     }
