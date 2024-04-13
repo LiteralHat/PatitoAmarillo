@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>Privacy Policy.</title>
-    <meta name="LiteralHat.com | Privacy Policy" content="View the site's Privacy Policy Here." />
+    <title>Privacy Policy | LiteralHat</title>
+    <meta name="LiteralHat.com | Privacy Policy" content="View the site's Privacy Policy." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 

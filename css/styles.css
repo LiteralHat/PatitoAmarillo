@@ -68,6 +68,7 @@
     --tone7: #2a5057;
     --tone8: #12333b;
     --tone9: #7ac5bc;
+    --tone10:rgb(238, 131, 167);
     --tonered: #c4001e;
     --tonegreen: #106363;
     --toneblack: #000000;
@@ -188,7 +189,8 @@ ol {
     content: " ► ";
 }
 
-.bold {
+.bold,
+.bold * {
     font-weight: bold;
 }
 
@@ -235,9 +237,16 @@ ol {
     font-size: 1.5rem;
 }
 
+.mediumtext {
+    font-size: 1.3rem;
+}
+
+.textsize2 {
+    font-size: 2rem;
+}
+
 .large {
     font-size: 3rem;
-
 }
 
 .larger {
@@ -268,8 +277,15 @@ ol {
     text-align: left;
 }
 
+.flexright {
+    display: flex;
+    justify-content: right;
+}
 
-
+.flexleft {
+    display: flex;
+    justify-content: left;
+}
 
 
 
@@ -312,15 +328,35 @@ ol {
 
 
 
+.coollist * {
+    list-style: none;
+    font-family: var(--font-header);
+    text-decoration: none;
+    word-break: break-all;
+    text-align: center;
+}
 
+.coollist li:nth-child(odd) {
+    left: 1rem;
+    position: relative;
+}
 
+.coollist li:nth-child(even) {
+    right: 1rem;
+    position: relative;
+}
 
-
+.linodots * {
+    list-style-type: none;
+}
 
 /* master container for all inner elements */
 .boxedsection {
     display: flex;
     box-sizing: border-box;
+    height: 100%;
+    
+    
 }
 
 /* all whiteboxes must be contained in a contentcontainer */
@@ -339,6 +375,7 @@ ol {
     background-color: white;
     box-sizing: border-box;
     width: 100%;
+    
 }
 
 .clearbox {
@@ -363,11 +400,10 @@ ol {
     box-sizing: border-box;
 }
 
-
 .widthcontainer {
     width: var(--content-width);
     box-sizing: border-box;
-
+    height: 100%;
 }
 
 .bigwidthcontainer {
@@ -399,7 +435,6 @@ ol {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    height: auto;
     justify-content: center;
     align-items: start;
 }
@@ -557,7 +592,7 @@ ol {
 
 
 
-.nounderline a:link {
+.nounderline * {
     text-decoration: none;
 }
 
@@ -989,18 +1024,24 @@ a:hover {
 
 
 
+.white * {
+    color: white;
+}
+
 .white {
     color: white;
 }
 
-.white>p {
-    color: white;
-}
+
 
 .padtop {
     padding-top: 0.9rem;
 }
 
+.fontheader,
+.fontheader * {
+    font-family: var(--font-header);
+}
 
 
 
@@ -1014,56 +1055,59 @@ a:hover {
 
 
 
-
-.text1 {
+.text1, .text1 * {
     color: var(--tone1);
 }
 
-.text2 {
+.text2, .text2 * {
     color: var(--tone2);
 }
 
-.text3 {
+.text3, .text3 * {
     color: var(--tone3);
 }
 
-.text4 {
+.text4, .text4 * {
     color: var(--tone4);
 }
 
-.text5 {
+.text5, .text5 * {
     color: var(--tone5);
 }
 
-.text6 {
+.text6, .text6 * {
     color: var(--tone6);
 }
 
-.text7 {
+.text7, .text7 * {
     color: var(--tone7);
 }
 
-.text8 {
+.text8, .text8 * {
     color: var(--tone8);
 }
 
-.text9 {
+.text9, .text9 * {
     color: var(--tone9);
 }
 
-.textgreen {
+.text10, .text10 * {
+    color: var(--tone10);
+}
+
+.textgreen, .textgreen * {
     color: var(--tonegreen);
 }
 
-.textred {
+.textred, .textred * {
     color: var(--tonered);
 }
 
-.textblack {
+.textblack, .textblack * {
     color: var(--toneblack);
 }
 
-.textgrey {
+.textgrey, .textgrey * {
     color: var(--tonegrey);
 }
 
@@ -1152,7 +1196,6 @@ a:hover {
     height: 0px;
     background-color: red;
 }
-
 
 
 
@@ -1300,6 +1343,9 @@ a:hover {
     scroll-behavior: unset;
 }
 
+.gallerysearchform {
+    width: 17rem;
+}
 
 
 
@@ -1419,17 +1465,12 @@ a:hover {
 @media (max-width: 1545px) {
 
     .bigwidthcontainer {
-        width: 100%;
-        margin: auto;
-    }
-
-    .biggerwidthcontainer {
-        width: 100%;
+        width: 60vw;
         margin: auto;
     }
 
     .extrawidthcontainer {
-        width: 100%;
+        width: 60vw;
         margin: auto;
     }
 
@@ -1462,6 +1503,7 @@ a:hover {
         max-width: 100%;
         height: auto;
     }
+
     #gallerysidecontainer {
         display: none;
     }
@@ -1491,10 +1533,6 @@ a:hover {
 
     .galleryimage {
         width: 100%;
-    }
-
-    .whitebox {
-        height: fit-content;
     }
 
 }
@@ -1531,6 +1569,7 @@ a:hover {
     .boxedsection {
         width: 100%;
         flex-direction: column;
+
     }
 
     .sidecontainer {
@@ -1539,7 +1578,7 @@ a:hover {
         flex-wrap: wrap;
     }
 
- 
+
 
     .sidecontainer:first-child {
         justify-content: right;
@@ -1556,6 +1595,7 @@ a:hover {
 
     .whitebox {
         width: 100%;
+
     }
 
     #hattyright {
@@ -1564,6 +1604,7 @@ a:hover {
 
     .contentcontainer {
         width: 100%;
+        height: 100%;
     }
 
     .gallerybutton {

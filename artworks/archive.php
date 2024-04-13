@@ -9,8 +9,8 @@ $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 <html lang="en">
 
 <head>
-    <title>LiteralArchive.</title>
-    <meta name="LiteralHat | Archive" content="" />
+    <title>Archive | LiteralGallery</title>
+    <meta name="Archive | LiteralGallery" content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 
 </head>

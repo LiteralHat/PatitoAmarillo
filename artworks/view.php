@@ -7,10 +7,14 @@ $statement->bindValue(':artworkid', $id, PDO::PARAM_INT);
 $statement->execute();
 $artworksdb = $statement->fetch();
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$wordsArray = explode("-", $artworksdb['title']);
-$capitalizedWords = array_map('ucfirst', $wordsArray);
-$formattedTitle = implode(" ", $capitalizedWords);
+if (!$artworksdb) {
+    echo "<p class='center large'>Oh no. This page doesn't exist! <a href='../gallery'>Go back?</a></p>";
+    exit();
+} else {
+    $wordsArray = explode("-", $artworksdb['title']);
+    $capitalizedWords = array_map('ucfirst', $wordsArray);
+    $formattedTitle = implode(" ", $capitalizedWords);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,34 +22,14 @@ $formattedTitle = implode(" ", $capitalizedWords);
 
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
-    <meta name="LiteralHat | " content="" />
+    <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $artworksdb['title']?>" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
 <body>
     <main>
-
-
         <?php include_once ($folder . '/elements/galleryheader.php') ?>
-
-
-        <!-- PHP CODE TO DO THE PHP SHIT -->
-        <?php
-
-
-
-
-        if (!$artworksdb) {
-            echo "<p class='center large'>Oh no. This page doesn't exist! Sorry.</p>";
-            exit();
-        }
-
-
-
-
-
-        ?>
-
+    
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
                 <div class='contentcontainer'>
@@ -131,11 +115,8 @@ $formattedTitle = implode(" ", $capitalizedWords);
                                     <dt>Collection</dt>
                                     <dd>
                                         <?php
-                                        if (isset($artworksdb['collection'])) {
-                                            $wordsArray = explode("-", $artworksdb['collection']);
-                                            $capitalizedWords = array_map('ucfirst', $wordsArray);
-                                            $finalString = implode(" ", $capitalizedWords);
-                                            echo $finalString;
+                                        if (isset($artworksdb['artworkcollection'])) {
+                                            echo $artworksdb['artworkcollection'];
                                         } else {
                                             echo "";
                                         }

@@ -7,16 +7,18 @@ if (!isset($_GET['page'])) {
 }
 if (isset($_SESSION['dbresults'])) {
     $artworksdb = $_SESSION['dbresults'];
-    $searchQuery = $_SESSION['searchQuery'];
-    //echo '<br>SESSION ONGOING';
-
 } else {
     $statement = $db->query("SELECT * FROM artworks");
     //$artworksdb is the 'master' array that will be echo'ed in HTML
     $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
     //echo '<br>ARRAY RESET';
 }
+
 ;
+
+if (isset($_SESSION['searchQuery'])) {
+    $searchQuery = $_SESSION['searchQuery'];
+};
 ?>
 
 
@@ -24,8 +26,8 @@ if (isset($_SESSION['dbresults'])) {
 <html lang="en">
 
 <head>
-    <title>LiteralGallery.</title>
-    <meta name="LiteralHat | Gallery"
+    <title>Home | LiteralGallery</title>
+    <meta name="Home | LiteralGallery"
         content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 
@@ -173,7 +175,7 @@ if (isset($_SESSION['dbresults'])) {
 
 
             <div class='boxedsection'>
-                <div class='sidecontainer'>
+                <div class='sidecontainer gallerysearchform'>
                     <div class='spacermedium'></div>
                     <form class='form' action='galleryformhandler.php' method='get'>
                         <div class='contentcontainer'>
@@ -182,7 +184,7 @@ if (isset($_SESSION['dbresults'])) {
                                 <fieldset id='titlecontains'>
                                     <p>
                                         <label for="title">
-                                            Title Contains:
+                                            <h3>Title Contains: </h3>
                                             <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="title" type="text"
                                                 name="title" placeholder="e.g. baby bird" />
                                         </label>
@@ -190,11 +192,13 @@ if (isset($_SESSION['dbresults'])) {
                                 </fieldset>
 
                                 <fieldset id='daterange'>
+                                    <p>
                                     <h3>Date Range:</h3>
                                     <p>
                                         <label for="fuzzydate"><input id="fuzzydate" type="checkbox" name="fuzzydate" />
                                             Fuzzy Date
-                                    </p></label>
+                                    </p>
+                                    </label>
 
                                     <ul>
                                         <li><label for="beforedate">From:</label><input id="beforedate" type="date"
@@ -202,7 +206,7 @@ if (isset($_SESSION['dbresults'])) {
                                         <li><label for="afterdate">To: </label><input id="afterdate" type="date"
                                                 name="afterdate" /></li>
                                     </ul>
-
+                                    </p>
                                 </fieldset>
 
 
@@ -213,64 +217,95 @@ if (isset($_SESSION['dbresults'])) {
                                             <h3>Category:</h3>
                                             <select name='category' id='category'>
                                                 <option value='artwork'>Artworks / Pieces</option>
+                                                <option value='collection'>Collections</option>
                                                 <option value='doodle'>Doodles / Incomplete</option>
                                                 <option value='photography'>Photography / Film</option>
                                                 <option value='sketchbook'>Sketchbook</option>
+                                                <option value='' selected>Select an option:</option>
                                             </select>
                                         </label>
                                     </p>
                                 </fieldset>
 
+                                <fieldset id='collection'>
+                                    <p>
+                                        <label for='collection'>
+                                            <h4>Pick a collection:</h4>
+                                            <select name='collection'>
+                                                <option value='Baby Bird'>2024 - Baby Bird</option>
+                                                <option value='Rose Tinted Window Panes'>2022 - Rose Tinted Window Panes
+                                                </option>
+                                                <option value='Self Defense'>2022 - Self Defense</option>
+                                                <option value='Rat in the Machine'>2022 - Rat In The Machine</option>
+                                                <option value='LiteralLucid'>2021 - LiteralLucid</option>
+                                                <option value='' selected>Select an option</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                                </fieldset>
 
                                 <fieldset id='mediums'>
-                                    <label for='mediums'>
-                                        <h4>Show only..?</h4>
-                                        <ul>
-                                            <li><input id="watercolor" type="checkbox" name="mediums[]"
-                                                    value="watercolor" /><label for="watercolor">
-                                                    Watercolor</label>
-                                            </li>
-                                            <li><input id="ink" type="checkbox" name="mediums[]" value="ink" /><label
-                                                    for="ink">
-                                                    Ink</label></li>
-                                            <li><input id="acrylic" type="checkbox" name="mediums[]"
-                                                    value="acrylic" /><label for="acrylic"> Acrylic</label></li>
-                                            <li><input id="graphite" type="checkbox" name="mediums[]"
-                                                    value="graphite" /><label for="graphite"> Graphite</label>
-                                            </li>
-                                            <li><input id="gouache" type="checkbox" name="mediums[]"
-                                                    value="gouache" /><label for="gouache"> Gouache</label></li>
-                                            <li><input id="digital" type="checkbox" name="mediums[]"
-                                                    value="digital" /><label for="digital"> Digital</label></li>
-                                            <li><input id="traditional" type="checkbox" name="mediums[]"
-                                                    value="traditional" /><label for="traditional">
-                                                    Traditional</label>
-                                            </li>
-                                        </ul>
-                                    </label>
+                                    <p>
+                                        <label for='mediums'>
+                                            <h4>Show only..?</h4>
+                                            <ul>
+                                                <li><input id="watercolor" type="checkbox" name="mediums[]"
+                                                        value="watercolor" /><label for="watercolor">
+                                                        Watercolor</label>
+                                                </li>
+                                                <li><input id="ink" type="checkbox" name="mediums[]"
+                                                        value="ink" /><label for="ink">
+                                                        Ink</label></li>
+                                                <li><input id="acrylic" type="checkbox" name="mediums[]"
+                                                        value="acrylic" /><label for="acrylic"> Acrylic</label></li>
+                                                <li><input id="graphite" type="checkbox" name="mediums[]"
+                                                        value="graphite" /><label for="graphite"> Graphite</label>
+                                                </li>
+                                                <li><input id="gouache" type="checkbox" name="mediums[]"
+                                                        value="gouache" /><label for="gouache"> Gouache</label></li>
+                                                <li><input id="digital" type="checkbox" name="mediums[]"
+                                                        value="digital" /><label for="digital"> Digital</label></li>
+                                                <li><input id="traditional" type="checkbox" name="mediums[]"
+                                                        value="traditional" /><label for="traditional">
+                                                        Traditional</label>
+                                                </li>
+                                            </ul>
+                                        </label>
+                                    </p>
                                 </fieldset>
 
                                 <script>
                                     const categoryField = document.getElementById('category');
+                                    const collectionField = document.getElementById('collection');
                                     const mediumField = document.getElementById('mediums');
+
+                                    collectionField.style.display = 'none';
+                                    mediumField.style.display = 'none';
+
 
                                     categoryField.addEventListener('change', function () {
                                         if (categoryField.value === 'artwork') {
-                                            mediumField.style.display = 'block'; 
+                                            mediumField.style.display = 'block';
+                                            collectionField.style.display = 'none';
+                                        } else if (categoryField.value === 'collection') {
+                                            mediumField.style.display = 'none';
+                                            collectionField.style.display = 'block';
                                         } else {
-                                            mediumField.style.display = 'none'; 
+                                            mediumField.style.display = 'none';
+                                            collectionField.style.display = 'none';
                                         }
                                     });
 
                                 </script>
 
                                 <fieldset>
-
-                                    <label for="tags">
-                                        <h3>Tags:</h3><span>(Separate tags with a space e.g. 'hat levy')</span>
-                                        <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="tags" type="text"
-                                            name="tags" placeholder="tag1 tag2 tag3" />
-                                    </label>
+                                    <p>
+                                        <label for="tags">
+                                            <h3>Tags:</h3><span>(Separate tags with a space e.g. 'hat levy')</span>
+                                            <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="tags" type="text"
+                                                name="tags" placeholder="tag1 tag2 tag3" />
+                                        </label>
+                                    </p>
                                 </fieldset>
 
 
@@ -289,7 +324,7 @@ if (isset($_SESSION['dbresults'])) {
                 <div class='boxedsection gallerycontainer' id='gallerytop'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <?php if (isset($_SESSION['dbresults'])) {
+                            <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
                                 echo '<p class="bold">You searched: <i>' . $searchQuery . '</i></p>';
                                 echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
                             } else {
@@ -389,7 +424,7 @@ if (isset($_SESSION['dbresults'])) {
 
                             <hr class='hrtextseparator'>
                             <br>
-                            <div>
+                            <div class='flexright'>
                                 <h2 id='gallerypagenumbers'>More pages:
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
@@ -419,7 +454,7 @@ if (isset($_SESSION['dbresults'])) {
 
         </div>
 
-
+                                    <div class='spacermedium'></div>
         <?php include ($footer);
         ?>
     </main>

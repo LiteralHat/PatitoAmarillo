@@ -16,7 +16,9 @@
         </ul>
         <li class='tone4'><a href=<?php echo $links . "community/fanart.php" ?>>Community</a></li>
         <ul>
-            <li><a href=<?php echo $links . "community/fanart.php" ?>>Fanart<span class='warning'> NEW!</span></a></li>
+            <li><a href=<?php echo $links . "community/fanart.php" ?>>Fanart</a></li>
+            
+            <li><a href=<?php echo $links . "community/support.php" ?>>Help, Save, Support!</a></li>
         </ul>
 
         <li class='tone5'><a href=<?php echo $links . "about/about_faq.php" ?>>About</a></li>

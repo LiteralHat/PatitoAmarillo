@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralAbout.</title>
-    <meta name="LiteralHat.com | About + FAQ" content="View commonly asked questions and contact information here." />
+    <title>About + FAQ | LiteralHat</title>
+    <meta name="About + FAQ | LiteralHat" content="View commonly asked questions and contact information." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 

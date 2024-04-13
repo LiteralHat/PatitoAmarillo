@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralFanart.</title>
-    <meta name="LiteralHat | Fanart." content="Browse, look, and explore the fanart of LiteralHat." />
+    <title>Fanart | LiteralHat</title>
+    <meta name="LiteralHat | Fanart" content="Browse, look, and explore the fanart of LiteralHat." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -31,7 +31,7 @@
 
                 </div>
 
-                <div class='biggerwidthcontainer'>
+                <div class='extrawidthcontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
                             <div class='whiteborder padded'>

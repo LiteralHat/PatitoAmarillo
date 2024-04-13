@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $artworksdb = reSort($artworksdb, $matchingArtworks);
     }
 
-    if (!empty($_GET['category'])) {
+    if (!empty($_GET['category']) && ($_GET['category']) !== 'collection') {
         $category = $_GET['category'];
         notAllowed($category);
         array_push($searchQuery, "category: " . $category);
@@ -110,6 +110,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
         $matchingArtworks = executeStatement($statement);
         $artworksdb = reSort($artworksdb, $matchingArtworks);
+    }
+
+    if (!empty($_GET['collection'])) {
+        $collection = $_GET['collection'];
+        notAllowed($collection);
+        array_push($searchQuery, "'" . $collection . "'");
+        $queryitem = $collection;
+        $searchTerm = '%' . $queryitem . '%';
+        $statement = $db->prepare("SELECT * FROM artworks WHERE artworkcollection LIKE :searchTerm");
+        $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+        $matchingArtworks = executeStatement($statement);
+        $artworksdb = reSort($artworksdb, $matchingArtworks);
+
     }
 
     if (!empty($_GET['mediums'])) {
