@@ -7,6 +7,7 @@ if (!isset($_GET['page'])) {
 }
 if (isset($_SESSION['dbresults'])) {
     $artworksdb = $_SESSION['dbresults'];
+    $searchQuery = $_SESSION['searchQuery'];
     //echo '<br>SESSION ONGOING';
 
 } else {
@@ -103,7 +104,7 @@ if (isset($_SESSION['dbresults'])) {
                 </div>
             </div>
 
-<!-- 
+            <!-- 
 
             <?php
 
@@ -205,10 +206,25 @@ if (isset($_SESSION['dbresults'])) {
                                 </fieldset>
 
 
-                                <fieldset>
-                                    <label for='mediums'>
-                                        <h3>Mediums:</h3>
 
+                                <fieldset>
+                                    <p>
+                                        <label for='category'>
+                                            <h3>Category:</h3>
+                                            <select name='category' id='category'>
+                                                <option value='artwork'>Artworks / Pieces</option>
+                                                <option value='doodle'>Doodles / Incomplete</option>
+                                                <option value='photography'>Photography / Film</option>
+                                                <option value='sketchbook'>Sketchbook</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                                </fieldset>
+
+
+                                <fieldset id='mediums'>
+                                    <label for='mediums'>
+                                        <h4>Show only..?</h4>
                                         <ul>
                                             <li><input id="watercolor" type="checkbox" name="mediums[]"
                                                     value="watercolor" /><label for="watercolor">
@@ -230,16 +246,23 @@ if (isset($_SESSION['dbresults'])) {
                                                     value="traditional" /><label for="traditional">
                                                     Traditional</label>
                                             </li>
-                                            <li><input id="mixedmedia" type="checkbox" name="mediums[]"
-                                                    value="mixedmedia" /><label for="mixedmedia"> Mixed
-                                                    Media</label>
-                                            </li>
                                         </ul>
-
                                     </label>
                                 </fieldset>
 
+                                <script>
+                                    const categoryField = document.getElementById('category');
+                                    const mediumField = document.getElementById('mediums');
 
+                                    categoryField.addEventListener('change', function () {
+                                        if (categoryField.value === 'artwork') {
+                                            mediumField.style.display = 'block'; 
+                                        } else {
+                                            mediumField.style.display = 'none'; 
+                                        }
+                                    });
+
+                                </script>
 
                                 <fieldset>
 
@@ -267,6 +290,7 @@ if (isset($_SESSION['dbresults'])) {
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
                             <?php if (isset($_SESSION['dbresults'])) {
+                                echo '<p class="bold">You searched: <i>' . $searchQuery . '</i></p>';
                                 echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
                             } else {
                                 echo '<h2>Viewing All Artworks: ' . count($artworksdb) . '</h2><span></span>';
@@ -298,9 +322,11 @@ if (isset($_SESSION['dbresults'])) {
 
                                 <label for='itemsnumber'><span class='bold'>Items Per Page:</span></label>
                                 <select name='itemsnumber' id='itemsnumber'>
-                                    <option value='30'>30</option>
+                                    <option value='15'>15</option>
+                                    <option value='30' selected>30</option>
                                     <option value='45'>45</option>
                                     <option value='60'>60</option>
+                                    <option value='60'>69</option>
                                 </select>
 
                                 <?php
@@ -332,23 +358,27 @@ if (isset($_SESSION['dbresults'])) {
                             <div id='galleryitems'>
                                 <?php
 
+                                if (count($artworksdb) == 0) {
+                                    echo '<div class="center padtop"><p class="medium padtop">Uh oh. Looks like there aren\'t any results for your query.</p><p class="padtop">Try search for something else.</p><img src="../images/pagedolls/hat-frustrated.jpg" width=300px></div>
+                                    ';
+                                } else {
+                                    foreach ($artworksdb as $row => $artwork) {
+                                        $rowCount++;
 
+                                        if ($rowCount >= $itemsStartLimit) {
+                                            $wordsArray = explode("-", $artwork['title']);
+                                            $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                            $finalString = implode(" ", $capitalizedWords);
+                                            $dateString = htmlspecialchars($artwork['datecreated']);
+                                            $year = substr($dateString, 0, 4);
+                                            echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
 
-                                foreach ($artworksdb as $row => $artwork) {
-                                    $rowCount++;
-
-                                    if ($rowCount >= $itemsStartLimit) {
-                                        $wordsArray = explode("-", $artwork['title']);
-                                        $capitalizedWords = array_map('ucfirst', $wordsArray);
-                                        $finalString = implode(" ", $capitalizedWords);
-                                        $dateString = htmlspecialchars($artwork['datecreated']);
-                                        $year = substr($dateString, 0, 4);
-                                        echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
-
-                                        if ($rowCount >= $itemsEndLimit) {
-                                            break;
+                                            if ($rowCount >= $itemsEndLimit) {
+                                                break;
+                                            }
                                         }
                                     }
+
                                 }
 
                                 ?>
@@ -381,7 +411,7 @@ if (isset($_SESSION['dbresults'])) {
                 </div>
 
 
-                <div class='sidecontainer'>
+                <div class='sidecontainer' id='gallerysidecontainer'>
 
                 </div>
 

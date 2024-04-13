@@ -83,6 +83,13 @@
                                 <h3>v13.6.0-beta 13.04.2024</h3>
                                 <ul>
                                     <li>Fixed incorrect variable causing entire gallery sorting methods to break in gallery</li>
+                                    <li>Added category search option in gallery advanced search</li>
+                                    <li>Added error image when gallery search returns no results</li>
+                                    <li>Added search query text so user can see what they searched for</li>
+                                    <li>Removed smooth scroll from website (temporary)</li>
+                                    <li>Added href to page tags to align gallery box to top on page jump</li>
+                                    <li>Changed default items per page to 30</li>
+                                    <li>Improved responsive elements on gallery on midsize screen widths</li>
                                 </ul>
 
                                 <h3>v13.5.0-beta 12.04.2024</h3>

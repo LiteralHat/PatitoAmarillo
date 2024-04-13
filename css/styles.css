@@ -1462,6 +1462,9 @@ a:hover {
         max-width: 100%;
         height: auto;
     }
+    #gallerysidecontainer {
+        display: none;
+    }
 
     button {
         max-width: 27vw;
@@ -1535,6 +1538,8 @@ a:hover {
         display: flex;
         flex-wrap: wrap;
     }
+
+ 
 
     .sidecontainer:first-child {
         justify-content: right;

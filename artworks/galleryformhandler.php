@@ -10,6 +10,7 @@ session_start();
 $db = new PDO('sqlite:artworksv2.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+$searchQuery = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     function notAllowed($string)
@@ -53,13 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (!empty($_GET['title'])) {
         $title = $_GET['title'];
         notAllowed($title);
+        array_push($searchQuery, "'" . $title . "'");
         $queryitem = str_replace(' ', '-', $title);
         $searchTerm = '%' . $queryitem . '%';
         $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
-
         $matchingArtworks = executeStatement($statement);
         $artworksdb = reSort($artworksdb, $matchingArtworks);
+
     }
 
     if (!empty($_GET['afterdate']) || !empty($_GET['beforedate'])) {
@@ -76,6 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         } else {
             $afterdate = date('Y-m-d');
         }
+
+
+        array_push($searchQuery, "from " . $beforedate . " to " . $afterdate);
+
 
         if (!empty($_GET['fuzzydate'])) {
             $beforedatedt = new DateTime($beforedate);
@@ -94,9 +100,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $artworksdb = reSort($artworksdb, $matchingArtworks);
     }
 
+    if (!empty($_GET['category'])) {
+        $category = $_GET['category'];
+        notAllowed($category);
+        array_push($searchQuery, "category: " . $category);
+        $queryitem = str_replace(' ', '-', $category);
+        $searchTerm = '%' . $queryitem . '%';
+        $statement = $db->prepare("SELECT * FROM artworks WHERE category LIKE :searchTerm");
+        $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+        $matchingArtworks = executeStatement($statement);
+        $artworksdb = reSort($artworksdb, $matchingArtworks);
+    }
 
     if (!empty($_GET['mediums'])) {
         $answer = $_GET['mediums'];
+        $mediumQuery = array();
         $artworksByTag = [];
         foreach ($answer as $queryitem) {
             $searchTerm = '%' . $queryitem . '%';
@@ -106,15 +124,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $matchingArtworks = executeStatement($statement);
 
             $artworksByTag[$queryitem] = $matchingArtworks;
+
+            array_push($mediumQuery, $queryitem);
         }
         ;
+        $mediumQuery = implode(" / ", $mediumQuery);
+        array_push($searchQuery, 'mediums: ' . $mediumQuery);
+
         $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
         $artworksdb = reSort($artworksdb, $matchingArtworks);
-
     }
 
     if (!empty($_GET['tags'])) {
         $answer = explode(' ', $_GET['tags']);
+
+        $mediumQuery = array();
         $artworksByTag = [];
         foreach ($answer as $queryitem) {
 
@@ -124,13 +148,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
             $matchingArtworks = executeStatement($statement);
             $artworksByTag[$queryitem] = $matchingArtworks;
+
+            array_push($mediumQuery, $queryitem);
         }
         ;
+        $mediumQuery = implode(", ", $mediumQuery);
+        array_push($searchQuery, 'tags: ' . $mediumQuery);
+
         $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
         $artworksdb = reSort($artworksdb, $matchingArtworks);
     }
 
     $_SESSION['dbresults'] = $artworksdb;
+
+    $searchQuery = implode(", ", $searchQuery);
+    $_SESSION['searchQuery'] = $searchQuery;
     header("Location: gallery?page=1#gallerytop");
     exit();
 
