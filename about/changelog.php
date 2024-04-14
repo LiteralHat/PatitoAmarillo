@@ -90,6 +90,10 @@
                                     <li>Added href to page tags to align gallery box to top on page jump</li>
                                     <li>Changed default items per page to 30</li>
                                     <li>Improved responsive elements on gallery on midsize screen widths</li>
+                                    <li>Added <a href='../community/support'>support</a> page</li>
+                                    <li>Fixed css issue causing pagewidth to size down inconsistently on tablet devices</li>
+                                    <li>Changed some homepage elements and typefaces</li>
+                                    <li>Fixed all site meta head tags</li>
                                 </ul>
 
                                 <h3>v13.5.0-beta 12.04.2024</h3>
