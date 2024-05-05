@@ -45,7 +45,7 @@
                                             <h2 class='white'>Be Gay, Do Crime.</h2>
                                             <h2 class='white'>Create more than you consume.</h2>
                                             <h2 class='white'>Desire less.</h2>
-                                            
+
                                         </section>
                                     </div>
                                 </div>
@@ -57,7 +57,9 @@
 
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
-                            <blockquote class='fontheader white textsize2 center'>› I don't know what to put here. ‹</blockquote>
+                            <div class='spacersmall'></div>
+                            <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't dance, its not my revolution. "                            </blockquote>
+                            <div class='spacersmall'></div>
                         </div>
                     </div>
                 </div>
@@ -73,7 +75,7 @@
                         <div class='whitebox tonered center'>
                             <div class='whiteborder paddedsm'>
                                 <section>
-                                    <h2 class='white'>Patrons!</h2>
+                                    <h2 class='white'>Supporters!</h2>
                                     <hr>
 
                                     <ul class='centeredlist hearts white fontheader padtop mediumtext text10'>
@@ -82,7 +84,6 @@
                                         <li>Hugs</li>
                                         <li>Brew</li>
                                         <li>Jay Aury</li>
-                                        <li>Captain Cbisnasty1031</li>
                                         <li>Thatoneguy</li>
                                         <li>NickAnd-Valentine</li>
                                         <li>Jaegar Foxx</li>
@@ -112,7 +113,7 @@
                         <div class="whitebox toneblack">
                             <div class='whiteborder paddedsm'>
                                 <section>
-                                    <ul class='coollist padtop textsize2'>
+                                    <ul class='coollist padtop mediumtext'>
                                         <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
                                         </li>
                                         <li><a href="https://www.reddit.com/r/LiteralHat/" target="_blank">Subreddit</a>
@@ -157,7 +158,7 @@
                         </div>
                     </div>
 
-                    
+
 
                 </div>
 
@@ -178,11 +179,20 @@
                             <section class="section">
                                 <h2 class='padtop bold'>Welcome home.
                                 </h2>
-                                <p>This is my official website. It was last updated on 13.04.2024.</p>
+
+                                <p>This is my website where I post stuff ranging from my art, music, animations, projects, or rambles. There isn't a specific goal in mind, I do whatever I feel like doing. The layout of the site might change drastically depending on the day. Generally this site receives an update whenever I have the time.</p>
+
+                                <p>This website was last updated on <?php
+                                $filename = 'index.php';
+                                echo date("F d Y H:i:s.", filemtime($filename));
+                                ?></p>
+                        
                                 <p>Please report any major issues on <a
                                         href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
-                                <h2 class='padtop bold text4'>With many thanks to my
-                                    testers.
+
+                        
+                                <h2 class='padtop bold text4'>With love to my
+                                    testers:
                                 </h2>
                                 <div class='spacersmall'></div>
                                 <p class='mediumtext bold'>
@@ -205,7 +215,9 @@
                                     <li>Ami</li>
                                     <li>Ari</li>
                                 </ul>
+                                <div class='spacersmall'></div>
                                 </p>
+                                <p>Be respectful and do not inquire them about me - rather, check out their work at your own discretion.</p>
                             </section>
                         </div>
                     </div>

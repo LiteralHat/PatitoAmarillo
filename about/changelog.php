@@ -5,7 +5,8 @@
 
 <head>
     <title>Website Changelog | LiteralHat</title>
-    <meta name="Website Changelog | LiteralHat" content="View the site's version history, new changes, bug fixes, upcoming features, meta information, and more." />
+    <meta name="Website Changelog | LiteralHat"
+        content="View the site's version history, new changes, bug fixes, upcoming features, meta information, and more." />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -42,8 +43,6 @@
 
                             <div class="whitebox padded">
                                 <p class="bold">This is the site's official changelog.</p>
-                                <p>This website is still in development. Functionality is limited as a result. Please
-                                    forgive any broken links, images, etc.</p>
                                 <p>To view this website's Git repository and version history, <a
                                         href="https://github.com/LiteralHat/literalhat.com" target="_blank">click
                                         here.</a>
@@ -57,19 +56,20 @@
 
                     <section>
                         <div class='contentcontainer'>
-                            <div class='whitebox tone2 paddedsm'>
-                                <div class="whitebox padded">
-                                    <h2 class='textred'>Known Major Issues</h2>
-                                    <ul>
-                                        <li>None at the moment</li>
-                                    </ul>
+                            <div class='whitebox toneblack'>
+                                <div class='whiteborder paddedsm'>
+                                    <div class="whitebox padded">
+                                        <h2 class='textred'>Known Major Issues</h2>
+                                        <ul>
+                                            <li>Images in the gallery containing apostrophes in title and file names
+                                                refuse to parse and render correctly</li>
+                                        </ul>
 
-                                    <h2 class='textgreen'>Unreleased</h2>
-                                    <ul>
-                                        <li>Working search bar</li>
-                                        <li>Better site theme</li>
-                                        <li>Toggleable site theme (dark mode, high contrast, etc.)</li>
-                                    </ul>
+                                        <h2 class='textgreen'>Planned features</h2>
+                                        <ul>
+                                            <li>Working search bar</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -80,9 +80,34 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                                <h3>v13.8.0-beta 05.02.2024</h3>
+                                <ul>
+                                    <li>Updated top menu bar with cooler links, added random link feature too so every time you refresh a new sickass track comes up.</li>
+                                    <li>Updated Help! Save! Support! page</li>
+                                    <li>Updated About + FAQ page</li>
+                                    <li>Updated homepage</li>
+                                </ul>
+
+
+                                <h3>v13.7.0-beta 16.04.2024</h3>
+                                <ul>
+                                    <li>Fixed issue on .htaccess causing 404 page not to display properly</li>
+                                    <li>Added 301 rewrite rule that redirects www.literalhat.com to literalhat.com
+                                        as
+                                        the
+                                        former doesn't have CORS permissions and I don't want to add any</li>
+                                    <li>Added dynamic timestamp to 'last updated' text on frontpage</li>
+                                    <li>Changed some wording on <a href='../community/support'>support</a> page</li>
+                                    <li>Fixed alignment issues on rock-paper-scissors page</li>
+                                    <li>Added separator to changelog</li>
+                                </ul>
+                                <hr class='hrtextseparator'>
+                                <br>
                                 <h3>v13.6.0-beta 13.04.2024</h3>
                                 <ul>
-                                    <li>Fixed incorrect variable causing entire gallery sorting methods to break in gallery</li>
+                                    <li>Fixed incorrect variable causing entire gallery sorting methods to break in
+                                        gallery</li>
                                     <li>Added category search option in gallery advanced search</li>
                                     <li>Added error image when gallery search returns no results</li>
                                     <li>Added search query text so user can see what they searched for</li>
@@ -91,7 +116,8 @@
                                     <li>Changed default items per page to 30</li>
                                     <li>Improved responsive elements on gallery on midsize screen widths</li>
                                     <li>Added <a href='../community/support'>support</a> page</li>
-                                    <li>Fixed css issue causing pagewidth to size down inconsistently on tablet devices</li>
+                                    <li>Fixed css issue causing pagewidth to size down inconsistently on tablet
+                                        devices</li>
                                     <li>Changed some homepage elements and typefaces</li>
                                     <li>Fixed all site meta head tags</li>
                                 </ul>
@@ -170,7 +196,8 @@
 
                                 <h3>v6.4.0-beta 20.03.2024</h3>
                                 <ul>
-                                    <li>Removed padding from footer that caused a white bar on right side of page</li>
+                                    <li>Removed padding from footer that caused a white bar on right side of page
+                                    </li>
                                     <li>Removed 'back to top' button on mobile devices</li>
                                     <li>Added mobile responsive 'side' menu</li>
                                     <li>Changed spacing on top of menu bar on subpages</li>
@@ -248,7 +275,8 @@
                                     <li>Changed organisation of divs, overlapping class properties, internal file
                                         structure</li>
                                     <li>Fixed non semantic html tags</li>
-                                    <li>Fixed mobile specific issue where the background would appear as black instead
+                                    <li>Fixed mobile specific issue where the background would appear as black
+                                        instead
                                         of white</li>
                                 </ul>
                                 <h3>v1.0.0-beta 07.03.2024</h3>
@@ -272,15 +300,7 @@
                 </div>
 
 
-
-
-
-
-
-                <div class='sidecontainer'>
-                    <div class='contentbox padtop'>
-                    </div>
-                </div>
+                <div class='sidecontainer'></div>
 
             </div>
 

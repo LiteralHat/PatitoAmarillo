@@ -4,8 +4,8 @@
 <html lang="en">
 
 <head>
-    <title>LiteralBlank.</title>
-    <meta name="LiteralHat | Blank." content="" />
+    <title>Rock Paper Scissors | LiteralHat</title>
+    <meta name="Rock Paper Scissors | LiteralHat" content="" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -75,6 +75,9 @@
             <div class='boxedsection'>
                 <div class='bigwidthcontainer'>
                     <div class='contentcontainer'>
+
+
+                    
                         <div class='rowbox' id='mainMenuBox'>
                             <div class='contentcontainer'>
                                 <div class='padded center rpsbox'>
@@ -110,7 +113,7 @@
 
                         </div>
 
-                        <div class='contentcontainer columnbox' id='gameBox'>
+                        <div class='columnbox' id='gameBox'>
 
                             <div class='gamerowBox flexcenter'>
                                 <div class='contentcontainer'>

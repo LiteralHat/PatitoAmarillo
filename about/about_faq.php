@@ -43,54 +43,53 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <div class="center">
-                                    <p class='large'>Hi. I'm Hat.</p>
-                                    <p>I made this website.</p>
-                                    <p>Sometimes I draw, sometimes I animate.</p>
-                                    <p>On good days, I code. On bad days, I code anyways, but with more StackOverflow.
-                                    </p>
-                                    <p>I also enjoy pretending to be a competent guitarist.</p>
-                                    <p>This is the website of my passion. Thanks for visiting.</p>
-                                    <img src=<?php echo ($links . 'images/pagedolls/hat-hands-together.png'); ?>
-                                        class='image small'
-                                        src='boy with red mohawk standing on one foot and waving enthusiastically'></img>
+                                    <p>Hi. You may know me as LiteralHat, Hat, Charlie, Richter, or any insult of your choice - It doesn't matter.</p>
+                                    <p>Sometimes I draw, animate, make music, code, or write articles.</p>
+                                    <p>None of my stuff is 'consistent', please be so kind as to not expect such from me - I do
+                                        whatever I feel like doing.</p>
+                                    <p>This website is my pride and joy. In the end, my goal is to make it the home of
+                                        everything I've done. I would appreciate it if you bookmarked LiteralHat.com,
+                                        and come back sometime.</p>
                                 </div>
-                                <p class='bold smalltext centerbox'>if (sleepSchedule == 'fucked') {<br>
-                                    doCoding();<br>
-                                    } else {<br>
-                                    shredGuitar();<br>
-                                    }
-                                </p>
-
                             </div>
                     </section>
+
+                    <div class='spacermedium'></div>
 
 
                     <section>
                         <div class='contentcontainer'>
-                            <div class="whitebox center tone1">
+                            <div class="whitebox center toneblack">
                                 <div class='whiteborder'>
                                     <h2 class='white padtop'>Frequently Asked Questions</h2>
                                 </div>
                             </div>
                         </div>
 
-
                         <div class='contentcontainer'>
-                            <div class="whitebox padded tone2">
-                                <div class="whitebox padded">
-                                    <p class='question'>Are you up for hire?</p>
-                                    <p>Please send any business enquiries to <i>support@literalhat.com</i>.</p>
-                                    <p class='question'>Can I use your art in ______?</p>
-                                    <p>I encourage you to.</p>
-                                    <p>Profile pictures, banners, edits, videos etc. - all are fine as long as your use
-                                        is not commercial.</p>
-                                    <p>No need to credit... be kind to others in your usage.</p>
-                                    <p class='question'>How can I support you?</p>
-                                    <p>You can become a supporter through <a href='https://www.patreon.com/LiteralHat'
-                                            target='_blank'>Patreon</a> where I post daily.</p>
-                                    <p>Or, if you can, show my stuff to your friends. That's all I need.</p>
-                                </div>
+                            <div class="whitebox padded">
+                                <h3>Can I use your art in ______?</h3>
+                                <p class='bold'>You may, as long as your use is non-commercial.</p>
+                                <p>You may use any of my artworks in your profile pictures, banners, edits, forum
+                                    signatures (and/or posts). You may modify my artworks, edit or crop them as you
+                                    wish. You may print them out and hang them on your wall as decor or for your own
+                                    personal delight. You are free to repost my art online to your hearts content.</p>
+                                <p>You may use my music in your animations, videos, covers, or edits. You may remix my
+                                    music to your hearts content, and reupload them to other platforms.</p>
+                               <p class='warning'>Do not use my artworks, characters, music, animations, anything I've made, really - for profit.</p>
+                                    <p>No need to credit. But be kind to others in your usage.</p>
+                                <h3>Are you up for hire?</h3>
+                                <p>No, sorry.</p>
+                                <h3>How can I support you?</h3>
+                                <p><a href='<?php echo $links . "community/support.php" ?>'>Help, Save, Support</a></p>
+                                <h3>How can I contact you?</h3>
+                                <p>I don't use social media. All my
+                                    posts on Instagram, Twitter, etc. are done with
+                                    a script. In other words, completely automated and I don't even visit the site.
+                                    You're free to comment or message but it won't be seen.</p>
+                                <p>Email <i>support@literalhat.com</i> instead, and I will get back to you when I have the time.</p>
                             </div>
+
                         </div>
                     </section>
 

@@ -23,7 +23,7 @@
                 </div>
 
                 <div class='bigwidthcontainer'>
-                    <div class='spacersmall'></div>
+                    <div class='spacermedium'></div>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
                             <div class='whiteborder padded'>
@@ -35,67 +35,57 @@
                     </div>
                     <div class='contentcontainer center white'>
 
-                        
+
                         <section>
-                        <div class='spacersmall'></div>
+                            <div class='spacermedium'></div>
                             <h2>Hi.</h2>
                             <p>If you’ve found this page, Congratulations.</p>
 
+                            <div class='spacermedium'></div>
                             <img class='padded' src='../images/pagedolls/little-hat.png'>
+
+
+                            <div class='spacermedium'></div>
                             <p class='bold mediumtext'>Thank you.</p>
 
-
-
+                            <div class='spacersmall'></div>
                             <p>The fact that you’re here already means a lot.</p>
 
-                            <p>Now listen closely.</p>
-
-                            <p>All my work - this website, my art, animations, music, EVERYTHING - is merely a
-                                hobby.</p>
-
-                            <p>I'm a one man team trying to have the most fun as possible.</p>
-
-                            <p>If you would like to support me, <b>don't show my stuff to your friends, don't
-                                    like
-                                    and subscribe,</b> just sit back and take the time to enjoy my work. See how
-                                long you can go without telling anyone about LiteralHat.</p>
-
-                            <br>
-
-                            <p>The world shouldn't have celebrities.</p>
+                            <p>Please read on because the following is very important to me.</p>
 
                             <div class='spacermedium'></div>
-
-                            <h2>The Case With Social Media</h2>
-
-                            <p>I don't use social media.</p>
-                            <p>I get pressured all the time to make this and that, and make it faster, and it's
-                                distressing.</p>
-                            <p>Everything posted on my Instagram, Twitter, etc. is done with a script. In other
-                                words, all automated and I don't even visit the site.</p>
-                            <p>You're free to comment or message but it probably won't be seen. Sorry. But I
-                                appreciate you with all my heart.</p>
-
+                            <hr>
                             <div class='spacermedium'></div>
-                            <h2>My mission</h2>
-                            <p>This website is my pride and joy.</p>
-                            <p>In the end, my goal is to make it the home of everything I've done.</p>
-                            <p>I would appreciate it if you bookmarked LiteralHat.com, and come back sometime.
-                            </p>
-                            <p>I update it very frequently - Promise I'll try my best to keep it interesting and
-                                worthwhile.</p>
+
+                            <p>Everything I do - art, animation, music, this website and its content - is all for fun.
+                                I'm a hobbyist and am not interested in making this my full time job.</p>
+
+                            <p>If you would like to support my work.</p>
+
+                            <p>Show my stuff to someone. Whether it be your friends, your mom, or your dog.</p>
+
+                            <p>Print it out. Stick it on your wall. Make a bookmark. Make a sticker. Make a card.</p>
+
+                            <p>Download my music, make remixes, do a cover, and upload them.</p>
+
+                            <p>Download my art and repost them everywhere like the plague.</p>
+
+                            <p>But most importantly - keep it free, and make sure others do too.</p>
+
 
 
                             <div class='spacermedium'></div>
-                            <h2>Keep me alive!</h2>
-                            <p>You can also support <a href='https://www.patreon.com/LiteralHat' target='_blank'>here
-                                    (Click me...? Promise it's not a rickroll.)</a> where I'm very active and
-                                will
-                                reply to comments. It'll help a lot with hosting costs, and I will be eternally
-                                grateful.</p>
-                            <p>But if you can't, then that's okay. I love you anyways.</p>
+                            <hr>
+                            <div class='spacermedium'></div>
 
-                            <p><a href='https://youtu.be/JrdGAcZ8vhs?si=7cfvHmk-Ivde5Rsv' target='_blank'>?</a></p>
+                            <p class='bold mediumtext'>I appreciate those who support whatever I make, instead of
+                                blindly treating me like a content factory.</p>
+
+                            <div class='spacersmall'></div>
+                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you
+                                want to help with hosting costs and doing what I do. If you're only in for the perks I
+                                would suggest you seek out other artists to subscribe to.</p>
+                            
                         </section>
 
                     </div>

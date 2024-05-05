@@ -52,11 +52,17 @@
                                 <h2>Welcome to the fanart gallery.</h2>
                                 <p>This is where you can view artworks made by you.</p>
                                 <p>Click on an image to enlarge and see the artist's name, click again to hide.</p>
+                                <p>Email <i>support@literalhat.com</i> to submit an artwork. Please provide a credit
+                                    name. </p>
                                 <p>If you want an image removed, or your artwork is credited with 'unknown', please
                                     email <i>support@literalhat.com</i>.</p>
                                 <p class='bold'>If you have something to submit, hold on for now - you'll be able to
                                     submit directly here in the future.</p>
                                 <p class='warning'>Please note that links currently aren't permanent!</p>
+                                <hr class='hrtextseparator'>
+                                <div class='spacersmall'></div>
+                                <a class='medium center fontheader uppercase nounderline' href='submitfanart.php' target='_blank'>Click here to
+                                        submit your own fanart.</a>
                             </div>
                         </div>
                     </div>

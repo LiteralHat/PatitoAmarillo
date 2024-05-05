@@ -1,7 +1,12 @@
 
 RewriteEngine On
 
-ErrorDocument 404 /literalwebsite/404.php
+
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "https://www.literalhat.com"
+</FilesMatch>
+
+ErrorDocument 404 /404.php
 
 
 RewriteRule ^artworks/view/([0-9]+) artworks/view.php?artworkid=$1

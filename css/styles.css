@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: Insatiable;
-    src: url('fonts/Insatiable.ttf');
+    src: url('fonts/Satan.ttf');
 }
 
 @font-face {
@@ -172,6 +172,7 @@ p,
 blockquote,
 span,
 ul,
+input,
 label,
 ol {
     font-family: var(--font-body);
@@ -221,6 +222,9 @@ ol {
     width: 13rem;
 }
 
+.tinytext {
+    font-size: 0.3rem;
+}
 
 .small {
     font-size: 0.8rem;
@@ -233,16 +237,11 @@ ol {
 
 
 .medium {
-    width: 28rem;
     font-size: 1.5rem;
 }
 
 .mediumtext {
     font-size: 1.3rem;
-}
-
-.textsize2 {
-    font-size: 2rem;
 }
 
 .large {
@@ -375,14 +374,23 @@ ol {
     background-color: white;
     box-sizing: border-box;
     width: 100%;
-    
 }
+
+
+
 
 .clearbox {
     border: 0.3rem solid transparent;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+}
+
+
+.chalkboard {
+    background: linear-gradient(133deg, rgba(0,0,0,1) 0%, rgba(20,20,20,1) 28%, rgba(36,36,36,1) 64%, rgba(28,28,28,1) 78%, rgba(18,18,18,1) 100%);
+
+    border: var(--box-borders) solid black;
 }
 
 .padded {
@@ -405,6 +413,13 @@ ol {
     box-sizing: border-box;
     height: 100%;
 }
+
+.smallwidthcontainer {
+    width: 30rem;
+    box-sizing: border-box;
+    height: 100%;
+}
+
 
 .bigwidthcontainer {
     width: 900px;
@@ -951,7 +966,6 @@ a:hover {
     font-size: 2.4rem;
     font-weight: normal;
     font-family: Insatiable, Sedgwick Ave Display;
-    letter-spacing: -3px;
 }
 
 
@@ -1033,9 +1047,17 @@ a:hover {
 }
 
 
+.nopad, .nopad *{
+    padding: 0;
+    margin: 0;
+}
 
 .padtop {
     padding-top: 0.9rem;
+}
+
+.padtopsm {
+    padding-top: 0.4rem;
 }
 
 .fontheader,
@@ -1043,6 +1065,24 @@ a:hover {
     font-family: var(--font-header);
 }
 
+
+.fontfancy,
+.fontfancy * {
+    font-family: var(--font-fancy);
+}
+
+
+
+.fontlogo,
+.fontlogo * {
+    font-family: var(--font-logo);
+}
+
+
+.uppercase,
+.uppercase * {
+    text-transform: uppercase;
+}
 
 
 
@@ -1359,6 +1399,37 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+.songcover {
+    height: 12rem;
+    width: 12rem;
+    object-fit: cover;
+    border: 0.3rem solid black;
+    
+}
+
+.songtextbox {
+    width: 100%;
+    height: auto;
+}
+
+
+.songcredit {
+    height: 3rem;
+    width: 12rem;
+
+}
+
+.songdownloaddialog {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 

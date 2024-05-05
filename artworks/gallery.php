@@ -51,6 +51,7 @@ if (isset($_SESSION['searchQuery'])) {
                         <p>I am a single person developing this gallery as well as cataloguing artworks, so any
                             patience
                             is wholly appreciated.</p>
+                            <p>Artworks are still in the process of being added.</p>
 
                         <br>
                         <br>
