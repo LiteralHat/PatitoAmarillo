@@ -1407,8 +1407,8 @@ a:hover {
 
 
 .songcover {
-    height: 12rem;
-    width: 12rem;
+    height: 13rem;
+    width: 13rem;
     object-fit: cover;
     border: 0.3rem solid black;
     
@@ -1431,6 +1431,35 @@ a:hover {
     margin-right: auto;
 }
 
+#songsearchbar {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    
+}
+
+#songsearchbar input {
+    min-height: 2rem;
+    font-family: var(--font-header);
+    font-size: 2rem;
+    background-color: black;
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 0.4rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#songsearchbar button {
+    height: 3rem;
+    width: 3rem;
+    background-color: black;
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
 
 
 

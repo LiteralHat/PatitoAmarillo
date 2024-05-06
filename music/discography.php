@@ -7,7 +7,11 @@
     <title>LiteralTemplating.</title>
     <meta name="LiteralHat | Templating." content="Dedicated templating dump page" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
 
 <body>
     <main>
@@ -21,21 +25,21 @@
             <div class='boxedsection'>
                 <div class='widthcontainer'>
                     <div class='contentcontainer'>
-                        <div class='columnbox center white'>
+                        <div class='columnbox white'>
                             <h1 class='small textblack'>Discography.</h1>
                             <img src='../images/titles/discography.png' height='130px'>
                             <div class='spacersmall'></div>
                             <div class='spacersmall'></div>
                             <div class='spacersmall'></div>
-                            <div class='whiteborder padded'>
+
+                            <div class='whiteborder padded center '>
                                 <h2 class='large'>Welcome to my complete discography.</h2>
                                 <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
-                                <p>Some songs have a 'buy' option, but it would mean much more if you downloaded
-                                    whatever you'd like and <a href='https://www.patreon.com/LiteralHat'>supported
-                                        me</a>.</p>
-                                <p>Please download as much as you can, listen, make remixes, create animations, do your
+                                <p>In return please <a href='https://www.patreon.com/LiteralHat'>support
+                                        me</a>, so I can keep making more.</p>
+                                <p>Download as much as you can, listen, make remixes, create animations, do your
                                     own covers, send to your friends.</p>
                                 <p>I kindly ask for a credit: </p>
                                 <p class='italics'>'Song Name' by LiteralHat - https://literalhat.com/</p>
@@ -43,56 +47,101 @@
                                     any means of profit.</p>
                                 <p>That's all, take care, and happy listening.</p>
                             </div>
+
                             <div class='spacersmall'></div>
                             <div class='spacersmall'></div>
+
+                            <form id='songsearchbar' class='whiteborder centerbox' method='GET'>
+                                <input type='text' pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" placeholder='search...'
+                                    name='search' required></input>
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                                
+                            </form>
+                            <div class='spacersmall'></div>
+                            <div class='spacersmall'></div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <?php
-        $db = new PDO('sqlite:music.db');
-        $statement = $db->query("SELECT * FROM music");
-        $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-        ?>
 
 
         <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
                 <div class='bigwidthcontainer'>
+                    <div class='spacersmall'></div>
                     <div class='columnbox'>
-
                         <?php
+                        $db = new PDO('sqlite:music.db');
+                        $statement = $db->query("SELECT * FROM music");
+                        $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+                        function notAllowed($string)
+                        {
+                            $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
+                            if (preg_match($notallowed, $string)) {
+                                echo "<p class='warning'>Your search query is not valid!</p>";
+                                exit;
+                            } else {
+                                return;
+                            }
+                        }
+
+                        if (!empty($_GET['search'])) {
+                            $search = $_GET['search'];
+                            notAllowed($search);
+                            $queryitem = str_replace(' ', '-', $search);
+                            $searchTerm = '%' . $queryitem . '%';
+                            $statement = $db->prepare("SELECT * FROM music WHERE title LIKE :searchTerm");
+                            $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
+                            $statement->execute();
+                            $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+                          
+                        }
+
+
+                        usort($musicdb, function ($a, $b) {
+                            return strtotime($b['datecreated']) - strtotime($a['datecreated']);
+                        });
+
+                        
                         foreach ($musicdb as $row => $song) {
-
                             $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
-
+                            $titleparsed = str_replace("'", "&apos;", $song['title']);
                             $formattedDate = date("F Y", strtotime($song['datecreated']));
+                            $extratext = '<br>';
+                            if (isset($song['cover'])) {
+                                $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
+                            }
+                            if (isset($song['buy'])) {
+                                $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
+                            }
+
                             echo "
-                     
                         <div class='contentcontainer'>
                         <div class='whitebox toneblack'>
                             <div class='whiteborder paddedsm white'>
                                 <div class='contentcontainer'>
-                                    <img class='songcover' src='https://reloaded.literalhat.com/music/". $song['title'] . ".jpg'>
+                                    <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'>
                                     <div class='paddedsm songtextbox'>
                                         <h2>" . $title . "</h2>
                                         <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
                                         <br>
                                         <br>
                                         <audio controls>
-                                            <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $song['title'] . ".mp3'>
+                                            <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
                                         </audio>
                                         <details>
                                 <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
-                                <p>" . str_replace('\n', '<br>', $song['lyrics']) . "</p>
+                                <p>" . nl2br($song['lyrics']) . "</p>
                               </details>
                                     </div>
                                     <div class='paddedsm'>
-                                    <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $song['title'] . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
-                                    <p><a href=''>BUY</a></p>
+                                    <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
+                                    " . $extratext . "
                                     <hr>
                                     <p class='padtop'>CREDIT:</P>
                                     <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
@@ -101,10 +150,13 @@
                                 </div>
                             </div>
                         </div>
-                    
                 </div>";
                         }
+
+                        $db = null;
                         ?>
+
+
                         <script>
                             function clickToCopy() {
                                 // Get the text field
@@ -118,10 +170,9 @@
                                 navigator.clipboard.writeText(copyText.value);
 
                                 // Alert the copied text
-                                alert("You've copied the text: " + copyText.value + ". By the way, I really appreciate it.");
+                                alert("You've copied the text: " + copyText.value + ". Thank you a lot for crediting :D");
                             }
                         </script>
-
 
                     </div>
                 </div>
