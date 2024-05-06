@@ -1461,8 +1461,11 @@ a:hover {
     cursor: pointer;
 }
 
-
-
+.formspacebetween {
+display: flex;
+width: 100%;
+justify-content: space-between;
+}
 
 
 
