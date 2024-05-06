@@ -4,3 +4,6 @@ admin
 vendor
 composer.json
 composer.lock
+htaccess
+database
+scripts
