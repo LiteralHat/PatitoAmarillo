@@ -383,7 +383,7 @@ if (isset($_SESSION['searchQuery'])) {
                                 ?>
 
                                 <input type='hidden' name='data' value='<?php echo json_encode($encodeArray); ?>'>
-                                <button type='submit' type='submit' value='submit' name='submit'> Sort that bad
+                                <button type='submit' value='submit' name='submit'> Sort that bad
                                     boy!
                                 </button>
                             </form>
