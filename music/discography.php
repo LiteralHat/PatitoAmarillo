@@ -55,7 +55,7 @@
                                 <input type='text' pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" placeholder='search...'
                                     name='search' required></input>
                                 <button type="submit"><i class="fa fa-search"></i></button>
-                                
+
                             </form>
                             <div class='spacersmall'></div>
                             <div class='spacersmall'></div>
@@ -99,7 +99,7 @@
                             $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
                             $statement->execute();
                             $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-                          
+
                         }
 
 
@@ -107,50 +107,55 @@
                             return strtotime($b['datecreated']) - strtotime($a['datecreated']);
                         });
 
-                        
-                        foreach ($musicdb as $row => $song) {
-                            $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
-                            $titleparsed = str_replace("'", "&apos;", $song['title']);
-                            $formattedDate = date("F Y", strtotime($song['datecreated']));
-                            $extratext = '<br>';
-                            if (isset($song['cover'])) {
-                                $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
-                            }
-                            if (isset($song['buy'])) {
-                                $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
-                            }
 
-                            echo "
-                        <div class='contentcontainer'>
-                        <div class='whitebox toneblack'>
-                            <div class='whiteborder paddedsm white'>
+                        foreach ($musicdb as $row => $song) {
+                            if (isset($song['title']) && isset($song['datecreated']) && isset($song['type'])) {
+                                $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
+                                $titleparsed = str_replace("'", "&apos;", $song['title']);
+                                $formattedDate = date("F Y", strtotime($song['datecreated']));
+                                $extratext = '<br>';
+                                if (isset($song['cover'])) {
+                                    $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
+                                }
+                                if (isset($song['buy'])) {
+                                    $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
+                                }
+
+                                echo "
                                 <div class='contentcontainer'>
-                                    <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'>
-                                    <div class='paddedsm songtextbox'>
-                                        <h2>" . $title . "</h2>
-                                        <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
-                                        <br>
-                                        <br>
-                                        <audio controls>
-                                            <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
-                                        </audio>
-                                        <details>
-                                <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
-                                <p>" . nl2br($song['lyrics']) . "</p>
-                              </details>
-                                    </div>
-                                    <div class='paddedsm'>
-                                    <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
-                                    " . $extratext . "
-                                    <hr>
-                                    <p class='padtop'>CREDIT:</P>
-                                    <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
-                                    <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
+                                <div class='whitebox toneblack'>
+                                    <div class='whiteborder paddedsm white'>
+                                        <div class='contentcontainer'>
+                                            <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'>
+                                            <div class='paddedsm songtextbox'>
+                                                <h2>" . $title . "</h2>
+                                                <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
+                                                <br>
+                                                <br>
+                                                <audio controls>
+                                                    <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
+                                                </audio>
+                                                <details>
+                                        <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
+                                        <p>" . nl2br($song['lyrics']) . "</p>
+                                    </details>
+                                            </div>
+                                            <div class='paddedsm'>
+                                            <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
+                                            " . $extratext . "
+                                            <hr>
+                                            <p class='padtop'>CREDIT:</P>
+                                            <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
+                                            <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                </div>";
+                        </div>";
+                            } else {
+
+                                echo '';
+                            }
                         }
 
                         $db = null;

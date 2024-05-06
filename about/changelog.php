@@ -80,15 +80,21 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-
-                                <h3>v13.8.0-beta 05.02.2024</h3>
+                                <h3>v14.8.0-beta 06.05.2024</h3>
                                 <ul>
-                                    <li>Updated top menu bar with cooler links, added random link feature too so every time you refresh a new sickass track comes up.</li>
+                                    <li>Released Discography page!</li>
+                                    <li>Added fanart submission form to fanart page</li>
+                                    <li>Added a lot of back end stuff. Basically, stuff you can't see, but it's important.</li>
+                                </ul>
+
+                                <h3>v13.8.0-beta 02.05.2024</h3>
+                                <ul>
+                                    <li>Updated top menu bar with cooler links, added random link feature too so every
+                                        time you refresh a new sickass track comes up.</li>
                                     <li>Updated Help! Save! Support! page</li>
                                     <li>Updated About + FAQ page</li>
                                     <li>Updated homepage</li>
                                 </ul>
-
 
                                 <h3>v13.7.0-beta 16.04.2024</h3>
                                 <ul>
