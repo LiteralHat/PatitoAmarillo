@@ -23,13 +23,9 @@
         <div id='lightBoxContainer'>
         </div>
 
-        <div class="contentrowstripe centerbox">
+        <div class="contentrowstripe centerbox maxheight">
             <div class='boxedsection'>
-                <div class='sidecontainer'>
-                    <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
 
-                </div>
 
                 <div class='extrawidthcontainer'>
                     <div class='contentcontainer'>
@@ -44,76 +40,31 @@
                         </div>
                     </div>
 
-
-
                     <div class='contentcontainer'>
-                        <div class="whitebox tone3 paddedsm">
-                            <div class="whitebox padded center">
-                                <h2>Welcome to the fanart gallery.</h2>
-                                <p>This is where you can view artworks made by you.</p>
-                                <p>Click on an image to enlarge and see the artist's name, click again to hide.</p>
-                                <p>Email <i>support@literalhat.com</i> to submit an artwork. Please provide a credit
-                                    name. </p>
-                                <p>If you want an image removed, or your artwork is credited with 'unknown', please
-                                    email <i>support@literalhat.com</i>.</p>
-                                <p class='bold'>If you have something to submit, hold on for now - you'll be able to
-                                    submit directly here in the future.</p>
-                                <p class='warning'>Please note that links currently aren't permanent!</p>
-                                <hr class='hrtextseparator'>
-                                <div class='spacersmall'></div>
-                                <a class='medium center fontheader uppercase nounderline' href='submitfanart.php' target='_blank'>Click here to
-                                        submit your own fanart.</a>
+                        <div class="whitebox center toneblack">
+                            <div class='whiteborder padded'>
+                        
+                                <h2 class='white padtop larger'>
+                                    Page under maintenance...
+                                </h2>
+                                <div class='paddedsm white'>
+                                    <p>Yes, I know it was here like, last week. But I'm remaking it. It won't take too long, promise.</p>
+                                    <p>For the 200iq Rick and Morty intellectuals in the room, basically I was using Javascript to handle all the DOM manipulation and data, and now I realise how impractical that is considering I want to implement CRUD onto the site.</p>
+                                    <p>It'll be back soon, bro. Trust me and chill.</p>
+                                </div>
+                             
                             </div>
                         </div>
                     </div>
 
-                    <div class='contentcontainer'>
-                        <section class='whitebox toneblack'>
-                            <div class='whiteborder padded'>
-
-                                <h2 class='white' id='year'></h2>
-                                <p class='white'>
-                                    <span class='white yearhover' onclick='updateYear(2024)'>2024</span>
-                                    -
-                                    <span class='white yearhover' onclick='updateYear(2023)'>2023</span>
-                                    -
-                                    <span class='white yearhover' onclick='updateYear(2022)'>2022</span>
-                                    -
-                                    <span class='white yearhover' onclick='updateYear(2021)'>2021</span>
-                                    -
-                                    <span class='white yearhover' onclick='updateYear(2020)'>2020</span>
-                                </p>
-
-                                <hr>
-                                <div class='center padded' id='loadingDiv'>
-                                    <img src='../images/pagedolls/loading.gif' style='width:300px'>
-                                    <div>
-                                        <span class='fancy large white'>Loading</span>
-                                        <span class='fancy large white' id='loadText'></span>
-                                    </div>
-                                </div>
 
 
-                                <div class='padtop' id="fanartgallery">
-                                    <!-- js appends here -->
-                                </div>
-
-
-                            </div>
-                        </section>
-
-                    </div>
 
 
 
                 </div>
 
 
-
-                <div class='sidecontainer'>
-                    <div class='contentbox padtop'>
-                    </div>
-                </div>
 
             </div>
 

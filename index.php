@@ -185,13 +185,13 @@
 
                                 <p>This website was last updated on <?php
                                 $filename = 'index.php';
-                                echo date("F d Y H:i:s.", filemtime($filename));
-                                ?></p>
+                                echo date("F d Y H:i:s", filemtime($filename));
+                                ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more information.</p> 
+                                
                         
                                 <p>Please report any major issues on <a
                                         href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
-
-                        
+                                        <p>
                                 <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
@@ -218,7 +218,11 @@
                                 </ul>
                                 <div class='spacersmall'></div>
                                 </p>
-                                <p>Be respectful and do not inquire them about me - rather, check out their work at your own discretion.</p>
+                                <p>I hate that I have to say this, but be respectful and do not inquire them about me - rather, check out their work at your own discretion.</p>
+
+
+                        
+
                             </section>
                         </div>
                     </div>

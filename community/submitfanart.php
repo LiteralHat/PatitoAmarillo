@@ -16,6 +16,13 @@
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
 
+
+                <div class='sidecontainer'>
+                    <div class='spacermedium'></div>
+                    <?php include_once ($menusimple) ?>
+
+                </div>
+
                 <div class='widthcontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
@@ -28,12 +35,24 @@
                     </div>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <p>Fanart submission guidelines:</p>
+                            <h2>Submission Requirements</h2>
+
+                            <p>As long as it's relevant to LiteralHat, you may submit it here. This includes:</p>
                             <ul>
-                                <li>Fanart must be your <b>own original work.</b></li>
-                                <li>Edits of my work are considered fanart and are very much welcome.</li>
-                                <li>Video submissions</li>
+                                <li>Your own original drawings</li>
+                                <li>Edits done on a base (as long as credit is given ON the drawing)</li>
+                                <li>Cosplay photo</li>
+                                <li>Sculpture</li>
+                                <li>Look, if you're not sure, submit it anyways :)</li>
                             </ul>
+
+                            <p>Don't submit anything with copyrighted content. Artworks may explore controversial,
+                                satirical or political themes, but must not be
+                                distasteful.</p>
+                            <p>The fanart page is updated <b>annually,</b> or whenever the site gets a major update.</p>
+                            </ul>
+
+                            
                         </div>
                     </div>
 
@@ -54,7 +73,8 @@
 
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
-                                <form class='form' action='https://formsubmit.co/0de0e4c731081aa8e5dd8277099a7bbe' method='POST'>
+                                <form class='form' action='https://formsubmit.co/0de0e4c731081aa8e5dd8277099a7bbe'
+                                    method='POST'>
                                     <fieldset>
                                         <label for="artistcredit">
                                             <h3>Artist Credit Name:</h3>
@@ -75,16 +95,33 @@
                                         </div>
                                     </div>
 
-                                    <fieldset class='nopad padtop'>
-                                        <label for="tos">
-                                            <p class='smalltext'><input id="tos" type="checkbox" name="tos" required />
-                                                I confirm that my artwork will be posted to the fanart page, which is
-                                                completely public.</p>
+                                    <fieldset>
+                                        <label for='year'>
+                                            <br>
+                                            <h3>In what year was this created?</h3>
+
+                                            <select name='year' id='year'>
+                                                <option value='2024'>2024</option>
+                                                <option value='2023'>2023</option>
+                                                <option value='2022'>2022</option>
+                                                <option value='2021'>2021</option>
+                                                <option value='2020'>2020</option>
+                                            </select>
                                         </label>
-                                        <label for="unsuitable">
+                                    </fieldset>
+
+                                    <hr class='hrtextseparator'>
+                                    <fieldset class='nopad padtop'>
+                                        <label for="agree1">
+
+                                            <p class='smalltext'><input id="tos" type="checkbox" name="tos" required />
+                                                I acknowledge that my artwork will be posted publicly on the fanart
+                                                page.</p>
+                                        </label>
+                                        <label for="agree2">
                                             <p class='smalltext'><input id="unsuitable" type="checkbox"
                                                     name="unsuitable" required /> I understand that my artwork may not
-                                                be posted at all if it is deemed to be unsuitable.</p>
+                                                be posted if it is deemed unsuitable.</p>
                                         </label>
                                     </fieldset>
 
@@ -101,6 +138,12 @@
 
                     </section>
 
+
+                </div>
+
+
+
+                <div class='sidecontainer'>
 
                 </div>
             </div>

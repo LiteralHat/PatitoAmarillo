@@ -1,4 +1,14 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../variables.php');
+session_start();
+
+if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
+    $isadmin = true;
+
+} else {
+    $isadmin = false;
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +47,8 @@
                                 <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
-                                <p>In return please <a href='https://www.patreon.com/LiteralHat'>support
-                                        me</a>, so I can keep making more.</p>
+                                <p>If you can. <a href='https://www.patreon.com/LiteralHat'>Support
+                                        me</a>, so I can keep making more. No pressure though.</p>
                                 <p>Download as much as you can, listen, make remixes, create animations, do your
                                     own covers, send to your friends.</p>
                                 <p>I kindly ask for a credit: </p>
@@ -77,8 +87,6 @@
                         $db = new PDO('sqlite:music.db');
                         $statement = $db->query("SELECT * FROM music");
                         $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
                         function notAllowed($string)
                         {
                             $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
@@ -108,6 +116,8 @@
                         });
 
 
+
+
                         foreach ($musicdb as $row => $song) {
                             if (isset($song['title']) && isset($song['datecreated']) && isset($song['type'])) {
                                 $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
@@ -121,14 +131,25 @@
                                     $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
                                 }
 
+                                if ($isadmin) {
+                                    $extracode = "<form action='../admin/delete_music' method='post'>
+                                    <input type='hidden' name='post_id' value='" . $song['index'] . "'>
+                                    <input type='submit' value='Delete' class='tonered paddedsm'>
+                                    </form>";
+                                } else {
+                                    $extracode = '';
+                                }
+
                                 echo "
                                 <div class='contentcontainer'>
                                 <div class='whitebox toneblack'>
                                     <div class='whiteborder paddedsm white'>
                                         <div class='contentcontainer'>
-                                            <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'>
+                                        <div class='songcovercontainer'>
+                                            <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'></div>
                                             <div class='paddedsm songtextbox'>
-                                                <h2>" . $title . "</h2>
+                                                <h2>" . $title . "</h2>" . $extracode . "
+                                                
                                                 <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
                                                 <br>
                                                 <br>
@@ -150,6 +171,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                         </div>";
                             } else {
@@ -178,7 +200,7 @@
                                 alert("You've copied the text: " + copyText.value + ". Thank you a lot for crediting :D");
                             }
                         </script>
-
+                    </div>
                     </div>
                 </div>
             </div>

@@ -1,15 +1,8 @@
 <footer>
+
+
     <div class="contentrowblack centerbox">
         <div class="widthcontainer">
-
-
-        <!-- <div class='contentcontainer'>
-                <div class='tonered whitebox noshadow center'>
-                    <br>
-                </div>
-            </div> -->
-
-
             <div class='contentcontainer'>
                 <div class="footercontainer">
                     <nav>
