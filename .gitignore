@@ -4,6 +4,8 @@ admin
 vendor
 composer.json
 composer.lock
-htaccess
+.htaccess
 database
 scripts
+variables.php
+database
