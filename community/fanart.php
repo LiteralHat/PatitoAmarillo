@@ -48,9 +48,8 @@
                                     Page under maintenance...
                                 </h2>
                                 <div class='paddedsm white'>
-                                    <p>Yes, I know it was here like, last week. But I'm remaking it. It won't take too long, promise.</p>
-                                    <p>For the 200iq Rick and Morty intellectuals in the room, basically I was using Javascript to handle all the DOM manipulation and data, and now I realise how impractical that is considering I want to implement CRUD onto the site.</p>
-                                    <p>It'll be back soon, bro. Trust me and chill.</p>
+                                    <p>Yes, I know it was here like, last week. But I'm remaking it! It won't take too long, promise :D And it'll be better afterwards.</p>
+                                    <p>(Technical reason: Website's databases were local, I've decided to move them all to a server one. Also fixing some inefficient code. Also in the process of moving hosting providers.)</p>
                                 </div>
                              
                             </div>

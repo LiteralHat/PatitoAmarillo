@@ -7,7 +7,7 @@ session_start();
 // $data = json_decode($jsondb, true); 
 
 
-$db = new PDO('sqlite:artworksv2.db');
+$db = new PDO('sqlite:artworks.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 $searchQuery = [];

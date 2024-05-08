@@ -1,5 +1,5 @@
 <?php include_once ('../variables.php');
-$db = new PDO('sqlite:artworksv2.db');
+$db = new PDO('sqlite:artworks.db');
 $statement = $db->query("SELECT * FROM artworks");
 $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
