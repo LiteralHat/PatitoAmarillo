@@ -1,7 +1,7 @@
 <?php include_once ('../variables.php');
-$db = new PDO('sqlite:artworks.db');
+include_once ('../includes/dbh.php');
 $statement = $db->query("SELECT * FROM artworks");
-$artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -11,7 +11,7 @@ $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Archive | LiteralGallery</title>
     <meta name="Archive | LiteralGallery" content="" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/includes/headtags.php') ?>
 
 </head>
 
@@ -20,7 +20,7 @@ $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <main>
 
-        <?php include_once ($folder . '/elements/galleryheader.php'); ?>
+        <?php include_once ($folder . '/includes/galleryheader.php'); ?>
 
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
@@ -62,7 +62,7 @@ $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
                             $itemsPerPage = 30;
                         }
 
-                        $totalArtworks = count($artworksdb);
+                        $totalArtworks = count($data);
                         $totalPages = ceil($totalArtworks / $itemsPerPage);
                         //gets the current page from the url
                         if (isset($_GET['page'])) {
@@ -100,7 +100,7 @@ $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <div id='galleryitems'>
                                 <ul>
                                     <?php
-                                    foreach ($artworksdb as $row => $artwork) {
+                                    foreach ($data as $row => $artwork) {
                                         $wordsArray = explode("-", $artwork['title']);
                                         $capitalizedWords = array_map('ucfirst', $wordsArray);
                                         $finalString = implode(" ", $capitalizedWords);

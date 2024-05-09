@@ -1,5 +1,5 @@
 <?php include_once ('../variables.php');
-$db = new PDO('sqlite:artworksv2.db');
+include_once ('../includes/dbh.php');
 $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
 $statement = $db->prepare($sql);
 $id = filter_input(INPUT_GET, 'artworkid');
@@ -23,12 +23,12 @@ if (!$data) {
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
     <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title']?>" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/includes/headtags.php') ?>
 </head>
 
 <body>
     <main>
-        <?php include_once ($folder . '/elements/galleryheader.php') ?>
+        <?php include_once ($folder . '/includes/galleryheader.php') ?>
     
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
