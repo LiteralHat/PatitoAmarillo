@@ -5,13 +5,13 @@ $statement = $db->prepare($sql);
 $id = filter_input(INPUT_GET, 'artworkid');
 $statement->bindValue(':artworkid', $id, PDO::PARAM_INT);
 $statement->execute();
-$artworksdb = $statement->fetch();
+$data = $statement->fetch();
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-if (!$artworksdb) {
+if (!$data) {
     echo "<p class='center large'>Oh no. This page doesn't exist! <a href='../gallery'>Go back?</a></p>";
     exit();
 } else {
-    $wordsArray = explode("-", $artworksdb['title']);
+    $wordsArray = explode("-", $data['title']);
     $capitalizedWords = array_map('ucfirst', $wordsArray);
     $formattedTitle = implode(" ", $capitalizedWords);
 }
@@ -22,7 +22,7 @@ if (!$artworksdb) {
 
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
-    <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $artworksdb['title']?>" />
+    <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title']?>" />
     <?php include_once ($folder . '/elements/headtags.php') ?>
 </head>
 
@@ -36,7 +36,7 @@ if (!$artworksdb) {
                     <div class='whitebox toneblack'>
                         <div class='whiteborder paddedsm'>
                             <img class='galleryimage'
-                                src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $artworksdb['datecreated'] . "_" . htmlspecialchars($artworksdb['title']) ?>.webp'>
+                                src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'>
                         </div>
 
                     </div>
@@ -57,15 +57,15 @@ if (!$artworksdb) {
                                 <p class='medium white'>
                                     <?php
                                     $finalString = implode(" ", $capitalizedWords);
-                                    $dateString = htmlspecialchars($artworksdb['datecreated']);
+                                    $dateString = htmlspecialchars($data['datecreated']);
                                     $year = substr($dateString, 0, 4);
                                     echo $year;
                                     ?>
                                 </P>
                                 <p class='white'>
                                     <?php
-                                    if (isset($artworksdb['description'])) {
-                                        echo htmlspecialchars($artworksdb['description']);
+                                    if (isset($data['description'])) {
+                                        echo htmlspecialchars($data['description']);
                                     } else {
                                         echo "<i>This artwork has no description.</i>";
                                     }
@@ -73,7 +73,7 @@ if (!$artworksdb) {
 
                                 </p>
 
-                                <a href='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $artworksdb['datecreated'] . "_" . htmlspecialchars($artworksdb['title']) ?>.webp'
+                                <a href='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'
                                     target='_blank'>
                                     <p class='textgrey smalltext'>Click here to open image in new tab.</p>
                                 </a>
@@ -88,7 +88,7 @@ if (!$artworksdb) {
 
 
                                         <?php
-                                        $dateString = htmlspecialchars($artworksdb['datecreated']);
+                                        $dateString = htmlspecialchars($data['datecreated']);
                                         $timestamp = strtotime($dateString);
                                         // Formats the timestamp into the desired date format
                                         $formattedDate = date("d F Y", $timestamp);
@@ -102,8 +102,8 @@ if (!$artworksdb) {
 
 
                                         <?php
-                                        if (isset($artworksdb['artworkid'])) {
-                                            echo "# " . htmlspecialchars($artworksdb['artworkid']);
+                                        if (isset($data['artworkid'])) {
+                                            echo "# " . htmlspecialchars($data['artworkid']);
                                         } else {
                                             echo "";
                                         }
@@ -115,8 +115,8 @@ if (!$artworksdb) {
                                     <dt>Collection</dt>
                                     <dd>
                                         <?php
-                                        if (isset($artworksdb['artworkcollection'])) {
-                                            echo $artworksdb['artworkcollection'];
+                                        if (isset($data['artworkcollection'])) {
+                                            echo $data['artworkcollection'];
                                         } else {
                                             echo "";
                                         }
@@ -126,8 +126,8 @@ if (!$artworksdb) {
                                     <dt>Dimensions</dt>
                                     <dd>
                                         <?php
-                                        if (isset($artworksdb['dimensions'])) {
-                                            echo htmlspecialchars($artworksdb['dimensions']);
+                                        if (isset($data['dimensions'])) {
+                                            echo htmlspecialchars($data['dimensions']);
                                         } else {
                                             echo "";
                                         }
@@ -138,8 +138,8 @@ if (!$artworksdb) {
                                     <dt>Mediums</dt>
                                     <dd>
                                         <?php
-                                        if (isset($artworksdb['medium'])) {
-                                            $wordsArray = explode(" ", $artworksdb['medium']);
+                                        if (isset($data['medium'])) {
+                                            $wordsArray = explode(" ", $data['medium']);
                                             $capitalizedWords = array_map('ucfirst', $wordsArray);
                                             $finalString = implode(", ", $capitalizedWords);
                                             echo $finalString;
@@ -153,8 +153,8 @@ if (!$artworksdb) {
                                     <dt>Tags</dt>
                                     <dd>
                                         <?php
-                                        if (isset($artworksdb['tags'])) {
-                                            echo htmlspecialchars($artworksdb['tags']);
+                                        if (isset($data['tags'])) {
+                                            echo htmlspecialchars($data['tags']);
                                         } else {
                                             echo "";
                                         }
@@ -171,12 +171,12 @@ if (!$artworksdb) {
                                 <span class='white'>HTML</span>
                                 <div class='whitebox toneblack'>
                                     <textarea
-                                        class='gallerycode'><a href='https://literalhat.com/artworks/view/<?php echo $artworksdb['artworkid']; ?>'><img src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $artworksdb['datecreated'] . "_" . htmlspecialchars($artworksdb['title']) ?>.webp'></a></textarea>
+                                        class='gallerycode'><a href='https://literalhat.com/artworks/view/<?php echo $data['artworkid']; ?>'><img src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'></a></textarea>
                                 </div>
                                 <span class='white'>BBcode</span>
                                 <div class='whitebox toneblack'>
                                     <textarea
-                                        class='gallerycode'><?php echo "[url=https://literalhat.com/artworks/view/" . $artworksdb['artworkid'] . "][img]https://reloaded.literalhat.com/gallery/literalhat_" . $artworksdb['datecreated'] . "_" . $artworksdb['title'] . ".webp[/img][/url]"; ?></textarea>
+                                        class='gallerycode'><?php echo "[url=https://literalhat.com/artworks/view/" . $data['artworkid'] . "][img]https://reloaded.literalhat.com/gallery/literalhat_" . $data['datecreated'] . "_" . $data['title'] . ".webp[/img][/url]"; ?></textarea>
                                 </div>
                             </div>
                         </div>

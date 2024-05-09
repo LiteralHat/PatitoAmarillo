@@ -9,7 +9,7 @@ session_start();
 
 $db = new PDO('sqlite:artworks.db');
 $statement = $db->query("SELECT * FROM artworks");
-$artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+$data = $statement->fetchAll(PDO::FETCH_ASSOC);
 $searchQuery = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     // This function compares the master array with the final array and removes the items that they both don't have in common
-    function reSort($artworksdb, $matchingArtworks)
+    function reSort($data, $matchingArtworks)
     {
-        return array_filter($artworksdb, function ($artwork) use ($matchingArtworks) {
+        return array_filter($data, function ($artwork) use ($matchingArtworks) {
             return in_array($artwork, $matchingArtworks);
         });
     }
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement = $db->prepare("SELECT * FROM artworks WHERE title LIKE :searchTerm");
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
         $matchingArtworks = executeStatement($statement);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
 
     }
 
@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement->bindValue(':afterdate', $afterdate, PDO::PARAM_STR);
 
         $matchingArtworks = executeStatement($statement);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
     }
 
     if (!empty($_GET['category']) && ($_GET['category']) !== 'collection') {
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement = $db->prepare("SELECT * FROM artworks WHERE category LIKE :searchTerm");
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
         $matchingArtworks = executeStatement($statement);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
     }
 
     if (!empty($_GET['collection'])) {
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement = $db->prepare("SELECT * FROM artworks WHERE artworkcollection LIKE :searchTerm");
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
         $matchingArtworks = executeStatement($statement);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
 
     }
 
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         array_push($searchQuery, 'mediums: ' . $mediumQuery);
 
         $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
     }
 
     if (!empty($_GET['tags'])) {
@@ -169,10 +169,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         array_push($searchQuery, 'tags: ' . $mediumQuery);
 
         $matchingArtworks = getMatchingArtworks($matchingArtworks, $artworksByTag);
-        $artworksdb = reSort($artworksdb, $matchingArtworks);
+        $data = reSort($data, $matchingArtworks);
     }
 
-    $_SESSION['dbresults'] = $artworksdb;
+    $_SESSION['dbresults'] = $data;
 
     $searchQuery = implode(", ", $searchQuery);
     $_SESSION['searchQuery'] = $searchQuery;

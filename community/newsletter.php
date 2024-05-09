@@ -63,8 +63,7 @@
                                     <fieldset>
                                         <label for="artistcredit">
                                             <h3>Email Address:</h3>
-                                            <input type="email" required value="signup"
-                                                placeholder="someone@somewhere.com">
+                                            <input type="email" required value="signup" placeholder="someone@somewhere.com">
                                         </label>
                                     </fieldset>
                                     <fieldset class='padtop'>

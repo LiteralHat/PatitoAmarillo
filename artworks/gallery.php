@@ -1,16 +1,17 @@
 <?php include_once ('../variables.php');
 session_start();
-$db = new PDO('sqlite:artworks.db');
+
+include_once ('../includes/dbh.php');
+
 if (!isset($_GET['page'])) {
     session_unset();
-    //echo '<br>SESSION DESTROYED';
 }
 if (isset($_SESSION['dbresults'])) {
-    $artworksdb = $_SESSION['dbresults'];
+    $data = $_SESSION['dbresults'];
 } else {
     $statement = $db->query("SELECT * FROM artworks");
-    //$artworksdb is the 'master' array that will be echo'ed in HTML
-    $artworksdb = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //$data is the 'master' array that will be echo'ed in HTML
+    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
     //echo '<br>ARRAY RESET';
 }
 
@@ -21,7 +22,6 @@ if (isset($_SESSION['searchQuery'])) {
 };
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,14 +29,14 @@ if (isset($_SESSION['searchQuery'])) {
     <title>Home | LiteralGallery</title>
     <meta name="Home | LiteralGallery"
         content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/includes/headtags.php') ?>
 
 </head>
 
 
 <body>
     <main>
-        <?php include_once ($folder . '/elements/galleryheader.php'); ?>
+        <?php include_once ($folder . '/includes/galleryheader.php'); ?>
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -87,7 +87,7 @@ if (isset($_SESSION['searchQuery'])) {
                             $itemsPerPage = 30;
                         }
 
-                        $totalArtworks = count($artworksdb);
+                        $totalArtworks = count($data);
                         $totalPages = ceil($totalArtworks / $itemsPerPage);
                         //gets the current page from the url
                         if (isset($_GET['page'])) {
@@ -98,11 +98,9 @@ if (isset($_SESSION['searchQuery'])) {
 
                         $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
                         $itemsEndLimit = $itemsPerPage * $currentPage;
-
                         $rowCount = 0;
 
                         ?>
-
                     </div>
                 </div>
             </div>
@@ -113,7 +111,7 @@ if (isset($_SESSION['searchQuery'])) {
 
             if (!isset($_SESSION['dbresults'])) {
 
-                $artworksrecent = $artworksdb;
+                $artworksrecent = $data;
                 usort($artworksrecent, function ($a, $b) {
                     return strtotime($b['datecreated']) - strtotime($a['datecreated']);
                 });
@@ -327,9 +325,9 @@ if (isset($_SESSION['searchQuery'])) {
                         <div class="whitebox padded">
                             <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
                                 echo '<p class="bold">You searched: <i>' . $searchQuery . '</i></p>';
-                                echo '<h2>Search Results: ' . count($artworksdb) . '</h2><span></span>';
+                                echo '<h2>Search Results: ' . count($data) . '</h2><span></span>';
                             } else {
-                                echo '<h2>Viewing All Artworks: ' . count($artworksdb) . '</h2><span></span>';
+                                echo '<h2>Viewing All Artworks: ' . count($data) . '</h2><span></span>';
                             }
                             ?>
                             <div>
@@ -378,7 +376,7 @@ if (isset($_SESSION['searchQuery'])) {
                                         return $input;
                                     }
                                 }
-                                $encodeArray = escapeApostrophes($artworksdb);
+                                $encodeArray = escapeApostrophes($data);
 
                                 ?>
 
@@ -394,11 +392,11 @@ if (isset($_SESSION['searchQuery'])) {
                             <div id='galleryitems'>
                                 <?php
 
-                                if (count($artworksdb) == 0) {
+                                if (count($data) == 0) {
                                     echo '<div class="center padtop"><p class="medium padtop">Uh oh. Looks like there aren\'t any results for your query.</p><p class="padtop">Try search for something else.</p><img src="../images/pagedolls/hat-frustrated.jpg" width=300px></div>
                                     ';
                                 } else {
-                                    foreach ($artworksdb as $row => $artwork) {
+                                    foreach ($data as $row => $artwork) {
                                         $rowCount++;
 
                                         if ($rowCount >= $itemsStartLimit) {

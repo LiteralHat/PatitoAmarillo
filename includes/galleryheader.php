@@ -1,5 +1,5 @@
 <?php
-$wow = count($artworksdb);
+$wow = count($data);
 $randomNumber = (rand(0, $wow) + 1);
 ?>
 
