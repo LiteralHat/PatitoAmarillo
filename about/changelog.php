@@ -80,6 +80,11 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v14.10.0-beta 10.05.2024</h3>
+                                <ul>
+                                    <li>Fixed spacing issue with smaller pages not displaying blocks correctly on mobile</li>
+                                </ul>
+
                                 <h3>v14.9.0-beta 07.05.2024</h3>
                                 <ul>
                                     <li>Removed fanart page temporarily</li>
