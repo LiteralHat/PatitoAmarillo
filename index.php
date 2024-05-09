@@ -39,7 +39,7 @@
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
                                         <section class="section">
-                                            <img src="images/pagedolls/literalhat-punks-not-dead.png" height="800px"
+                                            <img src="images/pagedolls/literalhat-punks-not-dead.png" height="1000px"
                                                 id='sitelogo'
                                                 alt='literalhat.com logo behind a large group of cartoon sheep'>
 
@@ -181,8 +181,10 @@
                                 <h2 class='padtop bold'>Welcome home.
                                 </h2>
 
-                                <p>This is my website where I post stuff ranging from my art, music, animations, projects, or rambles. There isn't a specific goal in mind, I do whatever I feel like doing. The layout of the site might change drastically depending on the day. Generally this site receives an update whenever I have the time.</p>
-
+                                <p>This is my website.</p>
+                                <p>I post everything I make on this site, ranging from art to animations and music.</p>
+                                <p>I built this site from scratch, it receives updates whenever I have free time.</p>
+                                <p>Hope you enjoy your stay.</p>
                                 <p>This website was last updated on <?php
                                 $filename = 'index.php';
                                 echo date("F d Y H:i:s", filemtime($filename));
@@ -195,7 +197,6 @@
                                 <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
-                                <div class='spacersmall'></div>
                                 <p class='mediumtext bold'>
                                 <ul class='linodots nounderline fontheader mediumtext'>
                                     <li><a href="https://www.instagram.com/maker_gniht/" target="_blank">Puggleman</a>

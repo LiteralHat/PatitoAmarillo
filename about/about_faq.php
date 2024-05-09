@@ -43,10 +43,12 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <div class="center">
-                                    <p>Hi. You may know me as LiteralHat, Hat, Charlie, Richter, or any insult of your choice - It doesn't matter.</p>
-                                    <p>Sometimes I draw, animate, make music, code, or write articles.</p>
-                                    <p>None of my stuff is 'consistent', please be so kind as to not expect such from me - I do
-                                        whatever I feel like doing.</p>
+                                    <p>Hi.</p>
+                                    <p>I'm just a guy.</p>
+                                    <p>I'm a backend web developer.</p>
+                                    <p>Sometimes I draw, sometimes I animate.</p>
+                                    <p>I also enjoy pretending to be competent at guitar and Javascript.</p>
+                                    <p>I do not practice 'consistency' in my projects, please be so kind as to not expect such from me.</p>
                                     <p>This website is my pride and joy. In the end, my goal is to make it the home of
                                         everything I've done. I would appreciate it if you bookmarked LiteralHat.com,
                                         and come back sometime.</p>
@@ -83,10 +85,7 @@
                                 <h3>How can I support you?</h3>
                                 <p><a href='<?php echo $links . "community/support.php" ?>'>Help, Save, Support</a></p>
                                 <h3>How can I contact you?</h3>
-                                <p>I don't use social media. All my
-                                    posts on Instagram, Twitter, etc. are done with
-                                    a script. In other words, completely automated and I don't even visit the site.
-                                    You're free to comment or message but it won't be seen.</p>
+                                <p>I don't use social media... You're free to comment or message but it won't be seen.</p>
                                 <p>Email <i>support@literalhat.com</i> instead, and I will get back to you when I have the time.</p>
                             </div>
 

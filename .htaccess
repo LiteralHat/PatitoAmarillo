@@ -1,7 +1,6 @@
 
 RewriteEngine On
-ErrorDocument 404 /404.php
-
+ErrorDocument 404 http://www.literalhat.com/404
 
 RewriteRule ^artworks/view/([0-9]+) artworks/view.php?artworkid=$1
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -12,4 +11,8 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*?)/?$ /$1.php [NC,L]
+
+
+
+
 

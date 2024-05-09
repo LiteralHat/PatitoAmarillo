@@ -3,7 +3,6 @@ session_start();
 
 if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
     $isadmin = true;
-
 } else {
     $isadmin = false;
 }
@@ -84,7 +83,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-                        $db = new PDO('sqlite:music.db');
+                        include_once('../includes/dbh.php');
                         $statement = $db->query("SELECT * FROM music");
                         $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
                         function notAllowed($string)
@@ -182,6 +181,12 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
 
                         $db = null;
                         ?>
+
+
+                        <div class="spacermedium"></div>
+                        <div class="spacermedium"></div>
+                        <div class="spacermedium"></div>
+                        <div class="spacermedium"></div>
 
 
                         <script>

@@ -68,6 +68,9 @@
                                         <h2 class='textgreen'>Planned features</h2>
                                         <ul>
                                             <li>Working search bar</li>
+                                            <li>New fanart page</li>
+                                            <li>Fanart submission form</li>
+                                            <li>Email subscriptions</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -83,6 +86,9 @@
                                 <h3>v14.10.0-beta 10.05.2024</h3>
                                 <ul>
                                     <li>Fixed spacing issue with smaller pages not displaying blocks correctly on mobile</li>
+                                    <li>Purged site cache</li>
+                                    <li>Replaced homepage cover image with higher resolution version</li>
+                                    <li>Fixed 404 page not working on website subdirectories</li>
                                 </ul>
 
                                 <h3>v14.9.0-beta 07.05.2024</h3>
