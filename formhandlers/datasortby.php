@@ -58,10 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         $artworksArray = unescapeApostrophes($artworksArray);
 
-
         $_SESSION['dbresults'] = $artworksArray;
         $_SESSION['iPP'] = $itemsPerPage;
-        header("Location: gallery?page=1#gallerytop");
+        header("Location: " .  $_SERVER['HTTP_REFERER'] . "?page=1#top");
         exit();
     } else {
         echo 'Insufficient data received';

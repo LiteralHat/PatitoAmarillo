@@ -59,8 +59,7 @@ if (isset($_SESSION['searchQuery'])) {
                         
 
                         // echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
-                        
-
+                    
 
                         if (isset($_SESSION['last_activity'])) {
                             $expireAfterSeconds = 60 * 15; //15 minutes for now
@@ -175,7 +174,7 @@ if (isset($_SESSION['searchQuery'])) {
             <div class='boxedsection'>
                 <div class='sidecontainer gallerysearchform'>
                     <div class='spacermedium'></div>
-                    <form class='form' action='galleryformhandler.php' method='get'>
+                    <form class='form' action='../formhandlers/gallerysearch' method='GET'>
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <h2>Advanced Search:</h2>
@@ -319,7 +318,7 @@ if (isset($_SESSION['searchQuery'])) {
                 </div>
 
 
-                <div class='boxedsection gallerycontainer' id='gallerytop'>
+                <div class='boxedsection gallerycontainer' id='top'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
                             <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
@@ -334,9 +333,9 @@ if (isset($_SESSION['searchQuery'])) {
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
                                         if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
                                         } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
                                         }
                                         ;
                                     }
@@ -344,7 +343,7 @@ if (isset($_SESSION['searchQuery'])) {
                                 </h2>
                             </div>
 
-                            <form class='form' action='gallerysorter' method='POST'>
+                            <form class='form' action='../formhandlers/datasortby' method='POST'>
                                 <label for='sortby'><span class='bold'>Sort by:</span></label>
                                 <select name='sortby' id='sortby'>
                                     <option value='default'>Default (Date Added)</option>
@@ -427,9 +426,9 @@ if (isset($_SESSION['searchQuery'])) {
                                     <?php
                                     for ($i = 1; $i <= $totalPages; $i++) {
                                         if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
                                         } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#gallerytop">' . $i . '</a>';
+                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
                                         }
                                         ;
                                     }
