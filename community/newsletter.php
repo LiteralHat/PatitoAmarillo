@@ -6,7 +6,7 @@
 <head>
     <title>LiteralHat | Newsletter</title>
     <meta name="LiteralHat | Newsletter" content="Newsletter." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

@@ -23,12 +23,12 @@ if (!$data) {
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
     <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title']?>" />
-    <?php include_once ($folder . '/includes/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
-        <?php include_once ($folder . '/includes/galleryheader.php') ?>
+        <?php include_once ($folder . '/galleryheader.php') ?>
     
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>

@@ -6,7 +6,7 @@
 <head>
     <title>Help, Save, Support! | LiteralHat</title>
     <meta name="Help, Save, Support! | LiteralHat" content="Help, Save, Support." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

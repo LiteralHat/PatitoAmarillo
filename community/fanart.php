@@ -6,7 +6,7 @@
 <head>
     <title>Fanart | LiteralHat</title>
     <meta name="LiteralHat | Fanart" content="Browse, look, and explore the fanart of LiteralHat." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

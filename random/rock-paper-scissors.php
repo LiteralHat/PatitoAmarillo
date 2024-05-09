@@ -6,7 +6,7 @@
 <head>
     <title>Rock Paper Scissors | LiteralHat</title>
     <meta name="Rock Paper Scissors | LiteralHat" content="" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

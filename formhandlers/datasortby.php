@@ -60,8 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $_SESSION['dbresults'] = $artworksArray;
         $_SESSION['iPP'] = $itemsPerPage;
-        header("Location: " .  $_SERVER['HTTP_REFERER'] . "?page=1#top");
-        exit();
+     
+        require('../includes/urlpageparse.php');
+
     } else {
         echo 'Insufficient data received';
     }

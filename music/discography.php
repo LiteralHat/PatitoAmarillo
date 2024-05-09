@@ -16,7 +16,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
 <head>
     <title>LiteralDiscography.</title>
     <meta name="LiteralHat | Discography." content="It's you, it's me, and we're dancing badly!" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

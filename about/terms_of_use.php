@@ -6,7 +6,7 @@
 <head>
     <title>Terms Of Use | LiteralHat</title>
     <meta name="LiteralHat.com | Terms Of Use" content="View the site's terms of use here." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

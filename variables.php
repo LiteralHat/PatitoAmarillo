@@ -7,7 +7,7 @@
 //if the document root isnt in the xammp htdocs directory then it is live
 
 if ($_SERVER['DOCUMENT_ROOT'] == 'C:/xampp/htdocs') {
-$folder = 'C:/xampp/htdocs/LiteralWebsite';
+$folder = 'C:/xampp/htdocs/LiteralWebsite/includes';
 $links = 'http://localhost/LiteralWebsite/';
 
 } else {
@@ -17,17 +17,17 @@ $links = 'https://literalhat.com/';
 };
 
 
-$header = $folder . '/includes/header.php';
-$footer = $folder . '/includes/footer.php';
+$header = $folder . '/header.php';
+$footer = $folder . '/footer.php';
 
-$headtags = $folder . '/includes/headtags.php';
+$headtags = $folder . '/headtags.php';
 $stylesheet = $links . 'css/styles.css';
 
-$menutop = $folder . '/includes/menutop.php';
-$whiteboxbottom = $folder . '/includes/whiteboxbottom.php';
+$menutop = $folder . '/menutop.php';
+$whiteboxbottom = $folder . '/whiteboxbottom.php';
 
-$menuleft = $folder . '/includes/menuleft.php';
-$menusimple = $folder . '/includes/menusimple.php';
+$menuleft = $folder . '/menuleft.php';
+$menusimple = $folder . '/menusimple.php';
 
 
 $signuptext = '<p>If you would like to keep updated with new posts, <a href="'. $links .'community/newsletter">sign up

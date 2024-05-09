@@ -7,7 +7,7 @@
     <title>Website Changelog | LiteralHat</title>
     <meta name="Website Changelog | LiteralHat"
         content="View the site's version history, new changes, bug fixes, upcoming features, meta information, and more." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

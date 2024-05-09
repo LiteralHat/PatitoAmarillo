@@ -6,7 +6,7 @@
 <head>
     <title>Kill Wall | LiteralHat</title>
     <meta name="Kill Wall | LiteralHat" content="The Kill Wall!" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>

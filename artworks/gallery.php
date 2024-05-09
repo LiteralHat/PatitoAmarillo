@@ -28,14 +28,14 @@ if (isset($_SESSION['searchQuery'])) {
     <title>Home | LiteralGallery</title>
     <meta name="Home | LiteralGallery"
         content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
-    <?php include_once ($folder . '/includes/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 
 </head>
 
 
 <body>
     <main>
-        <?php include_once ($folder . '/includes/galleryheader.php'); ?>
+        <?php include_once ($folder . '/galleryheader.php'); ?>
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -96,6 +96,7 @@ if (isset($_SESSION['searchQuery'])) {
 
                         $itemsStartLimit = (($currentPage - 1) * $itemsPerPage + 1);
                         $itemsEndLimit = $itemsPerPage * $currentPage;
+
                         $rowCount = 0;
 
                         ?>

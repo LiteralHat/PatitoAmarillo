@@ -6,7 +6,7 @@
 <head>
     <title>LiteralFanart Submission Form</title>
     <meta name="LiteralFanart Submission Form" content="Submit fanart here." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>
