@@ -236,7 +236,7 @@ ol {
 }
 
 
-.medium {
+.medium, .medium * {
     font-size: 1.5rem;
 }
 
@@ -244,11 +244,11 @@ ol {
     font-size: 1.3rem;
 }
 
-.large {
+.large, .large * {
     font-size: 3rem;
 }
 
-.larger {
+.large, .larger * {
     font-size: 4rem;
 }
 
@@ -676,6 +676,9 @@ background-color: #353535;
     color: #c4001e;
 }
 
+
+
+
 a {
     color: #727272;
 }
@@ -967,6 +970,15 @@ a:hover {
 .hearts li::after {
     content: ' ♥ ';
     text-wrap: nowrap;
+}
+
+
+.hoverwhite li:visited {
+    color: white;
+}
+
+.hoverwhite li:hover {
+    color: white;
 }
 
 .centeredlist {

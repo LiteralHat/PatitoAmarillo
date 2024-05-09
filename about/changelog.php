@@ -71,6 +71,7 @@
                                             <li>New fanart page</li>
                                             <li>Fanart submission form</li>
                                             <li>Email subscriptions</li>
+                                            <li>GOD, I NEED TO CHANGE HOSTING PROVIDERS</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -89,6 +90,7 @@
                                     <li>Purged site cache</li>
                                     <li>Replaced homepage cover image with higher resolution version</li>
                                     <li>Fixed 404 page not working on website subdirectories</li>
+                                    <li>Updated About+Faq</li>
                                 </ul>
 
                                 <h3>v14.9.0-beta 07.05.2024</h3>

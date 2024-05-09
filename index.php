@@ -1,5 +1,5 @@
 <?php include_once ('variables.php');
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,8 @@
                     <div class='contentcontainer'>
                         <div class="whitebox padded center tone3">
                             <div class='spacersmall'></div>
-                            <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't dance, its not my revolution. "                            </blockquote>
+                            <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't
+                                dance, its not my revolution. " </blockquote>
                             <div class='spacersmall'></div>
                         </div>
                     </div>
@@ -79,7 +80,7 @@
                                     <h2 class='white'>Supporters!</h2>
                                     <hr>
 
-                                    <ul class='centeredlist hearts white fontheader padtop mediumtext text10'>
+                                    <ul class='centeredlist hearts fontheader padtop mediumtext text10'>
                                         <li>Somber-Sonder</li>
                                         <li>M1n1Cat</li>
                                         <li>Hugs</li>
@@ -93,7 +94,7 @@
                                         <li>Ciphybara</li>
                                         <li>4jaws</li>
                                     </ul>
-
+                                    <hr>
                                 </section>
 
                             </div>
@@ -188,12 +189,13 @@
                                 <p>This website was last updated on <?php
                                 $filename = 'index.php';
                                 echo date("F d Y H:i:s", filemtime($filename));
-                                ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more information.</p> 
-                                
-                        
+                                ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more
+                                    information.</p>
+
+
                                 <p>Please report any major issues on <a
                                         href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
-                                        <p>
+                                <p>
                                 <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
@@ -219,10 +221,11 @@
                                 </ul>
                                 <div class='spacersmall'></div>
                                 </p>
-                                <p>I hate that I have to say this, but be respectful and do not inquire them about me - rather, check out their work at your own discretion.</p>
+                                <p>I hate that I have to say this, but be respectful and do not inquire them about me -
+                                    rather, check out their work at your own discretion.</p>
 
 
-                        
+
 
                             </section>
                         </div>

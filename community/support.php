@@ -38,7 +38,6 @@
 
                         <section>
                             <div class='spacermedium'></div>
-                            <h2>Hi.</h2>
                             <p>If you’ve found this page, Congratulations.</p>
 
                             <div class='spacermedium'></div>
