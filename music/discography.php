@@ -43,7 +43,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                             <div class='spacersmall'></div>
 
                             <div class='whiteborder padded center '>
-                                <h2 class='large'>Welcome to my complete discography.</h2>
+                                <h2 class='large'>Welcome to my complete discography. </h2>
                                 <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>

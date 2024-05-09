@@ -1,11 +1,5 @@
 
 RewriteEngine On
-
-
-<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
-    Header set Access-Control-Allow-Origin "https://www.literalhat.com"
-</FilesMatch>
-
 ErrorDocument 404 /404.php
 
 

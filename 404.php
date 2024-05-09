@@ -6,16 +6,12 @@
 <head>
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Blank." content="" />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once ($folder . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
-        <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
-        <!-- side bar on the left.  -->
 
 
         <div class='spacermedium'></div>
@@ -32,8 +28,14 @@
                         </div>
                         <div class='contentcontainer'>
                             <section class='section'>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 <h1 class='huge'>404</h1>
-                                <p>Aw, fuck.</p>
+                                <h2>Aw, fuck.</h2>
+                                <p>Something bad happened, or you tried to visit a page that doesn't exist.</p>
+                                <span><a href="javascript:history.go(-1);">Go back?</a></span>
                             </section>
                         </div>
 
@@ -49,7 +51,6 @@
         <div class='spacermedium'></div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
     </main>
 </body>
 
