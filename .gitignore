@@ -1,11 +1,12 @@
-debug
 images
-admin
 vendor
 composer.json
 composer.lock
-.htaccess
-database
+
 scripts
 variables.php
-database
+
+includes/dbh.php
+.htaccess
+admin
+debug
