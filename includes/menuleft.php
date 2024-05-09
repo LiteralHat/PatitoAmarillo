@@ -18,7 +18,7 @@
         </ul>
 
 
-        <li class='tone4'><a href=<?php echo $links . "" ?>>Articles</a></li>
+        <li class='tone4'><a href=<?php echo $links . "articles/articles.php" ?>>Articles</a></li>
 
 
         <li class='tone5'><a href=<?php echo $links . "random/rock-paper-scissors.php" ?>>Random</a></li>

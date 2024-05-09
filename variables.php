@@ -17,14 +17,18 @@ $links = 'https://literalhat.com/';
 };
 
 
-$header = $folder . '/elements/header.php';
-$footer = $folder . '/elements/footer.php';
+$header = $folder . '/includes/header.php';
+$footer = $folder . '/includes/footer.php';
 
-$headtags = $folder . '/elements/headtags.php';
+$headtags = $folder . '/includes/headtags.php';
 $stylesheet = $links . 'css/styles.css';
 
-$menutop = $folder . '/elements/menutop.php';
-$whiteboxbottom = $folder . '/elements/whiteboxbottom.php';
+$menutop = $folder . '/includes/menutop.php';
+$whiteboxbottom = $folder . '/includes/whiteboxbottom.php';
 
-$menuleft = $folder . '/elements/menuleft.php';
-$menusimple = $folder . '/elements/menusimple.php';
+$menuleft = $folder . '/includes/menuleft.php';
+$menusimple = $folder . '/includes/menusimple.php';
+
+
+$signuptext = '<p>If you would like to keep updated with new posts, <a href="'. $links .'community/newsletter">sign up
+here.</a></p>';
