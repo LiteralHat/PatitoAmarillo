@@ -30,7 +30,7 @@
                             <div class="center white medium">
                                 <br>
                                 <p>Hi.</p>
-                                <p>I'm a backend web developer.</p>
+                                <p>I'm a web developer.</p>
                                 <p>Sometimes I draw, sometimes I animate.</p>
                                 <p>I enjoy pretending to be competent at guitar and Javascript.</p>
                                 <p>I do not practice 'consistency' in my projects, please be so kind as to not

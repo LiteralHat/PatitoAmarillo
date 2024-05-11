@@ -5,8 +5,8 @@
 <html lang="en">
 
 <head>
-    <title>Welcome Home. | LiteralHat</title>
-    <meta name="Welcome Home. | LiteralHat" content="Be gay, do crime. Create more than you consume. Desire less." />
+    <title>?????</title>
+    <meta name="" content="" />
     <?php include_once ($headtags) ?>
 </head>
 

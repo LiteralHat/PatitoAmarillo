@@ -6,7 +6,7 @@ composer.lock
 scripts
 variables.php
 
-includes/dbh.php
+/includes/dbh.php
 .htaccess
 admin
 debug
