@@ -2,11 +2,9 @@ images
 vendor
 composer.json
 composer.lock
-
 scripts
 variables.php
-
-/includes/dbh.php
 .htaccess
 admin
+includes
 debug
