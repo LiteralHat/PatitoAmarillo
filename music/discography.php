@@ -106,15 +106,11 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                             $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
                             $statement->execute();
                             $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-
                         }
-
 
                         usort($musicdb, function ($a, $b) {
                             return strtotime($b['datecreated']) - strtotime($a['datecreated']);
                         });
-
-
 
 
                         foreach ($musicdb as $row => $song) {

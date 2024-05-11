@@ -51,10 +51,13 @@ include_once ('../includes/dbh.php');
                                 <div class="whitebox padded center">
                                     <h2>Welcome to the fanart gallery.</h2>
                                     <p>This is where you can view artworks made by you.</p>
-                                    <p>Click on an image to enlarge and see the artist's name, click again to hide.</p>
+                                    <p>Items are sorted by newest to oldest. Click a year to view artworks made in that
+                                        year only.</p>
+                                    <p>Click image to enlarge and see the artist's name, click again to hide.</p>
                                     <p>For image removals, or if you've been credited with 'unknown'. Email
                                         <i>support@literalhat.com</i>.
                                     </p>
+                                    <p class="bold">Permalinking images is now safe!</p>
                                 </div>
                             </div>
                         </div>
@@ -62,22 +65,33 @@ include_once ('../includes/dbh.php');
 
 
                     <div class="contentcontainer">
-                        <div class="whitebox tone1 center">
-                            <div class="whiteborder">
-                                <h2 class="padtop white large">SUBMIT YOUR OWN</h2>
-                            </div>
-                        </div>
+                        <button id='random' class='gallerybutton tonegreen' href=''>
+                            <a href="fanartform">
+                                <div class="whiteborder">
+                                    <div class='paddedsm'>
+
+                                        <h2 class='white padtop large'>SUBMIT YOUR OWN</h2>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </button>
                     </div>
-            
+
                     <div class='contentcontainer'>
                         <section class='whitebox toneblack'>
                             <div class='whiteborder padded'>
+
+                                <hr>
                                 <div class='padtop white' id="fanartgallery">
                                     <?php $statement = $db->query("SELECT * FROM fanart");
                                     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                    usort($data, function ($a, $b) {
+                                        return strtotime($b['datecreated']) - strtotime($a['datecreated']);
+                                    });
 
                                     foreach ($data as $row => $item) {
-                                        echo "<div><img id='".$item['uuid'] . "_". $item['author'] . "' onclick='lightBox(this)' loading='lazy' class='fanartimage' src='https://leviathan.literalhat.com/fanart/" . $item['uuid'] . "_literalfanart_" . $item['datecreated'] . "_" . $item['author'] . ".webp'></div>";
+                                        echo "<div><img id='" . $item['uuid'] . "_" . $item['author'] . "' onclick='lightBox(this)' loading='lazy' class='fanartimage' src='https://leviathan.literalhat.com/fanart/" . $item['uuid'] . "_literalfanart_" . $item['datecreated'] . "_" . $item['author'] . ".webp'></div>";
                                     }
                                     ?>
                                 </div>
@@ -98,7 +112,6 @@ include_once ('../includes/dbh.php');
 
         <!-- Footer and closing div tags used for styled main content box  -->
         <script src="../scripts/fanartgallery.js"></script>
-
         <?php include ($footer) ?>
     </main>
 </body>

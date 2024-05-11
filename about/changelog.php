@@ -84,6 +84,21 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                            <h3>v15.10.0-beta 11.05.2024</h3>
+                                <ul>
+                                    <li>Fanart section is back!</li>
+                                    <li>Added submission button on fanart page</li>
+                                    <li>Removed unused left menu options</li>
+                                    <li>Made gallery code more efficient, faster, whatever</li>
+                                    <li>Added code that sorts artworks to newest to oldest</li>
+                                </ul>
+
+
+                                <hr class='hrtextseparator'><br>
+
+
+
+
                                 <h3>v14.10.0-beta 10.05.2024</h3>
                                 <ul>
                                     <li>Fixed spacing issue with smaller pages not displaying blocks correctly on mobile</li>
@@ -126,7 +141,6 @@
                                     <li>Fixed alignment issues on rock-paper-scissors page</li>
                                     <li>Added separator to changelog</li>
                                 </ul>
-                                <hr class='hrtextseparator'>
                                 <br>
                                 <h3>v13.6.0-beta 13.04.2024</h3>
                                 <ul>

@@ -18,12 +18,4 @@
 
     </div>
 
-
-
 </header>
-
-<!-- script for random logo  -->
-
-<!-- <img class="logoimage"
-                                src="<?php echo ($links . 'images/pagedolls/x.png'); ?>">
-<script src="<?php echo ($links . 'scripts/randomcat.js') ?>"></script> -->
