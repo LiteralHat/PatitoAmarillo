@@ -72,11 +72,12 @@ include_once ('../includes/dbh.php');
                     <div class='contentcontainer'>
                         <section class='whitebox toneblack'>
                             <div class='whiteborder padded'>
-                                <div class='padtop' id="fanartgallery">
+                                <div class='padtop white' id="fanartgallery">
                                     <?php $statement = $db->query("SELECT * FROM fanart");
                                     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+
                                     foreach ($data as $row => $item) {
-                                        echo "<div><img id='".$item['uuid'] .$item['author'] . "' loading='lazy' class='fanartimage' src='https://leviathan.literalhat.com/fanart/" . $item['uuid'] . "_literalfanart_" . $item['datecreated'] . "_" . $item['author'] . ".webp'></div>";
+                                        echo "<div><img id='".$item['uuid'] . "_". $item['author'] . "' onclick='lightBox(this)' loading='lazy' class='fanartimage' src='https://leviathan.literalhat.com/fanart/" . $item['uuid'] . "_literalfanart_" . $item['datecreated'] . "_" . $item['author'] . ".webp'></div>";
                                     }
                                     ?>
                                 </div>

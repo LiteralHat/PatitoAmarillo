@@ -1235,21 +1235,13 @@ a:hover {
     justify-content: center;
 }
 
-.lightBoxElement {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
+.lightBoxOn {
+    height: 40rem;
 }
 
-.lightBoxElement img {
-    width: max-content;
-    height: auto;
-    margin: 0.6rem auto 0.4rem;
-    opacity: 1;
-}
+
+
+
 
 .galleryCredit h2 {
     margin: 0.5rem;
@@ -1277,11 +1269,6 @@ a:hover {
     height: 0px;
     background-color: red;
 }
-
-
-
-
-
 
 
 
