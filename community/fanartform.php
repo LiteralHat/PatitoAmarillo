@@ -38,29 +38,25 @@
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
 
-                            <?php
+                            <h2>Submission Requirements</h2>
+                            <p>As long as it's relevant to LiteralHat, I'll put on the gallery if I like it.</p>
+                            <p>The following is allowed:</p>
+                            <ul>
+                                <li>Your own original drawings</li>
+                                <li>Base edits (credit to original must be ON the drawing)</li>
+                                <li>Cosplay photo</li>
+                                <li>Sculpture</li>
+                                <li>Memes</li>
+                                <li>Shitpost</li>
+                                <li>Anything controversial, offensive, satirical or political</li>
+                                <li>Pitiful attempts of 'copying' my artworks or artstyle</li>
+                            </ul>
+                            <p>Please don't submit crossovers, sorry.</p>
+                            <p>You may submit someone else's fanart as long as you put down their name for the credit.
+                            </p>
+                            <p>Your submission will be put up depending on when I see it and have the time.</p>
+                            </ul>
 
-                            if (isset($_GET['success']) && ctype_digit($_GET['success'])) {
-                                echo "<h2>Artwork Submitted!</h2><p>Thank you for submitting your artwork. It will appear publicly on the fanart page upon approval.</p>";
-                            } else {
-                                echo "<h2>Submission Requirements</h2>
-                        <p>As long as it's relevant to LiteralHat, I'll put on the gallery if I like it.</p>
-                        <p>The following is allowed:</p>
-                        <ul>
-                            <li>Your own original drawings</li>
-                            <li>Base edits (credit to original must be ON the drawing)</li>
-                            <li>Cosplay photo</li>
-                            <li>Sculpture</li>
-                            <li>Memes</li>
-                            <li>Shitpost</li>
-                            <li>Pitiful attempts of 'copying' my artworks or artstyle</li>
-                        </ul>
-                        <p>Please don't submit crossovers, sorry.</p>
-                        <p>Anything controversial, offensive, satirical or political is encouraged.</p>
-                        <p>Your submission will be put up depending on when I see it and have the time.</p>
-                        </ul>";
-                            }
-                            ?>
 
                         </div>
                     </div>
@@ -83,7 +79,7 @@
                         <?php
                         $errors = [
                             '1' => "Credit name must not exceed 30 characters.",
-                            '2' => "Please add an artist name, or tick the 'anonymous' box if you don't want to be credited.",
+                            '2' => "Please add an artist name.",
                             '3' => "Please add a file.",
                             '4' => "Please agree to the terms.",
                             '5' => "Only JPG, JPEG, PNG, and GIF files are allowed.",
@@ -107,6 +103,16 @@
                         } else {
 
                         }
+
+
+
+                        if (isset($_GET['success']) && ctype_digit($_GET['success'])) {
+                            echo " <div class='contentcontainer'>
+                            <div class='whitebox tone8 text9 white paddedsm'><h2>Artwork Submitted! </h2><p>Thank you for submitting your artwork. It will appear publicly on the fanart page upon approval.</p></div>
+                                    </div>";
+
+
+                        }
                         ?>
 
 
@@ -120,7 +126,7 @@
                                             <p>Lowercase, no spaces. Limit of 30 characters. Alphanumeric characters
                                                 only.</p>
                                             <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\| ]+" id="author" type="text"
-                                                name="author" placeholder="e.g. literalhat"/>
+                                                name="author" placeholder="e.g. literalhat" />
                                         </label>
                                     </fieldset>
                                     <div class='whitebox toneblack'>
@@ -141,8 +147,8 @@
                                                 I am aware that what I'm posting will be public.</p>
                                         </label>
                                         <label for="agree2">
-                                            <p class='smalltext'><input id="unsuitable" type="checkbox"
-                                                    name="agree2" /> I agree that my artwork may not be
+                                            <p class='smalltext'><input id="unsuitable" type="checkbox" name="agree2" />
+                                                I agree that my artwork may not be
                                                 posted at all depending on the nature of the work.</p>
                                         </label>
                                     </fieldset>

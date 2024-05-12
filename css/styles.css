@@ -1233,7 +1233,8 @@ a:hover {
 }
 
 .lightBoxOn {
-    height: 40rem;
+    width: 50rem;
+    height: auto;
 }
 
 
@@ -1249,14 +1250,16 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.yearhover {
+.fanartyearbutton {
     color: white;
-
+    background-color: black;
+    border: none;
 }
 
-.yearhover:hover {
+.fanartyearbutton:hover {
     color: red;
     cursor: pointer;
+
 }
 
 .hidden img {
@@ -1810,4 +1813,8 @@ justify-content: space-between;
 
 .noshadow {
     box-shadow: 0 0 0 0 transparent;
+}
+
+.imgborder {
+    border: var(--box-borders) solid black;
 }

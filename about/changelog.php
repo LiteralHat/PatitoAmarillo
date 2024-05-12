@@ -84,7 +84,16 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                            <h3>v15.10.0-beta 11.05.2024</h3>
+                                <h3>v16.10.0-beta 13.05.2024</h3>
+                                <ul>
+                                    <li>Added fanart year selectors!</li>
+                                    <li>Added fanart submission form!</li>
+                                    <li>Fanart gallery is now faster than before!</li>
+                                </ul>
+
+                                <hr class='hrtextseparator'><br>
+
+                                <h3>v15.10.0-beta 11.05.2024</h3>
                                 <ul>
                                     <li>Fanart section is back!</li>
                                     <li>Added submission button on fanart page</li>
@@ -94,14 +103,10 @@
                                 </ul>
 
 
-                                <hr class='hrtextseparator'><br>
-
-
-
-
                                 <h3>v14.10.0-beta 10.05.2024</h3>
                                 <ul>
-                                    <li>Fixed spacing issue with smaller pages not displaying blocks correctly on mobile</li>
+                                    <li>Fixed spacing issue with smaller pages not displaying blocks correctly on mobile
+                                    </li>
                                     <li>Purged site cache</li>
                                     <li>Replaced homepage cover image with higher resolution version</li>
                                     <li>Fixed 404 page not working on website subdirectories</li>
