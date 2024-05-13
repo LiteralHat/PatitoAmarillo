@@ -1,6 +1,15 @@
-<?php include_once ('../../config.php');
+<?php 
+
+include_once ('../../config.php');
 session_start();
 include_once (INCLUDES_FOLDER . 'dbh.php');
+
+
+$isadmin = isset($_SESSION["petridish"]) && $_SESSION["petridish"] === true;
+
+if (!$isadmin) {
+    session_unset();
+}
 
 if (!isset($_GET['page'])) {
     session_unset();
@@ -106,8 +115,7 @@ if (isset($_SESSION['searchQuery'])) {
 
             if (!isset($_SESSION['dbresults'])) {
 
-                $artworksrecent = $data;
-                usort($artworksrecent, function ($a, $b) {
+                usort($data, function ($a, $b) {
                     return strtotime($b['datecreated']) - strtotime($a['datecreated']);
                 });
 
@@ -138,7 +146,7 @@ if (isset($_SESSION['searchQuery'])) {
                                                 <h2 class='white'>Newest Artworks</h2>
                                                 <div id='newestitems'>";
 
-                foreach ($artworksrecent as $row => $artwork) {
+                foreach ($data as $row => $artwork) {
                     $rowCount++;
                     $timeAgo = getTimeAgo($artwork['datecreated']);
                     if ($rowCount >= $itemsStartLimit) {

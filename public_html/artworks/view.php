@@ -1,5 +1,15 @@
 <?php include_once ('../../config.php');
 include_once (INCLUDES_FOLDER . 'dbh.php');
+session_start();
+
+if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
+    $isadmin = true;
+} else {
+    $isadmin = false;
+    session_unset();
+}
+
+
 $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
 $statement = $db->prepare($sql);
 $id = filter_input(INPUT_GET, 'artworkid');
@@ -7,6 +17,8 @@ $statement->bindValue(':artworkid', $id, PDO::PARAM_INT);
 $statement->execute();
 $data = $statement->fetch();
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
 if (!$data) {
     echo "<p class='center large'>Oh no. This page doesn't exist! <a href='../gallery'>Go back?</a></p>";
     exit();
@@ -22,14 +34,14 @@ if (!$data) {
 
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
-    <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title']?>" />
+    <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title'] ?>" />
     <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
         <?php include_once (INCLUDES_FOLDER . '/galleryheader.php') ?>
-    
+
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
                 <div class='contentcontainer'>
@@ -51,9 +63,23 @@ if (!$data) {
                                 <div class='spacersmall'></div>
                                 <h1 class='large white'>
                                     <?php
-                                    echo $formattedTitle
+                                    echo $formattedTitle;
+
+
+
                                     ?>
                                 </h1>
+                                <span>
+                                    <?php
+                                    if ($isadmin) {
+
+                                        echo "<form action='../../admin/delete_item' method='post'>
+                                        <input type='hidden' name='artwork' value='" . $data['artworkid'] . "'>
+                                        <input type='submit' value='Delete' class='tonered paddedsm'>
+                                        </form>";
+                                    }
+                                    ?>
+                                </span>
                                 <p class='medium white'>
                                     <?php
                                     $finalString = implode(" ", $capitalizedWords);
