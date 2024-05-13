@@ -1,4 +1,4 @@
-<?php include_once ('../config.php') ?>
+<?php include_once ('config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Blank." content="" />
-    <?php include_once (INCLUDES_FOLDER . '/elements/headtags.php') ?>
+    <?php include_once (ELEMENT_HEADTAGS) ?>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                                 <hr>
                                 <h1 class='white padtop large'>
 
-
+BLANK
 
                             
                                 </h1>
@@ -42,7 +42,11 @@
                     </div>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-
+                            
+<p>Hello. I see you're here. Very clever.</p>
+<p>Did you find this page because you were snooping my repo?</p>
+<p>Or did Google somehow crawl this page and serve it to you as a result?</p>
+<p>Either way, welcome to the website.</p>
 
                         </div>
                     </div>

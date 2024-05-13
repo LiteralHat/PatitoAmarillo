@@ -1,4 +1,4 @@
-<?php include_once ('../config.php') ?>
+<?php include_once ('../../config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +31,9 @@
                                 <br>
                                 <p>Hi.</p>
                                 <p>I'm a web developer.</p>
+                                <p>I work on this site in my spare time.</p>
                                 <p>Sometimes I draw, sometimes I animate.</p>
-                                <p>I enjoy pretending to be competent at guitar and Javascript.</p>
+                                <p>Other hobbies include pretending to be competent at the guitar, and at Javascript.</p>
                                 <p>I do not practice 'consistency' in my projects, please be so kind as to not
                                     expect such from me.</p>
                                 <p>This website is my pride and joy. In the end, my goal is to make it the home of
@@ -63,12 +64,12 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <h3>Can I use your art in ______?</h3>
-                                <p class='bold'>You may, as long as your use is non-commercial.</p>
-                                <p>You may use any of my artworks in your profile pictures, banners, edits, forum
-                                    signatures (and/or posts). You may modify my artworks, edit or crop them as you
-                                    wish. You may print them out and hang them on your wall as decor or for your own
+                                <p class='bold'>Yes, as long as your use is non-commercial.</p>
+                                <p>You can use any of my artworks in your profile pictures, banners, edits, forum
+                                    signatures (and/or posts). You can modify my artworks, edit or crop them as you
+                                    wish. You can print them out and hang them on your wall as decor or for your own
                                     personal delight. You are free to repost my art online to your hearts content.</p>
-                                <p>You may use my music in your animations, videos, covers, or edits. You may remix my
+                                <p>You can use my music in your animations, videos, covers, or edits. You may remix my
                                     music to your hearts content, and reupload them to other platforms.</p>
                                 <p class='warning'>Do not use my artworks, characters, music, animations, anything I've
                                     made, really - for profit.</p>

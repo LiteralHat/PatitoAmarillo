@@ -1,5 +1,4 @@
-<?php include_once 'config.php';
-?>
+<?php include_once '../config.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -183,7 +182,8 @@
                                 </h2>
 
                                 <p>This is my website.</p>
-                                <p>I post everything I make on this site, ranging from art to animations and music.</p>
+                                <p>Everything I make is centralised on this site. Animations, art, music, etc. If you are looking to 'follow' me somewhere, this place is it.</p>
+                                <p>The site can get text heavy at times. If your preferred style of entertainment is tick tocks, then you might find this place a bit too avant-garde for your taste.</p>
                                 <p>I built this site from scratch, it receives updates whenever I have free time.</p>
                                 <p>Hope you enjoy your stay.</p>
                                 <p>This website was last updated on <?php

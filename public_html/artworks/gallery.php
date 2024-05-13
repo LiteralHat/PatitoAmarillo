@@ -1,4 +1,4 @@
-<?php include_once ('../config.php');
+<?php include_once ('../../config.php');
 session_start();
 include_once (INCLUDES_FOLDER . 'dbh.php');
 
@@ -12,6 +12,9 @@ if (isset($_SESSION['dbresults'])) {
     //$data is the 'master' array that will be echo'ed in HTML
     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
     //echo '<br>ARRAY RESET';
+    usort($data, function ($a, $b) {
+        return strtotime($b['datecreated']) - strtotime($a['datecreated']);
+    });
 }
 
 ;
@@ -40,18 +43,11 @@ if (isset($_SESSION['searchQuery'])) {
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
                     <div class='columnbox'>
-                        <p>Welcome to the gallery. In this section of the website you can find artworks that I've
-                            drawn
-                            over
-                            the years. Please note that this section does NOT contain <i>full sketchbooks</i>, which
-                            are
-                            <a href='https://www.patreon.com/LiteralHat' target="_blank">Patreon only.</a>
-                        </p>
-                        <p>I am a single person developing this gallery as well as cataloguing artworks, so any
-                            patience
-                            is wholly appreciated.</p>
-                            <p>Artworks are still in the process of being added.</p>
-
+                        <p>Welcome to the gallery.</p>
+                        <p>Click on an artwork to view.</p>
+                        <p>Or find an artwork using the advanced search. If it breaks, email support.</p>
+                        <p>Sketchbooks are exclusively <a href='https://www.patreon.com/LiteralHat'>here.</a> In the future, only Patrons will be granted user accounts.</p>
+                        <p>This page is still a work in progress and currently not a priority as I have many artworks to catalog.</p>
                         <br>
                         <br>
 
@@ -390,6 +386,8 @@ if (isset($_SESSION['searchQuery'])) {
                             <hr class='hrtextseparator'>
                             <div id='galleryitems'>
                                 <?php
+
+                                
 
                                 if (count($data) == 0) {
                                     echo '<div class="center padtop"><p class="medium padtop">Uh oh. Looks like there aren\'t any results for your query.</p><p class="padtop">Try search for something else.</p><img src="../images/pagedolls/hat-frustrated.jpg" width=300px></div>

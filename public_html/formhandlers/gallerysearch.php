@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once('../../config.php');
 include_once(INCLUDES_FOLDER . 'dbh.php');
 
 $statement = $db->query("SELECT * FROM artworks");

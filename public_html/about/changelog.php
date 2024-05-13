@@ -1,4 +1,4 @@
-<?php include_once ('../config.php') ?>
+<?php include_once ('../../config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,15 +63,15 @@
                                         <ul>
                                             <li>Images in the gallery containing apostrophes in title and file names
                                                 refuse to parse and render correctly</li>
+                                            <li>Gallery individual view pages may be broken - 'newest' button is broken
+                                                too</li>
                                         </ul>
 
                                         <h2 class='textgreen'>Planned features</h2>
                                         <ul>
                                             <li>Working search bar</li>
-                                            <li>New fanart page</li>
-                                            <li>Fanart submission form</li>
                                             <li>Email subscriptions</li>
-                                            <li>GOD, I NEED TO CHANGE HOSTING PROVIDERS</li>
+                                            <li>Articles section</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -84,14 +84,22 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                                <h3>v16.11.0-beta 14.05.2024</h3>
+                                <ul>
+                                    <li>Fixed some security bugs that caused a persisting 403 forbidden error</li>
+                                    <li>Fanart submission page now works as intended</li>
+                                    <li>Changed default sorting of gallery page to be from newest to oldest</li>
+                                </ul>
+
+                                <hr class='hrtextseparator'><br>
+
                                 <h3>v16.10.0-beta 13.05.2024</h3>
                                 <ul>
                                     <li>Added fanart year selectors!</li>
                                     <li>Added fanart submission form!</li>
                                     <li>Fanart gallery is now faster than before!</li>
                                 </ul>
-
-                                <hr class='hrtextseparator'><br>
 
                                 <h3>v15.10.0-beta 11.05.2024</h3>
                                 <ul>

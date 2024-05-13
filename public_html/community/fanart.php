@@ -1,4 +1,4 @@
-<?php include_once ('../config.php');
+<?php include_once ('../../config.php');
 include_once (INCLUDES_FOLDER . 'dbh.php');
 ?>
 

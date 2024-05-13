@@ -1,4 +1,4 @@
-<?php include_once ('../config.php');
+<?php include_once ('../../config.php');
 session_start();
 
 if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
@@ -127,8 +127,8 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                                 }
 
                                 if ($isadmin) {
-                                    $extracode = "<form action='../admin/delete_music' method='post'>
-                                    <input type='hidden' name='post_id' value='" . $song['index'] . "'>
+                                    $extracode = "<form action='../admin/delete_item' method='post'>
+                                    <input type='hidden' name='musicid' value='" . $song['index'] . "'>
                                     <input type='submit' value='Delete' class='tonered paddedsm'>
                                     </form>";
                                 } else {

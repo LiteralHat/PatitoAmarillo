@@ -1,4 +1,4 @@
-<?php include_once ('../config.php');
+<?php include_once ('../../config.php');
 include_once (INCLUDES_FOLDER . 'dbh.php');
 $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
 $statement = $db->prepare($sql);
