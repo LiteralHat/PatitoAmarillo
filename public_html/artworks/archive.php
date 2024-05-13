@@ -1,5 +1,5 @@
 <?php include_once ('../variables.php');
-include_once ('../includes/dbh.php');
+include_once (BASE_FOLDER . 'dbh.php');
 $statement = $db->query("SELECT * FROM artworks");
 $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>

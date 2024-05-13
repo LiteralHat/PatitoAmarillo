@@ -1,6 +1,6 @@
 <?php include_once ('../variables.php');
 session_start();
-include_once ('../includes/dbh.php');
+include_once (BASE_FOLDER . 'dbh.php');
 
 if (!isset($_GET['page'])) {
     session_unset();

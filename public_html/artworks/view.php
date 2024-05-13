@@ -1,5 +1,5 @@
 <?php include_once ('../variables.php');
-include_once ('../includes/dbh.php');
+include_once (BASE_FOLDER . 'dbh.php');
 $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
 $statement = $db->prepare($sql);
 $id = filter_input(INPUT_GET, 'artworkid');

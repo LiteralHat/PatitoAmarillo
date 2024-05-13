@@ -83,7 +83,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-                        include_once('../includes/dbh.php');
+                        include_once(BASE_FOLDER . 'dbh.php');
                         $statement = $db->query("SELECT * FROM music");
                         $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
                         function notAllowed($string)
