@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php');
+<?php include_once ('../config.php');
 
 ?>
 
@@ -8,7 +8,7 @@
 <head>
     <title>LiteralFanart Submission Form</title>
     <meta name="LiteralFanart Submission Form" content="Submit fanart here." />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -180,7 +180,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

@@ -1,4 +1,4 @@
-<?php include_once 'variables.php';
+<?php include_once 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -263,7 +263,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ELEMENT_FOOTER ?>
+        <?php include_once ELEMENT_FOOTER ?>
     </main>
 </body>
 

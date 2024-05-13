@@ -1,4 +1,4 @@
-<?php include_once ('variables.php') ?>
+<?php include_once ('config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Blank." content="" />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>

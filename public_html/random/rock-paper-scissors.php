@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <title>Rock Paper Scissors | LiteralHat</title>
     <meta name="Rock Paper Scissors | LiteralHat" content="" />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -231,7 +231,7 @@
             <!-- Footer and closing div tags used for styled main content box  -->
 
             <script src=<?php echo BASE_URL . '/scripts/rock-paper-scissors.js' ?>></script>
-            <?php include (ELEMENT_FOOTER) ?>
+            <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <title>About + FAQ | LiteralHat</title>
     <meta name="About + FAQ | LiteralHat" content="View commonly asked questions and contact information." />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -106,7 +106,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

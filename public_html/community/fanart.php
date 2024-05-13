@@ -1,5 +1,5 @@
-<?php include_once ('../variables.php');
-include_once (BASE_FOLDER . 'dbh.php');
+<?php include_once ('../config.php');
+include_once (INCLUDES_FOLDER . 'dbh.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ include_once (BASE_FOLDER . 'dbh.php');
 <head>
     <title>Fanart | LiteralHat</title>
     <meta name="LiteralHat | Fanart" content="Browse, look, and explore the fanart of LiteralHat." />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -160,7 +160,7 @@ include_once (BASE_FOLDER . 'dbh.php');
 
         <!-- Footer and closing div tags used for styled main content box  -->
         <script src="../scripts/fanartgallery.js"></script>
-        <?php include (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

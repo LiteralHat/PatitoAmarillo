@@ -1,5 +1,5 @@
-<?php include_once ('../variables.php');
-include_once (BASE_FOLDER . 'dbh.php');
+<?php include_once ('../config.php');
+include_once (INCLUDES_FOLDER . 'dbh.php');
 $sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
 $statement = $db->prepare($sql);
 $id = filter_input(INPUT_GET, 'artworkid');
@@ -23,12 +23,12 @@ if (!$data) {
 <head>
     <title><?php echo $formattedTitle; ?> | LiteralHat </title>
     <meta name="<?php echo $formattedTitle; ?> | LiteralHat " content="<?php echo $data['title']?>" />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
-        <?php include_once (BASE_FOLDER . '/galleryheader.php') ?>
+        <?php include_once (INCLUDES_FOLDER . '/galleryheader.php') ?>
     
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
@@ -294,7 +294,7 @@ if (!$data) {
 
 
 
-        <?php include (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php');
+<?php include_once ('../config.php');
 session_start();
 
 if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
@@ -15,7 +15,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
 <head>
     <title>LiteralDiscography.</title>
     <meta name="LiteralHat | Discography." content="It's you, it's me, and we're dancing badly!" />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -83,7 +83,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-                        include_once(BASE_FOLDER . 'dbh.php');
+                        include_once(INCLUDES_FOLDER . 'dbh.php');
                         $statement = $db->query("SELECT * FROM music");
                         $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
                         function notAllowed($string)
@@ -207,7 +207,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
             </div>
             <!-- Footer and closing div tags used for styled main content box  -->
 
-            <?php include (ELEMENT_FOOTER) ?>
+            <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

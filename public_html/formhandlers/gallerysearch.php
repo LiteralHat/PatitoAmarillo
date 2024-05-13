@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once(BASE_FOLDER . 'dbh.php');
+include_once(INCLUDES_FOLDER . 'dbh.php');
 
 $statement = $db->query("SELECT * FROM artworks");
 $data = $statement->fetchAll(PDO::FETCH_ASSOC);

@@ -1,5 +1,5 @@
-<?php include_once ('../variables.php');
-include_once (BASE_FOLDER . 'dbh.php');
+<?php include_once ('../config.php');
+include_once (INCLUDES_FOLDER . 'dbh.php');
 $statement = $db->query("SELECT * FROM artworks");
 $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -11,7 +11,7 @@ $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Archive | LiteralGallery</title>
     <meta name="Archive | LiteralGallery" content="" />
-    <?php include_once (BASE_FOLDER . '/includes/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/includes/headtags.php') ?>
 
 </head>
 
@@ -20,7 +20,7 @@ $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <main>
 
-        <?php include_once (BASE_FOLDER . '/includes/galleryheader.php'); ?>
+        <?php include_once (INCLUDES_FOLDER . '/includes/galleryheader.php'); ?>
 
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
@@ -137,7 +137,7 @@ $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
 
-        <?php include (ELEMENT_FOOTER);
+        <?php include_once (ELEMENT_FOOTER);
         ?>
     </main>
 </body>

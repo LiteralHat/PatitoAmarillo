@@ -1,4 +1,4 @@
-<?php include_once ('../variables.php') ?>
+<?php include_once ('../config.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
 <head>
     <title>Terms Of Use | LiteralHat</title>
     <meta name="LiteralHat.com | Terms Of Use" content="View the site's terms of use here." />
-    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
+    <?php include_once (INCLUDES_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -94,7 +94,7 @@
                                         otherwise... This includes illustrative and / or implied depictions of gore,
                                         mature
                                         language, weaponry, and other mature themes.</li>
-                                    <li>We do not host pornographic content. This does not include artistic nudity.</li>
+                                    <li>We do not host pornographic content. This does not include_once artistic nudity.</li>
                                     <li>Content on this website is for general informational / entertainment purposes
                                         only:
                                         LiteralHat.com may host articles and media that are satirical; It should not be
@@ -168,7 +168,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 
