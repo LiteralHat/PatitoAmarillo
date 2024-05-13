@@ -28,14 +28,14 @@ if (isset($_SESSION['searchQuery'])) {
     <title>Home | LiteralGallery</title>
     <meta name="Home | LiteralGallery"
         content="Browse, view, and search LiteralHat's artworks, ranging from 2020 to current day. Traditional art, digital art, and more." />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 
 </head>
 
 
 <body>
     <main>
-        <?php include_once ($folder . '/galleryheader.php'); ?>
+        <?php include_once (BASE_FOLDER . '/galleryheader.php'); ?>
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -453,7 +453,7 @@ if (isset($_SESSION['searchQuery'])) {
         </div>
 
                                     <div class='spacermedium'></div>
-        <?php include ($footer);
+        <?php include (ELEMENT_FOOTER);
         ?>
     </main>
 </body>

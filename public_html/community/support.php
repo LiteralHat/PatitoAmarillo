@@ -6,14 +6,14 @@
 <head>
     <title>Help, Save, Support! | LiteralHat</title>
     <meta name="Help, Save, Support! | LiteralHat" content="Help, Save, Support." />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
+        <?php include_once (ELEMENT_HEADER) ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowblack centerbox">
@@ -104,7 +104,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
+        <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

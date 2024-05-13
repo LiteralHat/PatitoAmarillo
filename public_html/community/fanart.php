@@ -8,7 +8,7 @@ include_once ('../includes/dbh.php');
 <head>
     <title>Fanart | LiteralHat</title>
     <meta name="LiteralHat | Fanart" content="Browse, look, and explore the fanart of LiteralHat." />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -16,8 +16,8 @@ include_once ('../includes/dbh.php');
 
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
+        <?php include_once (ELEMENT_HEADER) ?>
+        <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
 
@@ -29,7 +29,7 @@ include_once ('../includes/dbh.php');
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
+                    <?php include_once (ELEMENT_MENUSIMPLE) ?>
                 </div>
 
                 <div class='extrawidthcontainer'>
@@ -160,7 +160,7 @@ include_once ('../includes/dbh.php');
 
         <!-- Footer and closing div tags used for styled main content box  -->
         <script src="../scripts/fanartgallery.js"></script>
-        <?php include ($footer) ?>
+        <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

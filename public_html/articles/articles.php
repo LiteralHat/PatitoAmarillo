@@ -6,15 +6,15 @@
 <head>
     <title>LiteralDesign.</title>
     <meta name="LiteralHat | Design." content="Dedicated debug page for fonts and other formatting." />
-    <?php include_once ($folder . '/elements/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/elements/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
+        <?php include_once (ELEMENT_HEADER) ?>
+        <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowblack centerbox">
@@ -42,7 +42,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
+        <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

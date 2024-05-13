@@ -6,22 +6,22 @@
 <head>
     <title>Rock Paper Scissors | LiteralHat</title>
     <meta name="Rock Paper Scissors | LiteralHat" content="" />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
+        <?php include_once (ELEMENT_HEADER) ?>
+        <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
+                    <?php include_once (ELEMENT_MENUSIMPLE) ?>
 
                 </div>
 
@@ -230,8 +230,8 @@
 
             <!-- Footer and closing div tags used for styled main content box  -->
 
-            <script src=<?php echo $links . '/scripts/rock-paper-scissors.js' ?>></script>
-            <?php include ($footer) ?>
+            <script src=<?php echo BASE_URL . '/scripts/rock-paper-scissors.js' ?>></script>
+            <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

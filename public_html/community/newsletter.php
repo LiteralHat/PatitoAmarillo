@@ -6,7 +6,7 @@
 <head>
     <title>LiteralHat | Newsletter</title>
     <meta name="LiteralHat | Newsletter" content="Newsletter." />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
-                    <?php include_once ($menusimple) ?>
+                    <?php include_once (ELEMENT_MENUSIMPLE) ?>
 
                 </div>
 
@@ -92,7 +92,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
+        <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

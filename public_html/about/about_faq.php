@@ -6,15 +6,15 @@
 <head>
     <title>About + FAQ | LiteralHat</title>
     <meta name="About + FAQ | LiteralHat" content="View commonly asked questions and contact information." />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
+        <?php include_once (ELEMENT_HEADER) ?>
+        <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowblack centerbox">
@@ -76,7 +76,7 @@
                                 <h3>Are you up for hire?</h3>
                                 <p>No, sorry.</p>
                                 <h3>How can I support you?</h3>
-                                <p><a href='<?php echo $links . "community/support.php" ?>'>Help, Save, Support</a></p>
+                                <p><a href='<?php echo BASE_URL . "community/support.php" ?>'>Help, Save, Support</a></p>
                                 <h3>How can I contact you?</h3>
                                 <p>I don't use social media... You're free to comment or message but it won't be seen.
                                 </p>
@@ -106,7 +106,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
+        <?php include (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

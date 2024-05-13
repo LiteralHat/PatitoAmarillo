@@ -1,4 +1,4 @@
-<?php include_once ('variables.php');
+<?php include_once 'variables.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,15 +7,15 @@
 <head>
     <title>Welcome Home. | LiteralHat</title>
     <meta name="Welcome Home. | LiteralHat" content="Be gay, do crime. Create more than you consume. Desire less." />
-    <?php include_once ($headtags) ?>
+    <?php include_once ELEMENT_HEADTAGS ?>
 </head>
 
 <body>
     <main>
 
         <!-- Header and opening main content div used for styling  -->
-        <?php include_once ($header) ?>
-        <?php include_once ($menutop) ?>
+        <?php include_once ELEMENT_HEADER ?>
+        <?php include_once ELEMENT_MENUTOP ?>
         <!-- side bar on the left.  -->
 
         <div class="contentrowstripe centerbox">
@@ -28,7 +28,7 @@
                     <div class='contentcontainer' id='hattyleft'>
                         <img src='images/pagedolls/hat-sitting.png' width='250px;'>
                     </div>
-                    <?php include_once ($menuleft) ?>
+                    <?php include_once ELEMENT_MENULEFT ?>
 
                 </div>
 
@@ -263,7 +263,7 @@
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
-        <?php include ($footer) ?>
+        <?php include ELEMENT_FOOTER ?>
     </main>
 </body>
 

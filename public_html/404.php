@@ -6,7 +6,7 @@
 <head>
     <title>LiteralBlank.</title>
     <meta name="LiteralHat | Blank." content="" />
-    <?php include_once ($folder . '/headtags.php') ?>
+    <?php include_once (BASE_FOLDER . '/headtags.php') ?>
 </head>
 
 <body>
