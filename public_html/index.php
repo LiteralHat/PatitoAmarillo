@@ -1,4 +1,4 @@
-<?php include_once '../config.php';?>
+<?php include_once '../config.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,10 +23,11 @@
             <div class='boxedsection'>
                 <!-- side content box (should be a pair on the top and bottom) -->
                 <div class='sidecontainer' id='menuleft'>
-                    <div class='spacermedium'></div>
+                    <div class="spacermedium"></div>
                     <div class='contentcontainer' id='hattyleft'>
                         <img src='images/pagedolls/hat-sitting.png' width='250px;'>
                     </div>
+                    <br>
                     <?php include_once ELEMENT_MENULEFT ?>
 
                 </div>
@@ -55,14 +56,7 @@
                     <!-- Look, the excessive divs are important. I swear. -->
 
 
-                    <div class='contentcontainer'>
-                        <div class="whitebox padded center tone3">
-                            <div class='spacersmall'></div>
-                            <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't
-                                dance, its not my revolution. " </blockquote>
-                            <div class='spacersmall'></div>
-                        </div>
-                    </div>
+
                 </div>
 
 
@@ -94,112 +88,94 @@
                                         <li>4jaws</li>
                                     </ul>
                                     <hr>
+                                    <br>
                                 </section>
+
+                                <img src=<?php echo (BASE_URL . "images/pagedolls/mail.png") ?> width='200px;' class="">
 
                             </div>
                         </div>
                     </div>
 
+
+
                 </div>
             </div>
 
 
+        </div>
 
+        <div class="contentrowblack centerbox">
 
+                <div class='contentcontainer'>
+                    <div class="whitebox padded center tone3">
+                        <div class='spacersmall'></div>
+                        <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't
+                            dance, its not my revolution. " </blockquote>
+                        <div class='spacersmall'></div>
+                    </div>
+                </div>
 
 
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='contentcontainer padright'>
                         <div class="whitebox toneblack">
-                            <div class='whiteborder paddedsm'>
-                                <section>
-                                    <ul class='coollist padtop mediumtext'>
-                                        <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
-                                        </li>
-                                        <li><a href="https://www.reddit.com/r/LiteralHat/" target="_blank">Subreddit</a>
-                                        </li>
-                                        <li><a href="https://www.instagram.com/literalhat/"
-                                                target="_blank">Instagram</a>
-                                        </li>
-                                        <li><a href="https://literalhat.newgrounds.com/" target="_blank">Newgrounds</a>
-                                        </li>
-                                        <li><a href="https://twitter.com/LiteralHat" target="_blank">Twitter</a>
-                                        </li>
-                                        <li><a href="https://www.tumblr.com/blog/literalhat" target="_blank">Tumblr</a>
-                                        </li>
-                                        <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>
-                                        </li>
-                                        <li><a href="https://literalhat.bandcamp.com/" target="_blank">Bandcamp</a>
-                                        </li>
-                                        <li><a href="https://open.spotify.com/intl-de/artist/4bvQi5fC5LUNHyiCdEiVqx"
-                                                target="_blank">Spotify</a>
-                                        </li>
-                                        <li><a href="https://literalhat.bandcamp.com/" target="_blank">Soundcloud</a>
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class='contentcontainer'>
-                        <div class='whitebox padded'>
                             <section>
-                                <form>
-                                    <p>Do you consider yourself a gamer?</p>
-                                    <input name='getfucked' type='radio'><span> YES</span></input>
-                                    <input name='getfucked' type='radio'><span> no</span></input>
-                                    <button type='button'
-                                        onclick="location.href='https://www.youtube.com/watch?v=4Jui6Prje6o'">Submit</button>
-                                </form>
+                                <ul class='coollist padtop'>
+                                    <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
+                                    </li>
+                                    <li><a href="https://www.reddit.com/r/LiteralHat/" target="_blank">Subreddit</a>
+                                    </li>
+                                    <li><a href="https://www.instagram.com/literalhat/" target="_blank">Instagram</a>
+                                    </li>
+                                    <li><a href="https://literalhat.newgrounds.com/" target="_blank">Newgrounds</a>
+                                    </li>
+                                    <li><a href="https://twitter.com/LiteralHat" target="_blank">Twitter</a>
+                                    </li>
+                                    <li><a href="https://www.tumblr.com/blog/literalhat" target="_blank">Tumblr</a>
+                                    </li>
+                                    <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>
+                                    </li>
+                                    <li><a href="https://literalhat.bandcamp.com/" target="_blank">Bandcamp</a>
+                                    </li>
+                                    <li><a href="https://open.spotify.com/intl-de/artist/4bvQi5fC5LUNHyiCdEiVqx"
+                                            target="_blank">Spotify</a>
+                                    </li>
+                                    <li><a href="https://literalhat.bandcamp.com/" target="_blank">Soundcloud</a>
+                                        </p>
+                                    </li>
+                                </ul>
                             </section>
+
                         </div>
                     </div>
-
-
-
                 </div>
 
 
-                <div class='extrawidthcontainer'>
+                <div class='widthcontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
-                            <div class='whiteborder padded'>
-                                <hr>
-                                <h1 class='white padtop'>LiteralHat.com.</h1>
-                                <hr>
-                            </div>
+
+                            <hr>
+                            <h1 class='white padtop'>Welcome home.</h1>
+                            <hr>
+
                         </div>
                     </div>
 
                     <div class='contentcontainer'>
-                        <div class="whitebox padded">
+                        <div class="whitebox padded toneblack white center">
                             <section class="section">
-                                <h2 class='padtop bold'>Welcome home.
-                                </h2>
-
-                                <p>This is my website.</p>
-                                <p>Everything I make is centralised on this site. Animations, art, music, etc. If you are looking to 'follow' me somewhere, this place is it.</p>
-                                <p>The site can get text heavy at times. If your preferred style of entertainment is tick tocks, then you might find this place a bit too avant-garde for your taste.</p>
-                                <p>I built this site from scratch, it receives updates whenever I have free time.</p>
-                                <p>Hope you enjoy your stay.</p>
-                                <p>This website was last updated on <?php
+                                <p>Website was last updated on <?php
                                 $filename = 'index.php';
                                 echo date("F d Y H:i:s", filemtime($filename));
-                                ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more
+                                ?> UTC. Refer to the <a href='about/changelog'>changelog</a> for more
                                     information.</p>
-
-
-                                <p>Please report any major issues on <a
-                                        href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
-                                <p>
-                                <h2 class='padtop bold text4'>With love to my
+                                <h2 class='padtop textred'>With love to my
                                     testers:
                                 </h2>
-                                <p class='mediumtext bold'>
+                                <p class='mediumtext'>
                                 <ul class='linodots nounderline fontheader mediumtext'>
                                     <li><a href="https://www.instagram.com/maker_gniht/" target="_blank">Puggleman</a>
                                     </li>
@@ -221,46 +197,26 @@
                                 </ul>
                                 <div class='spacersmall'></div>
                                 </p>
-                                <p>I hate that I have to say this, but be respectful and do not inquire them about me -
-                                    rather, check out their work at your own discretion.</p>
-
-
-
-
                             </section>
                         </div>
                     </div>
 
-
-
-
-
                 </div>
-
 
                 <div class='sidecontainer'>
 
                     <div class='contentcontainer padright'>
                         <div class="whitebox toneblack">
                             <div class='whiteborder padded center'>
-                                <h2 class='white'>Caty</h2>
                                 <img src='images/marla/marla1.jpg' style='width:10rem'>
                             </div>
                         </div>
                     </div>
-
-                    <div class='contentcontainer'>
-                        <div class='whitebox tonered padded'>
-                            <section>
-                                <h2 class='white'>!Achtung!</h2>
-                                <p class='white'>If your site looks broken, you need to clear your browser cache.</p>
-                            </section>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
+        </div>
+
         <!-- Footer and closing div tags used for styled main content box  -->
 
         <?php include_once ELEMENT_FOOTER ?>

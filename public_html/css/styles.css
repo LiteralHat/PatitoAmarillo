@@ -126,12 +126,12 @@ h6 {
 }
 
 h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-family: var(--font-logo);
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 }
 
 h3 {
@@ -176,7 +176,7 @@ input,
 label,
 ol {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.9rem;
     font-weight: 500;
     color: black;
@@ -333,6 +333,7 @@ ol {
     text-decoration: none;
     word-break: break-all;
     text-align: center;
+    font-size: 2rem;
 }
 
 .coollist li:nth-child(odd) {
@@ -344,6 +345,8 @@ ol {
     right: 1rem;
     position: relative;
 }
+
+
 
 .linodots * {
     list-style-type: none;

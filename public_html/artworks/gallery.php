@@ -7,10 +7,6 @@ include_once (INCLUDES_FOLDER . 'dbh.php');
 
 $isadmin = isset($_SESSION["petridish"]) && $_SESSION["petridish"] === true;
 
-if (!$isadmin) {
-    session_unset();
-}
-
 if (!isset($_GET['page'])) {
     session_unset();
 }

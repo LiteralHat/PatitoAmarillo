@@ -1,9 +1,10 @@
 <?php include_once ('../../config.php');
 session_start();
 
-$isadmin = isset($_SESSION["petridish"]) && $_SESSION["petridish"] === true;
-
-if (!$isadmin) {
+if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
+    $isadmin = true;
+} else {
+    $isadmin = false;
     session_unset();
 }
 

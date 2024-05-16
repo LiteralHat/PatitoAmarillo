@@ -35,9 +35,9 @@
                     </div>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                        <p>You can receive updates about new artworks, music postings, animations, website updates and more by signing up to the newsletter.</p>
-                            <p>To be added to the mailing list, complete the form below.</p>
-                           
+                        <p>If you would like to sign up early for newsletters, please complete the form below.</p>
+                            <p>In the future you will receive updates about new artworks, music, articles, and everything else.</p>
+                            <p>You might even witness me mess up a cron job and send you something completely irrelevant and stupid.</p>
                         </div>
                     </div>
 
@@ -58,12 +58,12 @@
 
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
-                                <form class='form' action='signup'
+                                <form class='form' action='newsletter_process'
                                     method='POST'>
                                     <fieldset>
                                         <label for="artistcredit">
                                             <h3>Email Address:</h3>
-                                            <input type="email" required value="signup" placeholder="someone@somewhere.com">
+                                            <input type="email" name="email" required  placeholder="someone@somewhere.com">
                                         </label>
                                     </fieldset>
                                     <fieldset class='padtop'>
