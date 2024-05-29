@@ -103,16 +103,6 @@
                         } else {
 
                         }
-
-
-
-                        if (isset($_GET['success']) && ctype_digit($_GET['success'])) {
-                            echo " <div class='contentcontainer'>
-                            <div class='whitebox tone8 text9 white paddedsm'><h2>Artwork Submitted! </h2><p>Thank you for submitting your artwork. It will appear publicly on the fanart page upon approval.</p></div>
-                                    </div>";
-
-
-                        }
                         ?>
 
 

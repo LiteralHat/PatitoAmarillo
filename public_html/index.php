@@ -23,11 +23,10 @@
             <div class='boxedsection'>
                 <!-- side content box (should be a pair on the top and bottom) -->
                 <div class='sidecontainer' id='menuleft'>
-                    <div class="spacermedium"></div>
+                    <div class='spacermedium'></div>
                     <div class='contentcontainer' id='hattyleft'>
                         <img src='images/pagedolls/hat-sitting.png' width='250px;'>
                     </div>
-                    <br>
                     <?php include_once ELEMENT_MENULEFT ?>
 
                 </div>
@@ -38,7 +37,7 @@
                             <div class="whiteborderdotted">
                                 <div class='blackborder'>
                                     <div class='whiteborder'>
-                                        <section class="section">
+                                        <section>
                                             <img src="images/pagedolls/literalhat-punks-not-dead.png" height="1000px"
                                                 id='sitelogo'
                                                 alt='literalhat.com logo behind a large group of cartoon sheep'>
@@ -56,7 +55,14 @@
                     <!-- Look, the excessive divs are important. I swear. -->
 
 
-
+                    <div class='contentcontainer'>
+                        <div class="whitebox padded center tone3">
+                            <div class='spacersmall'></div>
+                            <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't
+                                dance, its not my revolution. " </blockquote>
+                            <div class='spacersmall'></div>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -88,94 +94,95 @@
                                         <li>4jaws</li>
                                     </ul>
                                     <hr>
-                                    <br>
                                 </section>
-
-                                <img src=<?php echo (BASE_URL . "images/pagedolls/mail.png") ?> width='200px;' class="">
 
                             </div>
                         </div>
                     </div>
 
-
-
                 </div>
             </div>
 
 
-        </div>
 
-        <div class="contentrowblack centerbox">
 
-                <div class='contentcontainer'>
-                    <div class="whitebox padded center tone3">
-                        <div class='spacersmall'></div>
-                        <blockquote class='white fontfancy mediumtext uppercase textsize3 center'>" If I can't
-                            dance, its not my revolution. " </blockquote>
-                        <div class='spacersmall'></div>
-                    </div>
-                </div>
 
 
             <div class='boxedsection'>
                 <div class='sidecontainer'>
                     <div class='contentcontainer padright'>
                         <div class="whitebox toneblack">
-                            <section>
-                                <ul class='coollist padtop'>
-                                    <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
-                                    </li>
-                                    <li><a href="https://www.reddit.com/r/LiteralHat/" target="_blank">Subreddit</a>
-                                    </li>
-                                    <li><a href="https://www.instagram.com/literalhat/" target="_blank">Instagram</a>
-                                    </li>
-                                    <li><a href="https://literalhat.newgrounds.com/" target="_blank">Newgrounds</a>
-                                    </li>
-                                    <li><a href="https://twitter.com/LiteralHat" target="_blank">Twitter</a>
-                                    </li>
-                                    <li><a href="https://www.tumblr.com/blog/literalhat" target="_blank">Tumblr</a>
-                                    </li>
-                                    <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>
-                                    </li>
-                                    <li><a href="https://literalhat.bandcamp.com/" target="_blank">Bandcamp</a>
-                                    </li>
-                                    <li><a href="https://open.spotify.com/intl-de/artist/4bvQi5fC5LUNHyiCdEiVqx"
-                                            target="_blank">Spotify</a>
-                                    </li>
-                                    <li><a href="https://literalhat.bandcamp.com/" target="_blank">Soundcloud</a>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </section>
-
+                            <div class='whiteborder paddedsm'>
+                                <section>
+                                    <ul class='coollist padtop mediumtext'>
+                                        <li><a href="https://www.youtube.com/c/literalhat" target="_blank">YouTube</a>
+                                        </li>
+                                        <li><a href="https://www.reddit.com/r/LiteralHat/" target="_blank">Subreddit</a>
+                                        </li>
+                                        <li><a href="https://www.instagram.com/literalhat/"
+                                                target="_blank">Instagram</a>
+                                        </li>
+                                        <li><a href="https://literalhat.newgrounds.com/" target="_blank">Newgrounds</a>
+                                        </li>
+                                        <li><a href="https://twitter.com/LiteralHat" target="_blank">Twitter</a>
+                                        </li>
+                                        <li><a href="https://www.tumblr.com/blog/literalhat" target="_blank">Tumblr</a>
+                                        </li>
+                                        <li><a href="https://www.patreon.com/LiteralHat" target="_blank">Patreon</a>
+                                        </li>
+                                        <li><a href="https://literalhat.bandcamp.com/" target="_blank">Bandcamp</a>
+                                        </li>
+                                        <li><a href="https://open.spotify.com/intl-de/artist/4bvQi5fC5LUNHyiCdEiVqx"
+                                                target="_blank">Spotify</a>
+                                        </li>
+                                        <li><a href="https://literalhat.bandcamp.com/" target="_blank">Soundcloud</a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
                         </div>
                     </div>
+
+
+                
+
+
+
                 </div>
 
 
-                <div class='widthcontainer'>
+                <div class='extrawidthcontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
-
-                            <hr>
-                            <h1 class='white padtop'>Welcome home.</h1>
-                            <hr>
-
+                            <div class='whiteborder padded'>
+                                <hr>
+                                <h1 class='white padtop'>LiteralHat.com.</h1>
+                                <hr>
+                            </div>
                         </div>
                     </div>
 
                     <div class='contentcontainer'>
-                        <div class="whitebox padded toneblack white center">
-                            <section class="section">
-                                <p>Website was last updated on <?php
-                                $filename = 'index.php';
-                                echo date("F d Y H:i:s", filemtime($filename));
-                                ?> UTC. Refer to the <a href='about/changelog'>changelog</a> for more
-                                    information.</p>
-                                <h2 class='padtop textred'>With love to my
+                        <div class="whitebox padded">
+                            <section class="center">
+                                <h2 class='padtop bold'>Welcome home.
+                                </h2>
+
+                                <p>Hi.</p>
+                                <p>Everything I make is centralised on this site. Animations, art, music, etc. If you
+                                    are looking to 'follow' me somewhere, this place is it.</p>
+                                <p>Pages may be text heavy and unsuitable for individuals who prefer tick-tocks as their primary entertainment style.</p>
+                                <p>Hope you enjoy your stay.</p>
+                            </section>
+
+
+                            <section>
+                            <hr class="hrtextseparator">
+                                <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
-                                <p class='mediumtext'>
+                                <p class='mediumtext bold'>
                                 <ul class='linodots nounderline fontheader mediumtext'>
                                     <li><a href="https://www.instagram.com/maker_gniht/" target="_blank">Puggleman</a>
                                     </li>
@@ -195,28 +202,52 @@
                                     <li>Ami</li>
                                     <li>Ari</li>
                                 </ul>
-                                <div class='spacersmall'></div>
                                 </p>
+                            </section>
+                          
+                            <section>  <hr class="hrtextseparator">
+                            <h2 class='padtop bold text4'>Site information
+                                </h2>
+
+                            <p>This site receives updates whenever I have free time.</p>
+                                <p>It was last updated on <?php
+                                $filename = 'index.php';
+                                echo date("F d Y H:i:s", filemtime($filename));
+                                ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more
+                                    information.</p>
+
+
+                                <p>Please report any major issues on <a
+                                        href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
+
+
                             </section>
                         </div>
                     </div>
 
+
+
+
+
                 </div>
+
 
                 <div class='sidecontainer'>
 
                     <div class='contentcontainer padright'>
                         <div class="whitebox toneblack">
                             <div class='whiteborder padded center'>
+                                <h2 class='white'>Marla</h2>
                                 <img src='images/marla/marla1.jpg' style='width:10rem'>
                             </div>
                         </div>
                     </div>
+
+                    
+
                 </div>
             </div>
         </div>
-        </div>
-
         <!-- Footer and closing div tags used for styled main content box  -->
 
         <?php include_once ELEMENT_FOOTER ?>

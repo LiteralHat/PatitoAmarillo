@@ -1,4 +1,4 @@
-
+.gitignore
 vendor
 composer.json
 composer.lock
@@ -10,4 +10,5 @@ public_html/admin
 public_html/includes
 public_html/debug
 public_html/community/newfanart.php
+public_html/community/newsletter_process.php
 config.php
