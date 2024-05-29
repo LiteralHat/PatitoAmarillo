@@ -84,15 +84,20 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v16.12.0-beta 30.05.2024</h3>
+                                <ul>
+                                    <li>Added landing page for fanart submission confirmation</li>
+                                </ul>
+
+
+                                <hr class='hrtextseparator'><br>
 
                                 <h3>v16.11.0-beta 14.05.2024</h3>
                                 <ul>
-                                    <li>Fixed some security bugs that caused a persisting 403 forbidden error</li>
+                                    <li>Fixed persisting 403 forbidden error</li>
                                     <li>Fanart submission page now works as intended</li>
                                     <li>Changed default sorting of gallery page to be from newest to oldest</li>
                                 </ul>
-
-                                <hr class='hrtextseparator'><br>
 
                                 <h3>v16.10.0-beta 13.05.2024</h3>
                                 <ul>

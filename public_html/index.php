@@ -34,22 +34,18 @@
                 <div class="extrawidthcontainer center">
                     <div class='contentcontainer'>
                         <div class="whitebox toneblack">
-                            <div class="whiteborderdotted">
-                                <div class='blackborder'>
-                                    <div class='whiteborder'>
-                                        <section>
-                                            <img src="images/pagedolls/literalhat-punks-not-dead.png" height="1000px"
-                                                id='sitelogo'
-                                                alt='literalhat.com logo behind a large group of cartoon sheep'>
+                            <div class='whiteborder'>
+                                <section>
+                                    <img src="images/pagedolls/literalhat-punks-not-dead.png" height="1000px"
+                                        id='sitelogo' alt='literalhat.com logo behind a large group of cartoon sheep'>
 
-                                            <h2 class='white'>Be Gay, Do Crime.</h2>
-                                            <h2 class='white'>Create more than you consume.</h2>
-                                            <h2 class='white'>Desire less.</h2>
-
-                                        </section>
-                                    </div>
-                                </div>
+                                    <h2 class='white'>Be Gay, Do Crime.</h2>
+                                    <h2 class='white'>Create more than you consume.</h2>
+                                    <h2 class='white'>Desire less.</h2>
+                                </section>
                             </div>
+
+
                         </div>
                     </div>
                     <!-- Look, the excessive divs are important. I swear. -->
@@ -76,7 +72,7 @@
                         <div class='whitebox tonered center'>
                             <div class='whiteborder paddedsm'>
                                 <section>
-                                    <h2 class='white'>Supporters!</h2>
+                                    <h2 class='white'>special thanks:</h2>
                                     <hr>
 
                                     <ul class='centeredlist hearts fontheader padtop mediumtext text10'>
@@ -145,7 +141,7 @@
                     </div>
 
 
-                
+
 
 
 
@@ -172,13 +168,14 @@
                                 <p>Hi.</p>
                                 <p>Everything I make is centralised on this site. Animations, art, music, etc. If you
                                     are looking to 'follow' me somewhere, this place is it.</p>
-                                <p>Pages may be text heavy and unsuitable for individuals who prefer tick-tocks as their primary entertainment style.</p>
+                                <p>Pages may be text heavy and unsuitable for individuals who prefer tick-tocks as their
+                                    primary entertainment style.</p>
                                 <p>Hope you enjoy your stay.</p>
                             </section>
 
 
                             <section>
-                            <hr class="hrtextseparator">
+                                <hr class="hrtextseparator">
                                 <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
@@ -204,12 +201,13 @@
                                 </ul>
                                 </p>
                             </section>
-                          
-                            <section>  <hr class="hrtextseparator">
-                            <h2 class='padtop bold text4'>Site information
+
+                            <section>
+                                <hr class="hrtextseparator">
+                                <h2 class='padtop bold text4'>Site information
                                 </h2>
 
-                            <p>This site receives updates whenever I have free time.</p>
+                                <p>This site receives updates whenever I have free time.</p>
                                 <p>It was last updated on <?php
                                 $filename = 'index.php';
                                 echo date("F d Y H:i:s", filemtime($filename));
@@ -219,21 +217,12 @@
 
                                 <p>Please report any major issues on <a
                                         href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
-
-
                             </section>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
 
-
                 <div class='sidecontainer'>
-
                     <div class='contentcontainer padright'>
                         <div class="whitebox toneblack">
                             <div class='whiteborder padded center'>
@@ -242,9 +231,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
-
                 </div>
             </div>
         </div>

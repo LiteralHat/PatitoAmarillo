@@ -38,7 +38,7 @@
 
                         <section>
                             <div class='spacermedium'></div>
-                            <p>If you’ve found this page, Congratulations.</p>
+                            <p>Hi.</p>
 
                             <div class='spacermedium'></div>
                             <img class='padded' src='../images/pagedolls/little-hat.png'>
@@ -50,14 +50,11 @@
                             <div class='spacersmall'></div>
                             <p>The fact that you’re here already means a lot.</p>
 
-                            <p>Please read on because the following is very important to me.</p>
-
                             <div class='spacermedium'></div>
                             <hr>
                             <div class='spacermedium'></div>
 
-                            <p>Everything I do - art, animation, music, this website and its content - is all for fun.
-                                I'm a hobbyist and am not interested in making this my full time job.</p>
+                            <p>Everything I do is merely a hobby. I don't intend to make money off my work.</p>
 
                             <p>If you would like to support my work.</p>
 
@@ -81,9 +78,7 @@
                                 blindly treating me like a content factory.</p>
 
                             <div class='spacersmall'></div>
-                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you
-                                want to help with hosting costs and doing what I do. If you're only in for the perks I
-                                would suggest you seek out other artists to subscribe to.</p>
+                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you want. Helps with hosting and stuff.</p>
                             
                         </section>
 

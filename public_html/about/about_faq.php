@@ -17,18 +17,17 @@
         <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
+    
+
         <div class="contentrowblack centerbox">
             <div class='boxedsection'>
                 <div class='biggerwidthcontainer'>
-                    <section>
-                        <div class="spacermedium"></div>
-                        <div class='contentcontainer'>
-                            <h1 class='white padtop large huge'>About + Faq</h1>
-                        </div>
 
-                        <div class='contentcontainer'>
-                            <div class="center white medium">
-                                <br>
+                    <section>
+                    <div class='contentcontainer'>
+                        <div class="whitebox center toneblack">
+                            <div class='whiteborder padded white'>
+                                <h1 class='padtop large'>About / FAQ</h1>
                                 <p>Hi.</p>
                                 <p>I'm a web developer.</p>
                                 <p>I work on this site in my spare time.</p>
@@ -39,20 +38,10 @@
                                 <p>This website is my pride and joy. In the end, my goal is to make it the home of
                                     everything I've done. I would appreciate it if you bookmarked LiteralHat.com,
                                     and come back sometime.</p>
-                                <div class="spacermedium"></div>
-
                             </div>
-
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <div class="contentrowblack centerbox">
-            <div class='boxedsection'>
-                <div class='biggerwidthcontainer'>
-
-                    <section>
+                        </div>
+                    </div>
+                    
                         <div class='contentcontainer'>
                             <div class="whitebox center toneblack">
                                 <div class='whiteborder'>
@@ -87,23 +76,9 @@
 
                         </div>
                     </section>
-
-
                     <div class='spacermedium'></div>
-
-
-
-
-
                 </div>
-
-
-
-
-
-
             </div>
-
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->
 
