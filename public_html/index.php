@@ -72,13 +72,14 @@
                         <div class='whitebox tonered center'>
                             <div class='whiteborder paddedsm'>
                                 <section>
-                                    <h2 class='white'>special thanks:</h2>
+                                    <h2 class='white'>much love to:</h2>
                                     <hr>
 
                                     <ul class='centeredlist hearts fontheader padtop mediumtext text10'>
                                         <li>Somber-Sonder</li>
                                         <li>M1n1Cat</li>
                                         <li>Hugs</li>
+                                        <li>Dooter</li>
                                         <li>Brew</li>
                                         <li>Jay Aury</li>
                                         <li>Thatoneguy</li>
@@ -88,6 +89,8 @@
                                         <li>Kinzator</li>
                                         <li>Ciphybara</li>
                                         <li>4jaws</li>
+                                        <li>Puggleman</li>
+                                        <li>VampiricVixen</li>
                                     </ul>
                                     <hr>
                                 </section>
@@ -165,17 +168,19 @@
                                 <h2 class='padtop bold'>Welcome home.
                                 </h2>
 
+
                                 <p>Hi.</p>
-                                <p>Everything I make is centralised on this site. Animations, art, music, etc. If you
-                                    are looking to 'follow' me somewhere, this place is it.</p>
-                                <p>Pages may be text heavy and unsuitable for individuals who prefer tick-tocks as their
-                                    primary entertainment style.</p>
+                                <p>This website is still a work in progress and receives updates whenever I'm bothered,
+                                    really.</p>
+
+                                <p>Pages get text heavy at times. If your preferred style of entertainment is tick
+                                    tocks, then you might find this place a bit too avant-garde for your taste.</p>
+
                                 <p>Hope you enjoy your stay.</p>
                             </section>
 
 
                             <section>
-                                <hr class="hrtextseparator">
                                 <h2 class='padtop bold text4'>With love to my
                                     testers:
                                 </h2>
@@ -203,20 +208,16 @@
                             </section>
 
                             <section>
-                                <hr class="hrtextseparator">
                                 <h2 class='padtop bold text4'>Site information
                                 </h2>
 
-                                <p>This site receives updates whenever I have free time.</p>
-                                <p>It was last updated on <?php
+                                <p>Site last updated on <?php
                                 $filename = 'index.php';
                                 echo date("F d Y H:i:s", filemtime($filename));
                                 ?> UTC. Please refer to the <a href='about/changelog'>changelog</a> for more
                                     information.</p>
 
-
-                                <p>Please report any major issues on <a
-                                        href='https://github.com/LiteralHat/literalhat.com'>GitHub.</a></p>
+                                <p>Please report major issues to <i>support@literalhat.com</i>.</p>
                             </section>
                         </div>
                     </div>

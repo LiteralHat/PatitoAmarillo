@@ -17,31 +17,43 @@
         <?php include_once (ELEMENT_MENUTOP) ?>
         <!-- side bar on the left.  -->
 
-    
 
-        <div class="contentrowblack centerbox">
+
+        <div class="contentrowstripe centerbox">
             <div class='boxedsection'>
-                <div class='biggerwidthcontainer'>
+                <div class='widthcontainer'>
 
                     <section>
-                    <div class='contentcontainer'>
-                        <div class="whitebox center toneblack">
-                            <div class='whiteborder padded white'>
-                                <h1 class='padtop large'>About / FAQ</h1>
-                                <p>Hi.</p>
-                                <p>I'm a web developer.</p>
-                                <p>I work on this site in my spare time.</p>
-                                <p>Sometimes I draw, sometimes I animate.</p>
-                                <p>Other hobbies include pretending to be competent at the guitar, and at Javascript.</p>
-                                <p>I do not practice 'consistency' in my projects, please be so kind as to not
-                                    expect such from me.</p>
-                                <p>This website is my pride and joy. In the end, my goal is to make it the home of
-                                    everything I've done. I would appreciate it if you bookmarked LiteralHat.com,
-                                    and come back sometime.</p>
+                        <div class='contentcontainer'>
+                            <div class="whitebox center toneblack">
+                                <div class='whiteborder padded white'>
+                                    <h1 class='padtop large'>About / FAQ</h1>
+                                    <p>Hi.</p>
+                                    <p>I draw, animate, make music, and work on this site in my spare time.</p>
+                                    <p>There is no 'consistency' in my projects, please be so kind as to not
+                                        expect such from me.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
+
+
+                        <div class='contentcontainer'>
+                            <div class="whitebox center toneblack">
+                                <div class='whiteborder'>
+                                    <h2 class='white padtop'>Contact</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contentcontainer">
+                            <div class="whitebox padded">
+                                <h3>For any enquiries:</h3>
+                                <p>Email <i>support@literalhat.com</i> and I'll get back to you when I have the time.
+                                </p>
+                                <p><span class="warning">I don't use social media.</span> Please don't contact me through any other means, it won't be seen.</p>
+                            </div>
+                        </div>
+
                         <div class='contentcontainer'>
                             <div class="whitebox center toneblack">
                                 <div class='whiteborder'>
@@ -52,6 +64,8 @@
 
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
+                                <h3>I want to show you my fanart!</h3>
+                                <p>You can submit it <a href='https://literalhat.com/community/fanartform'>here.</a></p>
                                 <h3>Can I use your art in ______?</h3>
                                 <p class='bold'>Yes, as long as your use is non-commercial.</p>
                                 <p>You can use any of my artworks in your profile pictures, banners, edits, forum
@@ -62,16 +76,14 @@
                                     music to your hearts content, and reupload them to other platforms.</p>
                                 <p class='warning'>Do not use my artworks, characters, music, animations, anything I've
                                     made, really - for profit.</p>
-                                <p>No need to credit. But be kind to others in your usage.</p>
+                                <p>I ask of you to be kind to others during your usage.</p>
+                                <p>No need to credit but it is appreciated.</p>
                                 <h3>Are you up for hire?</h3>
                                 <p>No, sorry.</p>
                                 <h3>How can I support you?</h3>
-                                <p><a href='<?php echo BASE_URL . "community/support.php" ?>'>Help, Save, Support</a></p>
-                                <h3>How can I contact you?</h3>
-                                <p>I don't use social media... You're free to comment or message but it won't be seen.
+                                <p><a href='<?php echo BASE_URL . "community/support.php" ?>'>Help, Save, Support</a>
                                 </p>
-                                <p>Email <i>support@literalhat.com</i> instead, and I will get back to you when I have
-                                    the time.</p>
+
                             </div>
 
                         </div>

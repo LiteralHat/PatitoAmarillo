@@ -47,50 +47,28 @@
                                         href="https://github.com/LiteralHat/literalhat.com" target="_blank">click
                                         here.</a>
                                 </p>
-                                <p class="warning">If this website appears broken, you need to clear your cache (hard
-                                    refresh on desktop with CTRL + SHIFT R).</p>
                             </div>
 
                         </div>
                     </section>
-
-                    <section>
-                        <div class='contentcontainer'>
-                            <div class='whitebox toneblack'>
-                                <div class='whiteborder paddedsm'>
-                                    <div class="whitebox padded">
-                                        <h2 class='textred'>Known Major Issues</h2>
-                                        <ul>
-                                            <li>Images in the gallery containing apostrophes in title and file names
-                                                refuse to parse and render correctly</li>
-                                            <li>Gallery individual view pages may be broken - 'newest' button is broken
-                                                too</li>
-                                        </ul>
-
-                                        <h2 class='textgreen'>Planned features</h2>
-                                        <ul>
-                                            <li>Working search bar</li>
-                                            <li>Email subscriptions</li>
-                                            <li>Articles section</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
 
                     <section>
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+
+                                <h3>v16.13.0-beta 31.05.2024</h3>
+                                <ul>
+                                    <li>Changed background color to dark grey</li>
+                                    <li>Reworded FAQ page</li>
+                                </ul>
+
+                                <hr class='hrtextseparator'><br>
+
                                 <h3>v16.12.0-beta 30.05.2024</h3>
                                 <ul>
                                     <li>Added landing page for fanart submission confirmation</li>
                                 </ul>
-
-
-                                <hr class='hrtextseparator'><br>
 
                                 <h3>v16.11.0-beta 14.05.2024</h3>
                                 <ul>

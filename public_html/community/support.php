@@ -50,11 +50,17 @@
                             <div class='spacersmall'></div>
                             <p>The fact that you’re here already means a lot.</p>
 
+                            <p>Please read on because the following is very important to me.</p>
+
                             <div class='spacermedium'></div>
                             <hr>
                             <div class='spacermedium'></div>
 
-                            <p>Everything I do is merely a hobby. I don't intend to make money off my work.</p>
+                            <p>Everything I do - art, animation, music, this website and its content - is all for fun.</p>
+
+                            <p>I don't feel comfortable turning my passion into a job, as tempting as the idea may be.</p>
+
+                            <p>So.</p>
 
                             <p>If you would like to support my work.</p>
 
@@ -74,11 +80,12 @@
                             <hr>
                             <div class='spacermedium'></div>
 
-                            <p class='bold mediumtext'>I appreciate those who support whatever I make, instead of
-                                blindly treating me like a content factory.</p>
-
+                        
                             <div class='spacersmall'></div>
-                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you want. Helps with hosting and stuff.</p>
+
+                            <p class="medium">I appreciate those who support whatever I make, instead of blindly treating me like a content factory.</p>
+
+                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you want to help with hosting costs and doing what I do. If you're only in for the perks I would suggest you seek out other artists to give money to.</p>
                             
                         </section>
 

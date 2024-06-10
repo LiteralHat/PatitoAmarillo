@@ -28,13 +28,12 @@
                 <div class='widthcontainer'>
                     <div class='contentcontainer'>
                         <div class="whitebox center toneblack">
-                            <div class='whiteborder padded'>
                                 <div class='whiteborder padded'>
                                     <h1 class='white padtop large'>
                                         Rock Paper Scissors
                                     </h1>
                                 </div>
-                            </div>
+                     
                         </div>
                     </div>
 

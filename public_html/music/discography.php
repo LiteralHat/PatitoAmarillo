@@ -47,7 +47,8 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                                 <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
-                                <p>If you can. <a href='https://www.patreon.com/LiteralHat'>Support
+                               
+                                    <p>Please <a href='https://www.patreon.com/LiteralHat'>support
                                         me</a>, so I can keep making more. No pressure though.</p>
                                 <p>Download as much as you can, listen, make remixes, create animations, do your
                                     own covers, send to your friends.</p>
