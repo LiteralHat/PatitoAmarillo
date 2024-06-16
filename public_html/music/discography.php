@@ -1,6 +1,6 @@
 <?php
 include_once ('../../config.php');
-include '../includes/autoloader.inc.php';
+include '../../includes/autoloader.php';
 
 ?>
 
@@ -81,8 +81,8 @@ include '../includes/autoloader.inc.php';
                         <?php
                         
                     
-                        include '../classes/musicctrl.class.php';
-                        include '../classes/musicview.class.php';
+                        include '../../classes/musicctrl.class.php';
+                        include '../../classes/musicview.class.php';
 
                         ?>
 

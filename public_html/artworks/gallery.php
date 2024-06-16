@@ -1,7 +1,7 @@
 <?php 
 
 include_once ('../../config.php');
-session_start();
+
 include_once (INCLUDES_FOLDER . 'dbh.php');
 
 

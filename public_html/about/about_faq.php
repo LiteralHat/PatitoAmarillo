@@ -50,7 +50,7 @@
                                 <h3>For any enquiries:</h3>
                                 <p>Email <i>support@literalhat.com</i> and I'll get back to you when I have the time.
                                 </p>
-                                <p><span class="warning">I don't use social media.</span> Please don't contact me through any other means, it won't be seen.</p>
+                                <p><span class="warning">I don't use social media.</span> Please don't contact me through any other means - you can try, but it won't be read.</p>
                             </div>
                         </div>
 

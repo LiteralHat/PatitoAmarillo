@@ -58,8 +58,9 @@
 
                                 <h3>v16.14.0-beta 16.06.2024</h3>
                                 <ul>
-                                    <li>Rewrote code on Discography page</li>
-                                    <li>Changed artwork gallery to work with GET instead of POST requests</li>
+                                    <li>Rewrote code on Discography page to be less stupid</li>
+                                    <li>Fixed homepage soundcloud link (Thanks  Federico)</li>
+                                    <li>Added more Patrons to homepage</li>
                                 </ul>
 
                                 <hr class='hrtextseparator'><br>

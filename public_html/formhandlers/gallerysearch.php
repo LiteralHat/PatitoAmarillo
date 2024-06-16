@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $_SESSION['searchQuery'] = $searchQuery;
 
 
-    require('../includes/urlpageparse.php');
+    require('../../includes/urlpageparse.php');
 
 
 }

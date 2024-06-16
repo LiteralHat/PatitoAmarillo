@@ -91,6 +91,10 @@
                                         <li>4jaws</li>
                                         <li>Puggleman</li>
                                         <li>VampiricVixen</li>
+                                        <li>Acf6</li>
+                                        <li>Iloveplants</li>
+                                        <li>Bobbobjobob</li>
+                                        <li>Starlossom CommsAcc</li>
                                     </ul>
                                     <hr>
                                 </section>
@@ -134,7 +138,7 @@
                                         <li><a href="https://open.spotify.com/intl-de/artist/4bvQi5fC5LUNHyiCdEiVqx"
                                                 target="_blank">Spotify</a>
                                         </li>
-                                        <li><a href="https://literalhat.bandcamp.com/" target="_blank">Soundcloud</a>
+                                        <li><a href="https://soundcloud.com/literalhat" target="_blank">Soundcloud</a>
                                             </p>
                                         </li>
                                     </ul>

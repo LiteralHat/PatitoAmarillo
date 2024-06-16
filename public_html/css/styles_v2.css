@@ -498,8 +498,8 @@ ol {
 
 .contentrowstripe {
     background: linear-gradient(to bottom,
-            #232323,
-            #232323 48%,
+            #1b1b1b,
+            #1b1b1b 48%,
             #000000 48%,
             #000000);
     background-size: 200% 60px;

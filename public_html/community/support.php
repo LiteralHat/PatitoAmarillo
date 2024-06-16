@@ -56,9 +56,9 @@
                             <hr>
                             <div class='spacermedium'></div>
 
-                            <p>Everything I do - art, animation, music, this website and its content - is all for fun.</p>
+                            <p>Everything I do - art, animation, music, this website and its content - is for fun.</p>
 
-                            <p>I don't feel comfortable turning my passion into a job, as tempting as the idea may be.</p>
+                            <p>I don't feel comfortable turning my passion into a job, as tempting as the idea is.</p>
 
                             <p>So.</p>
 
@@ -70,9 +70,11 @@
 
                             <p>Download my music, make remixes, do a cover, and upload them.</p>
 
-                            <p>Download my art and repost them everywhere like the plague.</p>
+                            <p>Download my art and repost it everywhere like the plague.</p>
 
-                            <p>But most importantly - keep it free, and make sure others do too.</p>
+                            <p>Make your own patches, T-shirts, stickers, for yourself and your friends.</p>
+
+                            <p>But most importantly - <b><i>keep it free, and make sure others do too.</b></i></p>
 
 
 
@@ -80,13 +82,16 @@
                             <hr>
                             <div class='spacermedium'></div>
 
-                        
+
                             <div class='spacersmall'></div>
 
-                            <p class="medium">I appreciate those who support whatever I make, instead of blindly treating me like a content factory.</p>
+                            <p class="medium">I appreciate those who support whatever I make, instead of blindly
+                                treating me like a content factory.</p>
 
-                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you want to help with hosting costs and doing what I do. If you're only in for the perks I would suggest you seek out other artists to give money to.</p>
-                            
+                            <p>Join my <a href='https://www.patreon.com/LiteralHat' target='_blank'>Patreon</a> if you
+                                want to help with hosting costs and doing what I do. If you're only in for the perks I
+                                would suggest you seek out other artists to give money to.</p>
+
                         </section>
 
                     </div>
