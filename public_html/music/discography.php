@@ -1,12 +1,6 @@
-<?php include_once ('../../config.php');
-session_start();
-
-if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
-    $isadmin = true;
-} else {
-    $isadmin = false;
-    session_unset();
-}
+<?php
+include_once ('../../config.php');
+include '../includes/autoloader.inc.php';
 
 ?>
 
@@ -47,8 +41,8 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                                 <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
-                               
-                                    <p>Please <a href='https://www.patreon.com/LiteralHat'>support
+
+                                <p>Please <a href='https://www.patreon.com/LiteralHat'>support
                                         me</a>, so I can keep making more. No pressure though.</p>
                                 <p>Download as much as you can, listen, make remixes, create animations, do your
                                     own covers, send to your friends.</p>
@@ -85,99 +79,11 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-                        include_once(INCLUDES_FOLDER . 'dbh.php');
-                        $statement = $db->query("SELECT * FROM music");
-                        $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        function notAllowed($string)
-                        {
-                            $notallowed = '/[@#$%^&*()+={}\[\]:;<>\/\\|]/';
-                            if (preg_match($notallowed, $string)) {
-                                echo "<p class='warning'>Your search query is not valid!</p>";
-                                exit;
-                            } else {
-                                return;
-                            }
-                        }
+                        
+                    
+                        include '../classes/musicctrl.class.php';
+                        include '../classes/musicview.class.php';
 
-                        if (!empty($_GET['search'])) {
-                            $search = $_GET['search'];
-                            notAllowed($search);
-                            $queryitem = str_replace(' ', '-', $search);
-                            $searchTerm = '%' . $queryitem . '%';
-                            $statement = $db->prepare("SELECT * FROM music WHERE title LIKE :searchTerm");
-                            $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
-                            $statement->execute();
-                            $musicdb = $statement->fetchAll(PDO::FETCH_ASSOC);
-                        }
-
-                        usort($musicdb, function ($a, $b) {
-                            return strtotime($b['datecreated']) - strtotime($a['datecreated']);
-                        });
-
-
-                        foreach ($musicdb as $row => $song) {
-                            if (isset($song['title']) && isset($song['datecreated']) && isset($song['type'])) {
-                                $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
-                                $titleparsed = str_replace("'", "&apos;", $song['title']);
-                                $formattedDate = date("F Y", strtotime($song['datecreated']));
-                                $extratext = '<br>';
-                                if (isset($song['cover'])) {
-                                    $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
-                                }
-                                if (isset($song['buy'])) {
-                                    $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
-                                }
-
-                                if ($isadmin) {
-                                    $extracode = "<form action='../admin/delete_item' method='post'>
-                                    <input type='hidden' name='musicid' value='" . $song['index'] . "'>
-                                    <input type='submit' value='Delete' class='tonered paddedsm'>
-                                    </form>";
-                                } else {
-                                    $extracode = '';
-                                }
-
-                                echo "
-                                <div class='contentcontainer'>
-                                <div class='whitebox toneblack'>
-                                    <div class='whiteborder paddedsm white'>
-                                        <div class='contentcontainer'>
-                                        <div class='songcovercontainer'>
-                                            <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'></div>
-                                            <div class='paddedsm songtextbox'>
-                                                <h2>" . $title . "</h2>" . $extracode . "
-                                                
-                                                <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
-                                                <br>
-                                                <br>
-                                                <audio controls>
-                                                    <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
-                                                </audio>
-                                                <details>
-                                        <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
-                                        <p>" . nl2br($song['lyrics']) . "</p>
-                                    </details>
-                                            </div>
-                                            <div class='paddedsm'>
-                                            <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
-                                            " . $extratext . "
-                                            <hr>
-                                            <p class='padtop'>CREDIT:</P>
-                                            <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
-                                            <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                        </div>";
-                            } else {
-
-                                echo '';
-                            }
-                        }
-
-                        $db = null;
                         ?>
 
 
@@ -204,12 +110,12 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                             }
                         </script>
                     </div>
-                    </div>
                 </div>
             </div>
-            <!-- Footer and closing div tags used for styled main content box  -->
+        </div>
+        <!-- Footer and closing div tags used for styled main content box  -->
 
-            <?php include_once (ELEMENT_FOOTER) ?>
+        <?php include_once (ELEMENT_FOOTER) ?>
     </main>
 </body>
 

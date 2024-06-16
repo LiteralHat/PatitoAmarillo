@@ -56,14 +56,19 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
+                                <h3>v16.14.0-beta 16.06.2024</h3>
+                                <ul>
+                                    <li>Rewrote code on Discography page</li>
+                                    <li>Changed artwork gallery to work with GET instead of POST requests</li>
+                                </ul>
 
+                                <hr class='hrtextseparator'><br>
                                 <h3>v16.13.0-beta 31.05.2024</h3>
                                 <ul>
                                     <li>Changed background color to dark grey</li>
                                     <li>Reworded FAQ page</li>
                                 </ul>
 
-                                <hr class='hrtextseparator'><br>
 
                                 <h3>v16.12.0-beta 30.05.2024</h3>
                                 <ul>
