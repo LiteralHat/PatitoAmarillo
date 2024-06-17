@@ -80,6 +80,7 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                                         <p class='uppercase'>[ " . $data['type'] . " ] " . $formattedDate . "</p>
                                         <hr>
                                         <br>
+                                        <h2>Lyrics</h2>
                                         <p>" . nl2br($data['lyrics']) . "</p>
                                         
                                         </div>
