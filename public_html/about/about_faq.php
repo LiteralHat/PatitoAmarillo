@@ -50,7 +50,7 @@
                                 <h3>For any enquiries:</h3>
                                 <p>Email <i>support@literalhat.com</i> and I'll get back to you when I have the time.
                                 </p>
-                                <p><span class="warning">I don't use social media.</span> Please don't contact me through any other means - you can try, but it won't be read.</p>
+                                <p><span class="bold">I don't use social media.</span> Please don't contact me through any other means - you can try, but it won't be read.</p>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@
                                 <p class='bold'>Yes, as long as your use is non-commercial.</p>
                                 <p>You can use any of my artworks in your profile pictures, banners, edits, forum
                                     signatures (and/or posts). You can modify my artworks, edit or crop them as you
-                                    wish. You can print them out and hang them on your wall as decor or for your own
+                                    wish. You can print them out and hang them on your wall for your own
                                     personal delight. You are free to repost my art online to your hearts content.</p>
                                 <p>You can use my music in your animations, videos, covers, or edits. You may remix my
                                     music to your hearts content, and reupload them to other platforms.</p>

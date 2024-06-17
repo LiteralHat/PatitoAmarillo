@@ -180,6 +180,8 @@
                                 <p>Pages get text heavy at times. If your preferred style of entertainment is tick
                                     tocks, then you might find this place a bit too avant-garde for your taste.</p>
 
+                                <p>Site has basic responsiveness but is best visited on desktop.</p>
+
                                 <p>Hope you enjoy your stay.</p>
                             </section>
 

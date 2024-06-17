@@ -80,7 +80,8 @@ include '../../includes/autoloader.php';
                     <div class='columnbox'>
                         <?php
                         
-                    
+                        include '../../classes/dbh.class.php';
+                        include '../../classes/musicmodel.class.php';
                         include '../../classes/musicctrl.class.php';
                         include '../../classes/musicview.class.php';
 

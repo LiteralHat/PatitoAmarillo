@@ -56,14 +56,21 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                                <h3>v16.14.0-beta 16.06.2024</h3>
+                                <h3>v16.15.0-beta 16.06.2024</h3>
                                 <ul>
-                                    <li>Rewrote code on Discography page to be less stupid</li>
-                                    <li>Fixed homepage soundcloud link (Thanks  Federico)</li>
-                                    <li>Added more Patrons to homepage</li>
+                                    <li>Actually fixed the persisting 403 error, like actually fixed it. And if it happens again, I'm going to sit in a corner and contemplate my abilities.</li>
+                                    <li>Fixed discography page</li>
                                 </ul>
 
                                 <hr class='hrtextseparator'><br>
+
+                                <h3>v16.14.0-beta 16.06.2024</h3>
+                                <ul>
+                                    <li>Rewrote code on Discography page to be less stupid</li>
+                                    <li>Fixed homepage soundcloud link (Thanks Federico)</li>
+                                    <li>Added more Patrons to homepage</li>
+                                </ul>
+
                                 <h3>v16.13.0-beta 31.05.2024</h3>
                                 <ul>
                                     <li>Changed background color to dark grey</li>
