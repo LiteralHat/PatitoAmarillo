@@ -1,6 +1,13 @@
 <?php
+
 include_once ('../../config.php');
-include '../../includes/autoloader.php';
+include ('../../vendor/autoload.php');
+
+use App\Controllers\MusicCtrl;
+use App\Models\MusicModel;
+use App\Config\Dbh;
+
+include '../../controllers/musicctrl.php';
 
 ?>
 
@@ -79,11 +86,73 @@ include '../../includes/autoloader.php';
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-                        
-                        include '../../classes/dbh.class.php';
-                        include '../../classes/musicmodel.class.php';
-                        include '../../classes/musicctrl.class.php';
-                        include '../../classes/musicview.class.php';
+
+
+                    
+                        foreach ($data as $row => $song) {
+                            if (isset($song['title']) && isset($song['datecreated']) && isset($song['type'])) {
+                                $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
+                                $titleparsed = str_replace("'", "&apos;", $song['title']);
+                                $formattedDate = date("F Y", strtotime($song['datecreated']));
+                                $extratext = '<br>';
+                                if (isset($song['cover'])) {
+                                    $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
+                                }
+                                if (isset($song['buy'])) {
+                                    $extratext = "<p><a href='" . $song['buy'] . "'>BUY</a></p>";
+                                }
+
+                                if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
+                                    $extracode = "<form action='../admin/delete_item' method='post'>
+                                            <input type='hidden' name='musicid' value='" . $song['index'] . "'>
+                                            <input type='submit' value='Delete' class='tonered paddedsm'>
+                                            </form>";
+                                } else {
+                                    $extracode = '';
+                                    session_unset();
+                                }
+
+                                echo "
+                                        <div class='contentcontainer'>
+                                        <div class='whitebox toneblack'>
+                                            <div class='whiteborder paddedsm white'>
+                                                <div class='contentcontainer'>
+                                                <div class='songcovercontainer'>
+                                                    <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'></div>
+                                                    <div class='paddedsm songtextbox'>
+                                                        <h2>" . $title . "</h2>" . $extracode . "
+                                                        
+                                                        <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
+                                                        <br>
+                                                        <br>
+                                                        <audio controls>
+                                                            <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
+                                                        </audio>
+                                                        <details>
+                                                <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
+                                                <p>" . nl2br($song['lyrics']) . "</p>
+                                            </details>
+                                                    </div>
+                                                    <div class='paddedsm'>
+                                                    <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
+                                                    " . $extratext . "
+                                                    <hr>
+                                                    <p class='padtop'>CREDIT:</P>
+                                                    <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
+                                                    <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                </div>";
+                            } else {
+
+                                echo '';
+                            }
+                        }
+
+
 
                         ?>
 
