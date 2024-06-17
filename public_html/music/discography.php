@@ -49,8 +49,8 @@ include '../../controllers/musicctrl.php';
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
 
-                                <p>Please <a href='https://www.patreon.com/LiteralHat'>support
-                                        me</a>, so I can keep making more. No pressure though.</p>
+                                <p><a href='https://www.patreon.com/LiteralHat'>Support
+                                        me</a> if you can, it helps a lot.</p>
                                 <p>Download as much as you can, listen, make remixes, create animations, do your
                                     own covers, send to your friends.</p>
                                 <p>I kindly ask for a credit: </p>

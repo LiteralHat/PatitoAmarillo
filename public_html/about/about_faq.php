@@ -29,9 +29,16 @@
                                 <div class='whiteborder padded white'>
                                     <h1 class='padtop large'>About / FAQ</h1>
                                     <p>Hi.</p>
-                                    <p>I draw, animate, make music, and work on this site in my spare time.</p>
-                                    <p>There is no 'consistency' in my projects, please be so kind as to not
+                                    <p>I work on this site in my spare time.</p>
+                                    <p>Sometimes I draw, sometimes I animate. Sometimes I pretend to be competent at the guitar.</p>
+                                    <p>I don't practice 'consistency' in my projects, please be so kind as to not
                                         expect such from me.</p>
+                                        <hr>
+                                        <br>
+                                    <p>This website is my pride and joy. In the end, my goal is to make it the home of
+                                        everything I've done.</p>
+                                    <p>It would be nice if you bookmarked LiteralHat.com,
+                                        and visit again sometime.</p>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +57,7 @@
                                 <h3>For any enquiries:</h3>
                                 <p>Email <i>support@literalhat.com</i> and I'll get back to you when I have the time.
                                 </p>
-                                <p><span class="bold">I don't use social media.</span> Please don't contact me through any other means - you can try, but it won't be read.</p>
+                                <p><span class="bold">I don't use social media.</span> If you send a message through those means, it won't be read.</p>
                             </div>
                         </div>
 
@@ -76,7 +83,7 @@
                                     music to your hearts content, and reupload them to other platforms.</p>
                                 <p class='warning'>Do not use my artworks, characters, music, animations, anything I've
                                     made, really - for profit.</p>
-                                <p>I ask of you to be kind to others during your usage.</p>
+                                <p>Be kind to others during your usage. The world sucks at the moment, don't contribute to it.</p>
                                 <p>No need to credit but it is appreciated.</p>
                                 <h3>Are you up for hire?</h3>
                                 <p>No, sorry.</p>

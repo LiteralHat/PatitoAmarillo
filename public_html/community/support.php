@@ -56,9 +56,9 @@
                             <hr>
                             <div class='spacermedium'></div>
 
-                            <p>Everything I do - art, animation, music, this website and its content - is for fun.</p>
+                            <p>Everything I do - art, animation, music, this website and its content - is just for fun. I'm a hobbyist and I don't intend to make this my full time job.</p>
 
-                            <p>I don't feel comfortable turning my passion into a job, as tempting as the idea is.</p>
+                            <p>In the end I just want to change the world, even if only a bit.</p>
 
                             <p>So.</p>
 

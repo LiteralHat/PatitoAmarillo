@@ -39,22 +39,21 @@
                         <div class="whitebox padded">
 
                             <h2>Submission Requirements</h2>
-                            <p>As long as it's relevant to LiteralHat, I'll put on the gallery if I like it.</p>
-                            <p>The following is allowed:</p>
+                            <p>I think this is a rather self explanatory form.</p>
+                            <p>Yes, please submit:</p>
                             <ul>
                                 <li>Your own original drawings</li>
                                 <li>Base edits (credit to original must be ON the drawing)</li>
                                 <li>Cosplay photo</li>
                                 <li>Sculpture</li>
-                                <li>Memes</li>
-                                <li>Shitpost</li>
+                                <li>Meme / shitpost</li>
                                 <li>Anything controversial, offensive, satirical or political</li>
                                 <li>Pitiful attempts of 'copying' my artworks or artstyle</li>
                             </ul>
-                            <p>Please don't submit crossovers, sorry.</p>
+                            <p>No crossovers, sorry.</p>
                             <p>You may submit someone else's fanart as long as you put down their name for the credit.
                             </p>
-                            <p>Your submission will be put up depending on when I see it and have the time.</p>
+                            <p>It'll be approved when I have the time.</p>
                             </ul>
 
 
