@@ -36,7 +36,7 @@
                         <div class="whitebox toneblack">
                             <div class='whiteborder'>
                                 <section>
-                                    <img src="images/pagedolls/literalhat-punks-not-dead.png" height="1000px"
+                                    <img src="images/pagedolls/literalhat-punks-not-dead.webp" height="1000px"
                                         id='sitelogo' alt='literalhat.com logo behind a large group of cartoon sheep'>
 
                                     <h2 class='white'>Be Gay, Do Crime.</h2>

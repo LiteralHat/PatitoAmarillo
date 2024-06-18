@@ -12,11 +12,14 @@ class GalleryCtrl
         $this->model = new GalleryModel();
     }
 
-    //queries all 
+//initial database query that gets everything
+
     public function getAllItems($databaseType)
     {
         return $this->model->queryAllItems($databaseType);
     }
+
+//get request queries
 
     public function searchItem($searchTitle)
     {
