@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Models\GalleryModel;
 use App\Models\MusicModel;
+use App\Classes\Query;
 
 class GalleryCtrl
 {
@@ -19,7 +20,7 @@ class GalleryCtrl
         return $this->model->queryAllItems($databaseType);
     }
 
-//get request queries
+//basic get request queries
 
     public function searchItem($databaseType, $searchTitle)
     {
@@ -46,10 +47,19 @@ if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
     die();
 }
 
+//checks which page we're on, if its the main gallery or the view pages
+
 if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/archive') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/gallery') !== false ) {
 
-    if (isset($_GET['title'])) {
-        $data = $controller->searchItem($databaseType, $_GET['title']);
+
+
+//if we're not using a get method (for sorting etc) then it will just query and return the entire database
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['submit']))  {
+        // $data = $controller->searchItem($databaseType, $_GET['title']);
+        $parameters = $_GET;
+        $query = new Query($databaseType);
+        
+        
     } else {
         $data = $controller->getAllItems($databaseType);
     }

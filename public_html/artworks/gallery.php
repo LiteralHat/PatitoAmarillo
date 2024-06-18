@@ -5,6 +5,7 @@ include ('../../vendor/autoload.php');
 
 use App\Controllers\GalleryCtrl;
 use App\Models\GalleryModel;
+use App\Classes\Query;
 use App\Config\Dbh;
 
 include '../../controllers/galleryctrl.php';
