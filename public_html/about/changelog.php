@@ -56,13 +56,21 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                                <h3>v16.15.0-beta 16.06.2024</h3>
+                                <h3>v17.15.0-beta 16.06.2024</h3>
                                 <ul>
-                                    <li>Actually fixed the persisting 403 error, like actually fixed it. And if it happens again, I'm going to sit in a corner and contemplate my abilities.</li>
-                                    <li>Fixed discography page</li>
+                                    <li>Discography page now has view pages for individual songs!</li>
+                                    <li>Reverted some wording on website</li>
                                 </ul>
 
                                 <hr class='hrtextseparator'><br>
+
+
+                                <h3>v16.15.0-beta 17.06.2024</h3>
+                                <ul>
+                                    <li>Actually fixed the persisting 403 error, like actually fixed it. And if it
+                                        happens again, I'm going to get very very sad.</li>
+                                    <li>Fixed discography page</li>
+                                </ul>
 
                                 <h3>v16.14.0-beta 16.06.2024</h3>
                                 <ul>

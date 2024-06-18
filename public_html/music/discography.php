@@ -3,12 +3,11 @@
 include_once ('../../config.php');
 include ('../../vendor/autoload.php');
 
-use App\Controllers\MusicCtrl;
-use App\Models\MusicModel;
+use App\Controllers\GalleryCtrl;
+use App\Models\GalleryModel;
 use App\Config\Dbh;
 
-include '../../controllers/musicctrl.php';
-
+include '../../controllers/galleryctrl.php';
 ?>
 
 <!DOCTYPE html>

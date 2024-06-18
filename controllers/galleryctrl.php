@@ -1,14 +1,15 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\GalleryModel;
 use App\Models\MusicModel;
 
-class MusicCtrl
+class GalleryCtrl
 {
     private $model;
     public function __construct()
     {
-        $this->model = new MusicModel();
+        $this->model = new GalleryModel();
     }
 
     public function displayMusic()
@@ -27,7 +28,7 @@ class MusicCtrl
     }
 }
 
-$controller = new MusicCtrl();
+$controller = new GalleryCtrl();
 
 
 if (strpos(($_SERVER['REQUEST_URI']), 'music/discography') == true) {

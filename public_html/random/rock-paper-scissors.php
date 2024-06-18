@@ -42,6 +42,8 @@
                             <div class='whitebox padded'>
                                 <h2>Welcome to rock, paper, scissors.</h2>
                                 <p>its literally just rock paper scissors, man</p>
+
+                                <p>I don't know why I made this, I don't even like javascript</p>
                                 
                                 <p>This page is best viewed on desktop - if you're on mobile, you may experience some display issues.</p>
                             </div>

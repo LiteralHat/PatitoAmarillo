@@ -4,7 +4,7 @@ namespace App\Models;
 use App\Config\Dbh;
 
 use PDO;
-class MusicModel {
+class GalleryModel {
     private $dbh;
     public function __construct() {
         $this->dbh = new Dbh();
