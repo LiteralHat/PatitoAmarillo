@@ -1,12 +1,13 @@
-<?php include_once ('../../config.php');
-session_start();
+<?php
 
-if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
-    $isadmin = true;
-} else {
-    $isadmin = false;
-    session_unset();
-}
+include_once ('../../config.php');
+include ('../../vendor/autoload.php');
+
+use App\Controllers\MusicCtrl;
+use App\Models\MusicModel;
+use App\Config\Dbh;
+
+include '../../controllers/musicctrl.php';
 
 ?>
 
@@ -35,61 +36,78 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
             <div class='boxedsection'>
                 <div class='widthcontainer'>
                     <div class='contentcontainer'>
+                    <div class='columnbox white center'>
+                    <br>
+                            <img src='../../../images/titles/discography.png' height='120px'>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contentrowstripe centerbox maxheight">
+            <div class='boxedsection'>
+            <div class='sidecontainer'>
+                    <div class='spacermedium'></div>
+                    <?php include_once (ELEMENT_MENUSIMPLE) ?>
+                </div>
+
+
+                <div class='widthcontainer'>
+                <br>
+                    <div class="contentcontainer">
+                    
                         <div class='whitebox whiteborder paddedsm toneblack white'>
 
                             <?php
-                            include_once (INCLUDES_FOLDER . 'dbh.php');
-
-                            if (isset($_GET['musicid'])) {
-
-                                $sql = 'SELECT * FROM music WHERE musicid=:musicid';
-                                $statement = $db->prepare($sql);
-                                $id = filter_input(INPUT_GET, 'musicid');
-                                $statement->bindValue(':musicid', $id, PDO::PARAM_INT);
-                                $statement->execute();
-                                $data = $statement->fetch();
-                                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
-                                $title = implode(" ", array_map('ucfirst', explode("-", $data['title'])));
-                                $titleparsed = str_replace("'", "&apos;", $data['title']);
-                                $formattedDate = date("F Y", strtotime($data['datecreated']));
-                                $extratext = '';
-                                if (isset($data['cover'])) {
-                                    $extratext = "<p><a href='" . $data['cover'] . "'>ORIGINAL</a></p>";
-                                }
-                                if (isset($data['buy'])) {
-                                    $extratext = "<p><a href='" . $data['buy'] . "'>BUY</a></p>";
-                                }
-
-                                echo "
-                                    <div class='rowbox'>
-                                        <div class='columnbox'>
-                                            <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $data['datecreated'] . "_" . $titleparsed . ".webp'>
-                                            <br>
-                                            <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $data['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
-                                            " . $extratext . "
-                                            <p class='padtop'>CREDIT:</P>
-                                            <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
-                                            <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
-                                        </div>
-                                            
-                                        <div class='columnbox paddedsm'>
-                                        <h1>" . $title . "</h1>
-                                        <p class='uppercase'>[ " . $data['type'] . " ] " . $formattedDate . "</p>
-                                        <hr>
-                                        <br>
-                                        <h2>Lyrics</h2>
-                                        <p>" . nl2br($data['lyrics']) . "</p>
-                                        
-                                        </div>
-                                    </div>
-                                            ";
-                            } else {
-                                echo "<h1 class='white'>Song doesn't exist... Sorry!</h1>";
+                            $title = implode(" ", array_map('ucfirst', explode("-", $data['title'])));
+                            $titleparsed = str_replace("'", "&apos;", $data['title']);
+                            $formattedDate = date("d F Y", strtotime($data['datecreated']));
+                            $extratext = '';
+                            if (isset($data['cover'])) {
+                                $extratext = "<p><a href='" . $data['cover'] . "'>ORIGINAL</a></p>";
+                            }
+                            if (isset($data['buy'])) {
+                                $extratext = "<p><a href='" . $data['buy'] . "'>BUY</a></p>";
                             }
 
+                            echo "
+                            <div class='rowbox'>
+                                <div class='columnbox'>
+                                    <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $data['datecreated'] . "_" . $titleparsed . ".webp'>
+                                    <br>
+                                    <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $data['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>
+                                    " . $extratext . "
+                                    <p class='padtop'>CREDIT:</P>
+                                    <textarea id='creditText' class='textblack songcredit'>'" . $title . "' by LiteralHat - https://literalhat.com/</textarea>
+                                    <p class='fontheader padtopsm nounderline'><a onclick='clickToCopy()'>CLICK TO COPY</a></p>
+                                </div>
+                            
+                                <div class='columnbox paddedsm'>
+                                <h1>" . $title . "</h1>
+                                <p class='uppercase'>Category | " . $data['type'] . "</p>
+                                <p class='uppercase'>DATE CREATED | " . $formattedDate . "</p>
+                                <hr>
+
+                                
+                                <br>
+                                <audio controls>
+                                                            <source src='https://reloaded.literalhat.com/music/literalhat_" . $data['datecreated'] . "_" . $titleparsed . ".mp3'>
+                                                        </audio>
+                                                        
+                                <br>
+                                                        <hr>
+                                                        
+
+                                <br>
+                                <h2>Lyrics</h2>
+                                <p>" . nl2br($data['lyrics']) . "</p>
+                            
+                                </div>
+                            </div>
+                                    ";
 
                             $db = null;
                             ?>
@@ -102,42 +120,34 @@ if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                             <div class='spacersmall'></div>
                             <div class='spacersmall'></div>
                         </div>
+
+
+
+                        <script>
+                            function clickToCopy() {
+                                // Get the text field
+                                var copyText = document.getElementById("creditText");
+
+                                // Select the text field
+                                copyText.select();
+                                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                                // Copy the text inside the text field
+                                navigator.clipboard.writeText(copyText.value);
+
+                                // Alert the copied text
+                                alert("You've copied the text: " + copyText.value + ". Thank you a lot for crediting :D");
+                            }
+                        </script>
+
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="contentrowstripe centerbox maxheight">
-            <div class='boxedsection'>
-                <div class='widthcontainer'>
 
 
-                    <div class="contentcontainer">
-
-
-
-
-
-
-                            <script>
-                                function clickToCopy() {
-                                    // Get the text field
-                                    var copyText = document.getElementById("creditText");
-
-                                    // Select the text field
-                                    copyText.select();
-                                    copyText.setSelectionRange(0, 99999); // For mobile devices
-
-                                    // Copy the text inside the text field
-                                    navigator.clipboard.writeText(copyText.value);
-
-                                    // Alert the copied text
-                                    alert("You've copied the text: " + copyText.value + ". Thank you a lot for crediting :D");
-                                }
-                            </script>
-                       
-                    </div>
+                <div class='sidecontainer'>
+                    <div class='spacermedium'></div>
                 </div>
+
             </div>
         </div>
         <!-- Footer and closing div tags used for styled main content box  -->

@@ -86,15 +86,14 @@ include '../../controllers/musicctrl.php';
                     <div class='spacersmall'></div>
                     <div class='columnbox'>
                         <?php
-
-
-                    
+        
                         foreach ($data as $row => $song) {
                             if (isset($song['title']) && isset($song['datecreated']) && isset($song['type'])) {
                                 $title = implode(" ", array_map('ucfirst', explode("-", $song['title'])));
                                 $titleparsed = str_replace("'", "&apos;", $song['title']);
                                 $formattedDate = date("F Y", strtotime($song['datecreated']));
                                 $extratext = '<br>';
+                                $directlink = "view/". $song['datecreated'] ."/". $song['title'];
                                 if (isset($song['cover'])) {
                                     $extratext = "<p><a href='" . $song['cover'] . "'>ORIGINAL</a></p>";
                                 }
@@ -118,9 +117,9 @@ include '../../controllers/musicctrl.php';
                                             <div class='whiteborder paddedsm white'>
                                                 <div class='contentcontainer'>
                                                 <div class='songcovercontainer'>
-                                                    <img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'></div>
+                                                    <a href=".$directlink."><img class='songcover' src='https://reloaded.literalhat.com/musicicons/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".webp'></a></div>
                                                     <div class='paddedsm songtextbox'>
-                                                        <h2>" . $title . "</h2>" . $extracode . "
+                                                        <h2><a class='nounderline' href=".$directlink.">" . $title . "</a></h2>" . $extracode . "
                                                         
                                                         <span class='uppercase'>[ " . $song['type'] . " ] " . $formattedDate . "</span>
                                                         <br>
@@ -128,10 +127,8 @@ include '../../controllers/musicctrl.php';
                                                         <audio controls>
                                                             <source src='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3'>
                                                         </audio>
-                                                        <details>
-                                                <summary class='fontheader paddedsm'>Click here for lyrics...</summary>
-                                                <p>" . nl2br($song['lyrics']) . "</p>
-                                            </details>
+                                                <br><br>
+                                                <p><a class='fontheader nounderline' href=".$directlink.">Click here for lyrics...</a></p>
                                                     </div>
                                                     <div class='paddedsm'>
                                                     <p><a href='https://reloaded.literalhat.com/music/literalhat_" . $song['datecreated'] . "_" . $titleparsed . ".mp3' download='' id='downloadsong'>DOWNLOAD</a></p>

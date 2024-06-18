@@ -22,7 +22,6 @@
                 <div class='sidecontainer'>
                     <div class='spacermedium'></div>
                     <?php include_once (ELEMENT_MENUSIMPLE) ?>
-
                 </div>
 
                 <div class='widthcontainer'>

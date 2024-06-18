@@ -73,9 +73,7 @@
                                         <li>Contact information – we receive and store any information you enter on this
                                             website, such as email
                                             addresses and images.</li>
-                                        <li>Payments and billing information – when purchasing anything from the
-                                            LiteralHat
-                                            online store, payment
+                                        <li>Payments and billing information – when purchasing anything from the shop, payment
                                             information such as your name, Paypal, billing address, phone number and any
                                             other
                                             such relevant details
@@ -141,10 +139,10 @@
                                         unless under the
                                         following circumstances:</p>
                                     <ul>
-                                        <li>I am required by law.</li>
-                                        <li>With your consent.</li>
-                                        <li>Some guy buys my entire brand.</li>
-                                        <li>A third party vendor or service requires it (like when you buy something)
+                                        <li>I am required by law</li>
+                                        <li>With your consent</li>
+                                        <li>Some douche buys my entire brand</li>
+                                        <li>A third party vendor / service requires it
                                         </li>
                                     </ul>
                                 </div>
