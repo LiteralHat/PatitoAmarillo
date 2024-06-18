@@ -1,32 +1,13 @@
-<?php 
+<?php
 
 include_once ('../../config.php');
+include ('../../vendor/autoload.php');
 
-include_once (INCLUDES_FOLDER . 'dbh.php');
+use App\Controllers\GalleryCtrl;
+use App\Models\GalleryModel;
+use App\Config\Dbh;
 
-
-$isadmin = isset($_SESSION["petridish"]) && $_SESSION["petridish"] === true;
-
-if (!isset($_GET['page'])) {
-    session_unset();
-}
-if (isset($_SESSION['dbresults'])) {
-    $data = $_SESSION['dbresults'];
-} else {
-    $statement = $db->query("SELECT * FROM artworks");
-    //$data is the 'master' array that will be echo'ed in HTML
-    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-    //echo '<br>ARRAY RESET';
-    usort($data, function ($a, $b) {
-        return strtotime($b['datecreated']) - strtotime($a['datecreated']);
-    });
-}
-
-;
-
-if (isset($_SESSION['searchQuery'])) {
-    $searchQuery = $_SESSION['searchQuery'];
-};
+include '../../controllers/galleryctrl.php';
 ?>
 
 <!DOCTYPE html>
@@ -56,29 +37,7 @@ if (isset($_SESSION['searchQuery'])) {
                         <br>
                         <br>
 
-                        <?php //code for the header element and load the database for the gallery
-                        
-
-                        // echo '<div class="whitebox padded"><p>Now please kindly ignore this debug text.</p>';
-                    
-
-                        if (isset($_SESSION['last_activity'])) {
-                            $expireAfterSeconds = 60 * 15; //15 minutes for now
-                            $inactiveTime = time() - $_SESSION['last_activity'];
-
-                            if ($inactiveTime > $expireAfterSeconds) {
-                                // Session expired, destroy it
-                                session_unset();
-                                session_destroy();
-                                header("Location: gallery.php"); // Redirect to login page
-                                exit;
-                            }
-                        }
-
-                        $_SESSION['last_activity'] = time();
-
-                        //code that sets up all the shit that makes the rest of the shit do its fucking shit
-                        
+                        <?php
                         if (isset($_SESSION['iPP'])) {
                             // echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
                             $itemsPerPage = $_SESSION['iPP'];
@@ -105,7 +64,7 @@ if (isset($_SESSION['searchQuery'])) {
                 </div>
             </div>
 
-            <!-- 
+       
 
             <?php
 
@@ -169,13 +128,13 @@ if (isset($_SESSION['searchQuery'])) {
             }
 
             ?>
- -->
+
 
 
             <div class='boxedsection'>
                 <div class='sidecontainer gallerysearchform'>
                     <div class='spacermedium'></div>
-                    <form class='form' action='../formhandlers/gallerysearch' method='GET'>
+                    <form class='form' action='' method='GET'>
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
                                 <h2>Advanced Search:</h2>

@@ -21,27 +21,21 @@ class GalleryCtrl
 
 //get request queries
 
-    public function searchItem($searchTitle)
+    public function searchItem($databaseType, $searchTitle)
     {
-        return $this->model->queryItem($searchTitle);
+        return $this->model->queryItem($databaseType, $searchTitle);
     }
 
-
-
-
-
-
 //query for individual view page
-    public function getViewPageItem($datecreated, $title)
+    public function getViewPageItem($databaseType, $datecreated, $title)
     {
-        return $this->model->queryViewPageItem($datecreated, $title);
+        return $this->model->queryViewPageItem($databaseType, $datecreated, $title);
     }
 }
 
 $controller = new GalleryCtrl();
 
-
-
+//checks which database we're talking about and assigns a variable to it appropriately
 
 if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
     $databaseType = 'music';
@@ -52,21 +46,24 @@ if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
     die();
 }
 
-if (strpos(($_SERVER['REQUEST_URI']), 'music/discography') == true) {
-    if (isset($_GET['search'])) {
-        $data = $controller->searchItem($_GET['search']);
+if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/archive') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/gallery') !== false ) {
+
+    if (isset($_GET['title'])) {
+        $data = $controller->searchItem($databaseType, $_GET['title']);
     } else {
         $data = $controller->getAllItems($databaseType);
     }
-} elseif (strpos(($_SERVER['REQUEST_URI']), 'music/view') == true) {
+
+} elseif (strpos(($_SERVER['REQUEST_URI']), 'music/view') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/view') ) {
+
     $title = str_replace('/music/view/', '', $_SERVER['REQUEST_URI']);
     $dateandtitle = explode('/', $title);
     list($datecreated, $title) = $dateandtitle;
-    $data = $controller->getViewPageItem($datecreated, $title);
+    $data = $controller->getViewPageItem($databaseType, $datecreated, $title);
+
 } else {
 
+
 }
-
-
 
 

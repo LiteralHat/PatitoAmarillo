@@ -1,12 +1,15 @@
 <?php
 
 include_once ('../../config.php');
-include_once (INCLUDES_FOLDER . 'dbh.php');
+include ('../../vendor/autoload.php');
 
+use App\Controllers\GalleryCtrl;
+use App\Models\GalleryModel;
+use App\Config\Dbh;
 
-$statement = $db->query("SELECT * FROM artworks");
-$data = $statement->fetchAll(PDO::FETCH_ASSOC);
+include '../../controllers/galleryctrl.php';
 ?>
+
 
 
 <!DOCTYPE html>
