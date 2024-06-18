@@ -10,15 +10,19 @@ class GalleryModel {
         $this->dbh = new Dbh();
     }
 
-    public function getAllSongs() {
-        $sql = "SELECT * FROM music";
+//initial database query that gets everything
+
+    public function queryAllItems($databaseType) {
+        $sql = "SELECT * FROM $databaseType";
         $stmt = $this->dbh->getDb()->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll();
         return $data;
     }
 
-    public function searchSongs($title) {
+//get request queries
+
+    public function queryItem($title) {
         $sql = "SELECT * FROM music WHERE title LIKE :title";
         $stmt = $this->dbh->getDb()->prepare($sql);
         $title = '%' . $title . '%';
@@ -28,7 +32,11 @@ class GalleryModel {
         return $data;
     }
 
-    public function getSong($datecreated, $title) {
+
+
+
+//query for individual view page
+    public function queryViewPageItem($datecreated, $title) {
         $sql = "SELECT * FROM music WHERE title = :title AND datecreated = :datecreated LIMIT 1";
         $stmt = $this->dbh->getDb()->prepare($sql);
         $stmt->bindParam(':datecreated', $datecreated, PDO::PARAM_STR);

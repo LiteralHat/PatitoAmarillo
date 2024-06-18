@@ -44,7 +44,7 @@ include '../../controllers/galleryctrl.php';
 
                             <div class='whiteborder padded center '>
                                 <h2 class='large'>Welcome to my complete discography. </h2>
-                                <p>Everything I've written, regardless of how complete it is, is on this pages.</p>
+                                <p>Everything I've written, regardless of how complete it is, is on this page.</p>
                                 <p>I believe copyright is oppressive, wrong, and never aims to protect the artist - so
                                     everything here is free to download. </p>
 
