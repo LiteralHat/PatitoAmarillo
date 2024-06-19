@@ -32,6 +32,10 @@ class GalleryCtrl
     {
         return $this->model->queryViewPageItem($databaseType, $datecreated, $title);
     }
+
+    public function getSearchItem($sql){
+        return $this->model->querySearchItem($sql);
+    }
 }
 
 $controller = new GalleryCtrl();
@@ -52,14 +56,13 @@ if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
 if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/archive') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/gallery') !== false ) {
 
 
-
 //if we're not using a get method (for sorting etc) then it will just query and return the entire database
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['submit']))  {
         // $data = $controller->searchItem($databaseType, $_GET['title']);
         $parameters = $_GET;
-        $query = new Query($databaseType);
-        
-        
+        $query = new Query($databaseType, $parameters);
+        $query = $query->buildQuery();
+        $data = $controller->getSearchItem($query);
     } else {
         $data = $controller->getAllItems($databaseType);
     }

@@ -32,9 +32,6 @@ class GalleryModel {
         return $data;
     }
 
-
-
-
 //query for individual view page
     public function queryViewPageItem($databaseType, $datecreated, $title) {
         $sql = "SELECT * FROM $databaseType WHERE title = :title AND datecreated = :datecreated LIMIT 1";
@@ -44,9 +41,14 @@ class GalleryModel {
         $stmt->execute();
         $data = $stmt->fetch();
         return $data;
-
     }
 
+    public function querySearchItem($sql) {
+        $stmt = $this->dbh->getDb()->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        return $data;
+    }
 
 }
 
