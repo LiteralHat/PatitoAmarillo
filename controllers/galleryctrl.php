@@ -66,6 +66,9 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
             echo $query;
             //executes it against the database and stores it in $data
             $data = $controller->getSearchItem($query);
+
+
+
         } else {
             $data = $controller->getAllItems($columns, $databaseType);
         }
@@ -75,7 +78,7 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
             $sortby = new Sortby($data, $parameters);
             //the final stuff yay
             $data = $sortby->sortItems();
-            var_dump($data);
+            var_dump($parameters);
 
         }
 

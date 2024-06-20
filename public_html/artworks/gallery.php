@@ -45,7 +45,7 @@ include '../../controllers/galleryctrl.php';
 
                         <?php
 
-                        $itemsPerPage = 30;
+                        $itemsPerPage = $_GET['itemsnumber'];
 
 
                         $totalArtworks = count($data);
@@ -270,7 +270,8 @@ include '../../controllers/galleryctrl.php';
 
                                 <fieldset>
 
-                                    <button class='button' type='submit' value='submit' name='submitsearch'>SEARCH</button>
+                                    <button class='button' type='submit' value='submitsearch'
+                                        name='submitsearch'>SEARCH</button>
                                 </fieldset>
 
                             </div>
@@ -293,20 +294,57 @@ include '../../controllers/galleryctrl.php';
 
                             <div>
                                 <h2 id='gallerypagenumbers'>Page you wanna go to:
+
+
+
                                     <?php
+
+                                    $currentURL = htmlspecialchars($_SERVER['REQUEST_URI']);
+
                                     for ($i = 1; $i <= $totalPages; $i++) {
-                                        if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
+                                        // Check if page parameter is already set in the URL
+                                        if (isset($_GET['page'])) {
+                                            // Replace the existing page number with the current $i
+                                            $newURL = preg_replace('/(page=)\d+/', 'page=' . $i, $currentURL);
                                         } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
+                                            // If page parameter is not set, append it to the current URL
+                                            $newURL = $currentURL . '&page=' . $i;
                                         }
-                                        ;
+
+                                        // Add anchor link '#top' if needed
+                                        $newURL .= '#top';
+
+                                        // Determine link class based on current page
+                                        $linkClass = ($i == $currentPage) ? 'hoverred textblack' : 'hoverred textblack nounderline';
+
+                                        // Output the pagination link
+                                        echo '<a class="' . $linkClass . '" href="' . $newURL . '">' . $i . '</a>';
                                     }
+
                                     ?>
                                 </h2>
                             </div>
 
-                            <form class='form' action="/artworks/gallery" method='GET'>
+                            <form class='form' action="" method='GET'>
+
+
+                                <input type="hidden" name="title"
+                                    value="<?php echo isset($_GET['title']) ? htmlspecialchars($_GET['title']) : ''; ?>">
+                                <input type="hidden" name="submitsearch"
+                                    value="<?php echo isset($_GET['submitsearch']) ? htmlspecialchars($_GET['submitsearch']) : ''; ?>">
+                                <input type="hidden" name="beforedate"
+                                    value="<?php echo isset($_GET['beforedate']) ? htmlspecialchars($_GET['beforedate']) : ''; ?>">
+                                <input type="hidden" name="afterdate"
+                                    value="<?php echo isset($_GET['afterdate']) ? htmlspecialchars($_GET['afterdate']) : ''; ?>">
+                                <input type="hidden" name="category"
+                                    value="<?php echo isset($_GET['category']) ? htmlspecialchars($_GET['category']) : ''; ?>">
+                                <input type="hidden" name="collection"
+                                    value="<?php echo isset($_GET['collection']) ? htmlspecialchars($_GET['collection']) : ''; ?>">
+                                <input type="hidden" name="tags"
+                                    value="<?php echo isset($_GET['tags']) ? htmlspecialchars($_GET['tags']) : ''; ?>">
+
+
+
                                 <label for='sortby'><span class='bold'>Sort by:</span></label>
                                 <select name='sortby' id='sortby'>
                                     <option value='default'>Default (Date Added)</option>
@@ -324,7 +362,7 @@ include '../../controllers/galleryctrl.php';
                                     <option value='60'>69</option>
                                 </select>
 
-                                <button type='submit' value='submit' name='submitsort'> Sort that bad
+                                <button type='submit' value='submitsort' name='submitsort'> Sort that bad
                                     boy!
                                 </button>
                             </form>
@@ -370,16 +408,31 @@ include '../../controllers/galleryctrl.php';
                             <br>
                             <div class='flexright'>
                                 <h2 id='gallerypagenumbers'>More pages:
-                                    <?php
-                                    for ($i = 1; $i <= $totalPages; $i++) {
-                                        if ($i == $currentPage) {
-                                            echo '<a class="hoverred textblack" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
-                                        } else {
-                                            echo '<a class="hoverred textblack nounderline" href="gallery.php?page=' . $i . '#top">' . $i . '</a>';
-                                        }
-                                        ;
-                                    }
-                                    ?>
+                                <?php
+
+$currentURL = htmlspecialchars($_SERVER['REQUEST_URI']);
+
+for ($i = 1; $i <= $totalPages; $i++) {
+    // Check if page parameter is already set in the URL
+    if (isset($_GET['page'])) {
+        // Replace the existing page number with the current $i
+        $newURL = preg_replace('/(page=)\d+/', 'page=' . $i, $currentURL);
+    } else {
+        // If page parameter is not set, append it to the current URL
+        $newURL = $currentURL . '&page=' . $i;
+    }
+
+    // Add anchor link '#top' if needed
+    $newURL .= '#top';
+
+    // Determine link class based on current page
+    $linkClass = ($i == $currentPage) ? 'hoverred textblack' : 'hoverred textblack nounderline';
+
+    // Output the pagination link
+    echo '<a class="' . $linkClass . '" href="' . $newURL . '">' . $i . '</a>';
+}
+
+?>
                                 </h2>
                             </div>
                         </div>
