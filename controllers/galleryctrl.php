@@ -16,9 +16,9 @@ class GalleryCtrl
 
 //initial database query that gets everything
 
-    public function getAllItems($databaseType)
+    public function getAllItems($columns, $databaseType)
     {
-        return $this->model->queryAllItems($databaseType);
+        return $this->model->queryAllItems($columns, $databaseType);
     }
 
 //query for individual view page
@@ -36,12 +36,14 @@ class GalleryCtrl
 
 $controller = new GalleryCtrl();
 
-//checks which database we're talking about and assigns a variable to it appropriately
+//checks which database we're talking about, and sets the variables for columns and table  name. Columns is for the main gallery view page, btw. not the individual pages
 
 if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
     $databaseType = 'music';
+    $columns = '*';
 } elseif (strpos(($_SERVER['REQUEST_URI']), 'artworks') == true) {
     $databaseType = 'artworks';
+    $columns = 'title, datecreated, artworkid';
 } else {
     echo "Please email support@literalhat.com explaining what you did that lead up to this error, because this shouldnt happen. lol.";
     die();
@@ -51,9 +53,8 @@ if (strpos(($_SERVER['REQUEST_URI']), 'music') == true) {
 
 if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/archive') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/gallery') !== false ) {
 
-
 //if we're not using a get method (for sorting etc) then it will just query and return the entire database
-    if ($_SERVER['REQUEST_METHOD'] == 'GET' && ($_GET['submit'])=='submit'){
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['submit'])){
         
         //puts the get request into an assoc array
         $parameters = $_GET;
@@ -69,18 +70,15 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
         //executes it against the database and stores it in $data
         $stupid = $controller->getSearchItem($query);
 
-
-        //instantiates a new sorter method
+        //instantiates a new sorter thingy
         $sortby = new Sortby($stupid, $parameters);
+
+        //the final stuff yay
         $data = $sortby->sortItems();
 
-       
-        
-
     } else {
-        $data = $controller->getAllItems($databaseType);
-
-        echo 'yo';
+        $data = $controller->getAllItems($columns, $databaseType);
+        echo '<p>Hi 8)</p>';
     }
 
 } elseif (strpos(($_SERVER['REQUEST_URI']), 'music/view') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/view') ) {

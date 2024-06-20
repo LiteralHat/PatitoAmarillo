@@ -28,7 +28,7 @@ include '../../controllers/galleryctrl.php';
     <main>
         <?php include_once (INCLUDES_FOLDER . '/galleryheader.php'); ?>
 
-        
+
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -36,18 +36,17 @@ include '../../controllers/galleryctrl.php';
                         <p>Welcome to the gallery.</p>
                         <p>Click on an artwork to view.</p>
                         <p>Or find an artwork using the advanced search. If it breaks, email support.</p>
-                        <p>Sketchbooks are exclusively <a href='https://www.patreon.com/LiteralHat'>here.</a> In the future, only Patrons will be granted user accounts.</p>
-                        <p>This page is still a work in progress and currently not a priority as I have many artworks to catalog.</p>
+                        <p>Sketchbooks are exclusively <a href='https://www.patreon.com/LiteralHat'>here.</a> In the
+                            future, only Patrons will be granted user accounts.</p>
+                        <p>This page is still a work in progress and currently not a priority as I have many artworks to
+                            catalog.</p>
                         <br>
                         <br>
 
                         <?php
-                        if (isset($_SESSION['iPP'])) {
-                            // echo '<br>itemsPerPage = ' . $_SESSION['iPP'];
-                            $itemsPerPage = $_SESSION['iPP'];
-                        } else {
-                            $itemsPerPage = 30;
-                        }
+
+                        $itemsPerPage = 30;
+
 
                         $totalArtworks = count($data);
                         $totalPages = ceil($totalArtworks / $itemsPerPage);
@@ -68,7 +67,7 @@ include '../../controllers/galleryctrl.php';
                 </div>
             </div>
 
-       
+
 
             <!-- <?php
 
@@ -238,7 +237,7 @@ include '../../controllers/galleryctrl.php';
                                 <script>
                                     const categoryField = document.getElementById('category');
                                     const collectionField = document.getElementById('collection');
-                                    
+
 
                                     collectionField.style.display = 'none';
                                     mediumField.style.display = 'none';
@@ -282,13 +281,15 @@ include '../../controllers/galleryctrl.php';
                 <div class='boxedsection gallerycontainer' id='top'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
+                            <!-- <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
                                 echo '<p class="bold">You searched: <i>' . $searchQuery . '</i></p>';
                                 echo '<h2>Search Results: ' . count($data) . '</h2><span></span>';
                             } else {
                                 echo '<h2>Viewing All Artworks: ' . count($data) . '</h2><span></span>';
                             }
-                            ?>
+                            ?> -->
+
+
                             <div>
                                 <h2 id='gallerypagenumbers'>Page you wanna go to:
                                     <?php
@@ -304,7 +305,7 @@ include '../../controllers/galleryctrl.php';
                                 </h2>
                             </div>
 
-                            <form class='form' action='' method='GET'>
+                            <form class='form' action="/artworks/gallery" method='GET'>
                                 <label for='sortby'><span class='bold'>Sort by:</span></label>
                                 <select name='sortby' id='sortby'>
                                     <option value='default'>Default (Date Added)</option>
@@ -333,7 +334,7 @@ include '../../controllers/galleryctrl.php';
                             <div id='galleryitems'>
                                 <?php
 
-                                
+
 
                                 if (count($data) == 0) {
                                     echo '<div class="center padtop"><p class="medium padtop">Uh oh. Looks like there aren\'t any results for your query.</p><p class="padtop">Try search for something else.</p><img src="../images/pagedolls/hat-frustrated.jpg" width=300px></div>
@@ -396,7 +397,7 @@ include '../../controllers/galleryctrl.php';
 
         </div>
 
-                                    <div class='spacermedium'></div>
+        <div class='spacermedium'></div>
         <?php include_once (ELEMENT_FOOTER);
         ?>
     </main>

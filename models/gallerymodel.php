@@ -12,8 +12,8 @@ class GalleryModel {
 
 //initial database query that gets everything
 
-    public function queryAllItems($databaseType) {
-        $sql = "SELECT * FROM $databaseType";
+    public function queryAllItems($columns, $databaseType) {
+        $sql = "SELECT $columns FROM $databaseType";
         $stmt = $this->dbh->getDb()->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll();
