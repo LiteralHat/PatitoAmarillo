@@ -269,7 +269,8 @@ include '../../controllers/galleryctrl.php';
                                 <div class='spacersmall'></div>
 
                                 <fieldset>
-                                    <button class='button' type='submit' value='submit' name='submit'>SEARCH</button>
+
+                                    <button class='button' type='submit' value='submit' name='submitsearch'>SEARCH</button>
                                 </fieldset>
 
                             </div>
@@ -323,7 +324,7 @@ include '../../controllers/galleryctrl.php';
                                     <option value='60'>69</option>
                                 </select>
 
-                                <button type='submit' value='submit' name='submit'> Sort that bad
+                                <button type='submit' value='submit' name='submitsort'> Sort that bad
                                     boy!
                                 </button>
                             </form>

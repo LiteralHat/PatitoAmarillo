@@ -10,7 +10,7 @@ class GalleryModel {
         $this->dbh = new Dbh();
     }
 
-//initial database query that gets everything
+//database query that gets everything
 
     public function queryAllItems($columns, $databaseType) {
         $sql = "SELECT $columns FROM $databaseType";
