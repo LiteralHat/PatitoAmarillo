@@ -95,6 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $data = reSort($data, $matchingArtworks);
     }
 
+
     if (!empty($_GET['category']) && ($_GET['category']) !== 'collection') {
         $category = $_GET['category'];
         notAllowed($category);
@@ -117,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $statement->bindValue(':searchTerm', $searchTerm, PDO::PARAM_STR);
         $matchingArtworks = executeStatement($statement);
         $data = reSort($data, $matchingArtworks);
-
     }
 
     if (!empty($_GET['mediums'])) {

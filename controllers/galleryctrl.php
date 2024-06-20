@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\GalleryModel;
 use App\Models\MusicModel;
 use App\Classes\Query;
+use App\Classes\Sortby;
 
 class GalleryCtrl
 {
@@ -20,18 +21,13 @@ class GalleryCtrl
         return $this->model->queryAllItems($databaseType);
     }
 
-//basic get request queries
-
-    public function searchItem($databaseType, $searchTitle)
-    {
-        return $this->model->queryItem($databaseType, $searchTitle);
-    }
-
 //query for individual view page
     public function getViewPageItem($databaseType, $datecreated, $title)
     {
         return $this->model->queryViewPageItem($databaseType, $datecreated, $title);
     }
+
+//'master query' for all search functions
 
     public function getSearchItem($sql){
         return $this->model->querySearchItem($sql);
@@ -57,14 +53,34 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
 
 
 //if we're not using a get method (for sorting etc) then it will just query and return the entire database
-    if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['submit']))  {
-        // $data = $controller->searchItem($databaseType, $_GET['title']);
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && ($_GET['submit'])=='submit'){
+        
+        //puts the get request into an assoc array
         $parameters = $_GET;
+
+        //instantiates a query class
         $query = new Query($databaseType, $parameters);
+
+        //builds the query, $query is now a line of sql
         $query = $query->buildQuery();
-        $data = $controller->getSearchItem($query);
+        
+        echo $query;
+
+        //executes it against the database and stores it in $data
+        $stupid = $controller->getSearchItem($query);
+
+
+        //instantiates a new sorter method
+        $sortby = new Sortby($stupid, $parameters);
+        $data = $sortby->sortItems();
+
+       
+        
+
     } else {
         $data = $controller->getAllItems($databaseType);
+
+        echo 'yo';
     }
 
 } elseif (strpos(($_SERVER['REQUEST_URI']), 'music/view') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/view') ) {

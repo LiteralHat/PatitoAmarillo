@@ -56,10 +56,14 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                                <h3>v17.15.0-beta 16.06.2024</h3>
+                                <h3>v17.15.0-beta 19.06.2024</h3>
                                 <ul>
-                                    <li>Discography page now has view pages for individual songs!</li>
+                                    <li>Added individual pages for Discography songs! (More to come)</li>
                                     <li>Reverted some wording on website</li>
+                                    <li>Migrated gallery sort/filter server request method</li>
+                                    <li>Moved medium out of 'artworks' dropdown menu, it is now its own option</li>
+                                    <li>Site speed improvements</li>
+                                    <li>Optimised homepage image to be 50% of old size</li>
                                 </ul>
 
                                 <hr class='hrtextseparator'><br>

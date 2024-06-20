@@ -20,18 +20,6 @@ class GalleryModel {
         return $data;
     }
 
-//get request queries
-
-    public function queryItem($databaseType, $title) {
-        $sql = "SELECT * FROM $databaseType WHERE title LIKE :title";
-        $stmt = $this->dbh->getDb()->prepare($sql);
-        $title = '%' . $title . '%';
-        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
-        $stmt->execute();
-        $data = $stmt->fetchAll();
-        return $data;
-    }
-
 //query for individual view page
     public function queryViewPageItem($databaseType, $datecreated, $title) {
         $sql = "SELECT * FROM $databaseType WHERE title = :title AND datecreated = :datecreated LIMIT 1";
@@ -43,6 +31,7 @@ class GalleryModel {
         return $data;
     }
 
+//'master query' for all search functions
     public function querySearchItem($sql) {
         $stmt = $this->dbh->getDb()->prepare($sql);
         $stmt->execute();

@@ -64,7 +64,7 @@ include '../../controllers/galleryctrl.php';
 
                             <form id='songsearchbar' class='whiteborder centerbox' method='GET'>
                                 <input type='text' pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" placeholder='search...'
-                                    name='search' required></input>
+                                    name='title' required></input>
                                 <button type="submit"><i class="fa fa-search"></i></button>
 
                             </form>

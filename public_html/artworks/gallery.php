@@ -6,6 +6,7 @@ include ('../../vendor/autoload.php');
 use App\Controllers\GalleryCtrl;
 use App\Models\GalleryModel;
 use App\Classes\Query;
+use App\Classes\Sortby;
 use App\Config\Dbh;
 
 include '../../controllers/galleryctrl.php';
@@ -26,6 +27,8 @@ include '../../controllers/galleryctrl.php';
 <body>
     <main>
         <?php include_once (INCLUDES_FOLDER . '/galleryheader.php'); ?>
+
+        
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
                 <div class='contentcontainer paddedsm'>
@@ -67,7 +70,7 @@ include '../../controllers/galleryctrl.php';
 
        
 
-            <?php
+            <!-- <?php
 
             if (!isset($_SESSION['dbresults'])) {
 
@@ -128,7 +131,7 @@ include '../../controllers/galleryctrl.php';
 
             }
 
-            ?>
+            ?> -->
 
 
 
@@ -205,7 +208,7 @@ include '../../controllers/galleryctrl.php';
                                 <fieldset id='mediums'>
                                     <p>
                                         <label for='mediums'>
-                                            <h4>Show only..?</h4>
+                                            <h3>Medium</h3>
                                             <ul>
                                                 <li><input id="watercolor" type="checkbox" name="mediums[]"
                                                         value="watercolor" /><label for="watercolor">
@@ -235,17 +238,14 @@ include '../../controllers/galleryctrl.php';
                                 <script>
                                     const categoryField = document.getElementById('category');
                                     const collectionField = document.getElementById('collection');
-                                    const mediumField = document.getElementById('mediums');
+                                    
 
                                     collectionField.style.display = 'none';
                                     mediumField.style.display = 'none';
 
 
                                     categoryField.addEventListener('change', function () {
-                                        if (categoryField.value === 'artwork') {
-                                            mediumField.style.display = 'block';
-                                            collectionField.style.display = 'none';
-                                        } else if (categoryField.value === 'collection') {
+                                        if (categoryField.value === 'collection') {
                                             mediumField.style.display = 'none';
                                             collectionField.style.display = 'block';
                                         } else {
@@ -304,7 +304,7 @@ include '../../controllers/galleryctrl.php';
                                 </h2>
                             </div>
 
-                            <form class='form' action='../formhandlers/datasortby' method='POST'>
+                            <form class='form' action='' method='GET'>
                                 <label for='sortby'><span class='bold'>Sort by:</span></label>
                                 <select name='sortby' id='sortby'>
                                     <option value='default'>Default (Date Added)</option>
@@ -322,24 +322,6 @@ include '../../controllers/galleryctrl.php';
                                     <option value='60'>69</option>
                                 </select>
 
-                                <?php
-
-
-                                function escapeApostrophes($input)
-                                {
-                                    if (is_array($input)) {
-                                        return array_map('escapeApostrophes', $input);
-                                    } elseif (is_string($input)) {
-                                        return str_replace("'", "STUPIDAPOSTROPHE", $input);
-                                    } else {
-                                        return $input;
-                                    }
-                                }
-                                $encodeArray = escapeApostrophes($data);
-
-                                ?>
-
-                                <input type='hidden' name='data' value='<?php echo json_encode($encodeArray); ?>'>
                                 <button type='submit' value='submit' name='submit'> Sort that bad
                                     boy!
                                 </button>
