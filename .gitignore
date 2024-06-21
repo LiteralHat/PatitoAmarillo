@@ -1,14 +1,8 @@
 .gitignore
 vendor
-composer.json
-composer.lock
 public_html/images
-public_html/scripts
-public_html/variables.php
 public_html/.htaccess
 public_html/admin
-public_html/classes
-public_html/debug
 public_html/community/newfanart.php
 public_html/community/newsletter_process.php
 config.php

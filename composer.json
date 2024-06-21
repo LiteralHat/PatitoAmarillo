@@ -1,0 +1,14 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.305"
+    }
+    ,
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "controllers/",
+            "App\\Models\\": "models/",
+            "App\\Config\\": "config/",
+            "App\\Classes\\": "classes/"
+        }
+    }
+}
