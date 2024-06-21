@@ -26,8 +26,13 @@ include '../../controllers/galleryctrl.php';
 
 <body>
     <main>
-        <?php include_once (INCLUDES_FOLDER . '/galleryheader.php'); ?>
+        <?php include_once (INCLUDES_FOLDER . '/galleryheader.php'); 
+        
+      
+        
+        ?>
 
+            
 
         <div class="contentrowwhite centerbox">
             <div class='widthcontainer centerbox'>
@@ -45,7 +50,12 @@ include '../../controllers/galleryctrl.php';
 
                         <?php
 
-                        $itemsPerPage = $_GET['itemsnumber'];
+                        if (isset($_GET['itemsnumber'])) {
+
+                            $itemsPerPage = $_GET['itemsnumber'];
+                        }   else {
+                            $itemsPerPage = 30;
+                        }
 
 
                         $totalArtworks = count($data);
@@ -67,73 +77,6 @@ include '../../controllers/galleryctrl.php';
                 </div>
             </div>
 
-
-
-            <!-- <?php
-
-            if (!isset($_SESSION['dbresults'])) {
-
-                usort($data, function ($a, $b) {
-                    return strtotime($b['datecreated']) - strtotime($a['datecreated']);
-                });
-
-                function getTimeAgo($date)
-                {
-                    $now = new DateTime();
-                    $ago = new DateTime($date);
-                    $diff = $now->diff($ago);
-                    if ($diff->y > 0) {
-                        return $diff->y . 'y ago';
-                    } elseif ($diff->m > 0) {
-                        return $diff->m . 'm ago';
-                    } elseif ($diff->d > 0) {
-                        return $diff->d . 'd ago';
-                    } elseif ($diff->h > 0) {
-                        return $diff->h . 'h ago';
-                    } elseif ($diff->i > 0) {
-                        return $diff->i . 'm ago';
-                    } else {
-                        return 'Just now';
-                    }
-                }
-
-                echo "<div class='boxedsection'>
-                                    <div class='contentcontainer'>
-                                        <div class='whitebox toneblack'>
-                                            <div class='whiteborder padded'>
-                                                <h2 class='white'>Newest Artworks</h2>
-                                                <div id='newestitems'>";
-
-                foreach ($data as $row => $artwork) {
-                    $rowCount++;
-                    $timeAgo = getTimeAgo($artwork['datecreated']);
-                    if ($rowCount >= $itemsStartLimit) {
-                        $wordsArray = explode("-", $artwork['title']);
-                        $capitalizedWords = array_map('ucfirst', $wordsArray);
-                        echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'></a><p>" . $timeAgo . "</p></div>";
-
-                        if ($rowCount >= 5) {
-                            break;
-                        }
-                    }
-                }
-
-                $rowCount = 0;
-
-                echo '</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>';
-
-            } else {
-
-            }
-
-            ?> -->
-
-
-
             <div class='boxedsection'>
                 <div class='sidecontainer gallerysearchform'>
                     <div class='spacermedium'></div>
@@ -145,7 +88,7 @@ include '../../controllers/galleryctrl.php';
                                     <p>
                                         <label for="title">
                                             <h3>Title Contains: </h3>
-                                            <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="title" type="text"
+                                            <input pattern="[A-Za-z0-9' ]+" id="title" type="text"
                                                 name="title" placeholder="e.g. baby bird" />
                                         </label>
                                     </p>
@@ -259,7 +202,7 @@ include '../../controllers/galleryctrl.php';
                                     <p>
                                         <label for="tags">
                                             <h3>Tags:</h3><span>(Separate tags with a space e.g. 'hat levy')</span>
-                                            <input pattern="[^@#$%^&*()+={}\[\]:;<>\/\\|]+" id="tags" type="text"
+                                            <input pattern="[A-Za-z0-9 ]+" id="tags" type="text"
                                                 name="tags" placeholder="tag1 tag2 tag3" />
                                         </label>
                                     </p>
@@ -283,13 +226,12 @@ include '../../controllers/galleryctrl.php';
                 <div class='boxedsection gallerycontainer' id='top'>
                     <div class='contentcontainer'>
                         <div class="whitebox padded">
-                            <!-- <?php if (isset($_SESSION['dbresults']) && isset($_SESSION['searchQuery'])) {
-                                echo '<p class="bold">You searched: <i>' . $searchQuery . '</i></p>';
+                             <?php if (isset($_GET['title'])) {
                                 echo '<h2>Search Results: ' . count($data) . '</h2><span></span>';
                             } else {
                                 echo '<h2>Viewing All Artworks: ' . count($data) . '</h2><span></span>';
                             }
-                            ?> -->
+                            ?>
 
 
                             <div>
@@ -408,31 +350,31 @@ include '../../controllers/galleryctrl.php';
                             <br>
                             <div class='flexright'>
                                 <h2 id='gallerypagenumbers'>More pages:
-                                <?php
+                                    <?php
 
-$currentURL = htmlspecialchars($_SERVER['REQUEST_URI']);
+                                    $currentURL = htmlspecialchars($_SERVER['REQUEST_URI']);
 
-for ($i = 1; $i <= $totalPages; $i++) {
-    // Check if page parameter is already set in the URL
-    if (isset($_GET['page'])) {
-        // Replace the existing page number with the current $i
-        $newURL = preg_replace('/(page=)\d+/', 'page=' . $i, $currentURL);
-    } else {
-        // If page parameter is not set, append it to the current URL
-        $newURL = $currentURL . '&page=' . $i;
-    }
+                                    for ($i = 1; $i <= $totalPages; $i++) {
+                                        // Check if page parameter is already set in the URL
+                                        if (isset($_GET['page'])) {
+                                            // Replace the existing page number with the current $i
+                                            $newURL = preg_replace('/(page=)\d+/', 'page=' . $i, $currentURL);
+                                        } else {
+                                            // If page parameter is not set, append it to the current URL
+                                            $newURL = $currentURL . '&page=' . $i;
+                                        }
 
-    // Add anchor link '#top' if needed
-    $newURL .= '#top';
+                                        // Add anchor link '#top' if needed
+                                        $newURL .= '#top';
 
-    // Determine link class based on current page
-    $linkClass = ($i == $currentPage) ? 'hoverred textblack' : 'hoverred textblack nounderline';
+                                        // Determine link class based on current page
+                                        $linkClass = ($i == $currentPage) ? 'hoverred textblack' : 'hoverred textblack nounderline';
 
-    // Output the pagination link
-    echo '<a class="' . $linkClass . '" href="' . $newURL . '">' . $i . '</a>';
-}
+                                        // Output the pagination link
+                                        echo '<a class="' . $linkClass . '" href="' . $newURL . '">' . $i . '</a>';
+                                    }
 
-?>
+                                    ?>
                                 </h2>
                             </div>
                         </div>

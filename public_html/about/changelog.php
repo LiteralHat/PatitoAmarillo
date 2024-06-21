@@ -56,14 +56,15 @@
                         <div class='contentcontainer'>
                             <div class="whitebox padded">
 
-                                <h3>v17.15.0-beta 19.06.2024</h3>
+                                <h3>v17.15.0-beta 21.06.2024</h3>
                                 <ul>
                                     <li>Added individual pages for Discography songs! (More to come)</li>
                                     <li>Reverted some wording on website</li>
-                                    <li>Migrated gallery sort/filter server request method</li>
                                     <li>Moved medium out of 'artworks' dropdown menu, it is now its own option</li>
                                     <li>Site speed improvements</li>
                                     <li>Optimised homepage image to be 50% of old size</li>
+                                    <li>Changed gallery filter/sort requests to use GET instead of POST (in other words you should now be able to bookmark your search query)</li>
+                                    <li>Gallery is faster now..!</li>
                                 </ul>
 
                                 <hr class='hrtextseparator'><br>

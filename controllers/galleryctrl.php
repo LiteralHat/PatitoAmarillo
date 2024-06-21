@@ -59,14 +59,60 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
         $parameters = $_GET;
         
         if (!empty($_GET['submitsearch'])) {
+
+            if (!empty($parameters['title'])) {
+                $parameters['title'] = preg_replace("/[^a-zA-Z0-9']/", "-", $parameters['title']);
+            }
+    
+            if (!empty($parameters['mediums']) && is_array($parameters['mediums'])) {
+                $allowed_words = array("watercolor", "ink", "acrylic", "graphite", "gouache", "digital", "traditional");
+                foreach ($parameters['mediums'] as $key => $input) {
+                    if (in_array(strtolower($input), $allowed_words)) {
+                        $parameters['mediums'][$key] = filter_var($input, FILTER_SANITIZE_STRING);
+                    } else {
+                        header('dogs');
+                    }
+                }
+            } else {
+                header('dogs');
+            }
+    
+            if (!empty($parameters['tags'])) {
+                $parameters['tags'] = preg_replace("/[^a-zA-Z0-9]/", " ", $parameters['tags']);
+            }
+    
+            //category
+            if (!empty($parameters['category'])) {
+            }
+    
+            if (!empty($parameters['beforedate'])) {
+                if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $parameters['beforedate'])) {
+                    if (strtotime($parameters['beforedate']) !== false) {
+                        
+                    } else {
+                        header('dogs');
+                    }
+                } else {
+                    header('dogs');
+                }
+            }
+
+
+            if (isset($parameters['fuzzydate'])) {
+                $allowed_words = array("on", "off");
+                if (in_array($parameters['fuzzydate'], $allowed_words)) {
+                    $parameters['fuzzydate'] = filter_var($parameters['fuzzydate'], FILTER_SANITIZE_STRING);
+                } else {
+                    header('dogs');
+                }
+            }
+    
             //instantiates a query class
             $query = new Query($databaseType, $parameters);
             //builds the query, $query is now a line of sql
             $query = $query->buildQuery();
-            echo $query;
             //executes it against the database and stores it in $data
             $data = $controller->getSearchItem($query);
-
 
 
         } else {
@@ -78,15 +124,9 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
             $sortby = new Sortby($data, $parameters);
             //the final stuff yay
             $data = $sortby->sortItems();
-            var_dump($parameters);
+            
 
         }
-
-
-
-
-
-
 
     } else {
         $data = $controller->getAllItems($columns, $databaseType);

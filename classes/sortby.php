@@ -13,7 +13,7 @@ class Sortby
 
         $this->parameters = $parameters;
         $this->data = $data;
-        print_r($this->parameters['sortby']);
+        
     }
 
     public function sortItems()
