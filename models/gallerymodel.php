@@ -4,6 +4,9 @@ namespace App\Models;
 use App\Config\Dbh;
 
 use PDO;
+
+require '../../config/dbh.php';
+
 class GalleryModel {
     private $dbh;
     public function __construct() {

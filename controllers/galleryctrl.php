@@ -6,6 +6,13 @@ use App\Models\MusicModel;
 use App\Classes\Query;
 use App\Classes\Sortby;
 
+
+
+require '../../models/gallerymodel.php';
+require '../../classes/sortby.php';
+require '../../classes/query.php';
+
+
 class GalleryCtrl
 {
     private $model;
