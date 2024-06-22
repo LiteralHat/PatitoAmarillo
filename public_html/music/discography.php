@@ -102,7 +102,7 @@ include '../../controllers/galleryctrl.php';
 
                                 if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
                                     $extracode = "<form action='../admin/delete_item' method='post'>
-                                            <input type='hidden' name='musicid' value='" . $song['index'] . "'>
+                                            <input type='hidden' name='musicid' value='" . $song['musicid'] . "'>
                                             <input type='submit' value='Delete' class='tonered paddedsm'>
                                             </form>";
                                 } else {
