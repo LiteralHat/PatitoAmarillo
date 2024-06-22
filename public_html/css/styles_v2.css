@@ -1254,7 +1254,9 @@ a:hover {
     background-color: red;
 }
 
-
+.gallerytextbox {
+    width: 500px;
+}
 
 .galleryimage {
     width: 600px;

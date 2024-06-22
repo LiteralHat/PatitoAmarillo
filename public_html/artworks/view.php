@@ -32,175 +32,171 @@ $formattedTitle = implode(" ", $capitalizedWords);
 
         <div class="contentrowwhite centerbox">
             <div class='boxedsection'>
-                <div class='contentcontainer'>
-                    <div class='whitebox toneblack'>
-                        <div class='whiteborder paddedsm'>
-                            <img class='galleryimage'
-                                src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class='thinwidthcontainer'>
+                <div class="rowbox">
                     <div class='contentcontainer'>
                         <div class='whitebox toneblack'>
-                            <div class='whiteborder padded'>
-                                <div class='spacersmall'></div>
-                                <div class='spacersmall'></div>
-                                <h1 class='large white'>
-                                    <?php
-                                    echo $formattedTitle;
-                                    ?>
-                                </h1>
-                                <span>
-                                    <?php
-                                    // if ($isadmin) {
-
-                                    //     echo "<form action='../../admin/delete_item' method='post'>
-                                    //     <input type='hidden' name='artwork' value='" . $data['artworkid'] . "'>
-                                    //     <input type='submit' value='Delete' class='tonered paddedsm'>
-                                    //     </form>";
-                                    // } 
-                                    ?>
-                                </span>
-                                <p class='medium white'>
-                                    <?php
-                                    $finalString = implode(" ", $capitalizedWords);
-                                    $dateString = htmlspecialchars($data['datecreated']);
-                                    $year = substr($dateString, 0, 4);
-                                    echo $year;
-                                    ?>
-                                </P>
-                                <p class='white'>
-                                    <?php
-                                    if (isset($data['description'])) {
-                                        echo htmlspecialchars($data['description']);
-                                    } else {
-                                        echo "<i>This artwork has no description.</i>";
-                                    }
-                                    ?>
-
-                                </p>
-
-                                <a href='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'
-                                    target='_blank'>
-                                    <p class='textgrey smalltext'>Click here to open image in new tab.</p>
-                                </a>
-
-
-                                <hr>
-                                <div class='spacersmall'></div>
-                                <h2 class='white padtop'>Details</h2>
-                                <dl class='gallerydetails white'>
-                                    <dt>Date</dt>
-                                    <dd>
-
-
-                                        <?php
-                                        $dateString = htmlspecialchars($data['datecreated']);
-                                        $timestamp = strtotime($dateString);
-                                        // Formats the timestamp into the desired date format
-                                        $formattedDate = date("d F Y", $timestamp);
-                                        echo $formattedDate;
-                                        ?>
-
-                                    </dd>
-
-                                    <dt>Artwork No.</dt>
-                                    <dd>
-
-
-                                        <?php
-                                        if (isset($data['artworkid'])) {
-                                            echo "# " . htmlspecialchars($data['artworkid']);
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-
-                                    </dd>
-
-
-                                    <dt>Collection</dt>
-                                    <dd>
-                                        <?php
-                                        if (isset($data['artworkcollection'])) {
-                                            echo $data['artworkcollection'];
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-                                    </dd>
-
-                                    <dt>Dimensions</dt>
-                                    <dd>
-                                        <?php
-                                        if (isset($data['dimensions'])) {
-                                            echo htmlspecialchars($data['dimensions']);
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-
-                                    </dd>
-
-                                    <dt>Mediums</dt>
-                                    <dd>
-                                        <?php
-                                        if (isset($data['medium'])) {
-                                            $wordsArray = explode(" ", $data['medium']);
-                                            $capitalizedWords = array_map('ucfirst', $wordsArray);
-                                            $finalString = implode(", ", $capitalizedWords);
-                                            echo $finalString;
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-                                    </dd>
-
-
-                                    <dt>Tags</dt>
-                                    <dd>
-                                        <?php
-                                        if (isset($data['tags'])) {
-                                            echo htmlspecialchars($data['tags']);
-                                        } else {
-                                            echo "";
-                                        }
-                                        ?>
-                                    </dd>
-                                </dl>
-                                <div class='spacersmall'></div>
-                                <hr>
-                                <div class='spacersmall'></div>
-                                <h2 class='white padtop'>Embed</h2>
-                                <p><span class='warning'>Please note that at this time embedding is not
-                                        recommended!</span><span class='white'> Because artworks are still being
-                                        added, the URL indexes are constantly changing.</span></p>
-                                <span class='white'>HTML</span>
-                                <div class='whitebox toneblack'>
-                                    <textarea
-                                        class='gallerycode'><a href='https://literalhat.com/artworks/view/<?php echo $data['artworkid']; ?>'><img src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'></a></textarea>
-                                </div>
-                                <span class='white'>BBcode</span>
-                                <div class='whitebox toneblack'>
-                                    <textarea
-                                        class='gallerycode'><?php echo "[url=https://literalhat.com/artworks/view/" . $data['artworkid'] . "][img]https://reloaded.literalhat.com/gallery/literalhat_" . $data['datecreated'] . "_" . $data['title'] . ".webp[/img][/url]"; ?></textarea>
-                                </div>
+                            <div class='whiteborder paddedsm'>
+                                <img class='galleryimage'
+                                    src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'>
                             </div>
                         </div>
                     </div>
 
+                    <div class='contentcontainer'>
+                        <div class='gallerytextbox'>
+                            <div class='whitebox toneblack'>
+                                <div class='whiteborder padded'>
+                                    <div class='spacersmall'></div>
+                                    <div class='spacersmall'></div>
+                                    <h1 class='large white'>
+                                        <?php
+                                        echo $formattedTitle;
+                                        ?>
+                                    </h1>
+                                    <span>
+                                        <?php
+                                        // if ($isadmin) {
+                                        
+                                        //     echo "<form action='../../admin/delete_item' method='post'>
+                                        //     <input type='hidden' name='artwork' value='" . $data['artworkid'] . "'>
+                                        //     <input type='submit' value='Delete' class='tonered paddedsm'>
+                                        //     </form>";
+                                        // } 
+                                        ?>
+                                    </span>
+                                    <p class='medium white'>
+                                        <?php
+                                        $finalString = implode(" ", $capitalizedWords);
+                                        $dateString = htmlspecialchars($data['datecreated']);
+                                        $year = substr($dateString, 0, 4);
+                                        echo $year;
+                                        ?>
+                                    </P>
+                                    <p class='white'>
+                                        <?php
+                                        if (isset($data['description'])) {
+                                            echo htmlspecialchars($data['description']);
+                                        } else {
+                                            echo "<i>This artwork has no description.</i>";
+                                        }
+                                        ?>
 
-                    <div class='rowbox' id='gallerybuttons'>
+                                    </p>
+
+                                    <a href='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'
+                                        target='_blank'>
+                                        <p class='textgrey smalltext'>Click here to open image in new tab.</p>
+                                    </a>
+
+
+                                    <hr>
+                                    <div class='spacersmall'></div>
+                                    <h2 class='white padtop'>Details</h2>
+                                    <dl class='gallerydetails white'>
+                                        <dt>Date</dt>
+                                        <dd>
+                                            <?php
+                                            $dateString = htmlspecialchars($data['datecreated']);
+                                            $timestamp = strtotime($dateString);
+                                            // Formats the timestamp into the desired date format
+                                            $formattedDate = date("d F Y", $timestamp);
+                                            echo $formattedDate;
+                                            ?>
+
+                                        </dd>
+
+                                        <dt>Artwork No.</dt>
+                                        <dd>
+
+
+                                            <?php
+                                            if (isset($data['artworkid'])) {
+                                                echo "# " . htmlspecialchars($data['artworkid']);
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
+
+                                        </dd>
+
+
+                                        <dt>Collection</dt>
+                                        <dd>
+                                            <?php
+                                            if (isset($data['artworkcollection'])) {
+                                                echo $data['artworkcollection'];
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
+                                        </dd>
+
+                                        <dt>Dimensions</dt>
+                                        <dd>
+                                            <?php
+                                            if (isset($data['dimensions'])) {
+                                                echo htmlspecialchars($data['dimensions']);
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
+
+                                        </dd>
+
+                                        <dt>Mediums</dt>
+                                        <dd>
+                                            <?php
+                                            if (isset($data['medium'])) {
+                                                $wordsArray = explode(" ", $data['medium']);
+                                                $capitalizedWords = array_map('ucfirst', $wordsArray);
+                                                $finalString = implode(", ", $capitalizedWords);
+                                                echo $finalString;
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
+                                        </dd>
+
+
+                                        <dt>Tags</dt>
+                                        <dd>
+                                            <?php
+                                            if (isset($data['tags'])) {
+                                                echo htmlspecialchars($data['tags']);
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
+                                        </dd>
+                                    </dl>
+                                    <div class='spacersmall'></div>
+                                    <hr>
+                                    <div class='spacersmall'></div>
+                                    <h2 class='white padtop'>Embed</h2>
+                                    <span class='white'>HTML</span>
+                                    <div class='whitebox toneblack'>
+                                        <?php
+                                        $urllink = $data['datecreated'] . '/' . $data['title'];
+                                        ?>
+                                        <textarea
+                                            class='gallerycode'><a href='https://literalhat.com/artworks/view/<?php echo $urllink; ?>'><img src='https://reloaded.literalhat.com/gallery/literalhat_<?php echo $data['datecreated'] . "_" . htmlspecialchars($data['title']) ?>.webp'></a></textarea>
+                                    </div>
+                                    <span class='white'>BBcode</span>
+                                    <div class='whitebox toneblack'>
+                                        <textarea
+                                            class='gallerycode'><?php echo "[url=https://literalhat.com/artworks/view/" . $urllink . "][img]https://reloaded.literalhat.com/gallery/literalhat_" . $data['datecreated'] . "_" . $data['title'] . ".webp[/img][/url]"; ?></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class='rowbox' id='gallerybuttons'>
                         <div class='columnbox'>
                             <div class='contentcontainer'>
                                 <button id='previous' class='gallerybutton tone1' href=''>
                                     <?php
-                                    $currentUrl = $_SERVER['REQUEST_URI'];
-                                    preg_match('/\d+$/', $currentUrl, $matches);
+                                    $matches = $data['artworkid'];
                                     $extractedDigits = isset($matches[0]) ? $matches[0] : '';
                                     $extractedDigits -= 1;
                                     if ($extractedDigits <= 0) {
@@ -292,10 +288,10 @@ $formattedTitle = implode(" ", $capitalizedWords);
                                 </button>
                             </div>
                         </div>
+                    </div> -->
+
                     </div>
-
                 </div>
-
             </div>
         </div>
 
