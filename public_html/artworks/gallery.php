@@ -330,7 +330,7 @@ include '../../controllers/galleryctrl.php';
                                             $finalString = implode(" ", $capitalizedWords);
                                             $dateString = htmlspecialchars($artwork['datecreated']);
                                             $year = substr($dateString, 0, 4);
-                                            echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['artworkid'] . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
+                                            echo "<div class='gallerythumbnail'><a href=\"view/" . $artwork['datecreated'] . "/" . htmlspecialchars($artwork['title']) . "\"><img src='https://leviathan.literalhat.com/gallery/literalhat_" . $artwork['datecreated'] . "_" . htmlspecialchars($artwork['title']) . ".webp'><p class='gallerytitle'>" . $finalString . "</p></a><p>" . $year . "</div>";
 
                                             if ($rowCount >= $itemsEndLimit) {
                                                 break;

@@ -142,7 +142,12 @@ if (strpos($_SERVER['REQUEST_URI'], 'music/discography') !== false || strpos($_S
 
 } elseif (strpos(($_SERVER['REQUEST_URI']), 'music/view') !== false || strpos($_SERVER['REQUEST_URI'], 'artworks/view')) {
 
-    $title = str_replace('/music/view/', '', $_SERVER['REQUEST_URI']);
+    if (strpos(($_SERVER['REQUEST_URI']), 'music/view') !== false ) {
+        $title = str_replace('/music/view/', '', $_SERVER['REQUEST_URI']);
+    } else {
+    $title = str_replace('/artworks/view/', '', $_SERVER['REQUEST_URI']);
+    }
+    
     $dateandtitle = explode('/', $title);
     list($datecreated, $title) = $dateandtitle;
     $data = $controller->getViewPageItem($databaseType, $datecreated, $title);

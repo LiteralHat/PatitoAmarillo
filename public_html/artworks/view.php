@@ -1,32 +1,20 @@
-<?php include_once ('../../config.php');
-include_once (INCLUDES_FOLDER . 'dbh.php');
-session_start();
+<?php
 
-if (isset($_SESSION["petridish"]) && $_SESSION["petridish"] == true) {
-    $isadmin = true;
-} else {
-    $isadmin = false;
-    session_unset();
-}
+include_once ('../../config.php');
+include ('../../vendor/autoload.php');
 
+use App\Controllers\GalleryCtrl;
+use App\Models\GalleryModel;
+use App\Classes\Query;
+use App\Classes\Sortby;
+use App\Config\Dbh;
 
-$sql = 'SELECT * FROM artworks WHERE artworkid=:artworkid';
-$statement = $db->prepare($sql);
-$id = filter_input(INPUT_GET, 'artworkid');
-$statement->bindValue(':artworkid', $id, PDO::PARAM_INT);
-$statement->execute();
-$data = $statement->fetch();
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+include '../../controllers/galleryctrl.php';
 
+$wordsArray = explode("-", $data['title']);
+$capitalizedWords = array_map('ucfirst', $wordsArray);
+$formattedTitle = implode(" ", $capitalizedWords);
 
-if (!$data) {
-    echo "<p class='center large'>Oh no. This page doesn't exist! <a href='../gallery'>Go back?</a></p>";
-    exit();
-} else {
-    $wordsArray = explode("-", $data['title']);
-    $capitalizedWords = array_map('ucfirst', $wordsArray);
-    $formattedTitle = implode(" ", $capitalizedWords);
-}
 ?>
 
 <!DOCTYPE html>
@@ -64,20 +52,17 @@ if (!$data) {
                                 <h1 class='large white'>
                                     <?php
                                     echo $formattedTitle;
-
-
-
                                     ?>
                                 </h1>
                                 <span>
                                     <?php
-                                    if ($isadmin) {
+                                    // if ($isadmin) {
 
-                                        echo "<form action='../../admin/delete_item' method='post'>
-                                        <input type='hidden' name='artwork' value='" . $data['artworkid'] . "'>
-                                        <input type='submit' value='Delete' class='tonered paddedsm'>
-                                        </form>";
-                                    }
+                                    //     echo "<form action='../../admin/delete_item' method='post'>
+                                    //     <input type='hidden' name='artwork' value='" . $data['artworkid'] . "'>
+                                    //     <input type='submit' value='Delete' class='tonered paddedsm'>
+                                    //     </form>";
+                                    // } 
                                     ?>
                                 </span>
                                 <p class='medium white'>
